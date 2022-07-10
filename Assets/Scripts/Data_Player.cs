@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Data_Player : MonoBehaviour
 {
-    private float overallScore { get; set; }
+    public float overallScore { get; set; }
 
     public void Awake()
     {
         SingletonManager.Register(this);
+    }
+
+    public void Start()
+    {
+        overallScore = 100;
     }
 }
