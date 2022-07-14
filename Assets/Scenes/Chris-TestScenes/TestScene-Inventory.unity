@@ -214,6 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48fe33747f89b14083d3710a6e9ab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  MoneyCount: {fileID: 0}
 --- !u!1 &455304770
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534581621}
   - component: {fileID: 534581622}
+  - component: {fileID: 534581623}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -290,6 +293,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
+--- !u!114 &534581623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534581620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f801b9b74af92447a6fa99f7ac9abbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingMoney: 5000
+  Money: 0
+  WalletUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &696054333
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +570,7 @@ GameObject:
   - component: {fileID: 1358851617}
   - component: {fileID: 1358851616}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoneyCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
