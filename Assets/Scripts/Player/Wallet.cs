@@ -7,23 +7,33 @@ public class Wallet : MonoBehaviour
 {
     public int StartingMoney = 5000;
     public int Money = 0;
-    public UnityEvent WalletUpdate = new UnityEvent();
-    
+    public UnityEvent WalletUIUpdate = new UnityEvent();
+
     // Start is called before the first frame update
     void Start()
     {
         InitializeWallet();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void InitializeWallet()
     {
         Money = StartingMoney;
+        WalletUIUpdate.Invoke();
+    }
+
+    public void SpendMoney(int cost)
+    {
+        if(Money > 0)
+        {
+            Money -= cost;
+        }
+        WalletUIUpdate.Invoke();
+    }
+
+    public void AddMoney(int money)
+    {
+        Money += money;
+        WalletUIUpdate.Invoke();
     }
 
    
