@@ -14,6 +14,10 @@ public class SceneLoad : MonoBehaviour
 
     private string currentSceneId;
 
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,6 +30,15 @@ public class SceneLoad : MonoBehaviour
     {
         if(!string.IsNullOrEmpty(currentSceneId)) //currentsceneID != string.empty
         {
+            Complex_SceneManager addSceneLoader = SingletonManager.Get<Complex_SceneManager>();
+
+            if(addSceneLoader)
+            {
+                yield return addSceneLoader.UnloadScene();
+                Debug.Log("ComplexSceneManager_Unloaded");
+            }
+          
+
             yield return SceneManager.UnloadSceneAsync(currentSceneId);
             currentSceneId = string.Empty;
         }
