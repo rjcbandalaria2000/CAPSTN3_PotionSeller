@@ -18,12 +18,6 @@ public class Complex_SceneManager : MonoBehaviour
         StartCoroutine(LoadSceneSequence());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private IEnumerator LoadSceneSequence()
     {
         for(int i = 0; i < AdditionalScene.Count; i++)
