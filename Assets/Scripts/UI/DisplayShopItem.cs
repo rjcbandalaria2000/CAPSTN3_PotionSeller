@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DisplayShopItem : MonoBehaviour
 {
+    public Shop Shop;
+    public GameObject ItemShopPrefab; 
     // Start is called before the first frame update
     void Start()
     {
