@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public Transform startPos, endPos;
+    [Header("Positions")]
+    public Transform pos1, pos2;
+    private Vector3 nextPos;
+    public Transform startPos;
 
     public Meter meter;
 
     public int speed;
 
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        if(meter == null)
+        this.gameObject.transform.position = startPos.position;
+        nextPos = pos2.transform.position;
+        if (meter == null)
         {
             if(GameObject.FindObjectOfType<Meter>() != null )
             {
@@ -22,13 +28,13 @@ public class Arrow : MonoBehaviour
             }
             
         }
-        
+        StartCoroutine(arrowMovement());
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(arrowMovement());
+      
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,9 +47,19 @@ public class Arrow : MonoBehaviour
 
     IEnumerator arrowMovement()
     {
-        this.transform.Translate(Vector3.right * speed * Time.deltaTime);
-        yield return null;
-       
-     
+        while(true)
+        {
+            if(this.transform.position.x == pos1.position.x)
+            {
+                nextPos = pos2.position;
+            }
+            if(this.transform.position.x == pos2.position.x)
+            {
+                nextPos = pos1.position;
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+            yield return null;
+        }
     }
 }
