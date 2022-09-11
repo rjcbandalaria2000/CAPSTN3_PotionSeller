@@ -9,10 +9,12 @@ public class Arrow : MonoBehaviour
     private Vector3 nextPos;
     public Transform startPos;
 
-    public Meter meter;
+   // public Meter meter;
 
     public int speed;
     [SerializeField] bool isHitPoint;
+
+    private UI_Manager managerUI;
     
 
     // Start is called before the first frame update
@@ -20,14 +22,14 @@ public class Arrow : MonoBehaviour
     {
         this.gameObject.transform.position = startPos.position;
         nextPos = pos2.transform.position;
-        if (meter == null)
+        if(managerUI == null)
         {
-            if(GameObject.FindObjectOfType<Meter>() != null )
+            if (GameObject.FindObjectOfType<UI_Manager>() != null)
             {
-                meter = GameObject.FindObjectOfType<Meter>().GetComponent<Meter>();
+                managerUI = GameObject.FindObjectOfType<UI_Manager>().GetComponent<UI_Manager>();
             }
-            
         }
+        
         StartCoroutine(arrowMovement());
     }
 
@@ -36,34 +38,6 @@ public class Arrow : MonoBehaviour
     {
       
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Hitpoint"))
-    //    {
-    //        Debug.Log("Score");
-    //        StopCoroutine(arrowMovement());
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Miss");
-    //    }
-    //}
-
-    //public void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Hitpoint"))
-    //    {
-    //        isHitPoint = true;
-    //        Debug.Log("Target");
-
-    //    }
-        
-    //}
-    //public void OnCollisionExit(Collision collision)
-    //{
-    //    isHitPoint = false;
-    //}
 
     public void OnTriggerStay(Collider other)
     {
@@ -103,12 +77,13 @@ public class Arrow : MonoBehaviour
 
         if (isHitPoint)
         {
-           
+           managerUI.SuccessTXT.gameObject.SetActive(true);
            
             Debug.Log("Score");
         }
         else
         {
+            managerUI.FailureTXT.gameObject.SetActive(true);
             Debug.Log("Miss");
         }
     }
