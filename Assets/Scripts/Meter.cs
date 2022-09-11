@@ -13,8 +13,10 @@ public class Meter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+     
         meter_body = this.GetComponent<GameObject>();
         arrow = GameObject.FindObjectOfType<Arrow>().GetComponent<Arrow>();
+
     }
 
 }

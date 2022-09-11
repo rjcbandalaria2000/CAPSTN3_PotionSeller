@@ -9,6 +9,8 @@ public class Arrow : MonoBehaviour
     private Vector3 nextPos;
     public Transform startPos;
 
+    private Coroutine movementRoutine;
+
    // public Meter meter;
 
     public int speed;
@@ -29,8 +31,8 @@ public class Arrow : MonoBehaviour
                 managerUI = GameObject.FindObjectOfType<UI_Manager>().GetComponent<UI_Manager>();
             }
         }
-        
-        StartCoroutine(arrowMovement());
+
+        movementRoutine = StartCoroutine(arrowMovement());
     }
 
     // Update is called once per frame
@@ -63,7 +65,10 @@ public class Arrow : MonoBehaviour
             }
             if(this.transform.position.x == pos2.position.x)
             {
-                nextPos = pos1.position;
+                managerUI.FailureTXT.gameObject.SetActive(true);
+                Debug.Log("TIME UP");
+                StopCoroutine(movementRoutine);
+
             }
 
             transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
@@ -73,7 +78,7 @@ public class Arrow : MonoBehaviour
 
     public void OnClick()
     {
-        StopCoroutine(arrowMovement());
+        StopCoroutine(movementRoutine);
 
         if (isHitPoint)
         {
