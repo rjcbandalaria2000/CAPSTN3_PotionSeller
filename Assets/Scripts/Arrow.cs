@@ -12,7 +12,7 @@ public class Arrow : MonoBehaviour
     public Meter meter;
 
     public int speed;
-
+    [SerializeField] bool isHitPoint;
     
 
     // Start is called before the first frame update
@@ -37,12 +37,46 @@ public class Arrow : MonoBehaviour
       
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        Debug.Log("Score");
+    //        StopCoroutine(arrowMovement());
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Miss");
+    //    }
+    //}
+
+    //public void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        isHitPoint = true;
+    //        Debug.Log("Target");
+
+    //    }
+        
+    //}
+    //public void OnCollisionExit(Collision collision)
+    //{
+    //    isHitPoint = false;
+    //}
+
+    public void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Hitpoint") && Input.GetMouseButtonDown(0))
+        if (other.gameObject.CompareTag("Hitpoint"))
         {
-            Debug.Log("Score");
+            isHitPoint = true;
+            Debug.Log("Target");
+
         }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        isHitPoint = false;
     }
 
     IEnumerator arrowMovement()
@@ -62,4 +96,23 @@ public class Arrow : MonoBehaviour
             yield return null;
         }
     }
+
+    public void OnClick()
+    {
+        StopCoroutine(arrowMovement());
+
+        if (isHitPoint)
+        {
+           
+           
+            Debug.Log("Score");
+        }
+        else
+        {
+            Debug.Log("Miss");
+        }
+    }
+
+
+
 }
