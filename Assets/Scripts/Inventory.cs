@@ -7,20 +7,14 @@ public class Inventory : MonoBehaviour
 {
     public List<GameObject> Items = new List<GameObject>();
 
-    // Start is called before the first frame update
-    void Start()
+    public void AddItem(GameObject item)
     {
-        
+        Items.Add(item);
     }
 
-    public void AddToInventory(GameObject item)
+    public void RemoveItem(GameObject item)
     {
-
-    }
-
-    public void RemoveToInventory(GameObject item)
-    {
-
+        Items.Remove(item);
     }
  
 }
