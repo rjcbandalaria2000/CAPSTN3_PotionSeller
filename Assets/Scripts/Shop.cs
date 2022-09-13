@@ -15,24 +15,29 @@ public class Shop : MonoBehaviour
 
     public void BuyItem(string itemName)
     {
-        foreach(GameObject shopItem in Items)
+        bool isItemFound = false;
+        foreach (GameObject shopItem in Items)
         {
             ShopIngredient itemIngredient = shopItem.GetComponent<ShopIngredient>();
-            if (itemIngredient)
+            if (itemIngredient.ingredientScriptableObject.ingredientName == itemName)
             {
-                if(itemIngredient.Name == itemName)
+                isItemFound = true;
+                if (PlayerWallet.Money >= itemIngredient.ingredientScriptableObject.buyPrice)
                 {
-                    if(PlayerWallet.Money >= itemIngredient.Cost)
-                    {
-                        PlayerWallet.SpendMoney(itemIngredient.Cost);
-                        Debug.Log("Bought " + itemIngredient.Name);
-                    }
+                    PlayerWallet.SpendMoney((int)itemIngredient.ingredientScriptableObject.buyPrice);
+                    Debug.Log("Bought " + itemIngredient.ingredientScriptableObject.ingredientName);
+                    Inventory.instance.AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
                 }
                 else
                 {
-                    Debug.Log("Item no found");
+                    Debug.Log("Not enough funds...");
                 }
-            }
+                break;
+            }            
+        }
+        if (!isItemFound)
+        {
+            Debug.Log("No item found");            
         }
     }
 }
