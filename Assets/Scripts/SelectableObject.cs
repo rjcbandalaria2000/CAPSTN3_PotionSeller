@@ -8,7 +8,8 @@ public class SelectableObject : MonoBehaviour
     public OnSelectableObjectClicked onSelectableObjectClickedEvent = new OnSelectableObjectClicked();
 
     public string objectName;
-    public GameObject objectUI;
+    public GameObject objectNameUI;
+    public GameObject objectPanelUI;
 
     private void OnEnable()
     {

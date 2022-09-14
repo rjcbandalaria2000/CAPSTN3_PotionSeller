@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
@@ -16,6 +18,7 @@ public class SelectionManager : MonoBehaviour
             // reset back to default material color
             selectionRend.material = defaultMaterial;
             // resets _selection to null
+            _selection.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
             _selection = null;
         }
 
@@ -34,6 +37,7 @@ public class SelectionManager : MonoBehaviour
                     defaultMaterial = selectionRend.material;
                     // set material to selectable (highlighted)
                     selectionRend.material = highlightMaterial;
+                    selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(true);
                 }
                 _selection = selection;
                 
