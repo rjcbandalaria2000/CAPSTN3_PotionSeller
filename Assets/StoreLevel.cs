@@ -5,17 +5,25 @@ using UnityEngine;
 public class StoreLevel : MonoBehaviour
 {
     public int Level;
-    public List<int> MaxExperience;
-    public int ExperiencePoints;
+    public List<int> MaxExperiencePoints;
+    public int CurrentExperiencePoints;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddExpPoints(int value)
     {
-        
+        CurrentExperiencePoints += value;
+        if(CurrentExperiencePoints >= MaxExperiencePoints[Level])
+        {
+            Level++;
+            int tempExpPoints = CurrentExperiencePoints - MaxExperiencePoints[Level];
+            if(tempExpPoints > 0)
+            {
+                CurrentExperiencePoints = tempExpPoints;
+            }
+        }
     }
 }
