@@ -24,6 +24,8 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+
+        // SingletonManager.Register(this);
     }
 
     public void AddItem(string name)

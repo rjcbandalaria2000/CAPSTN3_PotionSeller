@@ -24,6 +24,7 @@ public class Arrow : MonoBehaviour
     {
         this.gameObject.transform.position = startPos.position;
         nextPos = pos2.transform.position;
+       
         if(managerUI == null)
         {
             if (GameObject.FindObjectOfType<UI_Manager>() != null)
@@ -69,6 +70,7 @@ public class Arrow : MonoBehaviour
                 Debug.Log("TIME UP");
                 StopCoroutine(movementRoutine);
 
+                //nextPos = pos1.position;
             }
 
             transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
