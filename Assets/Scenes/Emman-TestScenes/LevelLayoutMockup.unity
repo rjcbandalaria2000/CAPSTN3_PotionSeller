@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 68739333}
   - component: {fileID: 68739332}
   - component: {fileID: 68739331}
+  - component: {fileID: 68739334}
   m_Layer: 0
   m_Name: Stock
   m_TagString: Selectable
@@ -220,6 +221,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68739329}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &68739334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68739329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45a89781661f9442b0d69e8aa75f210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Stock
+  objectUI: {fileID: 0}
 --- !u!1 &130846119
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +265,7 @@ Transform:
   m_Children:
   - {fileID: 940969793}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
 --- !u!1 &295895439
 GameObject:
@@ -285,7 +300,7 @@ Transform:
   - {fileID: 1383135828}
   - {fileID: 1126302137}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &940969790
 GameObject:
@@ -383,6 +398,7 @@ GameObject:
   - component: {fileID: 1039685853}
   - component: {fileID: 1039685852}
   - component: {fileID: 1039685851}
+  - component: {fileID: 1039685854}
   m_Layer: 0
   m_Name: PrepStation
   m_TagString: Selectable
@@ -468,6 +484,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039685849}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1039685854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039685849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45a89781661f9442b0d69e8aa75f210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Prep Station
+  objectUI: {fileID: 0}
 --- !u!1 &1113585597
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +510,7 @@ GameObject:
   - component: {fileID: 1113585601}
   - component: {fileID: 1113585600}
   - component: {fileID: 1113585599}
+  - component: {fileID: 1113585602}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Selectable
@@ -565,6 +596,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113585597}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1113585602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113585597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45a89781661f9442b0d69e8aa75f210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Cauldron
+  objectUI: {fileID: 0}
 --- !u!1 &1126302136
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +852,7 @@ GameObject:
   - component: {fileID: 1738533849}
   - component: {fileID: 1738533848}
   - component: {fileID: 1738533847}
+  - component: {fileID: 1738533850}
   m_Layer: 0
   m_Name: Order
   m_TagString: Selectable
@@ -892,6 +938,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738533845}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1738533850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738533845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45a89781661f9442b0d69e8aa75f210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Order Window
+  objectUI: {fileID: 0}
 --- !u!1 &1755561110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1155,7 @@ GameObject:
   - component: {fileID: 2008040896}
   - component: {fileID: 2008040895}
   - component: {fileID: 2008040894}
+  - component: {fileID: 2008040897}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Selectable
@@ -1180,6 +1241,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008040892}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2008040897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008040892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45a89781661f9442b0d69e8aa75f210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Shop
+  objectUI: {fileID: 0}
 --- !u!1 &2138788937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,5 +1298,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

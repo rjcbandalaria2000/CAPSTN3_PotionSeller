@@ -37,10 +37,14 @@ public class SelectionManager : MonoBehaviour
                 }
                 _selection = selection;
                 
-                // outputs click - TEMPORARY (should be in 3D object base class or child class)
+                // outputs click - TEMPORARY? (should be in 3D object base class or child class)
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log(hit.transform.name);
+                    // Output name
+                    // Debug.Log(hit.transform.name);
+                    
+                    // Fire an event
+                    selection.gameObject.GetComponent<SelectableObject>()?.onSelectableObjectClickedEvent.Invoke();
                 }
             }            
         }        

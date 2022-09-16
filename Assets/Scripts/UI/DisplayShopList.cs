@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DisplayShopList : MonoBehaviour
 {
@@ -16,12 +18,13 @@ public class DisplayShopList : MonoBehaviour
 
     public void DisplayList()
     {
-        for(int i = 0; i < Shop.Items.Count; i++) {
-            
-            GameObject itemListPrefab = Instantiate(ItemShopPrefab);
-            itemListPrefab.transform.SetParent(ShopListUI.transform);
-
-        
+        foreach(GameObject shopItem in Shop.Items)
+        {
+            GameObject itemListPrefab = Instantiate(ItemShopPrefab);            
+            itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName;
+            itemListPrefab.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.buyPrice.ToString();            
+            itemListPrefab.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => Shop.BuyItem(itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
+            itemListPrefab.transform.SetParent(ShopListUI.transform, false);
         }
     }
 

@@ -5,16 +5,60 @@ using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
-    public List<GameObject> Items = new List<GameObject>();
-
-    public void AddItem(GameObject item)
+    private static Inventory _instance;
+    public static Inventory instance
     {
-        Items.Add(item);
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<Inventory>();
+            }
+            return _instance;
+        }
     }
 
-    public void RemoveItem(GameObject item)
+    public List<ItemData> potions = new();
+    public List<ItemData> ingredients = new();
+
+    private void Awake()
     {
-        Items.Remove(item);
+        _instance = this;
     }
- 
+
+    public void AddItem(string name)
+    {        
+        for (int i = 0; i < potions.Count; i++)
+        {
+            if (potions[i].itemName == name)
+            {
+                potions[i].itemAmount++;
+            }
+        }
+        for (int i = 0; i < ingredients.Count; i++)
+        {
+            if (ingredients[i].itemName == name)
+            {
+                ingredients[i].itemAmount++;
+            }
+        }
+    }
+
+    public void RemoveItem(string name)
+    {
+        for (int i = 0; i < potions.Count; i++)
+        {
+            if (potions[i].itemName == name)
+            {
+                potions[i].itemAmount--;
+            }
+        }
+        for (int i = 0; i < ingredients.Count; i++)
+        {
+            if (ingredients[i].itemName == name)
+            {
+                ingredients[i].itemAmount--;
+            }
+        }
+    } 
 }
