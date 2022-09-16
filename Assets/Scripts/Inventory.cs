@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
     {
         _instance = this;
 
-        // SingletonManager.Register(this);
+        //SingletonManager.Register(this);
     }
 
     public void AddItem(string name)

@@ -255,6 +255,7 @@ MonoBehaviour:
   customerOrder: []
   OrderQuantity: 5
   RNG: 0
+  markUP: 4
 --- !u!4 &818780880
 Transform:
   m_ObjectHideFlags: 0

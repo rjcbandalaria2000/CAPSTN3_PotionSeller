@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Customer : MonoBehaviour
 {
     public List<PotionScriptableObject> availablePotions;
@@ -10,10 +11,14 @@ public class Customer : MonoBehaviour
     public int OrderQuantity;
     public int RNG;
 
+    [Range(0,10)]
+    public int markUP;
+
+   
     // Start is called before the first frame update
     void Start()
     {
-       
+        markUP = Random.Range(0, 10); 
 
         StartCoroutine(initializeCustomerOrderList());
     }
@@ -35,4 +40,6 @@ public class Customer : MonoBehaviour
         yield return null;
 
     }
+
+    // baseprice + markup
 }
