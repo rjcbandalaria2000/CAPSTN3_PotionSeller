@@ -41,5 +41,17 @@ public class Customer : MonoBehaviour
 
     }
 
+    public void checkItem()
+    {
+        for(int i = 0; i < customerOrder.Count; i++)
+        {
+            if(customerOrder[i] == availablePotions[i].name) //This line is draft, change statement availablePotion
+            {
+                Debug.Log("Correct Item");
+                customerOrder.RemoveAt(i);
+            }
+        }
+    }
+
     // baseprice + markup
 }
