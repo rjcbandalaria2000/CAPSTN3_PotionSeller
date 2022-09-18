@@ -16,14 +16,24 @@ public class StoreLevel : MonoBehaviour
     public void AddExpPoints(int value)
     {
         CurrentExperiencePoints += value;
-        if(CurrentExperiencePoints >= MaxExperiencePoints[Level])
+        if (Level < MaxExperiencePoints.Count)
         {
-            Level++;
-            int tempExpPoints = CurrentExperiencePoints - MaxExperiencePoints[Level];
-            if(tempExpPoints > 0)
+
+            if (CurrentExperiencePoints >= MaxExperiencePoints[Level])
             {
-                CurrentExperiencePoints = tempExpPoints;
+                LevelUp();
             }
+
+        }
+       
+    }
+
+    public void LevelUp()
+    {
+        if(Level < MaxExperiencePoints.Count)
+        {
+            CurrentExperiencePoints -= MaxExperiencePoints[Level];
+            Level++;
         }
     }
 }

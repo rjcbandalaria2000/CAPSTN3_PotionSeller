@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SelectionManager : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class SelectionManager : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit))
         {
+            if(EventSystem.current.IsPointerOverGameObject()) { return; }
             Transform selection = hit.transform;
             if (selection.CompareTag("Selectable"))
             {
