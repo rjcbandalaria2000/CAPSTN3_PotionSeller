@@ -5,15 +5,23 @@ using UnityEngine.EventSystems;
 
 public class MixingTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
 {
+    [Header("States")]
     public bool IsMixing;
-    public int SwipeCount;
-    public Vector2 InitialPosition;
-
     public bool SwipedRight;
     public bool SwipedLeft;
 
+    [Header("Values")]
+    public int RequiredSwipes = 1;
+    public int SwipeCount;
     public float SwipeRightAccept = 0.5f;
     public float SwipeLeftAccept = -0.5f;
+
+    [Header("Potion")]
+    public GameObject Parent;
+    public GameObject PotionToGive;
+    public GameObject PotionReceived;
+    
+    private Vector2 InitialPosition;
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("OnPointerDown");

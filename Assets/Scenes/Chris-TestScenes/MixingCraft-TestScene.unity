@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 465937772}
   - component: {fileID: 465937771}
   - component: {fileID: 465937770}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1292,7 +1292,7 @@ GameObject:
   - component: {fileID: 1113585600}
   - component: {fileID: 1113585599}
   - component: {fileID: 1113585603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cauldron
   m_TagString: Selectable
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1846,7 +1846,7 @@ GameObject:
   - component: {fileID: 1430930940}
   - component: {fileID: 1430930942}
   - component: {fileID: 1430930941}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2117,7 +2117,7 @@ GameObject:
   - component: {fileID: 1681109098}
   - component: {fileID: 1681109097}
   - component: {fileID: 1681109096}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TestPot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2423,7 +2423,7 @@ GameObject:
   - component: {fileID: 1779302710}
   - component: {fileID: 1779302709}
   - component: {fileID: 1779302708}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2467,7 +2467,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4
 --- !u!114 &1779302709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2857,7 +2857,7 @@ GameObject:
   - component: {fileID: 1956247169}
   - component: {fileID: 1956247171}
   - component: {fileID: 1956247170}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
