@@ -11,3 +11,8 @@ public class OnSelectableObjectClicked : UnityEvent { };
 public class AddItemEvent : UnityEvent<GameObject, IngredientScriptableObject, string, int> { };
 public class RemoveItemEvent : UnityEvent<GameObject, IngredientScriptableObject, string, int> { };
 #endregion
+
+#region TimeManager Events
+public class TimeChangedEvent : UnityEvent <int, int> { }
+public class HourChangedEvent : UnityEvent <int> { }
+#endregion
