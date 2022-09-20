@@ -7,7 +7,8 @@ public class Shop : MonoBehaviour
 {
     public List<GameObject> Items = new();
     public Wallet PlayerWallet;
-    // Start is called before the first frame update
+    public float markupPercent = 1f;
+    
     void Start()
     {
         Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
@@ -33,11 +34,62 @@ public class Shop : MonoBehaviour
                     Debug.Log("Not enough funds...");
                 }
                 break;
-            }            
+            }
         }
         if (!isItemFound)
         {
             Debug.Log("No item found");            
+        }
+    }
+
+    public void SellItem(string itemName)
+    {
+        bool isItemFound = false;
+        foreach (GameObject shopItem in Items)
+        {
+            ShopPotion itemPotion = shopItem.GetComponent<ShopPotion>();
+            if (itemPotion.potionScriptableObject.potionName == itemName)
+            {
+                isItemFound = true;
+                if (PlayerWallet.Money >= itemPotion.potionScriptableObject.buyPrice)
+                {
+                    float getPrice = itemPotion.potionScriptableObject.buyPrice * markupPercent;
+                    PlayerWallet.AddMoney(Mathf.RoundToInt(getPrice));
+                    Debug.Log("Bought " + itemPotion.potionScriptableObject.potionName);
+                    Inventory.instance.AddItem(itemPotion.potionScriptableObject.potionName);
+                }
+                else
+                {
+                    Debug.Log("Not enough funds...");
+                }
+                break;
+            }
+        }
+        if (!isItemFound)
+        {
+            Debug.Log("No item found");
+        }
+    }
+
+    public void SetMarkupPercent(int value)
+    {
+        switch (value)
+        {
+            case 0:
+                markupPercent = 1f;
+                break;
+            case 1:
+                markupPercent = 1.25f;
+                break;
+            case 2:
+                markupPercent = 1.50f;
+                break;
+            case 3:
+                markupPercent = 1.75f;
+                break;
+            case 4:
+                markupPercent = 2f;
+                break;
         }
     }
 }
