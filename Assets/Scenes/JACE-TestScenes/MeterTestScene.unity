@@ -3710,7 +3710,7 @@ MonoBehaviour:
   pos1: {fileID: 1485133939}
   pos2: {fileID: 1900546509}
   startPos: {fileID: 1485133939}
-  speed: 500
+  speed: 250
   isHitPoint: 0
   hitPoint: {fileID: 1597077073}
   edgeVal1: 260
