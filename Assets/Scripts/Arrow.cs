@@ -17,8 +17,11 @@ public class Arrow : MonoBehaviour
     [SerializeField] bool isHitPoint;
 
     private UI_Manager managerUI;
-    
 
+    [Header("Hitpoint")]
+    public GameObject hitPoint;
+    public float edgeVal1;
+    public float edgeVal2;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +42,30 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        if (this.GetComponent<RectTransform>().transform.position.x >= edgeVal1 && this.GetComponent<RectTransform>().transform.position.x <= edgeVal2) // edge value
+        {
+            isHitPoint = true;
+            Debug.Log("Target");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Hitpoint"))
+        {
+            isHitPoint = true;
+            Debug.Log("Target");
+
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Hitpoint"))
+        {
+            isHitPoint = true;
+            Debug.Log("Target");
+
+        }
     }
 
     public void OnTriggerStay(Collider other)
@@ -64,6 +90,7 @@ public class Arrow : MonoBehaviour
             {
                 nextPos = pos2.position;
             }
+
             if(this.transform.position.x == pos2.position.x)
             {
                 managerUI.FailureTXT.gameObject.SetActive(true);
