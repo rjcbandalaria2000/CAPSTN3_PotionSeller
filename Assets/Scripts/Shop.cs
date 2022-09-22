@@ -56,7 +56,7 @@ public class Shop : MonoBehaviour
                     float getPrice = itemPotion.potionScriptableObject.buyPrice * markupPercent;
                     PlayerWallet.AddMoney(Mathf.RoundToInt(getPrice));
                     Debug.Log("Bought " + itemPotion.potionScriptableObject.potionName);
-                    Inventory.instance.AddItem(itemPotion.potionScriptableObject.potionName);
+                    Inventory.instance.RemoveItem(itemPotion.potionScriptableObject.potionName);
                 }
                 else
                 {
