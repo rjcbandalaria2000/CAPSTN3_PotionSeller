@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Arrow : MonoBehaviour
 {
@@ -17,12 +18,19 @@ public class Arrow : MonoBehaviour
     [SerializeField] bool isHitPoint;
 
     private UI_Manager managerUI;
-    
+
+    [Header("Hitpoint")]
+    public GameObject hitPoint;
+    public float edgeVal1;
+    public float edgeVal2;
+
+    private RectTransform transform;
 
     // Start is called before the first frame update
     void Start()
     {
         this.gameObject.transform.position = startPos.position;
+        transform = this.GetComponent<RectTransform>();
         nextPos = pos2.transform.position;
        
         if(managerUI == null)
@@ -39,22 +47,42 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        Debug.Log(this.GetComponent<RectTransform>().anchoredPosition.x);
+
     }
 
-    public void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Hitpoint"))
-        {
-            isHitPoint = true;
-            Debug.Log("Target");
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        isHitPoint = true;
+    //        Debug.Log("Target");
 
-        }
-    }
-    public void OnTriggerExit(Collider other)
-    {
-        isHitPoint = false;
-    }
+    //    }
+    //}
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        isHitPoint = true;
+    //        Debug.Log("Target");
+
+    //    }
+    //}
+
+    //public void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        isHitPoint = true;
+    //        Debug.Log("Target");
+
+    //    }
+    //}
+    //public void OnTriggerExit(Collider other)
+    //{
+    //    isHitPoint = false;
+    //}
 
     IEnumerator arrowMovement()
     {
@@ -64,7 +92,19 @@ public class Arrow : MonoBehaviour
             {
                 nextPos = pos2.position;
             }
-            if(this.transform.position.x == pos2.position.x)
+
+
+            if (transform.anchoredPosition.x >= edgeVal1 && transform.anchoredPosition.x <= edgeVal2) // edge value
+            {
+                isHitPoint = true;
+                Debug.Log("Target");
+            }
+            else
+            {
+                isHitPoint = false;
+            }
+
+            if (this.transform.position.x == pos2.position.x)
             {
                 managerUI.FailureTXT.gameObject.SetActive(true);
                 Debug.Log("TIME UP");
