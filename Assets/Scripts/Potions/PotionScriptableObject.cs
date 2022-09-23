@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum Potion
+{
+    Gayuma,
+    Katol,
+
+}
+
+
 [CreateAssetMenu(fileName = "New Potion Scriptable Object", menuName = "Scriptable Objects/Potion")]
 public class PotionScriptableObject : ScriptableObject
 {
