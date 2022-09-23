@@ -410,6 +410,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 272444732}
     m_Modifications:
+    - target: {fileID: 921437676245495952, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 366556169}
     - target: {fileID: 921437676245495980, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
       propertyPath: m_Name
       value: WalletPanel
@@ -6212,7 +6216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2038085493
 RectTransform:
   m_ObjectHideFlags: 0
