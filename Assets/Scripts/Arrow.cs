@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,10 @@ public class Arrow : MonoBehaviour
     private Vector3 nextPos;
     public Transform startPos;
 
+    [Header("Win/Lose UI")]
+    public GameObject winConditionUI;
+    public GameObject loseConditionUI; 
+
     private Coroutine movementRoutine;
 
    // public Meter meter;
@@ -17,7 +22,7 @@ public class Arrow : MonoBehaviour
     public int speed;
     [SerializeField] bool isHitPoint;
 
-    private UI_Manager managerUI;
+    private UIManager managerUI;
 
     [Header("Hitpoint")]
     public GameObject hitPoint;
@@ -35,13 +40,13 @@ public class Arrow : MonoBehaviour
        
         if(managerUI == null)
         {
-            if (GameObject.FindObjectOfType<UI_Manager>() != null)
+            if (GameObject.FindObjectOfType<UIManager>() != null)
             {
-                managerUI = GameObject.FindObjectOfType<UI_Manager>().GetComponent<UI_Manager>();
+                managerUI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
             }
         }
 
-        movementRoutine = StartCoroutine(arrowMovement());
+        //movementRoutine = StartCoroutine(arrowMovement());
     }
 
     // Update is called once per frame
@@ -106,7 +111,11 @@ public class Arrow : MonoBehaviour
 
             if (this.transform.position.x == pos2.position.x)
             {
-                managerUI.FailureTXT.gameObject.SetActive(true);
+                //managerUI.FailureTXT.gameObject.SetActive(true);
+                if (loseConditionUI)
+                {
+                    loseConditionUI.SetActive(true);
+                }
                 Debug.Log("TIME UP");
                 StopCoroutine(movementRoutine);
 
@@ -135,6 +144,9 @@ public class Arrow : MonoBehaviour
         }
     }
 
-
+    public void StartArrowMovement()
+    {
+        movementRoutine = StartCoroutine(arrowMovement());
+    }
 
 }

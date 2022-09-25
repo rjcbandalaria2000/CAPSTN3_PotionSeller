@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
-public class UI_Manager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI SuccessTXT;
     public TextMeshProUGUI FailureTXT;
@@ -14,7 +14,7 @@ public class UI_Manager : MonoBehaviour
 
     private void Start()
     {
-        SuccessTXT.gameObject.SetActive(false);
-        FailureTXT.gameObject.SetActive(false);
+        //SuccessTXT.gameObject.SetActive(false);
+       // FailureTXT.gameObject.SetActive(false);
     }
 }
