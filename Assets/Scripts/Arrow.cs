@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class Arrow : MonoBehaviour
 {
     [Header("Positions")]
-    public Transform pos1, pos2;
+    public Transform pos1;
+    public Transform pos2;
     private Vector3 nextPos;
     public Transform startPos;
 
@@ -31,10 +32,9 @@ public class Arrow : MonoBehaviour
 
     private RectTransform transform;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        this.gameObject.transform.position = startPos.position;
+          this.gameObject.transform.position = startPos.position;
         transform = this.GetComponent<RectTransform>();
         nextPos = pos2.transform.position;
        
@@ -45,8 +45,6 @@ public class Arrow : MonoBehaviour
                 managerUI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
             }
         }
-
-        //movementRoutine = StartCoroutine(arrowMovement());
     }
 
     // Update is called once per frame

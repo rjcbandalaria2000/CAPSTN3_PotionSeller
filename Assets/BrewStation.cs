@@ -27,6 +27,7 @@ public class BrewStation : SelectableObject
     public override void OnInteract()
     {
         objectPanelUI.SetActive(true);
+        if(arrow == null) { return; }
         arrow.StartArrowMovement();
     }
 
