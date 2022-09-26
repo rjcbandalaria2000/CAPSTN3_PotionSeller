@@ -7534,8 +7534,8 @@ MonoBehaviour:
   pos1: {fileID: 423116998}
   pos2: {fileID: 1918768781}
   startPos: {fileID: 423116998}
-  winConditionUI: {fileID: 0}
-  loseConditionUI: {fileID: 0}
+  winConditionUI: {fileID: 72761044}
+  loseConditionUI: {fileID: 1616970651}
   speed: 250
   isHitPoint: 0
   hitPoint: {fileID: 1433332966}

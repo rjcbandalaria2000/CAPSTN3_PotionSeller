@@ -50,7 +50,7 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(this.GetComponent<RectTransform>().anchoredPosition.x);
+        //Debug.Log(this.GetComponent<RectTransform>().anchoredPosition.x);
 
     }
 
