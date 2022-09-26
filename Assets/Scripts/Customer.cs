@@ -14,11 +14,13 @@ public class Customer : MonoBehaviour
     [Range(0,10)]
     public int markUP;
 
+    public bool isSelect;
    
     // Start is called before the first frame update
-    void Start()
+    void Start()    
     {
-        markUP = Random.Range(0, 10); 
+        isSelect = false;
+         markUP = Random.Range(0, 10); 
 
         StartCoroutine(initializeCustomerOrderList());
     }
