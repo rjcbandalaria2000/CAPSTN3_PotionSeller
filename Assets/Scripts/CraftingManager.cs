@@ -6,13 +6,14 @@ using TMPro;
 public class CraftingManager : MonoBehaviour
 {
     public PotionScriptableObject selectedPotionScriptableObject;
-    public TextMeshProUGUI selectedPotionText; 
+    public TextMeshProUGUI selectedPotionText;
+    public List<PotionScriptableObject> potionList = new();
 
     public void OnSelectedPotionClick(PotionScriptableObject potionScriptableObject)
     {
         Debug.Log(potionScriptableObject + " selected.");
         selectedPotionScriptableObject = potionScriptableObject;
-        selectedPotionText.text = selectedPotionScriptableObject.potionName;
+        //selectedPotionText.text = selectedPotionScriptableObject.potionName;
     }
 
     public void OnRemoveSelectedPotionClick()

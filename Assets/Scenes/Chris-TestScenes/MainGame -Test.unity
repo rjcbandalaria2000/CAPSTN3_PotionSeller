@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Gugo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1589,7 +1589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 273582173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &273582173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2801,7 +2813,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 656111130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935346316}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: OnSelectedPotionClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PotionScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &656111130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,7 +3164,7 @@ GameObject:
   - component: {fileID: 845744721}
   - component: {fileID: 845744720}
   m_Layer: 5
-  m_Name: PotionImage (3)
+  m_Name: Vicks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3263,7 +3287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Katol
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3482,7 +3506,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Gayuma
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3763,7 +3789,7 @@ GameObject:
   - component: {fileID: 1051861426}
   - component: {fileID: 1051861425}
   m_Layer: 5
-  m_Name: PotionImage (1)
+  m_Name: GugoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4125,7 +4151,7 @@ GameObject:
   - component: {fileID: 1206364751}
   - component: {fileID: 1206364750}
   m_Layer: 5
-  m_Name: PotionImage
+  m_Name: GayumaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7293,7 +7319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Vicks
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7401,6 +7427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPotionScriptableObject: {fileID: 0}
   selectedPotionText: {fileID: 0}
+  potionList: []
 --- !u!4 &1935346317
 Transform:
   m_ObjectHideFlags: 0
@@ -7935,7 +7962,7 @@ GameObject:
   - component: {fileID: 2073427588}
   - component: {fileID: 2073427587}
   m_Layer: 5
-  m_Name: PotionImage (2)
+  m_Name: KatolImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
