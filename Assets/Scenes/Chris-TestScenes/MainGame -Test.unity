@@ -1590,13 +1590,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1935346316}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: OnSelectedPotionClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PotionScriptableObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1988,7 +1988,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 328388216}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1039685855}
+        m_TargetAssemblyTypeName: PrepStation, Assembly-CSharp
+        m_MethodName: CloseUIPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &328388216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,13 +2169,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potions:
-  - itemName: 
+  - itemName: Gayuma
     itemAmount: 0
-  - itemName: 
+  - itemName: Gugo
     itemAmount: 0
-  - itemName: 
+  - itemName: Katol
     itemAmount: 0
-  - itemName: 
+  - itemName: Vicks
     itemAmount: 0
   ingredients:
   - itemName: Mushroom
@@ -5380,7 +5392,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1515876073}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935346316}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: OnSelectedPotionClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PotionScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1515876073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5747,7 +5771,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Close
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6452,7 +6476,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1821434889}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935346316}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: OnSelectedPotionClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PotionScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1821434889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7428,6 +7464,8 @@ MonoBehaviour:
   selectedPotionScriptableObject: {fileID: 0}
   selectedPotionText: {fileID: 0}
   potionList: []
+  isMixingComplete: 0
+  isCookingComplete: 0
 --- !u!4 &1935346317
 Transform:
   m_ObjectHideFlags: 0
