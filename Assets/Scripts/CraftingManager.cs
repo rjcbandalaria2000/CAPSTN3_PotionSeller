@@ -8,6 +8,13 @@ public class CraftingManager : MonoBehaviour
     public PotionScriptableObject selectedPotionScriptableObject;
     public TextMeshProUGUI selectedPotionText;
     public List<PotionScriptableObject> potionList = new();
+    public bool isMixingComplete;
+    public bool isCookingComplete;
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
 
     public void OnSelectedPotionClick(PotionScriptableObject potionScriptableObject)
     {
@@ -24,4 +31,14 @@ public class CraftingManager : MonoBehaviour
             selectedPotionText.text = null;
         }
     }
+
+    public void OnCompleteCrafting()
+    {
+        if(isMixingComplete && isCookingComplete)
+        {
+            Inventory.instance.AddItem(selectedPotionScriptableObject.potionName);
+        }
+    }
+
+
 }

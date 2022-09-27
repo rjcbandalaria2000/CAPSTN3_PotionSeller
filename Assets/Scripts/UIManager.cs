@@ -17,4 +17,9 @@ public class UIManager : MonoBehaviour
         //SuccessTXT.gameObject.SetActive(false);
        // FailureTXT.gameObject.SetActive(false);
     }
+
+    public void ClosePanel()
+    {
+
+    }
 }
