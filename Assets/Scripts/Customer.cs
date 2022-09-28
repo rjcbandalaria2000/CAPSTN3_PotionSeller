@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Customer : MonoBehaviour
+public class Customer : SelectableObject
 {
     public List<PotionScriptableObject> availablePotions;
     public List<string> customerOrder;
@@ -53,6 +53,20 @@ public class Customer : MonoBehaviour
                 customerOrder.RemoveAt(i);
             }
         }
+    }
+    private void OnEnable()
+    {
+        onSelectableObjectClickedEvent.AddListener(OnInteract);
+    }
+
+    private void OnDisable()
+    {
+        onSelectableObjectClickedEvent.RemoveListener(OnInteract);
+    }
+
+    public override void OnInteract()
+    {
+        Debug.Log("Customer Select");
     }
 
     // baseprice + markup
