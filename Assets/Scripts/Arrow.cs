@@ -1,13 +1,20 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Arrow : MonoBehaviour
 {
     [Header("Positions")]
-    public Transform pos1, pos2;
+    public Transform pos1;
+    public Transform pos2;
     private Vector3 nextPos;
     public Transform startPos;
+
+    [Header("Win/Lose UI")]
+    public GameObject winConditionUI;
+    public GameObject loseConditionUI; 
 
     private Coroutine movementRoutine;
 
@@ -16,45 +23,69 @@ public class Arrow : MonoBehaviour
     public int speed;
     [SerializeField] bool isHitPoint;
 
-    private UI_Manager managerUI;
-    
+    private UIManager managerUI;
 
-    // Start is called before the first frame update
-    void Start()
+    [Header("Hitpoint")]
+    public GameObject hitPoint;
+    public float edgeVal1;
+    public float edgeVal2;
+
+    private RectTransform transform;
+
+    private void Awake()
     {
-        this.gameObject.transform.position = startPos.position;
+          this.gameObject.transform.position = startPos.position;
+        transform = this.GetComponent<RectTransform>();
         nextPos = pos2.transform.position;
        
         if(managerUI == null)
         {
-            if (GameObject.FindObjectOfType<UI_Manager>() != null)
+            if (GameObject.FindObjectOfType<UIManager>() != null)
             {
-                managerUI = GameObject.FindObjectOfType<UI_Manager>().GetComponent<UI_Manager>();
+                managerUI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
             }
         }
-
-        movementRoutine = StartCoroutine(arrowMovement());
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+        //Debug.Log(this.GetComponent<RectTransform>().anchoredPosition.x);
+
     }
 
-    public void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Hitpoint"))
-        {
-            isHitPoint = true;
-            Debug.Log("Target");
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        isHitPoint = true;
+    //        Debug.Log("Target");
 
-        }
-    }
-    public void OnTriggerExit(Collider other)
-    {
-        isHitPoint = false;
-    }
+    //    }
+    //}
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        isHitPoint = true;
+    //        Debug.Log("Target");
+
+    //    }
+    //}
+
+    //public void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Hitpoint"))
+    //    {
+    //        isHitPoint = true;
+    //        Debug.Log("Target");
+
+    //    }
+    //}
+    //public void OnTriggerExit(Collider other)
+    //{
+    //    isHitPoint = false;
+    //}
 
     IEnumerator arrowMovement()
     {
@@ -64,9 +95,25 @@ public class Arrow : MonoBehaviour
             {
                 nextPos = pos2.position;
             }
-            if(this.transform.position.x == pos2.position.x)
+
+
+            if (transform.anchoredPosition.x >= edgeVal1 && transform.anchoredPosition.x <= edgeVal2) // edge value
             {
-                managerUI.FailureTXT.gameObject.SetActive(true);
+                isHitPoint = true;
+                Debug.Log("Target");
+            }
+            else
+            {
+                isHitPoint = false;
+            }
+
+            if (this.transform.position.x == pos2.position.x)
+            {
+                //managerUI.FailureTXT.gameObject.SetActive(true);
+                if (loseConditionUI)
+                {
+                    loseConditionUI.SetActive(true);
+                }
                 Debug.Log("TIME UP");
                 StopCoroutine(movementRoutine);
 
@@ -95,6 +142,9 @@ public class Arrow : MonoBehaviour
         }
     }
 
-
+    public void StartArrowMovement()
+    {
+        movementRoutine = StartCoroutine(arrowMovement());
+    }
 
 }
