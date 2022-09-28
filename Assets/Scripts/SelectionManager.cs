@@ -8,8 +8,21 @@ using UnityEngine.EventSystems;
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private Material highlightMaterial;
+    [SerializeField] private Material selectedMaterial;
     private Material defaultMaterial;
+    
     private Transform _selection;
+
+    public Material GetMaterial()
+    {
+        return selectedMaterial;
+    }
+    
+
+    public void Awake()
+    {
+        SingletonManager.Register(this);
+    }
 
     private void Update()
     {

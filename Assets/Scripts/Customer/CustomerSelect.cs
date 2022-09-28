@@ -35,8 +35,6 @@ public class CustomerSelect : MonoBehaviour
 
     public virtual void OnInteract()
     {
-        isSelected = true;
-
-       
+        //isSelected = true;
     }
 }

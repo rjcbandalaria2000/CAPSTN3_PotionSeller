@@ -67,6 +67,13 @@ public class Customer : SelectableObject
     public override void OnInteract()
     {
         Debug.Log("Customer Select");
+
+        if(isSelect == false)
+        {
+            isSelect = true;
+        
+            
+        }
     }
 
     // baseprice + markup
