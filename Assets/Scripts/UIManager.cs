@@ -10,12 +10,15 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI SuccessTXT;
     public TextMeshProUGUI FailureTXT;
 
-    
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
 
     private void Start()
     {
-        //SuccessTXT.gameObject.SetActive(false);
-       // FailureTXT.gameObject.SetActive(false);
+        SuccessTXT.gameObject.SetActive(false);
+        FailureTXT.gameObject.SetActive(false);
     }
 
     public void ClosePanel()

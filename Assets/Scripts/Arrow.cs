@@ -131,13 +131,18 @@ public class Arrow : MonoBehaviour
 
         if (isHitPoint)
         {
-           managerUI.SuccessTXT.gameObject.SetActive(true);
-           
+           SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
+            CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
+            if (craftingManager)
+            {
+                craftingManager.isCookingComplete = true;
+                craftingManager.OnCompleteCrafting();
+            }
             Debug.Log("Score");
         }
         else
         {
-            managerUI.FailureTXT.gameObject.SetActive(true);
+            SingletonManager.Get<UIManager>().FailureTXT.gameObject.SetActive(true);
             Debug.Log("Miss");
         }
     }

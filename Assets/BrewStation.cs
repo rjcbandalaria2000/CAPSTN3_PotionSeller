@@ -33,6 +33,7 @@ public class BrewStation : SelectableObject
 
     public void CloseUIPanel()
     {
+        if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(false);
     }
 }

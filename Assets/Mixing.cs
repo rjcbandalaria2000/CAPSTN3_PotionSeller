@@ -54,6 +54,7 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
             if (IsMixingComplete())
             {
                 IsMixing = false;
+                OnMixingComplete();
             }
             Debug.Log("Mouse Position " + mousePosition.normalized.x);
             Debug.Log("Object selected: " + eventData.pointerPress.name);
@@ -75,7 +76,13 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
     public void OnMixingComplete()
     {
-
+        Debug.Log("Finished Mixing");
+        CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
+        if (craftingManager)
+        {
+            craftingManager.isMixingComplete = true;
+            craftingManager.OnCompleteCrafting();
+        }
     }
 
     // Start is called before the first frame update
