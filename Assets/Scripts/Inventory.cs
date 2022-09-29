@@ -62,5 +62,20 @@ public class Inventory : MonoBehaviour
                 ingredients[i].itemAmount--;
             }
         }
-    } 
+    }
+
+    public bool IsPotionAvailable(string name)
+    {
+        for (int i = 0; i < potions.Count; i++)
+        {
+            if (potions[i].itemName == name)
+            {
+                if (potions[i].itemAmount > 0)
+                {
+                    return true;
+                }
+            }            
+        }
+        return false;
+    }
 }

@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,14 @@ using UnityEngine.UI;
 public class Arrow : MonoBehaviour
 {
     [Header("Positions")]
-    public Transform pos1, pos2;
+    public Transform pos1;
+    public Transform pos2;
     private Vector3 nextPos;
     public Transform startPos;
+
+    [Header("Win/Lose UI")]
+    public GameObject winConditionUI;
+    public GameObject loseConditionUI; 
 
     private Coroutine movementRoutine;
 
@@ -17,7 +23,7 @@ public class Arrow : MonoBehaviour
     public int speed;
     [SerializeField] bool isHitPoint;
 
-    private UI_Manager managerUI;
+    private UIManager managerUI;
 
     [Header("Hitpoint")]
     public GameObject hitPoint;
@@ -26,28 +32,25 @@ public class Arrow : MonoBehaviour
 
     private RectTransform transform;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        this.gameObject.transform.position = startPos.position;
+          this.gameObject.transform.position = startPos.position;
         transform = this.GetComponent<RectTransform>();
         nextPos = pos2.transform.position;
        
         if(managerUI == null)
         {
-            if (GameObject.FindObjectOfType<UI_Manager>() != null)
+            if (GameObject.FindObjectOfType<UIManager>() != null)
             {
-                managerUI = GameObject.FindObjectOfType<UI_Manager>().GetComponent<UI_Manager>();
+                managerUI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
             }
         }
-
-        movementRoutine = StartCoroutine(arrowMovement());
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(this.GetComponent<RectTransform>().anchoredPosition.x);
+        //Debug.Log(this.GetComponent<RectTransform>().anchoredPosition.x);
 
     }
 
@@ -106,7 +109,11 @@ public class Arrow : MonoBehaviour
 
             if (this.transform.position.x == pos2.position.x)
             {
-                managerUI.FailureTXT.gameObject.SetActive(true);
+                //managerUI.FailureTXT.gameObject.SetActive(true);
+                if (loseConditionUI)
+                {
+                    loseConditionUI.SetActive(true);
+                }
                 Debug.Log("TIME UP");
                 StopCoroutine(movementRoutine);
 
@@ -135,6 +142,9 @@ public class Arrow : MonoBehaviour
         }
     }
 
-
+    public void StartArrowMovement()
+    {
+        movementRoutine = StartCoroutine(arrowMovement());
+    }
 
 }

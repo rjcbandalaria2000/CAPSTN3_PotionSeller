@@ -24,11 +24,14 @@ public class Customer : SelectableObject
 
         StartCoroutine(initializeCustomerOrderList());
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        onSelectableObjectClickedEvent.AddListener(OnInteract);
+    }
+
+    private void OnDisable()
+    {
+        onSelectableObjectClickedEvent.RemoveListener(OnInteract);
     }
 
     IEnumerator initializeCustomerOrderList()
@@ -36,11 +39,12 @@ public class Customer : SelectableObject
         for (int i = 0; i < OrderQuantity; i++)
         {
             RNG = Random.Range(0, availablePotions.Count);
-            customerOrder.Add(availablePotions[RNG].name);
+            PotionScriptableObject potion = availablePotions[RNG];
+            customerOrder.Add(potion.name);
+            OrderManager.instance.onCustomerOrderEvent.Invoke(potion);
             Debug.Log("Customer wants: " + availablePotions[RNG].name);
         }
         yield return null;
-
     }
 
     public void checkItem()

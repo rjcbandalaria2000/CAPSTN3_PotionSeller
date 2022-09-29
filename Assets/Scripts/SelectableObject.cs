@@ -25,7 +25,7 @@ public class SelectableObject : MonoBehaviour
     {
         // Temporary Output Log
         Debug.Log(objectName + " clicked!");
-        
+        //onSelectableObjectClickedEvent.Invoke();
         // Object's UI Panel must open up
         // objectUI.SetActive(true);
     }
