@@ -20,7 +20,7 @@ public class CraftingManager : MonoBehaviour
     {
         Debug.Log(potionScriptableObject + " selected.");
         selectedPotionScriptableObject = potionScriptableObject;
-        //selectedPotionText.text = selectedPotionScriptableObject.potionName;
+        selectedPotionText.text = selectedPotionScriptableObject.potionName;
     }
 
     public void OnRemoveSelectedPotionClick()
