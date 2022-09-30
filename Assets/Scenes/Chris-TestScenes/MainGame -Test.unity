@@ -809,7 +809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Close
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5420,7 +5420,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1456012062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 210635577}
+        m_TargetAssemblyTypeName: BrewStation, Assembly-CSharp
+        m_MethodName: CloseUIPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1456012062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5550,7 +5562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1480464425
 Transform:
   m_ObjectHideFlags: 0
@@ -7846,8 +7858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52536ac301ae8f44ac642e41ad7a45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SuccessTXT: {fileID: 0}
-  FailureTXT: {fileID: 0}
+  SuccessTXT: {fileID: 72761046}
+  FailureTXT: {fileID: 1616970653}
 --- !u!4 &1959826903
 Transform:
   m_ObjectHideFlags: 0

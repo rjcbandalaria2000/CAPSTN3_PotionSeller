@@ -5,11 +5,13 @@ using TMPro;
 
 public class CraftingManager : MonoBehaviour
 {
-    public PotionScriptableObject selectedPotionScriptableObject;
-    public TextMeshProUGUI selectedPotionText;
+    public PotionScriptableObject       selectedPotionScriptableObject;
+    public TextMeshProUGUI              selectedPotionText;
     public List<PotionScriptableObject> potionList = new();
-    public bool isMixingComplete;
-    public bool isCookingComplete;
+
+    [Header("Crafting States")]
+    public bool                         isMixingComplete;
+    public bool                         isCookingComplete;
 
     private void Awake()
     {

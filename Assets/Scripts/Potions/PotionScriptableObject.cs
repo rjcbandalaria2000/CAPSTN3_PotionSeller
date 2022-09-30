@@ -11,4 +11,5 @@ public class PotionScriptableObject : ScriptableObject
     public float sellPrice;
 
     public List<IngredientScriptableObject> ingredients= new List<IngredientScriptableObject>();
+    public List<RequiredIngredients> requiredIngredients= new List<RequiredIngredients>();
 }
