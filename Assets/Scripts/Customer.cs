@@ -58,16 +58,7 @@ public class Customer : SelectableObject
             }
         }
     }
-    private void OnEnable()
-    {
-        onSelectableObjectClickedEvent.AddListener(OnInteract);
-    }
-
-    private void OnDisable()
-    {
-        onSelectableObjectClickedEvent.RemoveListener(OnInteract);
-    }
-
+   
     public override void OnInteract()
     {
         Debug.Log("Customer Select");
