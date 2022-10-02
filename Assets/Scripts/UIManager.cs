@@ -14,8 +14,8 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        //SuccessTXT.gameObject.SetActive(false);
-       // FailureTXT.gameObject.SetActive(false);
+        SuccessTXT.gameObject.SetActive(false);
+        FailureTXT.gameObject.SetActive(false);
     }
 
     public void ClosePanel()
