@@ -5,27 +5,27 @@ using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
-    private static Inventory _instance;
-    public static Inventory instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = GameObject.FindObjectOfType<Inventory>();
-            }
-            return _instance;
-        }
-    }
+    //private static Inventory _instance;
+    //public static Inventory instance
+    //{
+    //    get
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            _instance = GameObject.FindObjectOfType<Inventory>();
+    //        }
+    //        return _instance;
+    //    }
+    //}
 
     public List<ItemData> potions = new();
     public List<ItemData> ingredients = new();
 
     private void Awake()
     {
-        _instance = this;
+        //_instance = this;
 
-        //SingletonManager.Register(this);
+        SingletonManager.Register(this);
     }
 
     public void AddItem(string name)
