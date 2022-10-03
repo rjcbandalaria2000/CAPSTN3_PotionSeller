@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8876ac76dc1b3ba4d87f0f1ec3a6ca86, type: 3}
-  m_Name: Mushroom
+  m_Name: Raw Plant
   m_EditorClassIdentifier: 
-  ingredientName: Mushroom
+  ingredientName: Raw Plant
   ingredientSprite: {fileID: 0}
   buyPrice: 10
   sellPrice: 0
