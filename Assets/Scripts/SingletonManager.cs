@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public static class SingletonManager
 {
     private static List<MonoBehaviour> singletons = new List<MonoBehaviour>();
+    
 
     static SingletonManager()
     {
