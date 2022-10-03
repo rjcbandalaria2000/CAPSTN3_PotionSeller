@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - Hitpoint
+  - Customer
+  - Potion
+  - Hitpoint
   layers:
   - Default
   - TransparentFX

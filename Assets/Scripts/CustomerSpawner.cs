@@ -25,9 +25,14 @@ public class CustomerSpawner : MonoBehaviour
     {
         for(int i = 0; i < customerQuantity; i++)
         {
-           // GameObject spawnCustomer = Instantiate(customer,spawnPoint.position,Quaternion.identity);
+            GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
             Debug.Log("Customer");
         }
         yield return null;
+    }
+
+    public void Spawn()
+    {
+        customerSpawn = StartCoroutine(spawnCustomer());
     }
 }

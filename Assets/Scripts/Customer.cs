@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Customer : MonoBehaviour
+public class Customer : SelectableObject
 {
     public List<PotionScriptableObject> availablePotions;
     public List<string> customerOrder;
@@ -14,19 +14,24 @@ public class Customer : MonoBehaviour
     [Range(0,10)]
     public int markUP;
 
+    public bool isSelect;
    
     // Start is called before the first frame update
-    void Start()
+    void Start()    
     {
-        markUP = Random.Range(0, 10); 
+        isSelect = false;
+         markUP = Random.Range(0, 10); 
 
         StartCoroutine(initializeCustomerOrderList());
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        onSelectableObjectClickedEvent.AddListener(OnInteract);
+    }
+
+    private void OnDisable()
+    {
+        onSelectableObjectClickedEvent.RemoveListener(OnInteract);
     }
 
     IEnumerator initializeCustomerOrderList()
@@ -34,11 +39,12 @@ public class Customer : MonoBehaviour
         for (int i = 0; i < OrderQuantity; i++)
         {
             RNG = Random.Range(0, availablePotions.Count);
-            customerOrder.Add(availablePotions[RNG].name);
+            PotionScriptableObject potion = availablePotions[RNG];
+            customerOrder.Add(potion.name);
+            OrderManager.instance.onCustomerOrderEvent.Invoke(potion);
             Debug.Log("Customer wants: " + availablePotions[RNG].name);
         }
         yield return null;
-
     }
 
     public void checkItem()
@@ -50,6 +56,18 @@ public class Customer : MonoBehaviour
                 Debug.Log("Correct Item");
                 customerOrder.RemoveAt(i);
             }
+        }
+    }
+   
+    public override void OnInteract()
+    {
+        Debug.Log("Customer Select");
+
+        if(isSelect == false)
+        {
+            isSelect = true;
+        
+            
         }
     }
 
