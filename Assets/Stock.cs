@@ -14,17 +14,29 @@ public class Stock : SelectableObject
     public Inventory playerInventory;
     //private Inventory playerInventory = SingletonManager.Get<Inventory>(); currently does not work
 
+    private void Awake()
+    {
+        playerInventory = SingletonManager.Get<Inventory>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        playerInventory = SingletonManager.Get<Inventory>();
         objectPanelUI.SetActive(false);
     }
     private void OnEnable()
     {
-        onSelectableObjectClickedEvent.AddListener(OnInteract);
-        //SingletonManager.Get<Inventory>().onAddItemEvent.AddListener(InstantiateObject);
+        if(playerInventory == null)
+        {
+            playerInventory = SingletonManager.Get<Inventory>();
+          
+        }
         playerInventory.onAddItemEvent.AddListener(CreateStock);
         playerInventory.onRemoveItemEvent.AddListener(RemoveStock);
+        onSelectableObjectClickedEvent.AddListener(OnInteract);
+        //SingletonManager.Get<Inventory>().onAddItemEvent.AddListener(InstantiateObject);
+       
     }
 
     private void OnDisable()

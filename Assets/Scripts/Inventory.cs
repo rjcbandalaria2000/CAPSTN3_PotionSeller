@@ -78,7 +78,7 @@ public class Inventory : MonoBehaviour
             }
         }
         onRemoveItemEvent.Invoke(name, amount);
-    } 
+    
     }
 
     public bool IsPotionAvailable(string name)
