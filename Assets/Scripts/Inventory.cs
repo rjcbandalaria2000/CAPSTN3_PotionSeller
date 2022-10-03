@@ -16,7 +16,10 @@ public class Inventory : MonoBehaviour
     //        }
     //        return _instance;
     //    }
-    //}
+    //}    
+
+    public AddItemEvent onAddItemEvent = new AddItemEvent();
+    public RemoveItemEvent onRemoveItemEvent = new RemoveItemEvent();
 
     public List<ItemData> potions = new();
     public List<ItemData> ingredients = new();
@@ -29,30 +32,40 @@ public class Inventory : MonoBehaviour
     }
 
     public void AddItem(string name)
-    {        
+    {
+        int amount = 0;
         for (int i = 0; i < potions.Count; i++)
         {
             if (potions[i].itemName == name)
             {
-                potions[i].itemAmount++;
+                potions[i].itemAmount++;                
+                amount = potions[i].itemAmount;
+                break;
             }
         }
         for (int i = 0; i < ingredients.Count; i++)
         {
             if (ingredients[i].itemName == name)
             {
-                ingredients[i].itemAmount++;
+                ingredients[i].itemAmount++;                
+                amount = ingredients[i].itemAmount;
+                break;
             }
         }
+        //Debug.Log(name);
+        onAddItemEvent.Invoke(name, amount);
     }
 
     public void RemoveItem(string name)
     {
+        int amount = 0;
         for (int i = 0; i < potions.Count; i++)
         {
             if (potions[i].itemName == name)
             {
                 potions[i].itemAmount--;
+                amount = potions[i].itemAmount;
+                break;
             }
         }
         for (int i = 0; i < ingredients.Count; i++)
@@ -60,7 +73,10 @@ public class Inventory : MonoBehaviour
             if (ingredients[i].itemName == name)
             {
                 ingredients[i].itemAmount--;
+                amount = ingredients[i].itemAmount;
+                break;
             }
         }
+        onRemoveItemEvent.Invoke(name, amount);
     } 
 }
