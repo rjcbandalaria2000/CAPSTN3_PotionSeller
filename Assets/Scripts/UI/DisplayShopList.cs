@@ -10,6 +10,9 @@ public class DisplayShopList : MonoBehaviour
     public GameObject ItemShopPrefab;
     public GameObject ShopListUI;
 
+    [Header("Item List Elements")]
+    public GameObject buyPriceUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,7 @@ public class DisplayShopList : MonoBehaviour
         {
             GameObject itemListPrefab = Instantiate(ItemShopPrefab);            
             itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName;
-            itemListPrefab.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.buyPrice.ToString();            
+            itemListPrefab.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.buyPrice.ToString();            
             itemListPrefab.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => Shop.BuyItem(shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName));//itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
             itemListPrefab.transform.SetParent(ShopListUI.transform, false);
         }

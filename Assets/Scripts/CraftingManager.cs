@@ -75,7 +75,12 @@ public class CraftingManager : MonoBehaviour
                 }
             
             }
+            
             selectedPotionScriptableObject = potionScriptableObject;
+            if (selectedPotionText)
+            {
+                selectedPotionText.text = selectedPotionScriptableObject.potionName.ToString();
+            }
             Debug.Log("Setting potion");
         }
         
@@ -98,6 +103,9 @@ public class CraftingManager : MonoBehaviour
         {
             //Inventory.instance.AddItem(selectedPotionScriptableObject.potionName);
             SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject.potionName);
+            isCookingComplete = false;
+            isMixingComplete = false;
+            selectedPotionScriptableObject = null;
         }
     }
 

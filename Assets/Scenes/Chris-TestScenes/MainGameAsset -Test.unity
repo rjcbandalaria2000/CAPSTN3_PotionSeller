@@ -2403,13 +2403,13 @@ MonoBehaviour:
   - itemName: Vicks
     itemAmount: 0
   ingredients:
-  - itemName: Mushroom
+  - itemName: Wicked Shroom
     itemAmount: 0
-  - itemName: Oil
+  - itemName: Mermaid Oil
     itemAmount: 0
-  - itemName: Plant
+  - itemName: Raw Plant
     itemAmount: 0
-  - itemName: Seed
+  - itemName: Young Seedling
     itemAmount: 0
 --- !u!1 &419402963
 GameObject:
@@ -2791,7 +2791,7 @@ GameObject:
   - component: {fileID: 581372148}
   - component: {fileID: 581372147}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectedPotionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5734,6 +5734,7 @@ MonoBehaviour:
   Shop: {fileID: 2008040898}
   ItemShopPrefab: {fileID: 3596021268165845323, guid: 3f49dcee6af3b4c4b99c18a535050d21, type: 3}
   ShopListUI: {fileID: 1262319463}
+  buyPriceUI: {fileID: 0}
 --- !u!114 &1262319466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10201,7 +10202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedPotionScriptableObject: {fileID: 0}
-  selectedPotionText: {fileID: 0}
+  selectedPotionText: {fileID: 581372147}
   potionList: []
   isMixingComplete: 0
   isCookingComplete: 0
@@ -10643,7 +10644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2038085493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10997,7 +10998,7 @@ GameObject:
   - component: {fileID: 2146958306}
   - component: {fileID: 2146958305}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectedTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
