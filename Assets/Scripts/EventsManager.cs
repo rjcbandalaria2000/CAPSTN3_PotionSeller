@@ -7,6 +7,10 @@ using UnityEngine.Events;
 public class OnSelectableObjectClicked : UnityEvent { };
 #endregion
 
+#region OrderManager Events
+public class OnCustomerOrder : UnityEvent<PotionScriptableObject> { };
+#endregion
+
 #region Inventory Events
 public class AddItemEvent : UnityEvent<string, int> { };
 public class RemoveItemEvent : UnityEvent<string, int> { };
