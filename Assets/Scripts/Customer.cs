@@ -17,7 +17,7 @@ public class Customer : SelectableObject
     public bool isSelect;
    
     // Start is called before the first frame update
-    void Start()    
+    void Awake()    
     {
         isSelect = false;
          markUP = Random.Range(0, 10); 
@@ -42,7 +42,7 @@ public class Customer : SelectableObject
             PotionScriptableObject potion = availablePotions[RNG];
             customerOrder.Add(potion.name);
             OrderManager.instance.onCustomerOrderEvent.Invoke(potion);
-            Debug.Log("Customer wants: " + availablePotions[RNG].name);
+            Debug.Log("Customer wants: " + potion.name);
         }
         yield return null;
     }

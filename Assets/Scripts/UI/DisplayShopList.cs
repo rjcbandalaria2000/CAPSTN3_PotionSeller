@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,7 @@ public class DisplayShopList : MonoBehaviour
 
     public void DisplayList()
     {
-        foreach(GameObject shopItem in Shop.Items)
+        foreach (GameObject shopItem in Shop.Items)
         {
             GameObject itemListPrefab = Instantiate(ItemShopPrefab);            
             itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName;
@@ -31,4 +32,9 @@ public class DisplayShopList : MonoBehaviour
         }
     }
 
+    private int GetLastChildIndex(GameObject parentObject)
+    {
+        int num = parentObject.transform.childCount - 1;
+        return num;
+    }
 }
