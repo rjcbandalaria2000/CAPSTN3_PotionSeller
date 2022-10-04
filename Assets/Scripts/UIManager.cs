@@ -10,7 +10,10 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI SuccessTXT;
     public TextMeshProUGUI FailureTXT;
 
-    
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
 
     private void Start()
     {

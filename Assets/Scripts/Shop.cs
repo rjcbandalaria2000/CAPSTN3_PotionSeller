@@ -26,8 +26,8 @@ public class Shop : MonoBehaviour
                 {
                     PlayerWallet.SpendMoney((int)itemIngredient.ingredientScriptableObject.buyPrice);
                     Debug.Log("Bought " + itemIngredient.ingredientScriptableObject.ingredientName);
-                    Inventory.instance.AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
-                   //SingletonManager.Get<Inventory>().AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
+                    //Inventory.instance.AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
+                    SingletonManager.Get<Inventory>().AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
                 }
                 else
                 {

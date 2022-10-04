@@ -7,6 +7,7 @@ public class SelectableObject : MonoBehaviour
 {    
     public OnSelectableObjectClicked onSelectableObjectClickedEvent = new OnSelectableObjectClicked();
 
+    [Header("SelectableObject Variables")]
     public string objectName;
     public GameObject objectNameUI;
     public GameObject objectPanelUI;
