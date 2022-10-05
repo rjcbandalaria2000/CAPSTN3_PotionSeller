@@ -34,7 +34,7 @@ public class Arrow : MonoBehaviour
 
     private void Awake()
     {
-          this.gameObject.transform.position = startPos.position;
+        this.gameObject.transform.position = startPos.position;
         transform = this.GetComponent<RectTransform>();
         nextPos = pos2.transform.position;
        
@@ -47,14 +47,6 @@ public class Arrow : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(this.GetComponent<RectTransform>().anchoredPosition.x);
-
-    }
-
-   
     IEnumerator arrowMovement()
     {
         while(true)
@@ -120,4 +112,11 @@ public class Arrow : MonoBehaviour
         movementRoutine = StartCoroutine(arrowMovement());
     }
 
+    public void ResetBrewMeter()
+    {
+        this.gameObject.transform.position = startPos.position;
+        winConditionUI.SetActive(false);
+        loseConditionUI.SetActive(false);
+        isHitPoint = false; 
+    }
 }
