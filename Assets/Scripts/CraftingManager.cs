@@ -102,7 +102,11 @@ public class CraftingManager : MonoBehaviour
         if(isMixingComplete && isCookingComplete)
         {
             //Inventory.instance.AddItem(selectedPotionScriptableObject.potionName);
-            SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject.potionName);
+            if (selectedPotionScriptableObject)
+            {
+                SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject.potionName);
+            }
+           
             isCookingComplete = false;
             isMixingComplete = false;
             selectedPotionScriptableObject = null;

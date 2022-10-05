@@ -91,5 +91,13 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
         
     }
 
+    public void ResetMixing()
+    {
+        IsMixing = false;
+        SwipeCount = 0;
+        SwipedLeft = false;
+        SwipedRight = false;
+
+    }
    
 }
