@@ -22,16 +22,20 @@ public class OrderManager : MonoBehaviour
 
     public float markupPercent = 0f;
     public Wallet playerWallet;
-    private List<PotionScriptableObject> potions = new();
-    private List<GameObject> ordersList = new();
     public OnCustomerOrder onCustomerOrderEvent = new OnCustomerOrder();
+
+    [Header("UI Element")]
     public GameObject orderParentPanel;
     public GameObject orderPrefabUI;
+    
+    private List<PotionScriptableObject> potions = new();
+    private List<GameObject> ordersList = new();
+    private Inventory playerInventory;
 
     private void Awake()
     {
         _instance = this;
-
+        playerInventory = SingletonManager.Get<Inventory>();
         //SingletonManager.Register(this);
     }
 
@@ -99,23 +103,45 @@ public class OrderManager : MonoBehaviour
         foreach (PotionScriptableObject potionScriptableObject in potions)
         {
             if (potionScriptableObject.potionName == potion.potionName)
-            {
-                potions.Remove(potionScriptableObject);
-                Debug.Log("SOLD: Markup Percent is " + markupPercent);
-                playerWallet.AddMoney(Mathf.RoundToInt(potionScriptableObject.buyPrice + (potionScriptableObject.buyPrice * markupPercent)));
-                break;
+            { 
+                // check if there is an available potion in the player inventory
+                for(int i = 0; i < playerInventory.potions.Count; i++)
+                {
+                    if (playerInventory.potions[i].itemName == potion.potionName)
+                    {
+                        if (playerInventory.potions[i].itemAmount >= 1)
+                        {
+                            Debug.Log("Has enough " + potion.potionName + " in the inventory... Selling");
+                            playerInventory.potions[i].itemAmount -= 1;
+                            potions.Remove(potionScriptableObject);
+                            Debug.Log("SOLD: Markup Percent is " + markupPercent);
+                            playerWallet.AddMoney(Mathf.RoundToInt(potionScriptableObject.buyPrice + (potionScriptableObject.buyPrice * markupPercent)));
+                            //break; 
+                            //Remove Order from OrderList
+                            // Remove Order from UI
+                            foreach (GameObject order in ordersList)
+                            {
+                                if (order.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == potion.potionName)
+                                {
+                                    ordersList.Remove(order);
+                                    Destroy(order.gameObject);
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                        else
+                        {
+                            Debug.Log("Not enough potion");
+                        }
+                    }
+                }
+
+
+                
             }
         }
-        //Remove Order from OrderList
-        // Remove Order from UI
-        foreach (GameObject order in ordersList)
-        {
-            if (order.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == potion.potionName)
-            {
-                ordersList.Remove(order);
-                Destroy(order.gameObject);
-                break;
-            }
-        }
+       
+       
     }
 }

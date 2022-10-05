@@ -31,6 +31,11 @@ public class Inventory : MonoBehaviour
         SingletonManager.Register(this);
     }
 
+    public void Start()
+    {
+        
+    }
+
     public void AddItem(string name)
     {
         int amount = 0;
