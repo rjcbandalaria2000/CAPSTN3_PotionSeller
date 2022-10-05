@@ -5358,6 +5358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272e8360dbd8ba843ae8584d840c5e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  markupPercent: 0
   playerWallet: {fileID: 366556170}
   orderParentPanel: {fileID: 356092992}
   orderPrefabUI: {fileID: 8034697261129825748, guid: 23fb4470b361de346a3a3e7f704eb9c9, type: 3}
@@ -6617,6 +6618,7 @@ MonoBehaviour:
   - {fileID: 8839911747724466736, guid: e65796d4df650d04580becb41bbd7346, type: 3}
   - {fileID: 8839911747724466736, guid: 5ea101ec43d16744584532bb6f4b6139, type: 3}
   PlayerWallet: {fileID: 366556170}
+  markupPercent: 1
 --- !u!65 &1090573200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7455,6 +7457,7 @@ MonoBehaviour:
   Shop: {fileID: 0}
   ItemShopPrefab: {fileID: 3596021268165845323, guid: 3f49dcee6af3b4c4b99c18a535050d21, type: 3}
   ShopListUI: {fileID: 1262319463}
+  buyPriceUI: {fileID: 0}
 --- !u!114 &1262319466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9586,6 +9589,7 @@ MonoBehaviour:
   objectName: Cauldron
   objectNameUI: {fileID: 1315731139}
   objectPanelUI: {fileID: 1779302706}
+  mixingPot: {fileID: 0}
 --- !u!65 &1560163250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13523,6 +13527,7 @@ MonoBehaviour:
   Shop: {fileID: 1090573199}
   ItemShopPrefab: {fileID: 3596021268165845323, guid: 3f49dcee6af3b4c4b99c18a535050d21, type: 3}
   ShopListUI: {fileID: 2087342341}
+  buyPriceUI: {fileID: 0}
 --- !u!114 &2087342344
 MonoBehaviour:
   m_ObjectHideFlags: 0
