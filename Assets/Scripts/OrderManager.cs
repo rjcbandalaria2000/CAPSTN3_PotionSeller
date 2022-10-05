@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class OrderManager : MonoBehaviour
 {
@@ -98,9 +99,9 @@ public class OrderManager : MonoBehaviour
     {
         //if(Inventory.instance.IsPotionAvailable(potion.potionName))        
         //Debug.Log(potion.potionName);
-
+        //List<PotionScriptableObject> tempPotionsList = new();
         // Gain money
-        foreach (PotionScriptableObject potionScriptableObject in potions)
+        foreach (PotionScriptableObject potionScriptableObject in potions.ToList())
         {
             if (potionScriptableObject.potionName == potion.potionName)
             { 
@@ -119,7 +120,7 @@ public class OrderManager : MonoBehaviour
                             //break; 
                             //Remove Order from OrderList
                             // Remove Order from UI
-                            foreach (GameObject order in ordersList)
+                            foreach (GameObject order in ordersList.ToList())
                             {
                                 if (order.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == potion.potionName)
                                 {
