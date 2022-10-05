@@ -93,7 +93,7 @@ public class CraftingManager : MonoBehaviour
         if (selectedPotionScriptableObject != null)
         {
             selectedPotionScriptableObject = null;
-            selectedPotionText.text = null;
+            selectedPotionText.text = "";
         }
     }
 
@@ -110,6 +110,7 @@ public class CraftingManager : MonoBehaviour
             isCookingComplete = false;
             isMixingComplete = false;
             selectedPotionScriptableObject = null;
+            selectedPotionText.text = "";
         }
     }
 
