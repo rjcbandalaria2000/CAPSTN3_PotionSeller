@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    private static TimeManager _instance;
+    /*private static TimeManager _instance;
     public static TimeManager instance
     {
         get
@@ -15,11 +16,14 @@ public class TimeManager : MonoBehaviour
             }
             return _instance;
         }
-    }
+    }*/
 
     public static TimeChangedEvent onTimeChangedEvent = new();
     public static HourChangedEvent onHourChangedEvent = new();
-    
+    public static DayEndedEvent onDayEndedEvent = new();
+
+    public int dayCount;
+
     [SerializeField] private int startHour;
     [SerializeField] private int endHour;
     public static int minute;
@@ -31,7 +35,8 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
-        _instance = this;
+        //_instance = this;
+        SingletonManager.Register(this);
     }
 
     private void Start()
@@ -84,23 +89,28 @@ public class TimeManager : MonoBehaviour
 
     private void OnTimeCheck(int p_hour, int p_minuteByTens)
     {
-        if (p_hour == endHour)
+        if (p_hour >= endHour)
         {
-            // Invoke event ?
             hour = startHour;
-            EndDay();
+            EndDay();            
         }
     }
 
-    private void EndDay()
+    public void EndDay()
     {
         // Next day
+        dayCount++;
         // Invoke event ?
-        StopCoroutine(coroutineTime);
-        coroutineTime = null;
+        onDayEndedEvent.Invoke(dayCount);
+        ResetTime();
     }
 
     public void OnResetTimeButtonHit()
+    {
+        ResetTime();
+    }
+
+    private void ResetTime()
     {
         hour = startHour;
         minute = 0;

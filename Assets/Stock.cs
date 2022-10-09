@@ -16,22 +16,21 @@ public class Stock : SelectableObject
 
     private void Awake()
     {
-        playerInventory = SingletonManager.Get<Inventory>();
+        //playerInventory = SingletonManager.Get<Inventory>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        playerInventory = SingletonManager.Get<Inventory>();
+        //playerInventory = SingletonManager.Get<Inventory>();
         objectPanelUI.SetActive(false);
     }
     private void OnEnable()
     {
-        if(playerInventory == null)
-        {
-            playerInventory = SingletonManager.Get<Inventory>();
-          
-        }
+        //if(playerInventory == null)
+        //{
+        //    playerInventory = SingletonManager.Get<Inventory>();          
+        //}
         playerInventory.onAddItemEvent.AddListener(CreateStock);
         playerInventory.onRemoveItemEvent.AddListener(RemoveStock);
         onSelectableObjectClickedEvent.AddListener(OnInteract);

@@ -24,6 +24,7 @@ public class OrderManager : MonoBehaviour
     public float markupPercent = 0f;
     public Wallet playerWallet;
     public OnCustomerOrder onCustomerOrderEvent = new OnCustomerOrder();
+    public QuestCompletedEvent onQuestCompletedEvent = new QuestCompletedEvent();
 
     [Header("UI Element")]
     public GameObject orderParentPanel;
@@ -97,6 +98,7 @@ public class OrderManager : MonoBehaviour
 
     public void SellOrder(PotionScriptableObject potion)
     {
+        
         //if(Inventory.instance.IsPotionAvailable(potion.potionName))        
         //Debug.Log(potion.potionName);
         //List<PotionScriptableObject> tempPotionsList = new();
@@ -112,6 +114,7 @@ public class OrderManager : MonoBehaviour
                     {
                         if (playerInventory.potions[i].itemAmount >= 1)
                         {
+                            onQuestCompletedEvent?.Invoke(QuestManager.instance.sellPotionQuest);
                             Debug.Log("Has enough " + potion.potionName + " in the inventory... Selling");
                             playerInventory.potions[i].itemAmount -= 1;
                             potions.Remove(potionScriptableObject);
@@ -124,6 +127,7 @@ public class OrderManager : MonoBehaviour
                             {
                                 if (order.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == potion.potionName)
                                 {
+                                    order.transform.GetChild(3).GetComponent<Button>().onClick.RemoveListener(() => SellOrder(potion));
                                     ordersList.Remove(order);
                                     Destroy(order.gameObject);
                                     break;
@@ -136,13 +140,8 @@ public class OrderManager : MonoBehaviour
                             Debug.Log("Not enough potion");
                         }
                     }
-                }
-
-
-                
+                }                
             }
-        }
-       
-       
+        }       
     }
 }

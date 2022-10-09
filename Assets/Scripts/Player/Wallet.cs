@@ -8,6 +8,7 @@ public class Wallet : MonoBehaviour
     public int StartingMoney = 5000;
     public int Money = 0;
     public UnityEvent WalletUIUpdate = new UnityEvent();
+    public QuestCompletedEvent onQuestCompletedEvent = new();
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +28,14 @@ public class Wallet : MonoBehaviour
         {
             Money -= cost;
         }
+        onQuestCompletedEvent.Invoke(QuestManager.instance.spendMoneyQuest);
         WalletUIUpdate.Invoke();
     }
 
     public void AddMoney(int money)
     {
         Money += money;
+        onQuestCompletedEvent.Invoke(QuestManager.instance.addMoneyQuest);
         WalletUIUpdate.Invoke();
-    }
-
-   
+    }   
 }

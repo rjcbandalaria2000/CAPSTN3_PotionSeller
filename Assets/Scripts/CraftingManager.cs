@@ -5,6 +5,8 @@ using TMPro;
 
 public class CraftingManager : MonoBehaviour
 {
+    public QuestCompletedEvent onQuestCompletedEvent = new QuestCompletedEvent();
+
     public PotionScriptableObject       selectedPotionScriptableObject;
     public TextMeshProUGUI              selectedPotionText;
     public List<PotionScriptableObject> potionList = new();
@@ -105,6 +107,7 @@ public class CraftingManager : MonoBehaviour
             if (selectedPotionScriptableObject)
             {
                 SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject.potionName);
+                onQuestCompletedEvent?.Invoke(QuestManager.instance.createPotionQuest);
             }
            
             isCookingComplete = false;
