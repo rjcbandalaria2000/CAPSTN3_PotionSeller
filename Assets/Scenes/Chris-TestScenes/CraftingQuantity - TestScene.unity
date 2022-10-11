@@ -410,7 +410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &44587564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3051,7 +3051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &379228960
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5704,11 +5704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 921437676245495981, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 465.2144
       objectReference: {fileID: 0}
     - target: {fileID: 921437676245495981, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 124.49
       objectReference: {fileID: 0}
     - target: {fileID: 921437676245495981, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5740,11 +5740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 921437676245495981, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 293
+      value: 264
       objectReference: {fileID: 0}
     - target: {fileID: 921437676245495981, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66
+      value: -78.245
       objectReference: {fileID: 0}
     - target: {fileID: 921437676245495981, guid: ae0d1533065e49242af707d6da122c9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11613,6 +11613,8 @@ MonoBehaviour:
   Parent: {fileID: 0}
   PotionToGive: {fileID: 0}
   PotionReceived: {fileID: 0}
+  successUI: {fileID: 379228959}
+  failUI: {fileID: 44587563}
 --- !u!114 &1681109097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11867,7 +11869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1779302707
 RectTransform:
   m_ObjectHideFlags: 0
