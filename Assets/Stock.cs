@@ -22,7 +22,7 @@ public class Stock : SelectableObject
     // Start is called before the first frame update
     void Start()
     {
-        //playerInventory = SingletonManager.Get<Inventory>();
+        playerInventory = SingletonManager.Get<Inventory>();
         objectPanelUI.SetActive(false);
     }
     private void OnEnable()

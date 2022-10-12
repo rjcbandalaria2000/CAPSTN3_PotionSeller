@@ -37,8 +37,9 @@ public class Arrow : MonoBehaviour
         this.gameObject.transform.position = startPos.position;
         transform = this.GetComponent<RectTransform>();
         nextPos = pos2.transform.position;
-       
-        if(managerUI == null)
+        winConditionUI.SetActive(false);
+        loseConditionUI.SetActive(false);
+        if (managerUI == null)
         {
             if (GameObject.FindObjectOfType<UIManager>() != null)
             {
