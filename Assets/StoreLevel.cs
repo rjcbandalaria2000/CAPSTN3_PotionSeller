@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class StoreLevel : MonoBehaviour
 {
-    public int Level;
-    public List<int> MaxExperiencePoints;
-    public int CurrentExperiencePoints;
+    [Header("Unity Events")]
+    public OnGainExp onGainExp = new();
+    public OnRefreshLevelUI onRefreshLevelUI = new();
+    
+    [Header("Values")]
+    public int          Level;
+    public List<int>    MaxExperiencePoints;
+    public int          CurrentExperiencePoints;
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+        onGainExp.AddListener(AddExpPoints);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        onRefreshLevelUI.Invoke();
     }
 
     public void AddExpPoints(int value)
@@ -23,9 +35,9 @@ public class StoreLevel : MonoBehaviour
             {
                 LevelUp();
             }
-
+            
         }
-       
+        onRefreshLevelUI.Invoke();
     }
 
     public void LevelUp()
@@ -34,6 +46,12 @@ public class StoreLevel : MonoBehaviour
         {
             CurrentExperiencePoints -= MaxExperiencePoints[Level];
             Level++;
+            
         }
+    }
+
+    public float GetNormalizedExpPoints()
+    {
+        return (float)CurrentExperiencePoints / (float)MaxExperiencePoints[Level];
     }
 }

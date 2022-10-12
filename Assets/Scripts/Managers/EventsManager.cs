@@ -28,3 +28,9 @@ public class AddQuestEvent : UnityEvent<Quest> { }
 public class RemoveQuestEvent : UnityEvent<Quest> { }
 public class RemoveAllQuestsEvent : UnityEvent { }
 #endregion
+
+#region StoreLevel Events
+public class OnGainExp : UnityEvent <int> { };
+public class OnRefreshLevelUI : UnityEvent { };
+
+#endregion

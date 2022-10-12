@@ -8,8 +8,8 @@ using System.Linq;
 
 public class OrderManager : MonoBehaviour
 {
-    private static OrderManager _instance;
-    public static OrderManager instance
+    private static OrderManager             _instance;
+    public static OrderManager              instance
     {
         get
         {
@@ -21,18 +21,22 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public float markupPercent = 0f;
-    public Wallet playerWallet;
-    public OnCustomerOrder onCustomerOrderEvent = new OnCustomerOrder();
-    public QuestCompletedEvent onQuestCompletedEvent = new QuestCompletedEvent();
+    public float                            markupPercent = 0f;
+    public Wallet                           playerWallet;
+    public StoreLevel                       storeLevel;
+    public int                              sellExpPoints = 10;
+
+    [Header("Unity Events")]
+    public OnCustomerOrder                  onCustomerOrderEvent = new OnCustomerOrder();
+    public QuestCompletedEvent              onQuestCompletedEvent = new QuestCompletedEvent();
 
     [Header("UI Element")]
-    public GameObject orderParentPanel;
-    public GameObject orderPrefabUI;
+    public GameObject                       orderParentPanel;
+    public GameObject                       orderPrefabUI;
     
-    private List<PotionScriptableObject> potions = new();
-    private List<GameObject> ordersList = new();
-    private Inventory playerInventory;
+    private List<PotionScriptableObject>    potions = new();
+    private List<GameObject>                ordersList = new();
+    private Inventory                       playerInventory;
 
     private void Awake()
     {
@@ -120,7 +124,10 @@ public class OrderManager : MonoBehaviour
                             potions.Remove(potionScriptableObject);
                             Debug.Log("SOLD: Markup Percent is " + markupPercent);
                             playerWallet.AddMoney(Mathf.RoundToInt(potionScriptableObject.buyPrice + (potionScriptableObject.buyPrice * markupPercent)));
-                            //break; 
+
+                            //Add experience 
+                            storeLevel.onGainExp.Invoke(sellExpPoints);
+
                             //Remove Order from OrderList
                             // Remove Order from UI
                             foreach (GameObject order in ordersList.ToList())
