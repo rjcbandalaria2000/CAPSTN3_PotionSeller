@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour
     public List<GameObject> Items = new();
     public Wallet PlayerWallet;
     public float markupPercent = 1f;
+    public List<DisplayIngredientQuantity> displayIngredientsQuantity = new();
     
     void Start()
     {
@@ -101,8 +102,8 @@ public class Shop : MonoBehaviour
         {
             itemIngredient.ingredientScriptableObject.ingredientQuantity++;
             itemIngredient.ingredientScriptableObject.buyPrice += 2;
-            itemIngredient.ingredientScriptableObject.sellPrice -= 1;
-            SingletonManager.Get<DisplayIngredientQuantity>().updateCount(index);
+            itemIngredient.ingredientScriptableObject.sellPrice += 1;
+            displayIngredientsQuantity[index].updateCount(index);
         }
           
     }
@@ -110,11 +111,12 @@ public class Shop : MonoBehaviour
     public void decreaseQuantitiy(int index)
     {
         ShopIngredient itemIngredient = Items[index].GetComponent<ShopIngredient>();
-        if(itemIngredient.ingredientScriptableObject.ingredientQuantity > 0 )
+        if (itemIngredient.ingredientScriptableObject.ingredientQuantity > 0)
         {
             itemIngredient.ingredientScriptableObject.ingredientQuantity--;
             itemIngredient.ingredientScriptableObject.buyPrice -= 2;
-            itemIngredient.ingredientScriptableObject.sellPrice += 1;
-            SingletonManager.Get<DisplayIngredientQuantity>().updateCount(index);
+            itemIngredient.ingredientScriptableObject.sellPrice -= 1;
+            displayIngredientsQuantity[index].updateCount(index);
         }
+    }
 }

@@ -14,6 +14,14 @@ public class DisplayIngredientQuantity : MonoBehaviour
         SingletonManager.Register(this);
     }
 
+    private void Start()
+    {
+        if(ingredientComp == null)
+        {
+            ingredientComp = GameObject.FindObjectOfType<Shop>();
+        }
+    }
+
     public void updateCount(int index)
     {
         ShopIngredient itemIngredient = ingredientComp.Items[index].GetComponent<ShopIngredient>();
