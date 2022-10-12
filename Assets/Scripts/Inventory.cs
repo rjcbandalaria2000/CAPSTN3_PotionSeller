@@ -31,6 +31,11 @@ public class Inventory : MonoBehaviour
         SingletonManager.Register(this);
     }
 
+    public void Start()
+    {
+        
+    }
+
     public void AddItem(string name)
     {
         int amount = 0;
@@ -78,5 +83,21 @@ public class Inventory : MonoBehaviour
             }
         }
         onRemoveItemEvent.Invoke(name, amount);
-    } 
+    
+    }
+
+    public bool IsPotionAvailable(string name)
+    {
+        for (int i = 0; i < potions.Count; i++)
+        {
+            if (potions[i].itemName == name)
+            {
+                if (potions[i].itemAmount > 0)
+                {
+                    return true;
+                }
+            }            
+        }
+        return false;
+    }
 }

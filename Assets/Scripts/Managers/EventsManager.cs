@@ -19,4 +19,18 @@ public class RemoveItemEvent : UnityEvent<string, int> { };
 #region TimeManager Events
 public class TimeChangedEvent : UnityEvent <int, int> { }
 public class HourChangedEvent : UnityEvent <int> { }
+public class DayEndedEvent : UnityEvent<int> { }
+#endregion
+
+#region Quest Events
+public class QuestCompletedEvent : UnityEvent<Quest> { }
+public class AddQuestEvent : UnityEvent<Quest> { }
+public class RemoveQuestEvent : UnityEvent<Quest> { }
+public class RemoveAllQuestsEvent : UnityEvent { }
+#endregion
+
+#region StoreLevel Events
+public class OnGainExp : UnityEvent <int> { };
+public class OnRefreshLevelUI : UnityEvent { };
+
 #endregion

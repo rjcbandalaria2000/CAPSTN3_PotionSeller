@@ -6,20 +6,24 @@ using UnityEngine.EventSystems;
 public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
 {
     [Header("States")]
-    public bool     IsMixing;
-    public bool     SwipedRight;
-    public bool     SwipedLeft;
+    public bool         IsMixing;
+    public bool         SwipedRight;
+    public bool         SwipedLeft;
 
     [Header("Values")]
-    public int      RequiredSwipes = 1;
-    public int      SwipeCount;
-    public float    SwipeRightAccept = 0.5f;
-    public float    SwipeLeftAccept = -0.5f;
+    public int          RequiredSwipes = 1;
+    public int          SwipeCount;
+    public float        SwipeRightAccept = 0.5f;
+    public float        SwipeLeftAccept = -0.5f;
 
     [Header("Potion")]
-    public GameObject Parent;
-    public GameObject PotionToGive;
-    public GameObject PotionReceived;
+    public GameObject   Parent;
+    public GameObject   PotionToGive;
+    public GameObject   PotionReceived;
+
+    [Header("UI")]
+    public GameObject   successUI;
+    public GameObject   failUI;
     
     private Vector2 InitialPosition;
     public void OnPointerDown(PointerEventData eventData)
@@ -76,6 +80,7 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
     public void OnMixingComplete()
     {
+        ActivateSuccessUI();
         Debug.Log("Finished Mixing");
         CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
         if (craftingManager)
@@ -91,5 +96,35 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
         
     }
 
-   
+    public void ResetMixing()
+    {
+        IsMixing = false;
+        SwipeCount = 0;
+        SwipedLeft = false;
+        SwipedRight = false;
+        DisableMixingResultUI();
+    }
+
+    #region UI
+    public void ActivateSuccessUI()
+    {
+        if(successUI == null) { return; }
+        successUI.SetActive(true);
+        failUI.SetActive(false);
+    }
+
+    public void ActivateFailUI()
+    {
+        if(failUI == null) { return; }
+        failUI.SetActive(true);
+        successUI.SetActive(false);
+    }
+
+    public void DisableMixingResultUI()
+    {
+        if(successUI == null || failUI == null) { return; }
+        failUI.SetActive(false);
+        successUI.SetActive(false);
+    }
+    #endregion
 }

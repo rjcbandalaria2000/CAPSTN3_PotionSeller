@@ -32,8 +32,11 @@ public class BrewStation : SelectableObject
     }
 
     public void CloseUIPanel()
-    {
+    {   //Reset Brew Meter
+        if(arrow == null) { return; }
+        arrow.ResetBrewMeter();
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(false);
+       
     }
 }

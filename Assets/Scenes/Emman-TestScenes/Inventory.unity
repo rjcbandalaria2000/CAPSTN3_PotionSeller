@@ -445,16 +445,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6be4f2ca89a8142b3c83beb19e4a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
   potions:
   - itemName: Gayuma
-    itemAmount: 0
+    itemAmount: 5
   - itemName: Gugo
-    itemAmount: 0
+    itemAmount: 5
   - itemName: Vicks
-    itemAmount: 0
+    itemAmount: 5
   - itemName: Katol
-    itemAmount: 0
+    itemAmount: 5
   ingredients:
   - itemName: Mushroom
     itemAmount: 0
