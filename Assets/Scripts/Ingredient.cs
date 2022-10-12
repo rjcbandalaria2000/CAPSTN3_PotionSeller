@@ -8,6 +8,7 @@ public class Ingredient : ScriptableObject
    public string ingredientName;
     public int ID;  
    public Sprite sprite;
+    public int quantity;
    
     
 }

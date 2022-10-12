@@ -41,4 +41,30 @@ public class Shop : MonoBehaviour
             Debug.Log("No item found");            
         }
     }
+
+    public void addQuantity(int index)
+    {
+        ShopIngredient itemIngredient = Items[index].GetComponent<ShopIngredient>();
+        if (itemIngredient.ingredientScriptableObject.ingredientQuantity < 99)
+        {
+            itemIngredient.ingredientScriptableObject.ingredientQuantity++;
+            itemIngredient.ingredientScriptableObject.buyPrice += 2;
+            itemIngredient.ingredientScriptableObject.sellPrice -= 1;
+            SingletonManager.Get<DisplayIngredientQuantity>().updateCount(index);
+        }
+          
+    }
+
+    public void decreaseQuantitiy(int index)
+    {
+        ShopIngredient itemIngredient = Items[index].GetComponent<ShopIngredient>();
+        if(itemIngredient.ingredientScriptableObject.ingredientQuantity > 0 )
+        {
+            itemIngredient.ingredientScriptableObject.ingredientQuantity--;
+            itemIngredient.ingredientScriptableObject.buyPrice -= 2;
+            itemIngredient.ingredientScriptableObject.sellPrice += 1;
+            SingletonManager.Get<DisplayIngredientQuantity>().updateCount(index);
+        }
+        
+    }
 }

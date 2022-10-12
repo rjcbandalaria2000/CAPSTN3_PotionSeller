@@ -9,4 +9,5 @@ public class IngredientScriptableObject : ScriptableObject
     public Sprite ingredientSprite;
     public float buyPrice;
     public float sellPrice;
+    public int ingredientQuantity;
 }
