@@ -9,6 +9,7 @@ public class Shop : MonoBehaviour
     public Wallet PlayerWallet;
     public float markupPercent = 1f;
     public List<DisplayIngredientQuantity> displayIngredientsQuantity = new();
+    public List<DisplayCost> displayCosts = new();
     
     void Start()
     {
@@ -100,11 +101,20 @@ public class Shop : MonoBehaviour
         ShopIngredient itemIngredient = Items[index].GetComponent<ShopIngredient>();
         if (itemIngredient.ingredientScriptableObject.ingredientQuantity < 99)
         {
-            itemIngredient.ingredientScriptableObject.ingredientQuantity++;
-            itemIngredient.ingredientScriptableObject.buyPrice += 2;
-            itemIngredient.ingredientScriptableObject.sellPrice += 1;
-            displayIngredientsQuantity[index].updateCount(index);
+            if(itemIngredient.ingredientScriptableObject.ingredientQuantity > 99)
+            {
+                return;
+            }
+            else
+            {
+                itemIngredient.ingredientScriptableObject.ingredientQuantity++;
+                itemIngredient.ingredientScriptableObject.buyPrice += 2;
+                itemIngredient.ingredientScriptableObject.sellPrice += 1;
+                displayIngredientsQuantity[index].updateCount(index);
+                displayCosts[index].updateCount(index);
+            }
         }
+     
           
     }
 
@@ -113,10 +123,21 @@ public class Shop : MonoBehaviour
         ShopIngredient itemIngredient = Items[index].GetComponent<ShopIngredient>();
         if (itemIngredient.ingredientScriptableObject.ingredientQuantity > 0)
         {
-            itemIngredient.ingredientScriptableObject.ingredientQuantity--;
-            itemIngredient.ingredientScriptableObject.buyPrice -= 2;
-            itemIngredient.ingredientScriptableObject.sellPrice -= 1;
-            displayIngredientsQuantity[index].updateCount(index);
+            if(itemIngredient.ingredientScriptableObject.ingredientQuantity <= 0)
+            {
+                return;
+            }
+            else
+            {
+                itemIngredient.ingredientScriptableObject.ingredientQuantity--;
+                itemIngredient.ingredientScriptableObject.buyPrice -= 2;
+                itemIngredient.ingredientScriptableObject.sellPrice -= 1;
+                displayIngredientsQuantity[index].updateCount(index);
+                displayCosts[index].updateCount(index);
+            }
+            
+            
         }
+      
     }
 }

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Young Seedling
   ingredientSprite: {fileID: 0}
-  buyPrice: 10
-  sellPrice: 0
+  buyPrice: 26
+  sellPrice: 8
+  ingredientQuantity: 5
