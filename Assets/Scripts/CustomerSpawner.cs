@@ -5,8 +5,8 @@ using UnityEngine;
 public class CustomerSpawner : MonoBehaviour
 {
     public GameObject customer;
-    public Transform spawnPoint;
     public int customerQuantity;
+    public List<Transform> spawnPoint;
 
     Coroutine customerSpawn;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         for(int i = 0; i < customerQuantity; i++)
         {
-            GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
+            GameObject spawnCustomer = Instantiate(customer, spawnPoint[i].position, Quaternion.identity);
             //Debug.Log("Customer");
         }
         yield return null;
