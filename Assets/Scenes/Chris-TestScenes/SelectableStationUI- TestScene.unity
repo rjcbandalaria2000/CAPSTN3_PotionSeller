@@ -324,11 +324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2547803754900185127, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_Name
-      value: Order (1)
+      value: Order
       objectReference: {fileID: 0}
     - target: {fileID: 2547803755282499117, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2547803755556956644, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_Type
@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2547803755931055572, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: objectNameUI
+      value: 
+      objectReference: {fileID: 294817454}
     - target: {fileID: 2547803755967605957, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1121,6 +1125,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256440201}
   m_CullTransparentMesh: 1
+--- !u!1 &262036511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2547803755904605088, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+  m_PrefabInstance: {fileID: 79796905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &272444728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,9 +3144,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1988422068}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4018,7 +4027,7 @@ MonoBehaviour:
   playerWallet: {fileID: 366556170}
   storeLevel: {fileID: 366556173}
   sellExpPoints: 10
-  orderParentPanel: {fileID: 0}
+  orderParentPanel: {fileID: 262036511}
   orderPrefabUI: {fileID: 8034697261129825748, guid: 23fb4470b361de346a3a3e7f704eb9c9, type: 3}
 --- !u!4 &1283036972
 Transform:
@@ -5888,7 +5897,7 @@ GameObject:
   - component: {fileID: 1798258502}
   - component: {fileID: 1798258501}
   m_Layer: 5
-  m_Name: SelectedPotion
+  m_Name: SelectedPotionImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5929,13 +5938,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ded41cfe6017d7142bb72b993a4a099e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6581,6 +6590,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPotionScriptableObject: {fileID: 0}
   selectedPotionText: {fileID: 581372147}
+  selectedPotionIconImage: {fileID: 0}
+  defaultPotionIconImage: {fileID: 21300000, guid: ded41cfe6017d7142bb72b993a4a099e, type: 3}
   potionList: []
   isMixingComplete: 0
   isCookingComplete: 0

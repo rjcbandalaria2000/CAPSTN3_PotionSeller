@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class CraftingManager : MonoBehaviour
@@ -8,7 +9,11 @@ public class CraftingManager : MonoBehaviour
     public QuestCompletedEvent onQuestCompletedEvent = new QuestCompletedEvent();
 
     public PotionScriptableObject       selectedPotionScriptableObject;
+
+    [Header("UI")]
     public TextMeshProUGUI              selectedPotionText;
+    public Image                        selectedPotionIconImage;
+    public Sprite                        defaultPotionIconImage;
     public List<PotionScriptableObject> potionList = new();
 
     [Header("Crafting States")]
@@ -16,6 +21,7 @@ public class CraftingManager : MonoBehaviour
     public bool                         isCookingComplete;
 
     private Inventory                   playerInventory;
+    
 
     private void Awake()
     {
@@ -83,6 +89,10 @@ public class CraftingManager : MonoBehaviour
             {
                 selectedPotionText.text = selectedPotionScriptableObject.potionName.ToString();
             }
+            if (selectedPotionIconImage)
+            {
+                selectedPotionIconImage.sprite = selectedPotionScriptableObject.potionIconSprite;
+            }
             Debug.Log("Setting potion");
         }
         
@@ -114,6 +124,7 @@ public class CraftingManager : MonoBehaviour
             isMixingComplete = false;
             selectedPotionScriptableObject = null;
             selectedPotionText.text = "";
+            selectedPotionIconImage.sprite = defaultPotionIconImage;
         }
     }
 
