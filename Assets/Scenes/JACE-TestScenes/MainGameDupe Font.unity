@@ -2138,7 +2138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &295895440
 Transform:
   m_ObjectHideFlags: 0
@@ -4743,6 +4743,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   markupPercent: 0
   playerWallet: {fileID: 366556170}
+  storeLevel: {fileID: 0}
+  sellExpPoints: 10
   orderParentPanel: {fileID: 356092992}
   orderPrefabUI: {fileID: 8034697261129825748, guid: 23fb4470b361de346a3a3e7f704eb9c9, type: 3}
 --- !u!1 &779557833
@@ -5961,6 +5963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPotionScriptableObject: {fileID: 0}
   selectedPotionText: {fileID: 525146793}
+  selectedPotionIconImage: {fileID: 0}
+  defaultPotionIconImage: {fileID: 0}
   potionList: []
   isMixingComplete: 0
   isCookingComplete: 0
@@ -7537,7 +7541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1480464425
 Transform:
   m_ObjectHideFlags: 0
@@ -8685,6 +8689,8 @@ MonoBehaviour:
   Parent: {fileID: 0}
   PotionToGive: {fileID: 0}
   PotionReceived: {fileID: 0}
+  successUI: {fileID: 0}
+  failUI: {fileID: 0}
 --- !u!114 &1681109097
 MonoBehaviour:
   m_ObjectHideFlags: 0
