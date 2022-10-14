@@ -48,6 +48,12 @@ public class Arrow : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        winConditionUI.SetActive(false);
+        loseConditionUI.SetActive(false);
+    }
+
     IEnumerator arrowMovement()
     {
         while(true)
