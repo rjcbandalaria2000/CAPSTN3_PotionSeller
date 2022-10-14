@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6251534307498499808}
   - component: {fileID: 9090465337551562973}
   - component: {fileID: 9120350237707470228}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: SuccessText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 3025985229137674024}
   - component: {fileID: 8878954686484651377}
   - component: {fileID: 8808318330124759946}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218793644425818757}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 3598661710941684527}
   - component: {fileID: 774277860431867553}
   - component: {fileID: 2714335763934203294}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8113188589261238211}
         m_TargetAssemblyTypeName: Cauldron, Assembly-CSharp
         m_MethodName: CloseUIPanel
         m_Mode: 1
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 8987494144831666057}
   - component: {fileID: 761770292445108263}
   - component: {fileID: 3628227651303133294}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ Transform:
   m_GameObject: {fileID: 8113188589150071759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.273, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.78787, y: 0.78787, z: 0.78787}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8113188589261238210}
@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8113188589261238237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.83, z: 0.91}
   m_LocalScale: {x: 1.5366857, y: 1.5366857, z: 1.5366857}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -547,7 +547,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8113188589261238237}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5003539936733470427, guid: 2af7d9f19a34e3f479ea0fa2e7405213, type: 3}
 --- !u!23 &8113188589261238209
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 4533175234682955831}
   - component: {fileID: 5060542857700877530}
   - component: {fileID: 4462795338152947373}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: FailText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 7978265656558741926}
   - component: {fileID: 6597214325333678284}
   - component: {fileID: 2109437513917222121}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 960441123870450425}
   - component: {fileID: 5162315292236901887}
   - component: {fileID: 1206994031858191398}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 8089497406740929443}
   - component: {fileID: 8797903250804677445}
   - component: {fileID: 6701775881901704232}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
