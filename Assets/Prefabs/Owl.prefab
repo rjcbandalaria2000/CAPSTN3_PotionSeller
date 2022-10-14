@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2830969595681213146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 713979242171022968}
@@ -359,7 +359,7 @@ Transform:
   m_GameObject: {fileID: 9050541336643002333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 867.7, y: 276.6, z: 309}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3171184454675910752}
@@ -388,6 +388,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
   - {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
   customerOrder: []
+  targetPos: {fileID: 0}
   OrderQuantity: 1
   RNG: 0
   markUP: 0

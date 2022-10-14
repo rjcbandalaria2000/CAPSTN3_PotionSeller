@@ -8,13 +8,21 @@ public class Customer : SelectableObject
     public List<PotionScriptableObject> availablePotions;
     public List<string> customerOrder;
 
+  
+    public Transform targetPos;
+
     public int OrderQuantity;
     public int RNG;
 
     [Range(0,10)]
     public int markUP;
 
+    [Range(0, 10)]
+    public int speed;
+
     public bool isSelect;
+
+    Coroutine animationRoutine;
    
     // Start is called before the first frame update
     void Awake()    
@@ -23,6 +31,10 @@ public class Customer : SelectableObject
          markUP = Random.Range(0, 10); 
 
         StartCoroutine(initializeCustomerOrderList());
+    }
+    private void Start()
+    {
+        animationRoutine = StartCoroutine(moveAnimation());
     }
     private void OnEnable()
     {
@@ -71,5 +83,15 @@ public class Customer : SelectableObject
         }
     }
 
+    IEnumerator  moveAnimation()
+    {
+        while (this.gameObject.transform.position != targetPos.position)
+        {
+            this.transform.position = Vector2.Lerp(this.transform.position, targetPos.position, speed * Time.deltaTime);
+            yield return null;
+        }
+
+        animationRoutine = null;
+    }
     // baseprice + markup
 }
