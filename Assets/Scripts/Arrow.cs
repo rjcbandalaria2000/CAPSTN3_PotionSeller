@@ -92,7 +92,8 @@ public class Arrow : MonoBehaviour
 
         if (isHitPoint)
         {
-           SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
+            //SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
+            ActivateSuccessUI();
             CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
             if (craftingManager)
             {
@@ -103,7 +104,8 @@ public class Arrow : MonoBehaviour
         }
         else
         {
-            SingletonManager.Get<UIManager>().FailureTXT.gameObject.SetActive(true);
+            //SingletonManager.Get<UIManager>().FailureTXT.gameObject.SetActive(true);
+            ActivateLoseUI();
             Debug.Log("Miss");
         }
     }
@@ -119,5 +121,21 @@ public class Arrow : MonoBehaviour
         winConditionUI.SetActive(false);
         loseConditionUI.SetActive(false);
         isHitPoint = false; 
+    }
+
+    public void ActivateSuccessUI()
+    {
+        if (winConditionUI == null) { return; }
+        if(loseConditionUI == null) { return ; }
+        winConditionUI.SetActive(true);
+        loseConditionUI.SetActive(false);
+    }
+
+    public void ActivateLoseUI()
+    {
+        if (winConditionUI == null) { return; }
+        if (loseConditionUI == null) { return; }
+        winConditionUI.SetActive(false);
+        loseConditionUI.SetActive(true);
     }
 }

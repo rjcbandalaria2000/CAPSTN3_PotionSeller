@@ -7413,6 +7413,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.000022888
       objectReference: {fileID: 0}
+    - target: {fileID: 218604193677222358, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_Size.x
+      value: 313.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 218604193677222358, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 246304119099930768, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: arrow
       value: 
@@ -7489,6 +7497,38 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 82e741d8c49f39e41b842402ebf134aa, type: 3}
+    - target: {fileID: 2771865442439798850, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803692243198836160, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798555485803407388, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798555485803407388, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
+    - target: {fileID: 3798555485803407388, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798555485803407388, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3984757326273378455, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
+    - target: {fileID: 3839333996142753204, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839333996142753204, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ded41cfe6017d7142bb72b993a4a099e, type: 3}
     - target: {fileID: 4688823506405502440, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7525,6 +7565,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.000020981
       objectReference: {fileID: 0}
+    - target: {fileID: 7343891293166175906, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_Name
+      value: BrewButton
+      objectReference: {fileID: 0}
     - target: {fileID: 8810031335494703453, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_SizeDelta.x
       value: 62.8577
@@ -7535,11 +7579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810031335494703453, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810031335494703453, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 17.678
+      value: 0.000020981
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
