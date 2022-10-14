@@ -24,6 +24,8 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
     [Header("UI")]
     public GameObject   successUI;
     public GameObject   failUI;
+    public GameObject   leftArrowUI;
+    public GameObject   rightArrowUI; 
     
     private Vector2 InitialPosition;
     public void OnPointerDown(PointerEventData eventData)
@@ -43,11 +45,15 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
             {
                 Debug.Log("SwipeRight");
                 SwipedRight = true;
+                //SwipeLeft next
+                ActivateLeftArrowUI();
             }
             if(mousePosition.normalized.x < SwipeLeftAccept)
             {
                 Debug.Log("SwipeLeft");
                 SwipedLeft = true;
+                //Swipe Right next 
+                ActivateRightArrowUI();
             }
             if(SwipedLeft && SwipedRight)
             {
@@ -125,6 +131,22 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
         if(successUI == null || failUI == null) { return; }
         failUI.SetActive(false);
         successUI.SetActive(false);
+    }
+
+    public void ActivateLeftArrowUI()
+    {
+        if(leftArrowUI == null) { return; }
+        if(rightArrowUI == null) { return; }
+        leftArrowUI.SetActive(true);
+        rightArrowUI.SetActive(false);
+    }
+
+    public void ActivateRightArrowUI()
+    {
+        if (leftArrowUI == null) { return; }
+        if (rightArrowUI == null) { return; }
+        leftArrowUI.SetActive(false);
+        rightArrowUI.SetActive(true);
     }
     #endregion
 }
