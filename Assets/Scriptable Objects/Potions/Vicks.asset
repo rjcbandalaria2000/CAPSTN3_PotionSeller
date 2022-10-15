@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Vicks
   m_EditorClassIdentifier: 
   potionName: Vicks
-  potionSprite: {fileID: 0}
+  potionSprite: {fileID: 21300000, guid: ca417d4bd383c0a4ab6cdac19ff5329a, type: 3}
+  potionIconSprite: {fileID: 21300000, guid: 91aa54276816308479a3c05a63cda482, type: 3}
   buyPrice: 30
   sellPrice: 0
   requiredIngredients:

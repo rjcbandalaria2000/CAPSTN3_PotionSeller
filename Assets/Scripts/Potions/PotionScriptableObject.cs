@@ -8,9 +8,9 @@ public class PotionScriptableObject : ScriptableObject
 {
     public string potionName;
     public Sprite potionSprite;
+    public Sprite potionIconSprite;
     public float buyPrice;
     public float sellPrice;
 
-    //public List<IngredientScriptableObject> ingredients= new List<IngredientScriptableObject>();
     public List<RequiredIngredients> requiredIngredients= new List<RequiredIngredients>();
 }

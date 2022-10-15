@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Gayuma
   m_EditorClassIdentifier: 
   potionName: Gayuma
-  potionSprite: {fileID: 0}
+  potionSprite: {fileID: 21300000, guid: 12243efb960cf2143b41c131ff74144c, type: 3}
+  potionIconSprite: {fileID: 21300000, guid: 1ab7fe105f2bbe24b8dabd1cfd38c82d, type: 3}
   buyPrice: 20
   sellPrice: 0
   requiredIngredients:

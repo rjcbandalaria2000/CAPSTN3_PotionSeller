@@ -5710,6 +5710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPotionScriptableObject: {fileID: 0}
   selectedPotionText: {fileID: 525146793}
+  selectedPotionIconImage: {fileID: 0}
+  defaultPotionIconImage: {fileID: 0}
   potionList: []
   isMixingComplete: 0
   isCookingComplete: 0
@@ -7225,7 +7227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1480464425
 Transform:
   m_ObjectHideFlags: 0
