@@ -85,13 +85,14 @@ public class Customer : SelectableObject
 
     IEnumerator  moveAnimation()
     {
+        yield return new WaitForSeconds(1.5f);
         while (this.gameObject.transform.position != targetPos.position)
         {
-            this.transform.position = Vector2.Lerp(this.transform.position, targetPos.position, speed * Time.deltaTime);
+            this.transform.position = Vector3.Lerp(this.transform.position, targetPos.position, speed * Time.deltaTime);
             yield return null;
         }
 
-        animationRoutine = null;
+       
     }
     // baseprice + markup
 }
