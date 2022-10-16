@@ -53,6 +53,7 @@ public class DisplayQuestUI : MonoBehaviour
         foreach(GameObject gameObject in displayQuests)
         {
             Destroy(gameObject);
+
             displayQuests.Clear();
         }
     }
