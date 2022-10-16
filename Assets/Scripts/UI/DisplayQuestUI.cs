@@ -50,11 +50,10 @@ public class DisplayQuestUI : MonoBehaviour
 
     private void RemoveAll()
     {
-        foreach(GameObject gameObject in displayQuests)
+        foreach (GameObject gameObject in displayQuests)
         {
             Destroy(gameObject);
-
-            displayQuests.Clear();
         }
+        displayQuests.Clear();
     }
 }
