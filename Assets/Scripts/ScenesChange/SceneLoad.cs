@@ -28,16 +28,16 @@ public class SceneLoad : MonoBehaviour
 
     private IEnumerator LoadSequence(string sceneId)
     {
-        if(!string.IsNullOrEmpty(currentSceneId)) //currentsceneID != string.empty
+        if (!string.IsNullOrEmpty(currentSceneId)) //currentsceneID != string.empty
         {
             Complex_SceneManager addSceneLoader = SingletonManager.Get<Complex_SceneManager>();
 
-            if(addSceneLoader)
+            if (addSceneLoader) //remove extra scenes to the current scene 
             {
                 yield return addSceneLoader.UnloadScene();
-                Debug.Log("ComplexSceneManager_Unloaded");
+                Debug.Log("Complex_SceneManager Unloaded");
             }
-          
+
 
             yield return SceneManager.UnloadSceneAsync(currentSceneId);
             currentSceneId = string.Empty;
@@ -45,11 +45,17 @@ public class SceneLoad : MonoBehaviour
 
         Resources.UnloadUnusedAssets();
         yield return null;
-        GC.Collect();
+        GC.Collect(); // Trigger a collection to free memory
         yield return null;
 
-        yield return SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
+
+        yield return operation;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneId));
         currentSceneId = sceneId;
+
+        yield return null;
+
     }
 
     public Coroutine LoadScene(string sceneId)
