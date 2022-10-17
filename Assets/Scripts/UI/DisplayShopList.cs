@@ -33,9 +33,10 @@ public class DisplayShopList : MonoBehaviour
         for (int i = 0; i < Shop.Items.Count; i++)
         {
             GameObject itemListPrefab = Instantiate(ItemShopPrefab);            
-            itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName;
-            itemListPrefab.transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.buyPrice.ToString();            
-            itemListPrefab.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(() => Shop.BuyItem(shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName));//itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
+            itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Shop.Items[i].GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName;
+            itemListPrefab.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = Shop.Items[i].GetComponent<ShopIngredient>().ingredientScriptableObject.buyPrice.ToString();
+            Debug.Log(Shop.Items[i].name);
+            itemListPrefab.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => Shop.BuyItem(Shop.Items[i].GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName));//itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
             itemListPrefab.transform.SetParent(ShopListUI.transform, false);
 
             Shop.displayIngredientsQuantity.Add(itemListPrefab.GetComponentInChildren<DisplayIngredientQuantity>());
