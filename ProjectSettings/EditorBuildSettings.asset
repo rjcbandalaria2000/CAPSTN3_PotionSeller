@@ -6,15 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Persistence_Testing.unity
-    guid: fe1f899726fcc294a8f3788885cfb3be
+    path: Assets/Scenes/Emman-TestScenes/MainMenu.unity
+    guid: 5578a27eced322e459115a6993bd0e51
   - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: c4d32115b64c7da43a25b5e8804c7cd6
-  - enabled: 1
-    path: Assets/Scenes/Score.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/JACE-TestScenes/Customer_test.unity
-    guid: 8ebe3dd04d780214ba5c969868379866
+    path: Assets/Scenes/Chris-TestScenes/MainGameQuest.unity
+    guid: 1e3ec39286d37f34385f007b0dcdf2c9
   m_configObjects: {}
