@@ -130,6 +130,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1571267895}
     m_Modifications:
+    - target: {fileID: 891401959589444208, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401959589444208, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 980195214}
+    - target: {fileID: 891401959589444208, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401959589444208, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401959589444208, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Mermaid Oil
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401959589444208, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 891401959589444211, guid: c93c73a68e3da3746992db888a68f545, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -161,6 +185,22 @@ PrefabInstance:
     - target: {fileID: 891401960087224192, guid: c93c73a68e3da3746992db888a68f545, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960087224195, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 980195214}
+    - target: {fileID: 891401960087224195, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960087224195, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960087224195, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Wicked Shroom
       objectReference: {fileID: 0}
     - target: {fileID: 891401960110766644, guid: c93c73a68e3da3746992db888a68f545, type: 3}
       propertyPath: m_AnchorMax.y
@@ -265,6 +305,54 @@ PrefabInstance:
     - target: {fileID: 891401960917902120, guid: c93c73a68e3da3746992db888a68f545, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960917902123, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960917902123, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 980195214}
+    - target: {fileID: 891401960917902123, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960917902123, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960917902123, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Young Seed
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401960917902123, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401961091026217, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401961091026217, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 980195214}
+    - target: {fileID: 891401961091026217, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401961091026217, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401961091026217, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Raw Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 891401961091026217, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 891401961091026218, guid: c93c73a68e3da3746992db888a68f545, type: 3}
       propertyPath: m_AnchorMax.y
