@@ -16,4 +16,4 @@ MonoBehaviour:
   ingredientSprite: {fileID: 0}
   buyPrice: 26
   sellPrice: 8
-  ingredientQuantity: 4
+  ingredientQuantity: 2

@@ -5,9 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public void OnPlayButtonClicked()
+    private ChangeSceneController sceneChange;
+
+    private void Start()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        sceneChange = this.gameObject.GetComponent<ChangeSceneController>();
+    }
+    public void OnPlayButtonClicked(string scene)
+    {
+       //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        if (sceneChange == null) { return; }
+        if (scene == null) { return; }
+
+        sceneChange.OnChangeScene(scene);
     }
 
     public void OnQuitButtonClicked()

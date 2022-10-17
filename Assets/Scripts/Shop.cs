@@ -13,7 +13,15 @@ public class Shop : MonoBehaviour
     
     void Start()
     {
-        Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
+        if(PlayerWallet == null)
+        {
+            PlayerWallet = GameObject.FindObjectOfType<Wallet>().GetComponent<Wallet>();
+        }
+        else
+        {
+            Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
+        }
+       
     }
 
     public void BuyItem(string itemName)

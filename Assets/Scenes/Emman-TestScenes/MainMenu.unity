@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -439,13 +439,13 @@ MonoBehaviour:
       - m_Target: {fileID: 860535860}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
         m_MethodName: OnPlayButtonClicked
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Midterms_TestScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &468834648
@@ -891,6 +891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860535861}
   - component: {fileID: 860535860}
+  - component: {fileID: 860535862}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -925,6 +926,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &860535862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860535859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfdd5e741d2945459643f02a14d1b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &931143172
 GameObject:
   m_ObjectHideFlags: 0
