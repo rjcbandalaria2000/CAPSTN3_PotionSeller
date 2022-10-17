@@ -2207,6 +2207,17 @@ MonoBehaviour:
   Level: 0
   MaxExperiencePoints: c8000000f40100002003000084030000e8030000
   CurrentExperiencePoints: 0
+--- !u!114 &366556174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 988059883539165416, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+  m_PrefabInstance: {fileID: 988059883736876260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366556169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6be4f2ca89a8142b3c83beb19e4a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &377974226 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5773184875846492578, guid: c93c73a68e3da3746992db888a68f545, type: 3}
@@ -5683,6 +5694,26 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2547803756305451304, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547803756305451304, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1283036971}
+    - target: {fileID: 2547803756305451304, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1283036971}
+    - target: {fileID: 2547803756305451304, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RefreshList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547803756305451304, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetMarkupPercent
+      objectReference: {fileID: 0}
     - target: {fileID: 2547803756305451305, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_Type
       value: 0
@@ -8051,6 +8082,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1571267895}
     m_Modifications:
+    - target: {fileID: 7862993553341792609, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7862993554949957393, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
       propertyPath: objectNameUI
       value: 
@@ -8058,7 +8093,7 @@ PrefabInstance:
     - target: {fileID: 7862993554949957393, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
       propertyPath: playerInventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 366556174}
     - target: {fileID: 7862993554949957393, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
       propertyPath: stockObjects.Array.size
       value: 4
