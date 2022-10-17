@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Wallet playerWallet;
 
     [Header("Condition Objects")]
+    public int goalMoney = 1000;
     public GameObject conditionPanel;
     public TextMeshProUGUI conditionText;
     public Color winColor;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
         if (dayCount >= Constants.MAX_DAY)
         {
             TimeManager.onPauseGameTime.Invoke(true);
-            if (playerWallet.Money >= 1000) // WIN CONDITION
+            if (playerWallet.Money >= goalMoney) // WIN CONDITION
             {
                 // Fire WIN - event transition something
                 conditionPanel.SetActive(true);
