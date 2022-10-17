@@ -9,6 +9,8 @@ TagManager:
   - Customer
   - Potion
   - Hitpoint
+  - ADD
+  - MINUS
   layers:
   - Default
   - TransparentFX

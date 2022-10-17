@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9098434189749469499}
   m_Layer: 5
   m_Name: Add
-  m_TagString: Untagged
+  m_TagString: ADD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8923454882064944939}
   m_Layer: 5
   m_Name: Decrease
-  m_TagString: Untagged
+  m_TagString: MINUS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

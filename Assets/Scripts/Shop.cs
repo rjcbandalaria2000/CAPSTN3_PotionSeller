@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+
 public class Shop : MonoBehaviour
 {
     public List<GameObject> Items = new();
@@ -12,7 +13,7 @@ public class Shop : MonoBehaviour
     public List<DisplayCost> displayCosts = new();
     public List<DisplayItemSprite> itemSprites = new();
     public List<DisplayItemName> itemNames = new();
-    
+
    
     void Start()
     {

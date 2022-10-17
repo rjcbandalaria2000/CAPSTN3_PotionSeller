@@ -16,4 +16,4 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 1a2d22750c9cc4144972c13a5a57387a, type: 3}
   buyPrice: 34
   sellPrice: 12
-  ingredientQuantity: 5
+  ingredientQuantity: 1
