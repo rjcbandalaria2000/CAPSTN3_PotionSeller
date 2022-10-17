@@ -5,13 +5,16 @@ using UnityEngine;
 public class CustomerSpawner : MonoBehaviour
 {
     public GameObject customer;
-    public Transform spawnPoint;
     public int customerQuantity;
+    public Transform spawnPoint;
+    public List<Transform> targetPoints;
+    private int index;
 
     Coroutine customerSpawn;
     // Start is called before the first frame update
     void Start()
     {
+        index = 0;
         customerSpawn = StartCoroutine(spawnCustomer());
     }
 
@@ -23,12 +26,16 @@ public class CustomerSpawner : MonoBehaviour
 
     IEnumerator spawnCustomer()
     {
-        for(int i = 0; i < customerQuantity; i++)
+        while (index < customerQuantity)
         {
             GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
-            //Debug.Log("Customer");
+            spawnCustomer.GetComponent<Customer>().targetPos = targetPoints[index];
+          
+            yield return new WaitForSeconds(2.5f);
+            index++;
         }
-        yield return null;
+       
+       
     }
 
     public void Spawn()

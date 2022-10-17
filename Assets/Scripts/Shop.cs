@@ -8,10 +8,20 @@ public class Shop : MonoBehaviour
     public List<GameObject> Items = new();
     public Wallet PlayerWallet;
     public float markupPercent = 1f;
+    public List<DisplayIngredientQuantity> displayIngredientsQuantity = new();
+    public List<DisplayCost> displayCosts = new();
     
     void Start()
     {
-        Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
+        if(PlayerWallet == null)
+        {
+            PlayerWallet = GameObject.FindObjectOfType<Wallet>().GetComponent<Wallet>();
+        }
+        else
+        {
+            Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
+        }
+       
     }
 
     public void BuyItem(string itemName)
@@ -92,5 +102,50 @@ public class Shop : MonoBehaviour
                 markupPercent = 2f;
                 break;
         }
+    }
+    
+    public void addQuantity(int index)
+    {
+        ShopIngredient itemIngredient = Items[index].GetComponent<ShopIngredient>();
+        if (itemIngredient.ingredientScriptableObject.ingredientQuantity < 99)
+        {
+            if(itemIngredient.ingredientScriptableObject.ingredientQuantity > 99)
+            {
+                return;
+            }
+            else
+            {
+                itemIngredient.ingredientScriptableObject.ingredientQuantity++;
+                itemIngredient.ingredientScriptableObject.buyPrice += 2;
+                itemIngredient.ingredientScriptableObject.sellPrice += 1;
+                displayIngredientsQuantity[index].updateCount(index);
+                displayCosts[index].updateCount(index);
+            }
+        }
+     
+          
+    }
+
+    public void decreaseQuantitiy(int index)
+    {
+        ShopIngredient itemIngredient = Items[index].GetComponent<ShopIngredient>();
+        if (itemIngredient.ingredientScriptableObject.ingredientQuantity > 0)
+        {
+            if(itemIngredient.ingredientScriptableObject.ingredientQuantity <= 0)
+            {
+                return;
+            }
+            else
+            {
+                itemIngredient.ingredientScriptableObject.ingredientQuantity--;
+                itemIngredient.ingredientScriptableObject.buyPrice -= 2;
+                itemIngredient.ingredientScriptableObject.sellPrice -= 1;
+                displayIngredientsQuantity[index].updateCount(index);
+                displayCosts[index].updateCount(index);
+            }
+            
+            
+        }
+      
     }
 }

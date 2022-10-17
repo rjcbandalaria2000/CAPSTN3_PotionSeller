@@ -21,6 +21,7 @@ public class TimeManager : MonoBehaviour
     public static TimeChangedEvent onTimeChangedEvent = new();
     public static HourChangedEvent onHourChangedEvent = new();
     public static DayEndedEvent onDayEndedEvent = new();
+    public static PauseGameTime onPauseGameTime = new();
 
     public int dayCount;
 
@@ -51,11 +52,13 @@ public class TimeManager : MonoBehaviour
     private void OnEnable()
     {
         onTimeChangedEvent.AddListener(OnTimeCheck);
+        onPauseGameTime.AddListener(SetPauseGame);
     }
 
     private void OnDisable()
     {
         onTimeChangedEvent.RemoveListener(OnTimeCheck);
+        onPauseGameTime.RemoveListener(SetPauseGame);
     }
 
     private IEnumerator DoTimerCoroutine()
@@ -105,6 +108,18 @@ public class TimeManager : MonoBehaviour
         ResetTime();
     }
 
+    public void OnTimeSkipButtonHit()
+    {
+        TimeSkip();
+    }
+
+    private void TimeSkip()
+    {      
+        dayCount = 30;
+        onDayEndedEvent.Invoke(dayCount);
+        ResetTime();
+    }    
+
     public void OnResetTimeButtonHit()
     {
         ResetTime();
@@ -122,5 +137,39 @@ public class TimeManager : MonoBehaviour
         }
         coroutineTime = DoTimerCoroutine();
         StartCoroutine(coroutineTime);
+    }
+
+    private void SetPauseGame(bool p_bool)
+    {
+        doTimer = p_bool;
+        if (p_bool) // Pause the game if TRUE
+        {
+            if (coroutineTime != null)
+            {
+                Debug.Log(GetPauseLogic(p_bool));
+                StopCoroutine(coroutineTime);
+                coroutineTime = null;
+            }
+        }
+        else // Play the game if FALSE
+        {
+            Debug.Log(GetPauseLogic(p_bool));
+            coroutineTime = DoTimerCoroutine();  
+            StartCoroutine(coroutineTime);
+        }
+    }
+
+    private string GetPauseLogic(bool p_bool)
+    {
+        string debugString;
+        if (p_bool)
+        {
+            debugString = "Play game!";
+        }
+        else
+        {
+            debugString = "Game is paused.";
+        }
+        return debugString;
     }
 }

@@ -20,6 +20,7 @@ public class RemoveItemEvent : UnityEvent<string, int> { };
 public class TimeChangedEvent : UnityEvent <int, int> { }
 public class HourChangedEvent : UnityEvent <int> { }
 public class DayEndedEvent : UnityEvent<int> { }
+public class PauseGameTime : UnityEvent<bool> { }
 #endregion
 
 #region Quest Events

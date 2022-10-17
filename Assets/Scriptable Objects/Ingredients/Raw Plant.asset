@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Raw Plant
   ingredientSprite: {fileID: 0}
-  buyPrice: 10
-  sellPrice: 0
+  buyPrice: 28
+  sellPrice: 9
+  ingredientQuantity: 2
