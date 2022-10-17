@@ -14,21 +14,31 @@ public class DisplayShopList : MonoBehaviour
     [Header("Item List Elements")]
     public GameObject buyPriceUI;
 
+    [SerializeField] private int index;
+
     // Start is called before the first frame update
     void Start()
     {
-        DisplayList();
+        //DisplayList();
     }
 
     public void DisplayList()
     {
         foreach (GameObject shopItem in Shop.Items)
         {
+            index = 0;
+
             GameObject itemListPrefab = Instantiate(ItemShopPrefab);            
             itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName;
             itemListPrefab.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.buyPrice.ToString();            
             itemListPrefab.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => Shop.BuyItem(shopItem.GetComponent<ShopIngredient>().ingredientScriptableObject.ingredientName));//itemListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
             itemListPrefab.transform.SetParent(ShopListUI.transform, false);
+            Shop.displayIngredientsQuantity.Add(itemListPrefab.GetComponentInChildren<DisplayIngredientQuantity>());
+            Shop.displayCosts.Add(itemListPrefab.GetComponentInChildren<DisplayCost>());
+            Shop.itemSprites.Add(itemListPrefab.GetComponent<DisplayItemSprite>());
+
+            Shop.displayCosts[index].index = index;
+            index++;
         }
     }
 

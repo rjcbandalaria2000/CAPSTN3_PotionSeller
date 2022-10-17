@@ -10,7 +10,10 @@ public class Shop : MonoBehaviour
     public float markupPercent = 1f;
     public List<DisplayIngredientQuantity> displayIngredientsQuantity = new();
     public List<DisplayCost> displayCosts = new();
+    public List<DisplayItemSprite> itemSprites = new();
+    public List<DisplayItemName> itemNames = new();
     
+   
     void Start()
     {
         if(PlayerWallet == null)
@@ -21,6 +24,8 @@ public class Shop : MonoBehaviour
         {
             Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
         }
+
+       
        
     }
 
