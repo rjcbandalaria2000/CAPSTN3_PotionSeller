@@ -17,7 +17,7 @@ public class DisplayShopList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DisplayList();
+       // DisplayList();
     }
 
     public void DisplayList()

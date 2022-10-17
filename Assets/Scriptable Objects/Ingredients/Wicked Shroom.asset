@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Wicked Shroom
   ingredientSprite: {fileID: 0}
-  buyPrice: 26
-  sellPrice: 8
-  ingredientQuantity: 2
+  buyPrice: 74
+  sellPrice: 32
+  ingredientQuantity: 12
