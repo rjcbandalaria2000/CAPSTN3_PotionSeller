@@ -17,7 +17,7 @@ public class Stock : SelectableObject
     private void Awake()
     {
         //playerInventory = SingletonManager.Get<Inventory>();
-        playerInventory = SingletonManager.Get<Inventory>();
+        //playerInventory = SingletonManager.Get<Inventory>();
     }
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class Stock : SelectableObject
     {
      
         objectPanelUI.SetActive(false);
+        //playerInventory = SingletonManager.Get<Inventory>();
     }
     private void OnEnable()
     {
