@@ -8,9 +8,10 @@ public class CustomerSpawner : MonoBehaviour
     public GameObject customer;
     public int customerQuantity;
     public Transform spawnPoint;
-    public List<Transform> targetPoints = new();
-
+    public List<GameObject> spawnCustomers;
+    public List<bool> isOccupied;
     public int index;
+    public List<Transform> targetPoints = new();
     public List<GameObject> spawnedCustomers = new();
 
     Coroutine customerSpawn;
@@ -33,12 +34,14 @@ public class CustomerSpawner : MonoBehaviour
         {
             GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
             spawnCustomer.GetComponent<Customer>().targetPos = targetPoints[index];
-            spawnedCustomers.Add(spawnCustomer);
+            spawnCustomers.Add(spawnCustomer);
+            isOccupied[index] = true;
+          
             yield return new WaitForSeconds(2.5f);
             index++;
         }
-       
-       
+
+        index = 0;
     }
 
     public void Spawn()
@@ -59,4 +62,34 @@ public class CustomerSpawner : MonoBehaviour
         }
     }
 
+    public void callNewCustomer()
+    {
+        if(spawnCustomers.Count < customerQuantity)
+        {
+            while(index < isOccupied.Count)
+            {
+                if (isOccupied[index] == false)
+                {
+                    GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
+                    spawnCustomer.GetComponent<Customer>().targetPos = targetPoints[index];
+                    spawnCustomers.Add(spawnCustomer);
+                    isOccupied[index] = true;
+                    break; // Remove this if wants to spawn simultaneously
+                }
+                else
+                {
+                    Debug.Log("IsOccupied");
+                    index += 1;
+                }
+            }
+           
+        }
+        else
+        {
+            Debug.Log("Full Capacity");
+        }
+
+        index = 0;
+       
+    }
 }
