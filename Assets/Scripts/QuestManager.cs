@@ -101,16 +101,19 @@ public class QuestManager : MonoBehaviour
         {
             if (q.questTitle == quest.questTitle)
             {
+                int questReward = q.questReward;
                 // Set quest to completion
                 q.isCompleted = true;
                 // Turn off Quest
-                q.isActive = false;
+                q.isActive = false; 
+                onRemoveQuestEvent.Invoke(q);  
+                // Remove quest
+                questsOfTheDay.Remove(q);
                 // Give reward/s to player
                 playerWallet.AddMoney(q.questReward);
                 // Inventory.AddItem(quest.rewardsList[GetRandNum(0, quest.RewardsList.Count)])
-                onRemoveQuestEvent.Invoke(q);
-                // Remove quest
-                questsOfTheDay.Remove(q);
+               
+             
                 break;
             }
         }

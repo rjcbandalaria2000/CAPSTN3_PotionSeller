@@ -4900,12 +4900,13 @@ MonoBehaviour:
   customer: {fileID: 9050541336643002333, guid: ca4b621db6934b94197e03e911684beb, type: 3}
   customerQuantity: 3
   spawnPoint: {fileID: 1287701709}
+  spawnCustomers: []
+  isOccupied: 000000
+  index: 0
   targetPoints:
   - {fileID: 2043808534}
   - {fileID: 975641871}
   - {fileID: 1393332370}
-  index: 0
-  spawnedCustomers: []
 --- !u!4 &624150860
 Transform:
   m_ObjectHideFlags: 0
@@ -10925,7 +10926,7 @@ PrefabInstance:
       objectReference: {fileID: 624150859}
     - target: {fileID: 2547803756249609094, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Spawn
+      value: callNewCustomer
       objectReference: {fileID: 0}
     - target: {fileID: 2547803756249609095, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_Type

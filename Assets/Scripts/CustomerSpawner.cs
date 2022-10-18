@@ -8,11 +8,11 @@ public class CustomerSpawner : MonoBehaviour
     public GameObject customer;
     public int customerQuantity;
     public Transform spawnPoint;
-    public List<GameObject> spawnCustomers;
+    public List<GameObject> spawnCustomers = new();
     public List<bool> isOccupied;
     public int index;
     public List<Transform> targetPoints = new();
-    public List<GameObject> spawnedCustomers = new();
+    //public List<GameObject> spawnedCustomers = new();
 
     Coroutine customerSpawn;
 
@@ -49,21 +49,24 @@ public class CustomerSpawner : MonoBehaviour
         customerSpawn = StartCoroutine(spawnCustomer());
     }
 
-    public void RemoveCustomer(GameObject customer, string order)
+    public void RemoveCustomer()
     {
-        if(spawnedCustomers.Count <= 0) { return; }
-        for(int i = 0; i < spawnedCustomers.Count; i++)
+        //if(spawnCustomers.Count <= 0) { return; }
+        for(int i = 0; i < spawnCustomers.Count; i++)
         {
-            if (spawnedCustomers[i] == customer)
+            if (spawnCustomers[i] == null)
             {
-                Destroy(spawnedCustomers[i]);
-                spawnedCustomers.Remove(spawnedCustomers[i]);
+                //spawnCustomers.Remove(spawnCustomers[i]);
+                spawnCustomers.RemoveAt(i);
+                isOccupied[i] = false;
+                Debug.Log("Remove null");
             }
         }
     }
 
     public void callNewCustomer()
     {
+        RemoveCustomer(); 
         if(spawnCustomers.Count < customerQuantity)
         {
             while(index < isOccupied.Count)
@@ -92,4 +95,6 @@ public class CustomerSpawner : MonoBehaviour
         index = 0;
        
     }
+
+    
 }

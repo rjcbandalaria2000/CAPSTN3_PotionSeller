@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Persistence_Testing.unity
+    guid: fe1f899726fcc294a8f3788885cfb3be
+  - enabled: 1
     path: Assets/Scenes/Emman-TestScenes/MainMenu.unity
     guid: 5578a27eced322e459115a6993bd0e51
   - enabled: 0

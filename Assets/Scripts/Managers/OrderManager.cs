@@ -146,7 +146,7 @@ public class OrderManager : MonoBehaviour
                             }
 
                             //Temp fix reduce customer index to be able to spawn next available customer
-                            SingletonManager.Get<CustomerSpawner>().index--;
+                            //SingletonManager.Get<CustomerSpawner>().index--;
                             //if the potion is ordered by the customer
                             foreach(Customer customer in customers)
                             {
@@ -157,6 +157,7 @@ public class OrderManager : MonoBehaviour
                                     break;
                                 }
                             }
+                            SingletonManager.Get<CustomerSpawner>().RemoveCustomer();
                             
                         }
                         else
