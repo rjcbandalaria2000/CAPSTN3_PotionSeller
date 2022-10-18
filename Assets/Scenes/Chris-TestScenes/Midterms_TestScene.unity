@@ -745,6 +745,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4734691499718316039, guid: c93c73a68e3da3746992db888a68f545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     - target: {fileID: 4734691499718316056, guid: c93c73a68e3da3746992db888a68f545, type: 3}
       propertyPath: objectNameUI
       value: 
@@ -1502,6 +1506,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ddd196e02314adb4daf0b3574ee24d7f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     - target: {fileID: 919132149155446097, guid: ddd196e02314adb4daf0b3574ee24d7f, type: 3}
       propertyPath: m_Name
       value: smalltable_low
@@ -2387,6 +2395,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 295895440}
     m_Modifications:
+    - target: {fileID: 2004304225824512443, guid: e9e30999bb4403c45a187f5882d7e53f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     - target: {fileID: 2508080536150720505, guid: e9e30999bb4403c45a187f5882d7e53f, type: 3}
       propertyPath: m_Name
       value: windowframe_order_area
@@ -3429,6 +3441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 295895440}
     m_Modifications:
+    - target: {fileID: 750248436703491181, guid: 7acd6aa5f7796fa4c8bb54a8ef2dab85, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     - target: {fileID: 1579904313470823540, guid: 7acd6aa5f7796fa4c8bb54a8ef2dab85, type: 3}
       propertyPath: m_Name
       value: prepping_table_brewing_area
@@ -3930,8 +3946,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ded41cfe6017d7142bb72b993a4a099e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4338,6 +4354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 295895440}
     m_Modifications:
+    - target: {fileID: 646156173721520089, guid: 829f58c7e9dacd94d9c60f4c00bf2d3d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     - target: {fileID: 1318319211472132519, guid: 829f58c7e9dacd94d9c60f4c00bf2d3d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -5242,8 +5262,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quests
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
+  m_sharedMaterial: {fileID: -3984757326273378455, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9442,8 +9462,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f71396a16278c7843aca673d1d0a4441, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -12631,6 +12651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shop_area
       objectReference: {fileID: 0}
+    - target: {fileID: 7388608672490930103, guid: 123c16a049d6ba441af04b97f259d179, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123c16a049d6ba441af04b97f259d179, type: 3}
 --- !u!1 &1516001909
@@ -13134,8 +13158,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 13cc4796787ed954082a41743229ab46, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -13443,6 +13467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7978268586234281510, guid: 37a417c30fd5d7141ad9963b2a30df4f, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37a417c30fd5d7141ad9963b2a30df4f, type: 3}
 --- !u!4 &1615367887 stripped
@@ -13544,7 +13572,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -16209,6 +16237,10 @@ PrefabInstance:
       propertyPath: stockObjects.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7862993554949957395, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     - target: {fileID: 7862993554949957404, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -16524,7 +16556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -759.33, y: 373.85}
+  m_AnchoredPosition: {x: -776.3, y: 400.8}
   m_SizeDelta: {x: -1622.5983, y: -1004.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972575925
