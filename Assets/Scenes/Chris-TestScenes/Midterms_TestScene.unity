@@ -4890,6 +4890,8 @@ MonoBehaviour:
   - {fileID: 2043808534}
   - {fileID: 975641871}
   - {fileID: 1393332370}
+  spawnCustomers: []
+  isOccupied: 000000
   index: 0
 --- !u!4 &624150860
 Transform:
