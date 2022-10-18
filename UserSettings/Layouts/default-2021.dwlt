@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 89
+  controlID: 45
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 16
+  controlID: 46
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 17
+  controlID: 47
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -425,9 +425,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0ceeffff
-      m_LastClickedID: -4596
-      m_ExpandedIDs: a0a3ffff60d3ffff6aebffff0ceeffff20eeffff22eeffff34fbffffe46900003a6a00009a6b0000
+      m_SelectedIDs: 06bfffff
+      m_LastClickedID: -16634
+      m_ExpandedIDs: bab4ffff28b6ffffa0b7ffffb2b7ffffeab8ffff20b9ffff34b9ffff40c1ffff54c1ffff56c1ffffb8c4ffff54c8ffffbac8ffff36cfffff46cfffff14d0ffffbadaffffbcdaffff4ee0ffff86ebffff88ebffff62efffff20f4ffff30fbffff3c6400007a660000826c00003c7000009a700000fa7100001a7a0000b67a0000d28400008e870000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -676,9 +676,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.552025, y: -0.82300687, z: -16.432693}
+    m_Target: {x: 1337.4614, y: 610.58466, z: -34.018154}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 1337.4614, y: 610.58466, z: -34.018154}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -729,9 +729,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.10162925, y: -0.7911136, z: 0.13686663, w: -0.5874335}
   m_Size:
-    m_Target: 14.222835
+    m_Target: 140.75937
     speed: 2
-    m_Value: 10
+    m_Value: 140.75937
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -797,23 +797,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Scriptable Objects/Ingredients
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets/Scriptable Objects/Ingredients
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Chris Bandalaria\Documents\DLS-CSB\5th Year\CAPSTONE 3\CAPSTONE
     3 REPOSITORY\CAPSTN3_PotionSeller
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 255}
-    m_SelectedIDs: f8b80000
-    m_LastClickedID: 47352
-    m_ExpandedIDs: 00000000ee680000
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: ea880000
+    m_LastClickedID: 35050
+    m_ExpandedIDs: 00000000a2630000b6630000b8630000ba630000bc630000be63000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -841,7 +841,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ee680000
+    m_ExpandedIDs: 00000000a2630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -866,10 +866,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b8570100
-    m_LastClickedInstanceID: 87992
+    m_SelectedInstanceIDs: e0840000
+    m_LastClickedInstanceID: 34016
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000b8aa0000b6aa00001e5f0000f25e0000cc2200003ef00000225f00005e630000286300007c620000185f000000000000065f0000f67b0000a25d0000
+    m_ExpandedInstanceIDs: c6230000b8aa0000b6aa00001e5f0000f25e0000cc2200003ef00000225f00005e630000286300007c620000185f000000000000065f0000f67b0000a25d00005e5e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -960,7 +960,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 121
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

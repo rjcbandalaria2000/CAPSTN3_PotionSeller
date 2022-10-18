@@ -52,16 +52,19 @@ public class Stock : SelectableObject
     {
         //Debug.Log(name);
         bool isItemFound = false;
-        foreach (GameObject gameObject in stockObjects)
+        if (stockObjects.Count > 0)
         {
-            //Debug.Log(gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text);
-            if (gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text == name)
+            foreach (GameObject gameObject in stockObjects)
             {
-                isItemFound = true;
-                //Debug.Log("Found it! Updating...");
-                gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Amount: " + amount;
-                break;
-            }            
+                Debug.Log(gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text);
+                if (gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text == name)
+                {
+                    isItemFound = true;
+                    //Debug.Log("Found it! Updating...");
+                    gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Amount: " + amount;
+                    break;
+                }
+            }
         }
         if (!isItemFound)
         {
