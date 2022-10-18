@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     public Color winColor;
     public Color loseColor;
 
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
+
     private void OnEnable()
     {
         TimeManager.onDayEndedEvent.AddListener(GoalCheck);

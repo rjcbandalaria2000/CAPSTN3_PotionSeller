@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Analytics;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 
 public class Stock : SelectableObject
 {
