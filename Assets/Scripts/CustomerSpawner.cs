@@ -46,9 +46,17 @@ public class CustomerSpawner : MonoBehaviour
         customerSpawn = StartCoroutine(spawnCustomer());
     }
 
-    public void RemoveCustomer()
+    public void RemoveCustomer(GameObject customer, string order)
     {
-        
+        if(spawnedCustomers.Count <= 0) { return; }
+        for(int i = 0; i < spawnedCustomers.Count; i++)
+        {
+            if (spawnedCustomers[i] == customer)
+            {
+                Destroy(spawnedCustomers[i]);
+                spawnedCustomers.Remove(spawnedCustomers[i]);
+            }
+        }
     }
 
 }

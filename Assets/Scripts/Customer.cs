@@ -53,7 +53,7 @@ public class Customer : SelectableObject
             RNG = Random.Range(0, availablePotions.Count);
             PotionScriptableObject potion = availablePotions[RNG];
             customerOrder.Add(potion.name);
-            OrderManager.instance.onCustomerOrderEvent.Invoke(potion);
+            OrderManager.instance.onCustomerOrderEvent.Invoke(potion, this);
             Debug.Log("Customer wants: " + potion.name);
         }
         yield return null;

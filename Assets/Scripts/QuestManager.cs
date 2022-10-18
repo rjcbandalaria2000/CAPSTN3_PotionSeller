@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class QuestManager : MonoBehaviour
 {
@@ -96,7 +97,7 @@ public class QuestManager : MonoBehaviour
 
     public void QuestComplete(Quest quest)
     {
-        foreach (Quest q in questsOfTheDay)
+        foreach (Quest q in questsOfTheDay.ToList())
         {
             if (q.questTitle == quest.questTitle)
             {

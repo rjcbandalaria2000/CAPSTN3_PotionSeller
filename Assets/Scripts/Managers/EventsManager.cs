@@ -8,7 +8,7 @@ public class OnSelectableObjectClicked : UnityEvent { };
 #endregion
 
 #region OrderManager Events
-public class OnCustomerOrder : UnityEvent<PotionScriptableObject> { };
+public class OnCustomerOrder : UnityEvent<PotionScriptableObject, Customer> { };
 #endregion
 
 #region Inventory Events

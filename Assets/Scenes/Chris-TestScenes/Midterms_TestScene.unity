@@ -4755,6 +4755,8 @@ MonoBehaviour:
   - {fileID: 2043808534}
   - {fileID: 975641871}
   - {fileID: 1393332370}
+  index: 0
+  spawnedCustomers: []
 --- !u!4 &624150860
 Transform:
   m_ObjectHideFlags: 0
@@ -6888,7 +6890,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1573471262}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -9257,7 +9259,7 @@ MonoBehaviour:
   markupPercent: 0
   playerWallet: {fileID: 366556170}
   storeLevel: {fileID: 366556173}
-  sellExpPoints: 10
+  sellExpPoints: 20
   orderParentPanel: {fileID: 1349987620}
   orderPrefabUI: {fileID: 8034697261129825748, guid: 23fb4470b361de346a3a3e7f704eb9c9, type: 3}
 --- !u!4 &1283036972
@@ -16946,6 +16948,10 @@ PrefabInstance:
     - target: {fileID: 988059883539165421, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 988059883539165422, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: StartingMoney
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 988059883539165423, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_RootOrder

@@ -36,7 +36,9 @@ public class OrderManager : MonoBehaviour
     
     private List<PotionScriptableObject>    potions = new();
     private List<GameObject>                ordersList = new();
+    private List<Customer>                  customers = new();
     private Inventory                       playerInventory;
+    public Dictionary<Customer, PotionScriptableObject> customerOrderDictionary = new(); // test
 
     private void Awake()
     {
@@ -54,11 +56,13 @@ public class OrderManager : MonoBehaviour
         onCustomerOrderEvent.RemoveListener(AddOrder);
     }
 
-    public void AddOrder(PotionScriptableObject potion)
+    public void AddOrder(PotionScriptableObject potion, Customer customer)
     {
         GameObject orderListPrefab = Instantiate(orderPrefabUI, orderParentPanel.transform, false);
         ordersList.Add(orderListPrefab);
         potions.Add(potion);
+        customers.Add(customer);
+        customerOrderDictionary.Add(customer, potion);
         orderListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = potion.potionName;
         orderListPrefab.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = potion.buyPrice.ToString();
         orderListPrefab.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => SellOrder(potion));
@@ -109,7 +113,7 @@ public class OrderManager : MonoBehaviour
         // Gain money
         foreach (PotionScriptableObject potionScriptableObject in potions.ToList())
         {
-            if (potionScriptableObject.potionName == potion.potionName)
+            if (potionScriptableObject.potionName == potion.potionName) 
             { 
                 // check if there is an available potion in the player inventory
                 for(int i = 0; i < playerInventory.potions.Count; i++)
@@ -143,9 +147,17 @@ public class OrderManager : MonoBehaviour
 
                             //Temp fix reduce customer index to be able to spawn next available customer
                             SingletonManager.Get<CustomerSpawner>().index--;
+                            //if the potion is ordered by the customer
+                            foreach(Customer customer in customers)
+                            {
+                                if(customerOrderDictionary.TryGetValue(customer, out potion))
+                                {
+                                    customerOrderDictionary.Remove(customer);
+                                    Destroy(customer.gameObject);
+                                    break;
+                                }
+                            }
                             
-
-                            break;
                         }
                         else
                         {
