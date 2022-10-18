@@ -140,6 +140,11 @@ public class OrderManager : MonoBehaviour
                                     break;
                                 }
                             }
+
+                            //Temp fix reduce customer index to be able to spawn next available customer
+                            SingletonManager.Get<CustomerSpawner>().index--;
+                            
+
                             break;
                         }
                         else
