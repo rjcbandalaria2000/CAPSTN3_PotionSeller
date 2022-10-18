@@ -548,6 +548,8 @@ MonoBehaviour:
   PotionReceived: {fileID: 0}
   successUI: {fileID: 890067457408710878}
   failUI: {fileID: 8161399968619844914}
+  leftArrowUI: {fileID: 7070581347686272431}
+  rightArrowUI: {fileID: 822310967130300992}
 --- !u!1 &7070581347686272431
 GameObject:
   m_ObjectHideFlags: 0

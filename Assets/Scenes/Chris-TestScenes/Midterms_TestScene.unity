@@ -1439,6 +1439,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5688264350249643127, guid: f14266ee3065e4e45bdd742a290237dd, type: 3}
   m_PrefabInstance: {fileID: 92201097}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &117248269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7070581347686272431, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+  m_PrefabInstance: {fileID: 1659697439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &120001978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6940,6 +6945,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914825527}
   m_CullTransparentMesh: 1
+--- !u!1 &918949845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 822310967130300992, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+  m_PrefabInstance: {fileID: 1659697439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &940969790
 GameObject:
   m_ObjectHideFlags: 0
@@ -13083,8 +13093,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1218793644425818757, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3628227651303133294, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: leftArrowUI
+      value: 
+      objectReference: {fileID: 117248269}
+    - target: {fileID: 3628227651303133294, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: rightArrowUI
+      value: 
+      objectReference: {fileID: 918949845}
     - target: {fileID: 6860338093154630489, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
