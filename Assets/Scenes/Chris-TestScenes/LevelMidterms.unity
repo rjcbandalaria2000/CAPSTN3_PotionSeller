@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
+    - target: {fileID: 885234321859564435, guid: 7acd6aa5f7796fa4c8bb54a8ef2dab85, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 779620cfb8fdd2542af7c60083b7e84f, type: 2}
     - target: {fileID: 1579904313470823540, guid: 7acd6aa5f7796fa4c8bb54a8ef2dab85, type: 3}
       propertyPath: m_Name
       value: prepping_table_brewing_area
