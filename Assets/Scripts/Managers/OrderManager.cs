@@ -124,7 +124,8 @@ public class OrderManager : MonoBehaviour
                         {
                             onQuestCompletedEvent?.Invoke(QuestManager.instance.sellPotionQuest);
                             Debug.Log("Has enough " + potion.potionName + " in the inventory... Selling");
-                            playerInventory.potions[i].itemAmount -= 1;
+                            playerInventory.RemoveItem(potions[i].name);
+                            //playerInventory.potions[i].itemAmount -= 1;
                             potions.Remove(potionScriptableObject);
                             Debug.Log("SOLD: Markup Percent is " + markupPercent);
                             playerWallet.AddMoney(Mathf.RoundToInt(potionScriptableObject.buyPrice + (potionScriptableObject.buyPrice * markupPercent)));
