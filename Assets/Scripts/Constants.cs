@@ -9,6 +9,6 @@ public class Constants
     public const int HOURS_IN_DAY = 24;
     public const int MINUTES_IN_HOUR = 60;
     public const int SECONDS_IN_MINUTES = 60;
-    public const int MAX_DAY = 30;
+    public const int MAX_DAY = 3;
     public const int DEBT = 10000;
 }
