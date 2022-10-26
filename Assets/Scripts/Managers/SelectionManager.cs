@@ -44,8 +44,16 @@ public class SelectionManager : MonoBehaviour
                 Renderer selectionRend = _selection.GetComponent<Renderer>();
                 // reset back to default material color
                 selectionRend.material = defaultMaterial;
+                if (_selection.transform.childCount > 0)
+                {
+                    foreach (Transform child in _selection.transform)
+                    {
+                        Renderer childSelection = child.GetComponent<Renderer>();
+                        childSelection.material = defaultMaterial;  
+                    }
+                }
                 // resets _selection to null
-                _selection.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
+                _selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(false);
             }
 
             _selection = null;
@@ -69,6 +77,14 @@ public class SelectionManager : MonoBehaviour
                     defaultMaterial = selectionRend.material;
                     // set material to selectable (highlighted)
                     selectionRend.material = highlightMaterial;
+                    if (selection.transform.childCount > 0)
+                    {
+                        foreach(Transform child in selection.transform)
+                        {
+                            Renderer childSelection = child.GetComponent<Renderer>();
+                            childSelection.material = highlightMaterial;
+                        }
+                    }
                     selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(true);
                 }
                 _selection = selection;
