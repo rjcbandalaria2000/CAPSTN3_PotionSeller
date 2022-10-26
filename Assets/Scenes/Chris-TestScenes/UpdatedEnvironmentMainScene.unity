@@ -21772,6 +21772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quest
       objectReference: {fileID: 0}
+    - target: {fileID: 3199120548859810597, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 3199120548859810602, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
       propertyPath: m_RootOrder
       value: 6

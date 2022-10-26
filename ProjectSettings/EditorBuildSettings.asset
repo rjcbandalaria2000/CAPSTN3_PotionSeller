@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chris-TestScenes/UpdatedEnvironmentMainScene.unity
     guid: 3e7516c6d5cd01a48af53195a3e6fa0a
+  - enabled: 1
+    path: Assets/Scenes/Chris-TestScenes/MainMenu-Test.unity
+    guid: d4f2f6d26ddc7ff45ba06db2d295c55a
+  - enabled: 1
+    path: Assets/Scenes/Chris-TestScenes/Persistence_Testing 1.unity
+    guid: fb85e794a1213434aba73bb65f76110e
   m_configObjects: {}
