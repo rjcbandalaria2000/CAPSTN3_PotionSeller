@@ -9,6 +9,7 @@ public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material selectMaterial;
+    private List<Material> defaultMaterials = new();
     private Material defaultMaterial;
     private Transform _selection;
 
@@ -40,17 +41,23 @@ public class SelectionManager : MonoBehaviour
                 _selection.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
             }
             if (_selection.CompareTag("Selectable"))
-            {
-                Renderer selectionRend = _selection.GetComponent<Renderer>();
-                // reset back to default material color
-                selectionRend.material = defaultMaterial;
+            {                
                 if (_selection.transform.childCount > 0)
                 {
+                    int i = 0;
                     foreach (Transform child in _selection.transform)
                     {
                         Renderer childSelection = child.GetComponent<Renderer>();
-                        childSelection.material = defaultMaterial;  
+                        childSelection.material = defaultMaterials[i];
+                        i++;  
                     }
+                    defaultMaterials.Clear();
+                }
+                else
+                {
+                    Renderer selectionRend = _selection.GetComponent<Renderer>();
+                    // reset back to default material color
+                    selectionRend.material = defaultMaterial;
                 }
                 // resets _selection to null
                 _selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(false);
@@ -73,17 +80,21 @@ public class SelectionManager : MonoBehaviour
                 Renderer selectionRend = selection.GetComponent<Renderer>();
                 if (selectionRend != null)
                 {
-                    // store default material color
-                    defaultMaterial = selectionRend.material;
-                    // set material to selectable (highlighted)
-                    selectionRend.material = highlightMaterial;
                     if (selection.transform.childCount > 0)
                     {
                         foreach(Transform child in selection.transform)
                         {
                             Renderer childSelection = child.GetComponent<Renderer>();
+                            defaultMaterials.Add(childSelection.material);
                             childSelection.material = highlightMaterial;
                         }
+                    }
+                    else
+                    {                        
+                        // store default material color
+                        defaultMaterial = selectionRend.material;
+                        // set material to selectable (highlighted)
+                        selectionRend.material = highlightMaterial;
                     }
                     selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(true);
                 }
