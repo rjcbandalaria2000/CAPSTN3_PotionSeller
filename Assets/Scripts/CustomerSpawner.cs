@@ -44,10 +44,10 @@ public class CustomerSpawner : MonoBehaviour
         index = 0;
     }
 
-    public void Spawn()
-    {
-        customerSpawn = StartCoroutine(spawnCustomer());
-    }
+    //public void Spawn()
+    //{
+    //    customerSpawn = StartCoroutine(spawnCustomer());
+    //}
 
     public void RemoveCustomer()
     {
@@ -60,14 +60,18 @@ public class CustomerSpawner : MonoBehaviour
                 spawnCustomers.RemoveAt(i);
                 isOccupied[i] = false;
                 Debug.Log("Remove null");
+                break;
             }
         }
     }
 
-    public void callNewCustomer()
+    public IEnumerator callNewCustomer()
     {
-        RemoveCustomer(); 
-        if(spawnCustomers.Count < customerQuantity)
+        Debug.Log("Calling New Customer");
+        yield return new WaitForSeconds(2.0f);
+        RemoveCustomer();
+
+        if (spawnCustomers.Count < customerQuantity)
         {
             while(index < isOccupied.Count)
             {

@@ -157,8 +157,8 @@ public class OrderManager : MonoBehaviour
                                     break;
                                 }
                             }
-                            SingletonManager.Get<CustomerSpawner>().RemoveCustomer();
-                            
+                            //SingletonManager.Get<CustomerSpawner>().RemoveCustomer();
+                            StartCoroutine(SingletonManager.Get<CustomerSpawner>().callNewCustomer());
                         }
                         else
                         {
