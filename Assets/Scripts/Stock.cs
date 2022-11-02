@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.UI;
 //using static UnityEditor.Progress;
 
 public class Stock : SelectableObject
@@ -48,7 +50,7 @@ public class Stock : SelectableObject
         playerInventory.onRemoveItemEvent.RemoveListener(RemoveStock);
     }
 
-    public void CreateStock(string name, int amount)
+    public void CreateStock(ScriptableObject scriptableObject, int amount)
     {
         //Debug.Log(name);
         bool isItemFound = false;
@@ -56,8 +58,8 @@ public class Stock : SelectableObject
         {
             foreach (GameObject gameObject in stockObjects)
             {
-                Debug.Log(gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text);
-                if (gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text == name)
+                //Debug.Log(gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text);
+                if (gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text == scriptableObject.name)
                 {
                     isItemFound = true;
                     //Debug.Log("Found it! Updating...");
@@ -67,19 +69,30 @@ public class Stock : SelectableObject
             }
         }
         if (!isItemFound)
-        {
+        {            
+            //Debug.Log(scriptableObject.GetType());
             GameObject item = Instantiate(itemPanelPrefab, stockPanelParent.transform, false);
+            if (scriptableObject.GetType() == typeof(PotionScriptableObject))
+            {
+                PotionScriptableObject potionScriptableObject = (PotionScriptableObject)scriptableObject;
+                item.transform.GetChild(1).GetComponent<Image>().sprite = potionScriptableObject.potionIconSprite;
+            }
+            else if (scriptableObject.GetType() == typeof(IngredientScriptableObject))
+            {
+                IngredientScriptableObject ingredientScriptableObject = (IngredientScriptableObject)scriptableObject;
+                item.transform.GetChild(1).GetComponent<Image>().sprite = ingredientScriptableObject.ingredientSprite;
+            }
             item.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Amount: " + amount;
-            item.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = name;
+            item.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = scriptableObject.name;
             stockObjects.Add(item);
         }
     }
 
-    public void RemoveStock(string name, int amount)
+    public void RemoveStock(ScriptableObject scriptableObject, int amount)
     {
         foreach(GameObject gameObject in stockObjects)
         {
-            if (gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text == name)
+            if (gameObject.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text == scriptableObject.name)
             {
                 gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Amount: " + amount;    
                 if (gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == $"Amount: 0")

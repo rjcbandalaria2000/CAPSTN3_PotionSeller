@@ -24,10 +24,7 @@ public class Shop : MonoBehaviour
         else
         {
             Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
-        }
-
-       
-       
+        }       
     }
 
     public void BuyItem(string itemName)
@@ -44,7 +41,7 @@ public class Shop : MonoBehaviour
                     PlayerWallet.SpendMoney((int)itemIngredient.ingredientScriptableObject.buyPrice);
                     Debug.Log("Bought " + itemIngredient.ingredientScriptableObject.ingredientName);
                     //Inventory.instance.AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
-                    SingletonManager.Get<Inventory>().AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
+                    SingletonManager.Get<Inventory>().AddItem(itemIngredient.ingredientScriptableObject);
                 }
                 else
                 {
@@ -71,8 +68,8 @@ public class Shop : MonoBehaviour
                 if (PlayerWallet.Money >= itemPotion.potionScriptableObject.buyPrice)
                 {
                     float getPrice = itemPotion.potionScriptableObject.buyPrice * markupPercent;
-                    PlayerWallet.AddMoney(Mathf.RoundToInt(getPrice));
                     Debug.Log("Bought " + itemPotion.potionScriptableObject.potionName);
+                    PlayerWallet.AddMoney(Mathf.RoundToInt(getPrice));
                     //Inventory.instance.RemoveItem(itemPotion.potionScriptableObject.potionName);
                 }
                 else
@@ -128,8 +125,6 @@ public class Shop : MonoBehaviour
                 displayCosts[index].updateCount(index);
             }
         }
-     
-          
     }
 
     public void decreaseQuantitiy(int index)
@@ -148,10 +143,7 @@ public class Shop : MonoBehaviour
                 itemIngredient.ingredientScriptableObject.sellPrice -= 1;
                 displayIngredientsQuantity[index].updateCount(index);
                 displayCosts[index].updateCount(index);
-            }
-            
-            
+            }            
         }
-      
     }
 }

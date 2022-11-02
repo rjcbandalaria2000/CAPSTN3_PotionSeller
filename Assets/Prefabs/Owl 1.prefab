@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1994413904020496325}
   - component: {fileID: 4344112893448235791}
   - component: {fileID: 7798878471144912295}
+  - component: {fileID: 9064058313822652955}
   m_Layer: 0
   m_Name: Owl_Model
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +98,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 151.29822, y: 110.580505, z: 154.26529}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9064058313822652955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830969595681213146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94557d794bc6fe84199045c2766b0866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: OwlCustomer
+  objectNameUI: {fileID: 6535413301770951576}
+  objectPanelUI: {fileID: 0}
+  availablePotions:
+  - {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
+  - {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
+  - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
+  - {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
+  customerOrder: []
+  targetPos: {fileID: 0}
+  OrderQuantity: 1
+  RNG: 0
+  markUP: 0
+  speed: 1
+  isSelect: 0
 --- !u!1 &6535413301770951576
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,10 +352,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 713979242171022968}
-  - component: {fileID: 3489084183167131891}
   m_Layer: 0
   m_Name: Owl 1
-  m_TagString: Selectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,30 +376,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3489084183167131891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9050541336643002333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94557d794bc6fe84199045c2766b0866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: OwlCustomer
-  objectNameUI: {fileID: 6535413301770951576}
-  objectPanelUI: {fileID: 0}
-  availablePotions:
-  - {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
-  - {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
-  - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
-  - {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
-  customerOrder: []
-  targetPos: {fileID: 0}
-  OrderQuantity: 1
-  RNG: 0
-  markUP: 0
-  speed: 1
-  isSelect: 0

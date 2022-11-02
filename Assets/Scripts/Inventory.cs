@@ -33,15 +33,22 @@ public class Inventory : MonoBehaviour
 
     public void Start()
     {
-        
+        for (int i = 0; i < potions.Count; i++)
+        {
+            potions[i].itemName = potions[i].potionSO.potionName;
+        }
+        for (int i = 0; i < ingredients.Count; i++)
+        {
+            ingredients[i].itemName = ingredients[i].ingredientSO.ingredientName;
+        }
     }
 
-    public void AddItem(string name)
+    public void AddItem(ScriptableObject scriptableObject)
     {
         int amount = 0;
         for (int i = 0; i < potions.Count; i++)
         {
-            if (potions[i].itemName == name)
+            if (potions[i].itemName == scriptableObject.name)
             {
                 potions[i].itemAmount++;                
                 amount = potions[i].itemAmount;
@@ -50,7 +57,7 @@ public class Inventory : MonoBehaviour
         }
         for (int i = 0; i < ingredients.Count; i++)
         {
-            if (ingredients[i].itemName == name)
+            if (ingredients[i].itemName == scriptableObject.name)
             {
                 ingredients[i].itemAmount++;                
                 amount = ingredients[i].itemAmount;
@@ -58,15 +65,15 @@ public class Inventory : MonoBehaviour
             }
         }
         //Debug.Log(name);
-        onAddItemEvent.Invoke(name, amount);
+        onAddItemEvent.Invoke(scriptableObject, amount);
     }
 
-    public void RemoveItem(string name)
+    public void RemoveItem(ScriptableObject scriptableObject)
     {
         int amount = 0;
         for (int i = 0; i < potions.Count; i++)
         {
-            if (potions[i].itemName == name)
+            if (potions[i].itemName == scriptableObject.name)
             {
                 potions[i].itemAmount--;
                 amount = potions[i].itemAmount;
@@ -75,22 +82,21 @@ public class Inventory : MonoBehaviour
         }
         for (int i = 0; i < ingredients.Count; i++)
         {
-            if (ingredients[i].itemName == name)
+            if (ingredients[i].itemName == scriptableObject.name)
             {
                 ingredients[i].itemAmount--;
                 amount = ingredients[i].itemAmount;
                 break;
             }
         }
-        onRemoveItemEvent.Invoke(name, amount);
-    
+        onRemoveItemEvent.Invoke(scriptableObject, amount);    
     }
 
-    public bool IsPotionAvailable(string name)
+    public bool IsPotionAvailable(ScriptableObject scriptableObject)
     {
         for (int i = 0; i < potions.Count; i++)
         {
-            if (potions[i].itemName == name)
+            if (potions[i].itemName == scriptableObject.name)
             {
                 if (potions[i].itemAmount > 0)
                 {
