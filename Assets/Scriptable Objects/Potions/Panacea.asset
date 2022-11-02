@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ca8ae4459fb17940a376bf208628bc8, type: 3}
-  m_Name: Vicks
+  m_Name: Panacea
   m_EditorClassIdentifier: 
-  potionName: Vicks
+  potionName: Panacea
   potionSprite: {fileID: 21300000, guid: ca417d4bd383c0a4ab6cdac19ff5329a, type: 3}
   potionIconSprite: {fileID: 21300000, guid: 91aa54276816308479a3c05a63cda482, type: 3}
   buyPrice: 30
   sellPrice: 0
+  description:
+  - wounds and mild desease
   requiredIngredients:
   - ingredient: {fileID: 11400000, guid: 4b6f3551de3679d488246ba068e34740, type: 2}
     quantity: 1

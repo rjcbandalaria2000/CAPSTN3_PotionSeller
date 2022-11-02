@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ca8ae4459fb17940a376bf208628bc8, type: 3}
-  m_Name: Katol
+  m_Name: Bloom
   m_EditorClassIdentifier: 
-  potionName: Katol
-  potionSprite: {fileID: 21300000, guid: 443c6cd36f82dba4faf780a50660006a, type: 3}
-  potionIconSprite: {fileID: 21300000, guid: a64b4c727351f494fa18cd1d4a71e264, type: 3}
-  buyPrice: 20
+  potionName: Bloom
+  potionSprite: {fileID: 21300000, guid: 5320f2cf20a8fda4baa5465e5a8b1e7a, type: 3}
+  potionIconSprite: {fileID: 21300000, guid: ea4c8156a286d7f4aab438b8aab314d4, type: 3}
+  buyPrice: 30
   sellPrice: 0
+  description:
+  - faster growth
   requiredIngredients:
   - ingredient: {fileID: 11400000, guid: d0116ef6e149e9e4b8fe1673e478f612, type: 2}
     quantity: 1
-  - ingredient: {fileID: 11400000, guid: 4b6f3551de3679d488246ba068e34740, type: 2}
+  - ingredient: {fileID: 11400000, guid: 6b6217177fbf26648bdb237de7951a8f, type: 2}
     quantity: 1
