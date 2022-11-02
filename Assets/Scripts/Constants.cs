@@ -11,4 +11,5 @@ public class Constants
     public const int SECONDS_IN_MINUTES = 60;
     public const int MAX_DAY = 3;
     public const int DEBT = 10000;
+    public const float ROUND_OFF_DECIMAL = 10f;
 }

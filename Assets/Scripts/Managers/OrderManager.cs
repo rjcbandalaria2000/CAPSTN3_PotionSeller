@@ -127,11 +127,33 @@ public class OrderManager : MonoBehaviour
                             playerInventory.RemoveItem(potions[i].name);
                             //playerInventory.potions[i].itemAmount -= 1;
                             potions.Remove(potionScriptableObject);
-                            Debug.Log("SOLD: Markup Percent is " + markupPercent);
-                            playerWallet.AddMoney(Mathf.RoundToInt(potionScriptableObject.buyPrice + (potionScriptableObject.buyPrice * markupPercent)));
 
-                            //Add experience 
-                            storeLevel.onGainExp.Invoke(sellExpPoints);
+                            //Check if the customer will accept the markup price
+                            foreach(Customer customer in customers)
+                            {
+                                if(customerOrderDictionary.TryGetValue(customer, out potion))
+                                {
+                                    MarkupAcceptance customerAcceptance = customer.gameObject.GetComponent<MarkupAcceptance>();
+                                    if (customerAcceptance)
+                                    {
+                                        if (customerAcceptance.IsWithinMarkupRange(markupPercent))
+                                        {
+                                            Debug.Log("SOLD: Markup Percent is " + markupPercent);
+                                            playerWallet.AddMoney(Mathf.RoundToInt(potionScriptableObject.buyPrice + (potionScriptableObject.buyPrice * markupPercent)));
+                                            //Add experience 
+                                            storeLevel.onGainExp.Invoke(sellExpPoints);Debug.Log("Markup accepted");
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            Debug.Log("Markup unaccepted");
+                                        }
+                                    }
+                                }
+                            }
+                            
+
+                            
 
                             //Remove Order from OrderList
                             // Remove Order from UI

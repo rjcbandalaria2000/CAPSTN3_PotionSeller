@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Chris-TestScenes/MainMenu-Test.unity
     guid: d4f2f6d26ddc7ff45ba06db2d295c55a
   - enabled: 1
-    path: Assets/Scenes/Chris-TestScenes/UpdatedEnvironmentMainScene.unity
+    path: Assets/Scenes/Chris-TestScenes/CustomerAcceptanceRange - TestScene.unity
     guid: 3e7516c6d5cd01a48af53195a3e6fa0a
   m_configObjects: {}

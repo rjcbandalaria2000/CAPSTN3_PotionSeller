@@ -391,3 +391,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMarkUp: 0
   maxMarkUp: 0
+  minMarkUpRandomValue: 0.5
+  maxMarkUpRandomValue: 2
