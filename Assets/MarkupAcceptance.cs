@@ -15,7 +15,15 @@ public class MarkupAcceptance : MonoBehaviour
 
     public bool IsWithinMarkupRange(float markUpAmount)
     {
-        return true;
+        if (markUpAmount <= maxMarkUp && markUpAmount >= minMarkUp)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 
    
