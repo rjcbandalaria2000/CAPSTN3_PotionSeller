@@ -15,6 +15,8 @@ public class Customer : SelectableObject
     public List<PotionScriptableObject> customerPotion = new();
     public Transform targetPos;
 
+    public GameObject thisParent;
+
     public int OrderQuantity;
     public int RNG;
 
@@ -27,10 +29,13 @@ public class Customer : SelectableObject
     public bool isSelect;
 
     Coroutine animationRoutine;
+
+    public OnOrderComplete onOrderComplete = new OnOrderComplete();
    
     // Start is called before the first frame update
     void Awake()    
     {
+        thisParent = this.transform.parent.gameObject;
         isSelect = false;
         markUP = Random.Range(0, 10);
         playerInventory = SingletonManager.Get<Inventory>();
@@ -126,8 +131,13 @@ public class Customer : SelectableObject
                     OrderManager.instance.sellButton.onClick.RemoveListener(() => SellOrder());
 
                     // Destroy gameObject and call (spawn) a new customer (gameObject)
-                    Destroy(transform.parent.gameObject);
-                    StartCoroutine(SingletonManager.Get<CustomerSpawner>().callNewCustomer());                    
+
+                    SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
+                    onOrderComplete.Invoke();
+
+                    Destroy(thisParent);
+
+                                    
                     //SingletonManager.Get<CustomerSpawner>().CheckForNull();
                 }
                 else

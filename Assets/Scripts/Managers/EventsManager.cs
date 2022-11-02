@@ -35,3 +35,9 @@ public class OnGainExp : UnityEvent <int> { };
 public class OnRefreshLevelUI : UnityEvent { };
 
 #endregion
+
+#region OrderEvent
+
+public class OnOrderComplete : UnityEvent { };
+
+#endregion
