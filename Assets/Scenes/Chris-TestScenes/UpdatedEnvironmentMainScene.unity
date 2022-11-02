@@ -6074,7 +6074,7 @@ GameObject:
   - component: {fileID: 624150860}
   - component: {fileID: 624150859}
   m_Layer: 0
-  m_Name: CustomerSpawner
+  m_Name: ~CustomerSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6115,7 +6115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &625780320
 PrefabInstance:
@@ -6881,7 +6881,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764571098
 GameObject:
@@ -21806,7 +21806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988059883539165423, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 988059883539165423, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_LocalPosition.x
