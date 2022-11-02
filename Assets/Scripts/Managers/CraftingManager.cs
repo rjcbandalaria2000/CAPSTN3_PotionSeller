@@ -116,7 +116,7 @@ public class CraftingManager : MonoBehaviour
             //Inventory.instance.AddItem(selectedPotionScriptableObject.potionName);
             if (selectedPotionScriptableObject)
             {
-                SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject.potionName);
+                SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject);
                 onQuestCompletedEvent?.Invoke(QuestManager.instance.createPotionQuest);
             }
            
@@ -127,6 +127,4 @@ public class CraftingManager : MonoBehaviour
             selectedPotionIconImage.sprite = defaultPotionIconImage;
         }
     }
-
-
 }

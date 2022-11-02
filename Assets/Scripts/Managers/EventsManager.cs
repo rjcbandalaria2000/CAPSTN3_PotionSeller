@@ -12,8 +12,8 @@ public class OnCustomerOrder : UnityEvent<PotionScriptableObject, Customer> { };
 #endregion
 
 #region Inventory Events
-public class AddItemEvent : UnityEvent<string, int> { };
-public class RemoveItemEvent : UnityEvent<string, int> { };
+public class AddItemEvent : UnityEvent<ScriptableObject, int> { };
+public class RemoveItemEvent : UnityEvent<ScriptableObject, int> { };
 #endregion
 
 #region TimeManager Events

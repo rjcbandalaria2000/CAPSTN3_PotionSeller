@@ -7,9 +7,8 @@ using UnityEngine.EventSystems;
 
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private Material highlightMaterial;
-    [SerializeField] private Material selectMaterial;
     private List<Material> defaultMaterials = new();
+    [SerializeField] private Material highlightMaterial;
     private Material defaultMaterial;
     private Transform _selection;
 
@@ -24,20 +23,18 @@ public class SelectionManager : MonoBehaviour
     {
         if (_selection != null)
         {
-            if (customer != null && !customer.isSelect)
+            if (_selection.CompareTag("Customer"))
             {
                 Renderer selectionRend = _selection.GetComponent<Renderer>();
-                // reset back to default material color
+                //reset back to default material color
                 selectionRend.material = defaultMaterial;
-                // resets _selection to null
-                _selection.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
+                _selection.gameObject.transform.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
             }
             if (potion != null && !potion.isSelect)
             {
                 Renderer selectionRend = _selection.GetComponent<Renderer>();
                 // reset back to default material color
                 selectionRend.material = defaultMaterial;
-                // resets _selection to null
                 _selection.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
             }
             if (_selection.CompareTag("Selectable"))
@@ -74,6 +71,8 @@ public class SelectionManager : MonoBehaviour
             if(EventSystem.current.IsPointerOverGameObject()) { return; }
            
             Transform selection = hit.transform;
+
+            //Debug.Log(selection);
             
             if (selection.CompareTag("Selectable")) // FOR OBJECTS
             {
@@ -83,7 +82,7 @@ public class SelectionManager : MonoBehaviour
                     if (selection.transform.childCount > 0)
                     {
                         foreach(Transform child in selection.transform)
-                        {
+                        { 
                             Renderer childSelection = child.GetComponent<Renderer>();
                             defaultMaterials.Add(childSelection.material);
                             childSelection.material = highlightMaterial;
@@ -104,7 +103,7 @@ public class SelectionManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     // Output name
-                    // Debug.Log(hit.transform.name);
+                    //Debug.Log(hit.transform.name);
                     
                     // Fire an event
                     selection.gameObject.GetComponent<SelectableObject>()?.onSelectableObjectClickedEvent.Invoke();
@@ -113,25 +112,14 @@ public class SelectionManager : MonoBehaviour
 
             //---------------------------------------------------------------------------------------------------------------------
            
-            customer = hit.transform.gameObject.GetComponent<Customer>();
             if (selection.CompareTag("Customer"))
             {
-                Renderer selectionRend = customer.GetComponent<Renderer>();
-
+                Renderer selectionRend = selection.GetComponent<Renderer>();
                 if (selectionRend != null)
                 {
-                    if(!customer.isSelect)
-                    {
-                        defaultMaterial = selectionRend.material;
-                        selectionRend.material = highlightMaterial;
-                    }
-                    else
-                    {
-                        selectionRend.material = selectMaterial;
-                    }
-                   
+                    defaultMaterial = selectionRend.material;
+                    selectionRend.material = highlightMaterial;
                     selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(true);
-
                 }
                 _selection = selection;
 
@@ -173,7 +161,7 @@ public class SelectionManager : MonoBehaviour
                     }
                     else
                     {
-                        selectionRend.material = selectMaterial;
+                        selectionRend.material = highlightMaterial;
                     }
 
                     selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(true);

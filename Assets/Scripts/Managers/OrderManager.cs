@@ -21,23 +21,31 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public float                            markupPercent = 0f;
-    public Wallet                           playerWallet;
-    public StoreLevel                       storeLevel;
-    public int                              sellExpPoints = 10;
+    public float markupPercent = 0f;
+    public Wallet playerWallet;
+    public StoreLevel storeLevel;
+    public int sellExpPoints = 10;
 
     [Header("Unity Events")]
-    public OnCustomerOrder                  onCustomerOrderEvent = new OnCustomerOrder();
-    public QuestCompletedEvent              onQuestCompletedEvent = new QuestCompletedEvent();
+    public OnCustomerOrder onCustomerOrderEvent = new OnCustomerOrder();
+    public QuestCompletedEvent onQuestCompletedEvent = new QuestCompletedEvent();
 
     [Header("UI Element")]
-    public GameObject                       orderParentPanel;
-    public GameObject                       orderPrefabUI;
-    
-    private List<PotionScriptableObject>    potions = new();
-    private List<GameObject>                ordersList = new();
-    private List<Customer>                  customers = new();
-    private Inventory                       playerInventory;
+    public GameObject orderPanelUI;
+    public GameObject orderParentPanel;
+    public GameObject orderPrefabUI;
+    public Image orderImage;
+    public TextMeshProUGUI orderName;
+    public TextMeshProUGUI orderPrice;
+    public Button sellButton;
+
+    [HideInInspector]
+    public PotionScriptableObject potionOrder;
+
+    private List<PotionScriptableObject> potions = new();
+    private List<GameObject> ordersList = new();
+    private List<Customer> customers = new();
+    private Inventory playerInventory;
     public Dictionary<Customer, PotionScriptableObject> customerOrderDictionary = new(); // test
 
     private void Awake()
@@ -49,11 +57,11 @@ public class OrderManager : MonoBehaviour
 
     private void OnEnable()
     {
-        onCustomerOrderEvent.AddListener(AddOrder);
+        //onCustomerOrderEvent.AddListener(AddOrder);
     }
     private void OnDisable()
     {
-        onCustomerOrderEvent.RemoveListener(AddOrder);
+        //onCustomerOrderEvent.RemoveListener(AddOrder);
     }
 
     public void AddOrder(PotionScriptableObject potion, Customer customer)
@@ -65,21 +73,13 @@ public class OrderManager : MonoBehaviour
         customerOrderDictionary.Add(customer, potion);
         orderListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = potion.potionName;
         orderListPrefab.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = potion.buyPrice.ToString();
-        orderListPrefab.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => SellOrder(potion));
+        orderListPrefab.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => SellOrder(orderListPrefab.transform, potion, customer.gameObject));
     }
 
     public void RefreshList(int value)
     {
-        SetMarkupPercent(value);
-        for (int i = 0; i < ordersList.Count; i++)
-        {
-            //sellingPrice = selling price + (selling price* markup percent)
-            float sellingPrice = 0;
-            //Debug.Log(potions[j] + " | " + potions[j].buyPrice);
-            sellingPrice = potions[i].buyPrice + (potions[i].buyPrice * markupPercent);
-            //Debug.Log(sellingPrice);
-            ordersList[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(sellingPrice).ToString();
-        }
+        float sellingPrice = potionOrder.buyPrice + potionOrder.buyPrice * markupPercent;
+        orderParentPanel.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(sellingPrice).ToString();
     }
 
     public void SetMarkupPercent(int value)
@@ -104,70 +104,66 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public void SellOrder(PotionScriptableObject potion)
-    {
-        
-        //if(Inventory.instance.IsPotionAvailable(potion.potionName))        
-        //Debug.Log(potion.potionName);
-        //List<PotionScriptableObject> tempPotionsList = new();
-        // Gain money
-        foreach (PotionScriptableObject potionScriptableObject in potions.ToList())
+    public void SellOrder(Transform transform, PotionScriptableObject potion, GameObject gameObject)
+    { 
+        // check if there is an available potion in the player inventory
+        for (int i = 0; i < playerInventory.potions.Count; i++)
         {
-            if (potionScriptableObject.potionName == potion.potionName) 
-            { 
-                // check if there is an available potion in the player inventory
-                for(int i = 0; i < playerInventory.potions.Count; i++)
+            if (playerInventory.potions[i].itemName == potion.potionName)
+            {                
+                if (playerInventory.potions[i].itemAmount >= 1)
                 {
-                    if (playerInventory.potions[i].itemName == potion.potionName)
+                    onQuestCompletedEvent?.Invoke(QuestManager.instance.sellPotionQuest);
+
+                    //Debug.Log("Has enough " + potion.potionName + " in the inventory... Selling");
+                    //Debug.Log("SOLD: Markup Percent is " + markupPercent);
+                    //Debug.Log("SOLD: Sold for " + Mathf.RoundToInt(potion.buyPrice + (potion.buyPrice * markupPercent)));
+                    // Remove potion order item
+                    playerInventory.RemoveItem(potion);
+                    // Gain money
+                    playerWallet.AddMoney(Mathf.RoundToInt(potion.buyPrice + (potion.buyPrice * markupPercent)));
+                    
+                    //Add experience 
+                    storeLevel.onGainExp.Invoke(sellExpPoints);
+
+                    //Remove Order from OrderList
+                    // Remove Order from UI
+                    /*foreach (GameObject order in ordersList.ToList())
                     {
-                        if (playerInventory.potions[i].itemAmount >= 1)
+                        if (order.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == potion.potionName)
                         {
-                            onQuestCompletedEvent?.Invoke(QuestManager.instance.sellPotionQuest);
-                            Debug.Log("Has enough " + potion.potionName + " in the inventory... Selling");
-                            playerInventory.RemoveItem(potions[i].name);
-                            //playerInventory.potions[i].itemAmount -= 1;
-                            potions.Remove(potionScriptableObject);
-                            Debug.Log("SOLD: Markup Percent is " + markupPercent);
-                            playerWallet.AddMoney(Mathf.RoundToInt(potionScriptableObject.buyPrice + (potionScriptableObject.buyPrice * markupPercent)));
-
-                            //Add experience 
-                            storeLevel.onGainExp.Invoke(sellExpPoints);
-
-                            //Remove Order from OrderList
-                            // Remove Order from UI
-                            foreach (GameObject order in ordersList.ToList())
-                            {
-                                if (order.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == potion.potionName)
-                                {
-                                    order.transform.GetChild(3).GetComponent<Button>().onClick.RemoveListener(() => SellOrder(potion));
-                                    ordersList.Remove(order);
-                                    Destroy(order.gameObject);
-                                    break;
-                                }
-                            }
-
-                            //Temp fix reduce customer index to be able to spawn next available customer
-                            //SingletonManager.Get<CustomerSpawner>().index--;
-                            //if the potion is ordered by the customer
-                            foreach(Customer customer in customers)
-                            {
-                                if(customerOrderDictionary.TryGetValue(customer, out potion))
-                                {
-                                    customerOrderDictionary.Remove(customer);
-                                    Destroy(customer.gameObject);
-                                    break;
-                                }
-                            }
-                            //SingletonManager.Get<CustomerSpawner>().RemoveCustomer();
-                            StartCoroutine(SingletonManager.Get<CustomerSpawner>().callNewCustomer());
+                            order.transform.GetChild(3).GetComponent<Button>().onClick.RemoveListener(() => SellOrder(potion));
+                            ordersList.Remove(order);
+                            Destroy(order.gameObject);
+                            break;
                         }
-                        else
-                        {
-                            Debug.Log("Not enough potion");
-                        }
-                    }
-                }                
+                    }*/
+
+                    //Temp fix reduce customer index to be able to spawn next available customer
+                    //SingletonManager.Get<CustomerSpawner>().index--;
+                    //if the potion is ordered by the customer
+
+                    //foreach (Customer customer in customers)
+                    //{
+                    //    if (customerOrderDictionary.TryGetValue(customer, out potion))
+                    //    {
+                    //        customerOrderDictionary.Remove(customer);
+                    //        break;
+                    //    }
+                    //}
+
+                    //transform.GetChild(8).GetComponent<Button>().onClick.RemoveListener(() => OrderManager.instance.SellOrder(transform, potion, customer));
+
+                    Destroy(gameObject);
+                    //SingletonManager.Get<CustomerSpawner>().RemoveCustomer();
+                    //StartCoroutine(SingletonManager.Get<CustomerSpawner>().callNewCustomer());                    
+                }
+                else
+                {
+                    Debug.Log("Not enough potions to sell");                    
+                }
+                break;
             }
-        }       
+        }     
     }
 }

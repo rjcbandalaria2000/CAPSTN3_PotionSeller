@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class CustomerSpawner : MonoBehaviour
 {
@@ -18,14 +19,20 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Awake()
     {
+        index = 0;
         SingletonManager.Register(this);
+        customerSpawn = StartCoroutine(spawnCustomer());
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        index = 0;
-        customerSpawn = StartCoroutine(spawnCustomer());
+        StartCoroutine(CheckForNull());
+    }
+
+    void Update()
+    {
+        
     }
 
     IEnumerator spawnCustomer()
@@ -33,43 +40,40 @@ public class CustomerSpawner : MonoBehaviour
         while (index < customerQuantity)
         {
             GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
-            spawnCustomer.GetComponent<Customer>().targetPos = targetPoints[index];
+            spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
             spawnCustomers.Add(spawnCustomer);
             isOccupied[index] = true;
           
             yield return new WaitForSeconds(2.5f);
             index++;
         }
-
         index = 0;
     }
 
-    //public void Spawn()
-    //{
-    //    customerSpawn = StartCoroutine(spawnCustomer());
-    //}
-
-    public void RemoveCustomer()
+    public IEnumerator CheckForNull()
     {
-        //if(spawnCustomers.Count <= 0) { return; }
-        for(int i = 0; i < spawnCustomers.Count; i++)
+        while (true)
         {
-            if (spawnCustomers[i] == null)
+            yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < spawnCustomers.Count; i++)
             {
-                //spawnCustomers.Remove(spawnCustomers[i]);
-                spawnCustomers.RemoveAt(i);
-                isOccupied[i] = false;
-                Debug.Log("Remove null");
-                break;
+                if (spawnCustomers[i] == null)
+                {
+                    Debug.Log("Remove null");
+                    spawnCustomers.Remove(spawnCustomers[i]);
+                    //spawnCustomers.RemoveAt(i);
+                    isOccupied[i] = false;
+                    break;
+                }
             }
         }
+        
     }
 
     public IEnumerator callNewCustomer()
     {
         Debug.Log("Calling New Customer");
         yield return new WaitForSeconds(2.0f);
-        RemoveCustomer();
 
         if (spawnCustomers.Count < customerQuantity)
         {
@@ -78,7 +82,7 @@ public class CustomerSpawner : MonoBehaviour
                 if (isOccupied[index] == false)
                 {
                     GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
-                    spawnCustomer.GetComponent<Customer>().targetPos = targetPoints[index];
+                    spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
                     spawnCustomers.Add(spawnCustomer);
                     isOccupied[index] = true;
                     break; // Remove this if wants to spawn simultaneously
@@ -95,9 +99,7 @@ public class CustomerSpawner : MonoBehaviour
         {
             Debug.Log("Full Capacity");
         }
-
         index = 0;
-       
     }
 
     
