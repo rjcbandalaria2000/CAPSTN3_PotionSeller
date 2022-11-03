@@ -6257,7 +6257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e91f1d063800c1f48bc9b6770a5dde7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customer: {fileID: 9050541336643002333, guid: ca4b621db6934b94197e03e911684beb, type: 3}
+  customer:
+  - {fileID: 9050541336643002333, guid: ca4b621db6934b94197e03e911684beb, type: 3}
   customerQuantity: 3
   spawnPoint: {fileID: 1287701709}
   spawnCustomers: []

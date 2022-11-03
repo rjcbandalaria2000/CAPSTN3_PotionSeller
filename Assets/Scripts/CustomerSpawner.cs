@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 
 public class CustomerSpawner : MonoBehaviour
 {
-    public GameObject customer;
+    public List<GameObject> customer;
     public int customerQuantity;
     public Transform spawnPoint;
     public List<GameObject> spawnCustomers = new();
@@ -17,8 +17,8 @@ public class CustomerSpawner : MonoBehaviour
 
     Coroutine customerSpawn;
     Coroutine newSpawn;
-    
 
+    private int RNG;
     private void Awake()
     {
         index = 0;
@@ -41,7 +41,9 @@ public class CustomerSpawner : MonoBehaviour
     {
         while (index < customerQuantity)
         {
-            GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
+            RNG = Random.Range(0, customer.Count);
+
+            GameObject spawnCustomer = Instantiate(customer[RNG], spawnPoint.position, Quaternion.identity);
             spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
             spawnCustomer.transform.GetChild(0).GetComponent<Customer>().onOrderComplete.AddListener(newCustomerSpawn);
             spawnCustomers.Add(spawnCustomer);
@@ -107,7 +109,9 @@ public class CustomerSpawner : MonoBehaviour
             {
                 if (isOccupied[index] == false)
                 {
-                    GameObject spawnCustomer = Instantiate(customer, spawnPoint.position, Quaternion.identity);
+                    RNG = Random.Range(0,customer.Count);
+
+                    GameObject spawnCustomer = Instantiate(customer[RNG], spawnPoint.position, Quaternion.identity);
                     spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
                     spawnCustomers.Add(spawnCustomer);
                     isOccupied[index] = true;
