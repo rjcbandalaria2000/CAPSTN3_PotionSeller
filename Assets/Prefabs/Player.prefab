@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 988059883539165423}
   - component: {fileID: 988059883539165422}
   - component: {fileID: 988059883539165416}
+  - component: {fileID: 366556173}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f801b9b74af92447a6fa99f7ac9abbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingMoney: 5000
+  StartingMoney: 1500
   Money: 0
   WalletUIUpdate:
     m_PersistentCalls:
@@ -63,20 +64,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potions:
-  - itemName: Gayuma
+  - itemName: 
+    potionSO: {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
+    ingredientSO: {fileID: 0}
     itemAmount: 0
-  - itemName: Gugo
+  - itemName: 
+    potionSO: {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
+    ingredientSO: {fileID: 0}
     itemAmount: 0
-  - itemName: Katol
+  - itemName: 
+    potionSO: {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
+    ingredientSO: {fileID: 0}
     itemAmount: 0
-  - itemName: Vicks
+  - itemName: 
+    potionSO: {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
+    ingredientSO: {fileID: 0}
     itemAmount: 0
   ingredients:
-  - itemName: Wicked Shroom
+  - itemName: 
+    potionSO: {fileID: 0}
+    ingredientSO: {fileID: 11400000, guid: 3278b50ce61785c4a89df3a98a330d8b, type: 2}
     itemAmount: 0
-  - itemName: Mermaid Oil
+  - itemName: 
+    potionSO: {fileID: 0}
+    ingredientSO: {fileID: 11400000, guid: 4b6f3551de3679d488246ba068e34740, type: 2}
     itemAmount: 0
-  - itemName: Raw Plant
+  - itemName: 
+    potionSO: {fileID: 0}
+    ingredientSO: {fileID: 11400000, guid: d0116ef6e149e9e4b8fe1673e478f612, type: 2}
     itemAmount: 0
-  - itemName: Young Seedling
+  - itemName: 
+    potionSO: {fileID: 0}
+    ingredientSO: {fileID: 11400000, guid: 6b6217177fbf26648bdb237de7951a8f, type: 2}
     itemAmount: 0
+--- !u!114 &366556173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988059883539165421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d97c9ba734c6d4592149e33fea5260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 0
+  MaxExperiencePoints: c8000000f40100002003000084030000e8030000
+  CurrentExperiencePoints: 0

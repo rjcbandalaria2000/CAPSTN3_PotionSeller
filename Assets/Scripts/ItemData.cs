@@ -6,5 +6,7 @@ using UnityEngine;
 public class ItemData
 {
     public string itemName;
-    public int itemAmount;
+    public PotionScriptableObject potionSO;
+    public IngredientScriptableObject ingredientSO;
+    public int itemAmount;    
 }

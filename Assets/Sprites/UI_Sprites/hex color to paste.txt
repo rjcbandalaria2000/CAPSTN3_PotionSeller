@@ -1,0 +1,5 @@
+hex color to paste:
+
+desat purple: #5d4265
+
+off white: #ece6b7

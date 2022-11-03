@@ -111,9 +111,7 @@ public class QuestManager : MonoBehaviour
                 questsOfTheDay.Remove(q);
                 // Give reward/s to player
                 playerWallet.AddMoney(q.questReward);
-                // Inventory.AddItem(quest.rewardsList[GetRandNum(0, quest.RewardsList.Count)])
-               
-             
+                // Inventory.AddItem(quest.rewardsList[GetRandNum(0, quest.RewardsList.Count)])             
                 break;
             }
         }
