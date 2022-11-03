@@ -4,6 +4,7 @@ using System.Net.NetworkInformation;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 
@@ -31,6 +32,8 @@ public class Customer : SelectableObject
     Coroutine animationRoutine;
 
     public OnOrderComplete onOrderComplete = new OnOrderComplete();
+
+    public MarkupAcceptance markupAcceptance;
    
     // Start is called before the first frame update
     void Awake()    
@@ -41,6 +44,7 @@ public class Customer : SelectableObject
         playerInventory = SingletonManager.Get<Inventory>();
         StartCoroutine(initializeCustomerOrderList());
         animationRoutine = StartCoroutine(moveAnimation());
+        markupAcceptance = this.GetComponent<MarkupAcceptance>();
     }
     private void Start()
     {
@@ -96,6 +100,7 @@ public class Customer : SelectableObject
         OrderManager.instance.sellButton.onClick.RemoveAllListeners();
         OrderManager.instance.sellButton.onClick.AddListener(() => SellOrder());
 
+        Assert.IsNotNull(objectPanelUI, "UI panel not set or found");
         if (objectPanelUI == null) { return; }
         objectPanelUI.SetActive(true);
 
@@ -121,14 +126,22 @@ public class Customer : SelectableObject
 
                     // Remove potion order item
                     playerInventory.RemoveItem(customerPotion[0]);
-                    // Gain money
-                    OrderManager.instance.playerWallet.AddMoney(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
 
-                    // Add experience 
-                    OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
+                    if (markupAcceptance.IsWithinMarkupRange(OrderManager.instance.markupPercent))
+                    {
 
-                    // Remove listener reference ?
-                    OrderManager.instance.sellButton.onClick.RemoveListener(() => SellOrder());
+                        // Gain money
+                        OrderManager.instance.playerWallet.AddMoney(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
+
+                        // Add experience 
+                        OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
+
+                        // Remove listener reference ?
+                        OrderManager.instance.sellButton.onClick.RemoveListener(() => SellOrder());
+
+
+                    }
+                   
 
                     // Destroy gameObject and call (spawn) a new customer (gameObject)
 

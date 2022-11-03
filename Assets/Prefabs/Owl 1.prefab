@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4344112893448235791}
   - component: {fileID: 7798878471144912295}
   - component: {fileID: 9064058313822652955}
+  - component: {fileID: 3715932158876137560}
   m_Layer: 0
   m_Name: Owl_Model
   m_TagString: Selectable
@@ -118,13 +119,32 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
   - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
   - {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
-  customerOrder: []
+  customerPotion: []
   targetPos: {fileID: 0}
+  thisParent: {fileID: 0}
   OrderQuantity: 1
   RNG: 0
   markUP: 0
   speed: 1
   isSelect: 0
+  markupAcceptance: {fileID: 0}
+--- !u!114 &3715932158876137560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830969595681213146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e13ba1af992b047b6cb77b683729fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMarkUp: 0
+  maxMarkUp: 0
+  minMarkUpRandomValue: 0.5
+  maxMarkUpRandomValue: 2
+  markupValues: []
 --- !u!1 &6535413301770951576
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +170,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6535413301770951576}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -158,7 +178,7 @@ RectTransform:
   - {fileID: 1656031296209679196}
   m_Father: {fileID: 713979242171022968}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 56.3}
