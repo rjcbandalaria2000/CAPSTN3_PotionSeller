@@ -6,10 +6,7 @@ using UnityEngine.Events;
 using TMPro;
 
 public class UIManager : MonoBehaviour
-{
-    public TextMeshProUGUI SuccessTXT;
-    public TextMeshProUGUI FailureTXT;
-
+{ 
     public GameObject IngredientBook;
 
     private void Awake()
@@ -19,11 +16,6 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        if(SuccessTXT != null && FailureTXT != null)
-        {
-            SuccessTXT.gameObject.SetActive(false);
-            FailureTXT.gameObject.SetActive(false);
-        }
       
     }
 
