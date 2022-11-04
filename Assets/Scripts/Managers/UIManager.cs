@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI SuccessTXT;
     public TextMeshProUGUI FailureTXT;
 
+    public GameObject IngredientBook;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -28,5 +30,15 @@ public class UIManager : MonoBehaviour
     public void ClosePanel()
     {
 
+    }
+
+    public void ActivateIngredientBook()
+    {
+        IngredientBook.SetActive(true);
+    }
+
+    public void DeactivateIngredientBook()
+    {
+        IngredientBook.SetActive(false);
     }
 }
