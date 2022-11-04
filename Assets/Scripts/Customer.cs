@@ -21,8 +21,8 @@ public class Customer : SelectableObject
     public int OrderQuantity;
     public int RNG;
 
-    [Range(0,10)]
-    public int markUP;
+    //[Range(0,10)]
+    //public int markUP;
 
     [Range(0, 10)]
     public int speed;
@@ -40,7 +40,7 @@ public class Customer : SelectableObject
     {
         thisParent = this.transform.parent.gameObject;
         isSelect = false;
-        markUP = Random.Range(0, 10);
+        //markUP = Random.Range(0, 10);
         playerInventory = SingletonManager.Get<Inventory>();
         StartCoroutine(initializeCustomerOrderList());
         animationRoutine = StartCoroutine(moveAnimation());
@@ -134,19 +134,33 @@ public class Customer : SelectableObject
                         OrderManager.instance.playerWallet.AddMoney(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
 
                         // Add experience 
-                        OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
+                        //OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
+                        SingletonManager.Get<StoreLevel>().AddExpPoints(OrderManager.instance.sellExpPoints);
 
-                        // Remove listener reference ?
-                        OrderManager.instance.sellButton.onClick.RemoveListener(() => SellOrder());
+                       
 
+                        Debug.Log("Correct Markup price");
 
                     }
-                   
+                    else
+                    {
+                        Debug.Log("Incorrect mark up price");
+                    }
+
+                    //Temporary display of markup feedback 
+                    SingletonManager.Get<DisplayMarkUpFeedback>().StartDisplayMarkupFeedback(markupAcceptance.IsWithinMarkupRange(OrderManager.instance.markupPercent));
+
+                    // Remove listener reference ?
+                    OrderManager.instance.sellButton.onClick.RemoveListener(() => SellOrder());
 
                     // Destroy gameObject and call (spawn) a new customer (gameObject)
 
                     SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
                     onOrderComplete.Invoke();
+
+                    //Close UI panel after selling transaction
+                    OrderManager.instance.orderPanelUI.SetActive(false);
+                    //Show UI feedback
 
                     Destroy(thisParent);
 

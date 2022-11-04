@@ -144,7 +144,11 @@ MonoBehaviour:
   maxMarkUp: 0
   minMarkUpRandomValue: 0.5
   maxMarkUpRandomValue: 2
-  markupValues: []
+  markupValues:
+  - 0.5
+  - 1
+  - 1.5
+  - 2
 --- !u!1 &6535413301770951576
 GameObject:
   m_ObjectHideFlags: 0

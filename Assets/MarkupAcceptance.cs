@@ -9,10 +9,10 @@ public class MarkupAcceptance : MonoBehaviour
     public float maxMarkUp;
 
     [Header("Random Acceptance Range")]
-    [Range(0f, 2f)]
-    public float minMarkUpRandomValue;
-    [Range(0f, 2f)]
-    public float maxMarkUpRandomValue;
+    //[Range(0f, 2f)]
+    //public float minMarkUpRandomValue;
+    //[Range(0f, 2f)]
+    //public float maxMarkUpRandomValue;
     public List<float> markupValues = new();
 
     // Start is called before the first frame update
@@ -37,11 +37,18 @@ public class MarkupAcceptance : MonoBehaviour
 
     public void SetRandomMarkUpRandomValue()
     {
-        float minRandomValue = Random.Range(minMarkUpRandomValue, maxMarkUpRandomValue);
-        float maxRandomValue = Random.Range(minRandomValue, maxMarkUpRandomValue);
-        //Adjust the multiplier to be rounded off in decimals 
-        minMarkUp = Mathf.Round(minRandomValue * Constants.ROUND_OFF_DECIMAL) / Constants.ROUND_OFF_DECIMAL;
-        maxMarkUp = Mathf.Round(maxRandomValue * Constants.ROUND_OFF_DECIMAL) / Constants.ROUND_OFF_DECIMAL;
+        //float minRandomValue = Random.Range(minMarkUpRandomValue, maxMarkUpRandomValue);
+        //float maxRandomValue = Random.Range(minRandomValue, maxMarkUpRandomValue);
+        ////Adjust the multiplier to be rounded off in decimals 
+        //minMarkUp = Mathf.Round(minRandomValue * Constants.ROUND_OFF_DECIMAL) / Constants.ROUND_OFF_DECIMAL;
+        //maxMarkUp = Mathf.Round(maxRandomValue * Constants.ROUND_OFF_DECIMAL) / Constants.ROUND_OFF_DECIMAL;
+
+        // Only get the half for the minRandomValue
+        int minRandomValue = Random.Range(0, markupValues.Count / 2);
+        minMarkUp = markupValues[minRandomValue];
+        int maxRandomValue = Random.Range(markupValues.Count / 2, markupValues.Count);
+        maxMarkUp = markupValues[maxRandomValue];
+
         
     }
 
