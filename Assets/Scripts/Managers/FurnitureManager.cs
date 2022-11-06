@@ -13,7 +13,7 @@ public class FurnitureManager : MonoBehaviour
 
     public void ActivateFurniture(int storeLevel)
     {
-        furnitures[storeLevel].SetActive(true);
+        furnitures[storeLevel - 1].SetActive(true);
     }
 
 
