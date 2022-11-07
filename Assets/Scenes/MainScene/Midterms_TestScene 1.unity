@@ -5071,7 +5071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e91f1d063800c1f48bc9b6770a5dde7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customer: {fileID: 9050541336643002333, guid: ca4b621db6934b94197e03e911684beb, type: 3}
+  customer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   customerQuantity: 3
   spawnPoint: {fileID: 1287701709}
   spawnCustomers: []
@@ -6628,7 +6631,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: d538290a8db8be94c9eee1ad7adc554f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8fd65359e2b401c418233491b819d05d, type: 2}
+      objectReference: {fileID: 2100000, guid: cbf30a324fc75d24096f7b57de3d1c7e, type: 2}
     - target: {fileID: 919132149155446097, guid: d538290a8db8be94c9eee1ad7adc554f, type: 3}
       propertyPath: m_Name
       value: witch_low
@@ -9663,8 +9666,14 @@ MonoBehaviour:
   playerWallet: {fileID: 366556170}
   storeLevel: {fileID: 366556173}
   sellExpPoints: 20
+  orderPanelUI: {fileID: 0}
   orderParentPanel: {fileID: 1349987620}
   orderPrefabUI: {fileID: 8034697261129825748, guid: 23fb4470b361de346a3a3e7f704eb9c9, type: 3}
+  orderImage: {fileID: 0}
+  orderName: {fileID: 0}
+  orderPrice: {fileID: 0}
+  sellButton: {fileID: 0}
+  potionOrder: {fileID: 0}
 --- !u!4 &1283036972
 Transform:
   m_ObjectHideFlags: 0
@@ -15780,6 +15789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1826964120}
   - component: {fileID: 1826964119}
+  - component: {fileID: 1826964121}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -15864,6 +15874,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1826964121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826964118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1828410153
 GameObject:
   m_ObjectHideFlags: 0
@@ -16671,6 +16701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SuccessTXT: {fileID: 0}
   FailureTXT: {fileID: 0}
+  IngredientBook: {fileID: 0}
 --- !u!4 &1959826903
 Transform:
   m_ObjectHideFlags: 0
@@ -17868,7 +17899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: b60c5c7fafc96354dbffbf2c16c9757e, type: 2}
-  selectMaterial: {fileID: 0}
 --- !u!4 &2138788939
 Transform:
   m_ObjectHideFlags: 0
