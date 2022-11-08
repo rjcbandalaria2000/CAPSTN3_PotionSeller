@@ -1097,8 +1097,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 402.8674, y: 402.8674}
+  m_AnchoredPosition: {x: 202.56, y: -0.001358}
+  m_SizeDelta: {x: 807.98, y: 691.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8987494144831666057
 CanvasRenderer:
@@ -1230,7 +1230,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 8e62f5e540de8cb41b5b40fcd361407d, type: 2}
   m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 8400000, guid: 8e62f5e540de8cb41b5b40fcd361407d, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
