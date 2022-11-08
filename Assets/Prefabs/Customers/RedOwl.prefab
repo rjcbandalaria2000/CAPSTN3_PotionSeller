@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1267964732772512086, guid: b296a85f6cdacf4439212ddc91b938f2, type: 3}
+  - {fileID: 2100000, guid: e500f8d0ee8f5ea40900d391015c2f5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +124,6 @@ MonoBehaviour:
   thisParent: {fileID: 0}
   OrderQuantity: 1
   RNG: 0
-  markUP: 0
   speed: 1
   isSelect: 0
   markupAcceptance: {fileID: 0}
@@ -142,8 +141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMarkUp: 0
   maxMarkUp: 0
-  minMarkUpRandomValue: 0.5
-  maxMarkUpRandomValue: 2
   markupValues:
   - 0.5
   - 1
@@ -377,7 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713979242171022968}
   m_Layer: 0
-  m_Name: Owl 1
+  m_Name: RedOwl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
