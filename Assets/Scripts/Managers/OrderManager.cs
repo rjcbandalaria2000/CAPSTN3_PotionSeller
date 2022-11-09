@@ -79,7 +79,8 @@ public class OrderManager : MonoBehaviour
     public void RefreshList(int value)
     {
         float sellingPrice = potionOrder.buyPrice + potionOrder.buyPrice * markupPercent;
-        orderParentPanel.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(sellingPrice).ToString();
+        //orderParentPanel.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(sellingPrice).ToString();
+        orderPrice.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(sellingPrice).ToString();
     }
 
     public void SetMarkupPercent(int value)

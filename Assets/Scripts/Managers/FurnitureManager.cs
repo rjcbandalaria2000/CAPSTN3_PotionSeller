@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class FurnitureManager : MonoBehaviour
 {
@@ -13,7 +14,19 @@ public class FurnitureManager : MonoBehaviour
 
     public void ActivateFurniture(int storeLevel)
     {
-        furnitures[storeLevel - 1].SetActive(true);
+        if(furnitures.Count <= 0) { return; }
+        for(int i = 0; i < furnitures.Count; i++)
+        {
+            if(i < storeLevel)
+            {
+                furnitures[i].SetActive(true);
+            }
+            else
+            {
+                furnitures[i].SetActive(false);
+            }
+        } 
+        
     }
 
 

@@ -13,6 +13,8 @@ public class StoreLevel : MonoBehaviour
     public List<int>    MaxExperiencePoints;
     public int          CurrentExperiencePoints;
 
+    
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -23,6 +25,7 @@ public class StoreLevel : MonoBehaviour
     void Start()
     {
         onRefreshLevelUI.Invoke();
+        SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
     }
 
     public void AddExpPoints(int value)
@@ -46,7 +49,8 @@ public class StoreLevel : MonoBehaviour
         {
             CurrentExperiencePoints -= MaxExperiencePoints[Level];
             Level++;
-            
+            SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
+
         }
     }
 

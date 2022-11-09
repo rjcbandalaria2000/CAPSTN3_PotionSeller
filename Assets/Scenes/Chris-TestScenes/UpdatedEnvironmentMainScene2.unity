@@ -1024,7 +1024,8 @@ PrefabInstance:
       propertyPath: PlayerWallet
       value: 
       objectReference: {fileID: 366556170}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1032056364264726031, guid: c93c73a68e3da3746992db888a68f545, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c93c73a68e3da3746992db888a68f545, type: 3}
 --- !u!4 &33956069 stripped
 Transform:
@@ -20039,7 +20040,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1094986386020163696, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
 --- !u!4 &886079668 stripped
 Transform:
@@ -28012,7 +28014,8 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1283036971}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6533732966461964931, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
 --- !u!4 &1349987619 stripped
 Transform:
@@ -33148,7 +33151,8 @@ PrefabInstance:
       propertyPath: objectNameUI
       value: 
       objectReference: {fileID: 295726908}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5255818307879540430, guid: d8678103701239b48a52938c45bedaf2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d8678103701239b48a52938c45bedaf2, type: 3}
 --- !u!4 &1582145837 stripped
 Transform:
@@ -40431,7 +40435,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stock
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3635292028581341250, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
 --- !u!4 &1954862333 stripped
 Transform:
@@ -43673,7 +43678,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1214227585, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
 --- !u!1001 &9210625778968653001
 PrefabInstance:
