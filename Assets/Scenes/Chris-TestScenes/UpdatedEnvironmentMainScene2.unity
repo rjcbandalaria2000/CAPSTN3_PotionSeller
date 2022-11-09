@@ -6198,6 +6198,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d97c9ba734c6d4592149e33fea5260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &366556177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366556169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530306dba01dba3478cf0d8374229c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitures:
+  - {fileID: 734390532}
+  - {fileID: 295327410}
+  - {fileID: 535024252}
+  - {fileID: 65482845}
+  - {fileID: 561377362}
 --- !u!1 &370080575
 GameObject:
   m_ObjectHideFlags: 0
@@ -26040,7 +26058,7 @@ MonoBehaviour:
   markupPercent: 0
   playerWallet: {fileID: 366556170}
   storeLevel: {fileID: 366556175}
-  sellExpPoints: 20
+  sellExpPoints: 100
   orderPanelUI: {fileID: 1402045613}
   orderParentPanel: {fileID: 1349987620}
   orderPrefabUI: {fileID: 8034697261129825748, guid: 23fb4470b361de346a3a3e7f704eb9c9, type: 3}
@@ -34140,6 +34158,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1571267895}
     m_Modifications:
+    - target: {fileID: 1218793644425818757, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714335763934203294, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 148842678}
+    - target: {fileID: 2714335763934203294, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseUIPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 8113188589150071756, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
       propertyPath: m_RootOrder
       value: 4

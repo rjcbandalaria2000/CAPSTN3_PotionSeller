@@ -108,6 +108,8 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
         SwipeCount = 0;
         SwipedLeft = false;
         SwipedRight = false;
+        leftArrowUI.SetActive(true);
+        rightArrowUI.SetActive(true);
         DisableMixingResultUI();
     }
 
