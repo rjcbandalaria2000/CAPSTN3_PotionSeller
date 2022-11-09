@@ -95,7 +95,7 @@ public class Customer : SelectableObject
         
         // Change to OrderManager things
         OrderManager.instance.orderImage.sprite = customerPotion[0].potionIconSprite;
-        OrderManager.instance.orderName.text = customerPotion[0].potionName;
+        OrderManager.instance.orderName.text = customerPotion[0].description[0];
         OrderManager.instance.orderPrice.text = customerPotion[0].buyPrice.ToString();
         OrderManager.instance.sellButton.onClick.RemoveAllListeners();
         OrderManager.instance.sellButton.onClick.AddListener(() => SellOrder());

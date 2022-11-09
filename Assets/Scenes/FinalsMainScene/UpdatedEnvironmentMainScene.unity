@@ -13777,6 +13777,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1571267895}
     m_Modifications:
+    - target: {fileID: 762505984106318938, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: m_text
+      value: 000000
+      objectReference: {fileID: 0}
     - target: {fileID: 2547803754900185124, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -14009,6 +14013,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ded41cfe6017d7142bb72b993a4a099e, type: 3}
+    - target: {fileID: 7223393795869286049, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7713996b9f096c4f9e19d6c2493d55f, type: 3}
 --- !u!4 &1349987619 stripped
