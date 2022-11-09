@@ -843,7 +843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8463141466219632142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1078,7 +1078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2681757916792166614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1284,6 +1284,7 @@ GameObject:
   - component: {fileID: 667455371345170873}
   - component: {fileID: 7964775909660920449}
   - component: {fileID: 650028508749298876}
+  - component: {fileID: 913331068}
   m_Layer: 6
   m_Name: CameraAngle
   m_TagString: Untagged
@@ -1346,6 +1347,32 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &913331068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809730121061680954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 118bf83e7e2acfc4b9333a75cca23e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMixing: 0
+  SwipedRight: 0
+  SwipedLeft: 0
+  RequiredSwipes: 3
+  SwipeCount: 0
+  SwipeRightAccept: 0.5
+  SwipeLeftAccept: -0.5
+  Parent: {fileID: 0}
+  PotionToGive: {fileID: 0}
+  PotionReceived: {fileID: 0}
+  successUI: {fileID: 890067457408710878}
+  failUI: {fileID: 8161399968619844914}
+  leftArrowUI: {fileID: 7070581347686272431}
+  rightArrowUI: {fileID: 822310967130300992}
 --- !u!1 &7070581347686272431
 GameObject:
   m_ObjectHideFlags: 0
