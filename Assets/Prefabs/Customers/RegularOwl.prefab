@@ -124,7 +124,6 @@ MonoBehaviour:
   thisParent: {fileID: 0}
   OrderQuantity: 1
   RNG: 0
-  markUP: 0
   speed: 1
   isSelect: 0
   markupAcceptance: {fileID: 0}
@@ -142,13 +141,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMarkUp: 0
   maxMarkUp: 0
-  minMarkUpRandomValue: 0.5
-  maxMarkUpRandomValue: 2
   markupValues:
   - 0.5
   - 1
-  - 1.5
-  - 2
 --- !u!1 &6535413301770951576
 GameObject:
   m_ObjectHideFlags: 0
