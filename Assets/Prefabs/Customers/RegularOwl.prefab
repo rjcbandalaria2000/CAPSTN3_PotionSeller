@@ -125,9 +125,10 @@ MonoBehaviour:
   thisParent: {fileID: 0}
   OrderQuantity: 1
   RNG: 0
-  speed: 1
+  speed: 5
   isSelect: 0
   markupAcceptance: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &3715932158876137560
 MonoBehaviour:
   m_ObjectHideFlags: 0

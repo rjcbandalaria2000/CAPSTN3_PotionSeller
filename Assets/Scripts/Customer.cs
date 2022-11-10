@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using DG.Tweening;
 
 
 public class Customer : SelectableObject
@@ -15,6 +16,7 @@ public class Customer : SelectableObject
     // Customer might have more orders, hence "List"
     public List<PotionScriptableObject> customerPotion = new();
     public Transform targetPos;
+
 
     public GameObject thisParent;
 
@@ -35,9 +37,18 @@ public class Customer : SelectableObject
 
     public MarkupAcceptance markupAcceptance;
    
+    [Header("Animator")]
+    public Animator animator;
+
     // Start is called before the first frame update
     void Awake()    
     {
+      
+    }
+    private void Start()
+    {
+        animator = gameObject.GetComponentInChildren<Animator>();
+
         thisParent = this.transform.parent.gameObject;
         isSelect = false;
         //markUP = Random.Range(0, 10);
@@ -45,10 +56,6 @@ public class Customer : SelectableObject
         StartCoroutine(initializeCustomerOrderList());
         animationRoutine = StartCoroutine(moveAnimation());
         markupAcceptance = this.GetComponent<MarkupAcceptance>();
-    }
-    private void Start()
-    {
-
     }
     private void OnEnable()
     {
@@ -178,13 +185,29 @@ public class Customer : SelectableObject
 
     IEnumerator  moveAnimation()
     {
-        yield return new WaitForSeconds(1.5f);
-        //Debug.Log(targetPos);
-        while (this.gameObject.transform.position != targetPos.position)
+
+        thisParent.transform.DOMove(targetPos.position, speed);
+
+        while (thisParent.gameObject.transform.position != targetPos.position)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position, targetPos.position, speed * Time.deltaTime);
+            animator.SetBool("IsIdle", false);
             yield return null;
         }
+            
+        animator.SetBool("IsIdle", true);
+
+        //while (thisParent.gameObject.transform.position != targetPos.position)
+        //{
+        //    thisParent.transform.position = Vector3.Lerp(thisParent.transform.position, targetPos.position, speed * Time.deltaTime);
+        //    animator.SetBool("IsIdle", false);
+        //    Debug.Log("Not yet in position");
+        //    yield return null;
+        //}
+
+        //yield return null;
+
+
+
     }
     // baseprice + markup
 }
