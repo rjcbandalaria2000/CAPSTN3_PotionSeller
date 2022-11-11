@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 
 public class CustomerSpawner : MonoBehaviour
 {
+
     public List<GameObject> customer;
     public int customerQuantity;
     public Transform spawnPoint;
@@ -13,6 +14,8 @@ public class CustomerSpawner : MonoBehaviour
     public List<bool> isOccupied;
     public int index;
     public List<Transform> targetPoints = new();
+
+    public List<PotionScriptableObject> unlockPotion;
     //public List<GameObject> spawnedCustomers = new();
 
     Coroutine customerSpawn;
