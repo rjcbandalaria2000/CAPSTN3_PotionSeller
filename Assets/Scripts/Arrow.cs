@@ -30,6 +30,9 @@ public class Arrow : MonoBehaviour
     public float edgeVal1;
     public float edgeVal2;
 
+    [Header("VFX")]
+    public GameObject effect;
+
     private RectTransform transform;
 
     private void Awake()
@@ -100,6 +103,7 @@ public class Arrow : MonoBehaviour
                 craftingManager.isCookingComplete = true;
                 craftingManager.OnCompleteCrafting();
             }
+            PlayVFX();
             Debug.Log("Score");
         }
         else
@@ -137,5 +141,13 @@ public class Arrow : MonoBehaviour
         if (loseConditionUI == null) { return; }
         winConditionUI.SetActive(false);
         loseConditionUI.SetActive(true);
+    }
+
+    public void PlayVFX()
+    {
+        if (effect == null) { return; }
+        effect.SetActive(true);
+        ParticleSystem effectParticle = effect.GetComponent<ParticleSystem>();
+        effectParticle.Play();
     }
 }

@@ -19,6 +19,7 @@ public class CraftingManager : MonoBehaviour
     [Header("Crafting States")]
     public bool                         isMixingComplete;
     public bool                         isCookingComplete;
+    public bool                         hasCrafted;
 
     private Inventory                   playerInventory;
     
@@ -71,18 +72,18 @@ public class CraftingManager : MonoBehaviour
         //if the player has the right ingredients and the right quantity
         if (tempPlayerIngredients.Count >= potionScriptableObject.requiredIngredients.Count)
         {
-            for (int i = 0; i < potionScriptableObject.requiredIngredients.Count; i++)
-            {
-                for(int j = 0; j < tempPlayerIngredients.Count; j++)
-                {
-                    if (tempPlayerIngredients[j].itemName == potionScriptableObject.requiredIngredients[i].ingredient.ingredientName)
-                    {
-                        tempPlayerIngredients[j].itemAmount -= potionScriptableObject.requiredIngredients[i].quantity;
-                        break;
-                    }
-                }
+            //for (int i = 0; i < potionScriptableObject.requiredIngredients.Count; i++)
+            //{
+            //    for(int j = 0; j < tempPlayerIngredients.Count; j++)
+            //    {
+            //        if (tempPlayerIngredients[j].itemName == potionScriptableObject.requiredIngredients[i].ingredient.ingredientName)
+            //        {
+            //            tempPlayerIngredients[j].itemAmount -= potionScriptableObject.requiredIngredients[i].quantity;
+            //            break;
+            //        }
+            //    }
             
-            }
+            //}
             
             selectedPotionScriptableObject = potionScriptableObject;
             if (selectedPotionText)
@@ -118,6 +119,7 @@ public class CraftingManager : MonoBehaviour
             {
                 SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject);
                 onQuestCompletedEvent?.Invoke(QuestManager.instance.createPotionQuest);
+                RemoveIngredients(selectedPotionScriptableObject);
             }
            
             isCookingComplete = false;
@@ -126,5 +128,31 @@ public class CraftingManager : MonoBehaviour
             selectedPotionText.text = "";
             selectedPotionIconImage.sprite = defaultPotionIconImage;
         }
+    }
+
+    public void RemoveIngredients(PotionScriptableObject potionCrafted)
+    {
+        for (int i = 0; i < potionCrafted.requiredIngredients.Count; i++)
+        {
+            if (playerInventory)
+            {
+                for(int j = 0; j < playerInventory.ingredients.Count; j++)
+                {
+                    if (potionCrafted.requiredIngredients[i].ingredient.ingredientName == playerInventory.ingredients[j].ingredientSO.ingredientName)
+                    {
+                        if (playerInventory.ingredients[j].itemAmount > 0)
+                        {
+                            playerInventory.ingredients[j].itemAmount-= potionCrafted.requiredIngredients[i].quantity;
+                        }
+                        Debug.Log("Remaining Stock " + playerInventory.ingredients[j].ingredientSO.ingredientName + " " + playerInventory.ingredients[j].itemAmount);
+                        
+                        break;
+                    }
+                }
+            }
+        }
+        
+       
+        
     }
 }
