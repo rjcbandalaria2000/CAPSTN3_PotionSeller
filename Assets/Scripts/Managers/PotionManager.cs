@@ -5,34 +5,31 @@ using UnityEngine;
 public class PotionManager : MonoBehaviour
 {
     public List<PotionScriptableObject> Potions;
-    public StoreLevel storeLevel;
-    public CustomerSpawner customerSpawner;
+    //public StoreLevel storeLevel;
+    //public CustomerSpawner customerSpawner;
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+
+       // customerSpawner = GameObject.FindObjectOfType<CustomerSpawner>();
+    }
+
+    private void Start()
+    {
+        //initializePotion();
+    }
 
     public void initializePotion()
     {
+        
+        ////customerSpawner.unlockPotion.Clear();
 
-        for (int i = 0; i < storeLevel.Level; i++)
-        {
-            customerSpawner.unlockPotion[i] = Potions[i];
-        }
-
-        //switch (storeLevel.Level)
+        //for (int i = 0; i < storeLevel.Level; i++)
         //{
-        //    case 1:
-        //        for (int i = 0; i < storeLevel.Level; i++)
-        //        {
-        //            customerSpawner.unlockPotion[i] = Potions[i];
-        //        }
-        //        break;
-        //    case 2:
-        //        for (int i = 0; i < storeLevel.Level; i++)
-        //        {
-        //            customerSpawner.unlockPotion[i] = Potions[i];
-        //        }
-        //        break;
-
+        //    customerSpawner.unlockPotion.Add(Potions[i]);
         //}
 
-        
+       
     }
 }

@@ -16,6 +16,7 @@ public class CustomerSpawner : MonoBehaviour
     public List<Transform> targetPoints = new();
 
     public List<PotionScriptableObject> unlockPotion;
+    public StoreLevel storeLevel;
     //public List<GameObject> spawnedCustomers = new();
 
     Coroutine customerSpawn;
@@ -26,6 +27,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         index = 0;
         SingletonManager.Register(this);
+        storeLevel = GameObject.FindObjectOfType<StoreLevel>();
         customerSpawn = StartCoroutine(spawnCustomer());
     }
 
@@ -33,12 +35,21 @@ public class CustomerSpawner : MonoBehaviour
     void Start()
     {
         //StartCoroutine(CheckForNull());
+       initializeUnlockPotion(); 
+
+    }
+    
+    public void initializeUnlockPotion()
+    {
+        unlockPotion.Clear();
+
+        for (int i = 0; i < storeLevel.Level; i++)
+        {
+            unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
+        }
     }
 
-    void Update()
-    {
-        
-    }
+
 
     IEnumerator spawnCustomer()
     {
@@ -58,25 +69,6 @@ public class CustomerSpawner : MonoBehaviour
         index = 0;
     }
 
-    //public IEnumerator CheckForNull()
-    //{
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(0.5f);
-    //        for (int i = 0; i < spawnCustomers.Count; i++)
-    //        {
-    //            if (spawnCustomers[i] == null)
-    //            {
-    //                Debug.Log("Remove null");
-    //                spawnCustomers.Remove(spawnCustomers[i]);
-    //                //spawnCustomers.RemoveAt(i);
-    //                isOccupied[i] = false;
-    //                break;
-    //            }
-    //        }
-    //    }
-
-    //}
     public void RemoveCustomer()
     {
         //if(spawnCustomers.Count <= 0) { return; }

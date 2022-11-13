@@ -15958,6 +15958,7 @@ MonoBehaviour:
   - {fileID: 975641871}
   - {fileID: 1393332370}
   unlockPotion: []
+  storeLevel: {fileID: 0}
 --- !u!4 &624150860
 Transform:
   m_ObjectHideFlags: 0
@@ -15971,7 +15972,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &631738876
 PrefabInstance:
@@ -17707,7 +17708,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &745392482
 PrefabInstance:
@@ -29207,12 +29208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Potions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  storeLevel: {fileID: 0}
-  customerSpawner: {fileID: 0}
+  - {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
+  - {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
+  - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
+  - {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
 --- !u!4 &1411711685
 Transform:
   m_ObjectHideFlags: 0
@@ -29226,7 +29225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419216270
 GameObject:
@@ -43657,7 +43656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988059883539165423, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 988059883539165423, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_LocalPosition.x

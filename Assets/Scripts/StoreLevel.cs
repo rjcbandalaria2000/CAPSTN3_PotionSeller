@@ -24,6 +24,8 @@ public class StoreLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Level = 1;
+
         onRefreshLevelUI.Invoke();
         SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
     }
