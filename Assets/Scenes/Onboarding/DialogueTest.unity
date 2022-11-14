@@ -152,8 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfed6a95d5c39b647a311fdf04b2b173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  i: 0
   dialogueSOList:
   - {fileID: 11400000, guid: bb826560339e7924b862f03514126c5b, type: 2}
   - {fileID: 11400000, guid: 66d9d2281b056d8409bb4fecef46b1f9, type: 2}
@@ -172,6 +170,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b316389a24030c04f9b9f1ac6a6f64a3, type: 2}
   - {fileID: 11400000, guid: 66e7930a4d3cfc442904e7a9c7a0fb63, type: 2}
   panelText: {fileID: 1679791055}
+  nextButton: {fileID: 1103386672}
 --- !u!4 &223683047
 Transform:
   m_ObjectHideFlags: 0

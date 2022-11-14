@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 9 - Quests
+  m_Name: 4 - Select Potion
   m_EditorClassIdentifier: 
-  id: 9
-  dialogueTitle: Quests
+  id: 4
+  isButtonShown: 0
+  dialogueTitle: Select Potion
   dialogues:
-  - In order for us to earn money faster, we must have goals everytime we open our
-    shop. We can check the <b>[Quest Board]</b> to know what is the daily goal that
-    we need to meet.
+  - Now that we have all the ingredients needed. Let's try selecting the potion we
+    need to craft.  Click the corresponding button to proceed to potion brewing.

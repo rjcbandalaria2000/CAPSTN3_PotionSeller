@@ -6,6 +6,7 @@ using UnityEngine;
 public class Dialogues : ScriptableObject
 {
     public int id;
+    public bool isButtonShown;
     public string dialogueTitle;
     [TextArea] public List<string> dialogues;
 }

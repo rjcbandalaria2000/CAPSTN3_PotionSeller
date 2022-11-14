@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 4 - Select Potion
+  m_Name: 13 - Gold
   m_EditorClassIdentifier: 
-  id: 4
-  dialogueTitle: Select Potion
+  id: 13
+  isButtonShown: 1
+  dialogueTitle: Gold
   dialogues:
-  - Now that we have all the ingredients.  Let's try selecting the potion we need
-    to craft.  click <b>[Select]</b> to proceed to brewing ingredients
+  - Here you can see the gold that we have. The gold for the debt and for buying
+    ingredients are the same so be sure to buy only what you need and try not to
+    overbuy or we won't be able to save money to pay the debt.

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 0 - Order
+  m_Name: 14 - Pause and Play
   m_EditorClassIdentifier: 
-  id: 0
-  dialogueTitle: Order
+  id: 14
+  isButtonShown: 1
+  dialogueTitle: Pause/Play
   dialogues:
-  - First, let's go to the <b>[Order Area]</b> and check what is the potion we need
-    to craft.
+  - You can pause the day by clicking the <b>[Play/Pause Button]</b>.

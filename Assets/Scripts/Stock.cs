@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class Stock : SelectableObject
 {
+    public OnboardingClickEvent onOnboardingClickEvent = new();
     [Header("Stock Variables")]
     public List<GameObject> stockObjects = new();
     public GameObject itemPanelPrefab;
@@ -108,6 +109,8 @@ public class Stock : SelectableObject
     public override void OnInteract()
     {
         //base.OnInteract();
+        onOnboardingClickEvent.Invoke();
+
         if (objectPanelUI == null) { return; }
         objectPanelUI.SetActive(true);
     }

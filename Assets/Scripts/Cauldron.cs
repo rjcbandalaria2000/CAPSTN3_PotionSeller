@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cauldron : SelectableObject
 {
+    public OnboardingClickEvent onOnboardingClickEvent = new();
     public QuestCompletedEvent onQuestCompletedEvent = new();
     public Mixing mixingPot;
     // Start is called before the first frame update
@@ -26,7 +27,8 @@ public class Cauldron : SelectableObject
         //base.OnInteract();
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(true);
-        onQuestCompletedEvent.Invoke(QuestManager.instance.useCauldronQuest);
+        onQuestCompletedEvent.Invoke(QuestManager.instance?.useCauldronQuest);
+        onOnboardingClickEvent.Invoke();
     }
 
     public void CloseUIPanel()

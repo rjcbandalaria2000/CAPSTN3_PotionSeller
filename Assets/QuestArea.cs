@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuestArea : SelectableObject
 {
+    public OnboardingClickEvent onOnboardingClickEvent = new();
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class QuestArea : SelectableObject
 
     public override void OnInteract()
     {
+        onOnboardingClickEvent.Invoke();
         OpenUIPanel();
     }
 

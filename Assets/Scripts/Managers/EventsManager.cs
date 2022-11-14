@@ -41,3 +41,7 @@ public class OnRefreshLevelUI : UnityEvent { };
 public class OnOrderComplete : UnityEvent { };
 
 #endregion
+
+#region Onboarding Events
+public class OnboardingClickEvent : UnityEvent { };
+#endregion
