@@ -142,6 +142,7 @@ MonoBehaviour:
   minMarkUp: 0
   maxMarkUp: 0
   markupValues:
+  - 0
   - 0.5
   - 1
 --- !u!1 &6535413301770951576

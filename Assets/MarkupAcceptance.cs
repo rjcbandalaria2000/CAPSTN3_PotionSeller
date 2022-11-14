@@ -38,7 +38,7 @@ public class MarkupAcceptance : MonoBehaviour
     public void SetRandomMarkUpRandomValue()
     {
         // Only get the half for the minRandomValue
-        int minRandomValue = Random.Range(0, markupValues.Count / 2);
+        int minRandomValue = Random.Range(0, Mathf.RoundToInt(markupValues.Count / 2));
         minMarkUp = markupValues[minRandomValue];
         int maxRandomValue = Random.Range(markupValues.Count / 2, markupValues.Count);
         maxMarkUp = markupValues[maxRandomValue];      
