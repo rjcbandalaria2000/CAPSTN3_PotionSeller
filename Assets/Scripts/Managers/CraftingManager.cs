@@ -6,7 +6,10 @@ using TMPro;
 
 public class CraftingManager : MonoBehaviour
 {
+    [Header("Events")]
     public QuestCompletedEvent onQuestCompletedEvent = new QuestCompletedEvent();
+    public OnCompleteIngredientPotion onCompleteIngredientPotion = new();
+    public OnIncompleteIngredientPotion onIncompleteIngredientPotion = new();
 
     public PotionScriptableObject       selectedPotionScriptableObject;
 
@@ -61,6 +64,7 @@ public class CraftingManager : MonoBehaviour
                     }
                     else
                     {
+                        onIncompleteIngredientPotion.Invoke();
                         Debug.Log("Not enough ingredients" +
                             potionScriptableObject.requiredIngredients[i].ingredient.ingredientName + " "
                             + potionScriptableObject.requiredIngredients[i].quantity);
@@ -95,6 +99,7 @@ public class CraftingManager : MonoBehaviour
                 selectedPotionIconImage.sprite = selectedPotionScriptableObject.potionIconSprite;
             }
             Debug.Log("Setting potion");
+            onCompleteIngredientPotion.Invoke();
         }
         
        

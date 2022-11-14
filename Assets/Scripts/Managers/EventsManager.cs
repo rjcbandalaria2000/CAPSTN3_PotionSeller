@@ -41,3 +41,10 @@ public class OnRefreshLevelUI : UnityEvent { };
 public class OnOrderComplete : UnityEvent { };
 
 #endregion
+
+#region Prep Station Events
+
+public class OnIncompleteIngredientPotion : UnityEvent { };
+public class OnCompleteIngredientPotion : UnityEvent { };
+
+#endregion
