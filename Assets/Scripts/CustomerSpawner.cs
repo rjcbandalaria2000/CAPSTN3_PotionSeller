@@ -25,18 +25,20 @@ public class CustomerSpawner : MonoBehaviour
     private int RNG;
     private void Awake()
     {
+       
         index = 0;
         SingletonManager.Register(this);
         storeLevel = GameObject.FindObjectOfType<StoreLevel>();
-        customerSpawn = StartCoroutine(spawnCustomer());
+        
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
         //StartCoroutine(CheckForNull());
-       initializeUnlockPotion(); 
-
+        initializeUnlockPotion();
+        customerSpawn = StartCoroutine(spawnCustomer());
     }
     
     public void initializeUnlockPotion()
@@ -59,6 +61,8 @@ public class CustomerSpawner : MonoBehaviour
 
             GameObject spawnCustomer = Instantiate(customer[RNG], spawnPoint.position, Quaternion.identity);
             spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
+            spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions.Clear();
+            spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions = unlockPotion;
             spawnCustomer.transform.GetChild(0).GetComponent<Customer>().onOrderComplete.AddListener(newCustomerSpawn);
             spawnCustomers.Add(spawnCustomer);
             isOccupied[index] = true;
@@ -108,6 +112,8 @@ public class CustomerSpawner : MonoBehaviour
 
                     GameObject spawnCustomer = Instantiate(customer[RNG], spawnPoint.position, Quaternion.identity);
                     spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
+                    spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions.Clear();
+                    spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions = unlockPotion;
                     spawnCustomers.Add(spawnCustomer);
                     isOccupied[index] = true;
                     break; // Remove this if wants to spawn simultaneously
