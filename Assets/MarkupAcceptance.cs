@@ -8,17 +8,17 @@ public class MarkupAcceptance : MonoBehaviour
     public float minMarkUp;
     public float maxMarkUp;
 
-    [Header("Random Acceptance Range")]
+    //[Header("Random Acceptance Range")]
     //[Range(0f, 2f)]
     //public float minMarkUpRandomValue;
     //[Range(0f, 2f)]
     //public float maxMarkUpRandomValue;
-    public List<float> markupValues = new();
+    //public List<float> markupValues = new();
 
     // Start is called before the first frame update
     void Start()
     {
-        SetRandomMarkUpRandomValue();
+        //SetRandomMarkUpRandomValue();
     }
 
     public bool IsWithinMarkupRange(float markUpAmount)
@@ -35,14 +35,14 @@ public class MarkupAcceptance : MonoBehaviour
         
     }
 
-    public void SetRandomMarkUpRandomValue()
-    {
-        // Only get the half for the minRandomValue
-        int minRandomValue = Random.Range(0, Mathf.RoundToInt(markupValues.Count / 2));
-        minMarkUp = markupValues[minRandomValue];
-        int maxRandomValue = Random.Range(markupValues.Count / 2, markupValues.Count);
-        maxMarkUp = markupValues[maxRandomValue];      
-    }
+    //public void SetRandomMarkUpRandomValue()
+    //{
+    //    // Only get the half for the minRandomValue
+    //    int minRandomValue = Random.Range(0, Mathf.RoundToInt(markupValues.Count / 2));
+    //    minMarkUp = markupValues[minRandomValue];
+    //    int maxRandomValue = Random.Range(markupValues.Count / 2, markupValues.Count);
+    //    maxMarkUp = markupValues[maxRandomValue];      
+    //}
 
    
 }

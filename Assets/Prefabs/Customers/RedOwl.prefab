@@ -140,10 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minMarkUp: 0
-  maxMarkUp: 0
-  markupValues:
-  - 1.5
-  - 2
+  maxMarkUp: 1.5
 --- !u!1 &6535413301770951576
 GameObject:
   m_ObjectHideFlags: 0
