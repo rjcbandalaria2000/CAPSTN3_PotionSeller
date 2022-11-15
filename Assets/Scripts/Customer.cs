@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class Customer : SelectableObject
 {
-    private Inventory playerInventory;
+    public Inventory playerInventory;
     public List<PotionScriptableObject> availablePotions;
     // Customer might have more orders, hence "List"
     public List<PotionScriptableObject> customerPotion = new();
@@ -93,13 +93,14 @@ public class Customer : SelectableObject
         // Set ObjectPanelUI
         objectPanelUI = OrderManager.instance.orderPanelUI;
         OrderManager.instance.potionOrder = customerPotion[0];
-        
+
         // Change to OrderManager things
         OrderManager.instance.orderImage.sprite = customerPotion[0].potionIconSprite;
         OrderManager.instance.orderName.text = customerPotion[0].potionName;
         OrderManager.instance.orderPrice.text = customerPotion[0].buyPrice.ToString();
         OrderManager.instance.origOrderPrice.text = customerPotion[0].buyPrice.ToString();
         OrderManager.instance.sellButton.onClick.RemoveAllListeners();
+        OrderManager.instance.orderDropdown.value = 0;
         OrderManager.instance.sellButton.onClick.AddListener(() => SellOrder());
 
         onOnboardingClickEvent.Invoke();
@@ -159,7 +160,7 @@ public class Customer : SelectableObject
 
                     // Destroy gameObject and call (spawn) a new customer (gameObject)
 
-                    SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
+                    SingletonManager.Get<CustomerSpawner>()?.CustomerToRemove(thisParent);
                     onOrderComplete.Invoke();
 
                     //Close UI panel after selling transaction

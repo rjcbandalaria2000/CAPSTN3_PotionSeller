@@ -25,16 +25,6 @@ public class OnboardingManager : MonoBehaviour
     public Cauldron cauldron;
     public Button sellButton;
 
-    [Header("Outside Main Loop Variables")]
-    public GameObject stock;
-    public GameObject questArea;
-    public GameObject storeStats;
-    public GameObject storeLevel;
-    public GameObject dayTime;
-    public GameObject gold;
-    public GameObject pausePlay;
-    public GameObject exit;
-
     private void Start()
     {
         NextButtonHit();
@@ -109,6 +99,7 @@ public class OnboardingManager : MonoBehaviour
                     customer.onOnboardingClickEvent.AddListener(CustomerHit);
                 }                
                 sellButton.onClick.AddListener(SellButtonHit);
+                // markup listener
                 break;
             // Outside Main Loop
         }

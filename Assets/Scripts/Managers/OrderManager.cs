@@ -38,6 +38,7 @@ public class OrderManager : MonoBehaviour
     public TextMeshProUGUI orderName;
     public TextMeshProUGUI orderPrice;
     public TextMeshProUGUI origOrderPrice;
+    public TMP_Dropdown orderDropdown;
     public Button sellButton;
 
     [HideInInspector]
