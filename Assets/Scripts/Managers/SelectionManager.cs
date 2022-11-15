@@ -18,6 +18,10 @@ public class SelectionManager : MonoBehaviour
     [Header("Potion Selection")]
     private Potion potion;
 
+    private void Start()
+    {
+
+    }
 
     private void Update()
     {
@@ -29,6 +33,10 @@ public class SelectionManager : MonoBehaviour
                 //reset back to default material color
                 selectionRend.material = defaultMaterial;
                 _selection.gameObject.transform.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
+                if (_selection.gameObject.GetComponent<SelectableObject>().objectOrderUI != null)
+                {
+                    _selection.gameObject.GetComponent<SelectableObject>()?.objectOrderUI.SetActive(false);
+                }
             }
             if (potion != null && !potion.isSelect)
             {
@@ -58,6 +66,11 @@ public class SelectionManager : MonoBehaviour
                 }
                 // resets _selection to null
                 _selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(false);
+               
+                if (_selection.gameObject.GetComponent<SelectableObject>().objectOrderUI != null)
+                {
+                    _selection.gameObject.GetComponent<SelectableObject>()?.objectOrderUI.SetActive(false);
+                }
             }
 
             _selection = null;
@@ -96,6 +109,12 @@ public class SelectionManager : MonoBehaviour
                         selectionRend.material = highlightMaterial;
                     }
                     selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(true);
+                    
+                    if(selection.gameObject.GetComponent<SelectableObject>().objectOrderUI != null)
+                    {
+                        selection.gameObject.GetComponent<SelectableObject>()?.objectOrderUI.SetActive(true);
+                    }
+
                 }
                 _selection = selection;
                 
@@ -120,6 +139,11 @@ public class SelectionManager : MonoBehaviour
                     defaultMaterial = selectionRend.material;
                     selectionRend.material = highlightMaterial;
                     selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI.SetActive(true);
+                    
+                    if (selection.gameObject.GetComponent<SelectableObject>().objectOrderUI != null)
+                    {
+                        selection.gameObject.GetComponent<SelectableObject>()?.objectOrderUI.SetActive(true);
+                    }
                 }
                 _selection = selection;
 

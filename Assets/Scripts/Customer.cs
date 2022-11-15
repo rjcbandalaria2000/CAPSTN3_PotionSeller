@@ -23,8 +23,7 @@ public class Customer : SelectableObject
     public int OrderQuantity;
     public int RNG;
 
-    //[Range(0,10)]
-    //public int markUP;
+    public TextMeshProUGUI orderName;
 
     [Range(0, 10)]
     public int speed;
@@ -75,6 +74,7 @@ public class Customer : SelectableObject
             PotionScriptableObject potion = availablePotions[RNG];
             customerPotion.Add(potion);
             OrderManager.instance.onCustomerOrderEvent.Invoke(potion, this);
+           orderName.text = potion.name;
             //Debug.Log("Customer wants: " + potion.name);
         }
         yield return null;

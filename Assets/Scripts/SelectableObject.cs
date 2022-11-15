@@ -12,6 +12,8 @@ public class SelectableObject : MonoBehaviour
     public GameObject objectNameUI;
     public GameObject objectPanelUI;
 
+    public GameObject objectOrderUI;
+
     private void OnEnable()
     {
         onSelectableObjectClickedEvent.AddListener(OnInteract);
