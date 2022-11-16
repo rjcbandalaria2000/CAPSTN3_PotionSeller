@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BrewStation : SelectableObject
 {
+    [Header("States")]
     public bool isCompleted;
 
     public Arrow arrow;
+    public GameObject prepStationPanel;
+    public GameObject brewStationPanel;
 
     //public SelectableObject selectable;
     // Start is called before the first frame update
@@ -27,8 +30,8 @@ public class BrewStation : SelectableObject
     public override void OnInteract()
     {
         objectPanelUI.SetActive(true);
-        if(arrow == null) { return; }
-        arrow.StartArrowMovement();
+        //if(arrow == null) { return; }
+        //arrow.StartArrowMovement();
     }
 
     public void CloseUIPanel()
