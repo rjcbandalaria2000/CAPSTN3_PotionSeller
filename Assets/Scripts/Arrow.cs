@@ -7,28 +7,31 @@ using UnityEngine.UI;
 public class Arrow : MonoBehaviour
 {
     [Header("Positions")]
-    public Transform pos1;
-    public Transform pos2;
-    private Vector3 nextPos;
-    public Transform startPos;
+    public Transform        pos1;
+    public Transform        pos2;
+    private Vector3         nextPos;
+    public Transform        startPos;
 
     [Header("Win/Lose UI")]
-    public GameObject winConditionUI;
-    public GameObject loseConditionUI; 
+    public GameObject       winConditionUI;
+    public GameObject       loseConditionUI; 
 
-    private Coroutine movementRoutine;
+    private Coroutine       movementRoutine;
 
    // public Meter meter;
 
-    public int speed;
-    [SerializeField] bool isHitPoint;
+    public int              speed;
+    [SerializeField] 
+    bool                    isHitPoint;
 
-    private UIManager managerUI;
+    private UIManager       managerUI;
 
     [Header("Hitpoint")]
-    public GameObject hitPoint;
-    public float edgeVal1;
-    public float edgeVal2;
+    public GameObject       hitPoint;
+    public RectTransform    startHitPoint;
+    public RectTransform    endHitPoint;
+    public float            edgeVal1;
+    public float            edgeVal2;
 
     [Header("VFX")]
     public GameObject effect;
@@ -61,7 +64,7 @@ public class Arrow : MonoBehaviour
             }
 
 
-            if (transform.anchoredPosition.x >= edgeVal1 && transform.anchoredPosition.x <= edgeVal2) // edge value
+            if (transform.anchoredPosition.x >= startHitPoint.anchoredPosition.x && transform.anchoredPosition.x <= endHitPoint.anchoredPosition.x)//(transform.anchoredPosition.x >= edgeVal1 && transform.anchoredPosition.x <= edgeVal2) // edge value
             {
                 isHitPoint = true;
                 Debug.Log("Target");

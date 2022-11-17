@@ -30,6 +30,7 @@ public class BrewStation : SelectableObject
     public override void OnInteract()
     {
         objectPanelUI.SetActive(true);
+        prepStationPanel.SetActive(true);
         //if(arrow == null) { return; }
         //arrow.StartArrowMovement();
     }
@@ -54,6 +55,7 @@ public class BrewStation : SelectableObject
                 // Only proceed to the next step if a potion to make is selected
                 prepStationPanel.SetActive(false);
                 brewStationPanel.SetActive(true);
+                arrow.StartArrowMovement();
             }
             else
             {
