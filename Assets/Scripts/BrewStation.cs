@@ -42,4 +42,23 @@ public class BrewStation : SelectableObject
         objectPanelUI.SetActive(false);
        
     }
+
+    public void OnNextButtonClicked()
+    {
+        CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
+        //When the potion in Prep station is completed
+        if (craftingManager)
+        {
+            if (craftingManager.selectedPotionScriptableObject)
+            {
+                // Only proceed to the next step if a potion to make is selected
+                prepStationPanel.SetActive(false);
+                brewStationPanel.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("No potion has been selected");
+            }
+        }
+    }
 }

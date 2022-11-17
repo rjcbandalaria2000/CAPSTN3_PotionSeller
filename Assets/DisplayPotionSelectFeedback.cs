@@ -12,12 +12,13 @@ public class DisplayPotionSelectFeedback : MonoBehaviour
     private void Awake()
     {
         feedbackText = this.GetComponent<TextMeshProUGUI>();
-        craftingManager = SingletonManager.Get<CraftingManager>();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        craftingManager = SingletonManager.Get<CraftingManager>();
         if (craftingManager)
         {
             craftingManager.onCompleteIngredientPotion.AddListener(DisplayCompleteMessage);
