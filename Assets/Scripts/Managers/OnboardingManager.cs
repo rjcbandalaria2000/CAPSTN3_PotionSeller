@@ -14,6 +14,7 @@ public class OnboardingManager : MonoBehaviour
     public List<Dialogues> introText;
     public List<Dialogues> dialogueSOList;
     public TextMeshProUGUI panelText;
+    public GameObject nextIntroButton;
     public GameObject nextButton;
 
     [Header("Inside Main Loop Variables")]
@@ -41,8 +42,8 @@ public class OnboardingManager : MonoBehaviour
         else
         {
             id = 0;
-            nextButton.GetComponent<Button>().onClick.RemoveListener(NextIntroText);
-            nextButton.GetComponent<Button>().onClick.AddListener(NextButtonHit);
+            nextIntroButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            nextIntroButton.SetActive(false);
             NextButtonHit();
         }
     }
@@ -57,10 +58,10 @@ public class OnboardingManager : MonoBehaviour
         arrowFlows[id].SetActive(true);
         nextButton.SetActive(dialogueSOList[id].isButtonShown);
         
-        //if (id > dialogueSOList.Count)
-        //{
-        // Next scene?
-        //}
+        if (id > dialogueSOList.Count)
+        {
+            // Next scene?
+        }
         if (dialogueSOList[id].dialogues.Count > 1)
         {
             panelText.text = dialogueSOList[id].dialogues[i].ToString();
