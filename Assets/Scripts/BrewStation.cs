@@ -31,6 +31,7 @@ public class BrewStation : SelectableObject
     {
         objectPanelUI.SetActive(true);
         prepStationPanel.SetActive(true);
+        brewStationPanel.SetActive(false);
         //if(arrow == null) { return; }
         //arrow.StartArrowMovement();
     }

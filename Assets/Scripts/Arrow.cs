@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Arrow : MonoBehaviour
 {
     [Header("Positions")]
-    public Transform        pos1;
-    public Transform        pos2;
+    public RectTransform        pos1;
+    public RectTransform        pos2;
     private Vector3         nextPos;
     public Transform        startPos;
 
@@ -21,6 +21,7 @@ public class Arrow : MonoBehaviour
    // public Meter meter;
 
     public int              speed;
+    public List<int> speeds = new();
     [SerializeField] 
     bool                    isHitPoint;
 
@@ -32,9 +33,12 @@ public class Arrow : MonoBehaviour
     public RectTransform    endHitPoint;
     public float            edgeVal1;
     public float            edgeVal2;
+    private int             hitCount = 0;
+    public int              requiredHits = 3;
 
     [Header("VFX")]
     public GameObject effect;
+    public GameObject characterModel;
 
     private RectTransform transform;
 
@@ -42,7 +46,7 @@ public class Arrow : MonoBehaviour
     {
         this.gameObject.transform.position = startPos.position;
         transform = this.GetComponent<RectTransform>();
-        nextPos = pos2.transform.position;
+        nextPos = pos2.anchoredPosition;
         winConditionUI.SetActive(false);
         loseConditionUI.SetActive(false);
         if (managerUI == null)
@@ -56,12 +60,9 @@ public class Arrow : MonoBehaviour
 
     IEnumerator arrowMovement()
     {
-        while(true)
+        while(true)//while(true)
         {
-            if(this.transform.position.x == pos1.position.x)
-            {
-                nextPos = pos2.position;
-            }
+           
 
 
             if (transform.anchoredPosition.x >= startHitPoint.anchoredPosition.x && transform.anchoredPosition.x <= endHitPoint.anchoredPosition.x)//(transform.anchoredPosition.x >= edgeVal1 && transform.anchoredPosition.x <= edgeVal2) // edge value
@@ -74,46 +75,62 @@ public class Arrow : MonoBehaviour
                 isHitPoint = false;
             }
 
-            if (this.transform.position.x == pos2.position.x)
+            if(this.transform.anchoredPosition.x <= pos1.anchoredPosition.x)//(this.transform.position.x == pos1.position.x)
             {
-                //managerUI.FailureTXT.gameObject.SetActive(true);
-                if (loseConditionUI)
-                {
-                    loseConditionUI.SetActive(true);
-                }
-                Debug.Log("TIME UP");
-                StopCoroutine(movementRoutine);
-
-                //nextPos = pos1.position;
+                nextPos = pos2.anchoredPosition;
+                Debug.Log("Going to end point");
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+            if (this.transform.anchoredPosition.x >= pos2.anchoredPosition.x)
+            {
+                //managerUI.FailureTXT.gameObject.SetActive(true);
+                //if (loseConditionUI)
+                //{
+                //    loseConditionUI.SetActive(true);
+                //}
+                //Debug.Log("TIME UP");
+                //StopCoroutine(movementRoutine);
+
+                nextPos = pos1.anchoredPosition;
+                Debug.Log("Going to start point");
+            } 
+            
+
+            transform.anchoredPosition = Vector3.MoveTowards(this.transform.anchoredPosition, nextPos, speeds[hitCount] * Time.deltaTime);
+            Debug.Log("Moving");
             yield return null;
         }
     }
 
     public void OnClick()
     {
-        StopCoroutine(movementRoutine);
-
         if (isHitPoint)
         {
-            //SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
-            ActivateSuccessUI();
-            CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
-            if (craftingManager)
+            if (hitCount >= requiredHits)
             {
-                craftingManager.isCookingComplete = true;
-                craftingManager.OnCompleteCrafting();
+                StopCoroutine(movementRoutine);
+                ActivateSuccessUI();
+                CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
+                if (craftingManager)
+                {
+                    craftingManager.isCookingComplete = true;
+                    craftingManager.OnCompleteCrafting();
+                }
+                PlayVFX();
+                Debug.Log("Score");
             }
-            PlayVFX();
-            Debug.Log("Score");
+            else
+            {
+                hitCount++;
+            }
+            //SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
+            
         }
         else
         {
             //SingletonManager.Get<UIManager>().FailureTXT.gameObject.SetActive(true);
-            ActivateLoseUI();
-            Debug.Log("Miss");
+            //ActivateLoseUI();
+            //Debug.Log("Miss");
         }
     }
 
