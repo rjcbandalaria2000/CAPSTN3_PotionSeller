@@ -10,7 +10,8 @@ public class OnboardingManager : MonoBehaviour
 {
     private int id;
     private int i = 0;
-    
+
+    public List<Dialogues> introText;
     public List<Dialogues> dialogueSOList;
     public TextMeshProUGUI panelText;
     public GameObject nextButton;
@@ -27,18 +28,39 @@ public class OnboardingManager : MonoBehaviour
 
     private void Start()
     {
-        NextButtonHit();
+        NextIntroText();
+    }
+
+    public void NextIntroText()
+    {
+        if (id < introText.Count)
+        {
+            panelText.text = introText[id].dialogues[0].ToString();            
+            id++;
+        }
+        else
+        {
+            id = 0;
+            nextButton.GetComponent<Button>().onClick.RemoveListener(NextIntroText);
+            nextButton.GetComponent<Button>().onClick.AddListener(NextButtonHit);
+            NextButtonHit();
+        }
     }
 
     public void NextButtonHit()
     {
-        AddEventListenerOnID(id);
+        AddEventListenerOnID(id);        
         foreach(GameObject gameObject in arrowFlows)
         {
             gameObject.SetActive(false);
         }
         arrowFlows[id].SetActive(true);
         nextButton.SetActive(dialogueSOList[id].isButtonShown);
+        
+        //if (id > dialogueSOList.Count)
+        //{
+        // Next scene?
+        //}
         if (dialogueSOList[id].dialogues.Count > 1)
         {
             panelText.text = dialogueSOList[id].dialogues[i].ToString();
@@ -55,7 +77,8 @@ public class OnboardingManager : MonoBehaviour
             panelText.text = dialogueSOList[id].dialogues[0].ToString();
             id++;
             i = 0;
-        }     
+        }
+        
     }
 
     private void AddEventListenerOnID(int id)

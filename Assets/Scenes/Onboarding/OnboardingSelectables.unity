@@ -33064,6 +33064,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c75b821956ea384d8ad82b0cbb9c8d7, type: 2}
   - {fileID: 11400000, guid: b316389a24030c04f9b9f1ac6a6f64a3, type: 2}
   - {fileID: 11400000, guid: 66e7930a4d3cfc442904e7a9c7a0fb63, type: 2}
+  - {fileID: 11400000, guid: 66e7930a4d3cfc442904e7a9c7a0fb63, type: 2}
   panelText: {fileID: 1288863221}
   nextButton: {fileID: 1257185646}
   arrowFlows:
