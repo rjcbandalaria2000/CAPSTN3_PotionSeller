@@ -190,13 +190,21 @@ public class Customer : SelectableObject
 
     IEnumerator  moveAnimation()
     {
-
-        thisParent.transform.DOMove(targetPos.position, speed);
-
-        while (thisParent.gameObject.transform.position != targetPos.position)
+        if (targetPos)
         {
-            animator.SetBool("IsIdle", false);
-            yield return null;
+            thisParent.transform.DOMove(targetPos.position, speed);
+
+
+
+            while (thisParent.gameObject.transform.position != targetPos.position)
+            {
+                animator.SetBool("IsIdle", false);
+                yield return null;
+            }
+        }
+        else
+        {
+            Debug.Log("No target position");
         }
             
         animator.SetBool("IsIdle", true);

@@ -30,7 +30,7 @@ public class StoreLevel : MonoBehaviour
        
 
         onRefreshLevelUI.Invoke();
-        SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
+        SingletonManager.Get<FurnitureManager>()?.ActivateFurniture(Level);
     }
 
     public void AddExpPoints(int value)
