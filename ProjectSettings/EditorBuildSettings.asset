@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/MainMenu.unity
+    guid: e408b64ffaa260b4ca4b5b86d30d6d65
+  - enabled: 1
+    path: Assets/Scenes/MainGameScene.unity
+    guid: 0a87f8db82356664282024ebb66219d0
   - enabled: 0
     path: Assets/Scenes/FinalsMainScene/Persistence_Testing 1.unity
     guid: fb85e794a1213434aba73bb65f76110e
   - enabled: 0
     path: Assets/Scenes/FinalsMainScene/MainMenu-Test.unity
     guid: d4f2f6d26ddc7ff45ba06db2d295c55a
-  - enabled: 1
-    path: Assets/Scenes/Final Scenes/MainMenu.unity
-    guid: e408b64ffaa260b4ca4b5b86d30d6d65
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FinalsMainScene/UpdatedEnvironmentMainScene.unity
     guid: 678a3209fd3ea034fa0651af56d7a19e
   m_configObjects: {}
