@@ -44,6 +44,8 @@ public class OnOrderComplete : UnityEvent { };
 
 #region Onboarding Events
 public class OnboardingClickEvent : UnityEvent { };
+
+#endregion
 #region Prep Station Events
 
 public class OnIncompleteIngredientPotion : UnityEvent { };
