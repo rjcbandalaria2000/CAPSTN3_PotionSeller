@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -27,6 +28,16 @@ public class OnboardingManager : MonoBehaviour
     public Cauldron cauldron;
     public Button sellButton;
 
+    [Header("Scene Change")]
+    public int sceneID;
+
+    private BasicSceneManager basicSceneManager;
+
+    private void Awake()
+    {
+        basicSceneManager = this.GetComponent<BasicSceneManager>();
+    }
+
     private void Start()
     {
         NextIntroText();
@@ -50,6 +61,12 @@ public class OnboardingManager : MonoBehaviour
 
     public void NextButtonHit()
     {
+        if (id >= dialogueSOList.Count)
+        {
+            // Next scene?
+            Assert.IsNotNull(basicSceneManager, "Scene manager is null or is not set");
+            basicSceneManager.loadScene(sceneID);
+        }
         AddEventListenerOnID(id);        
         foreach(GameObject gameObject in arrowFlows)
         {
@@ -58,10 +75,7 @@ public class OnboardingManager : MonoBehaviour
         arrowFlows[id].SetActive(true);
         nextButton.SetActive(dialogueSOList[id].isButtonShown);
         
-        if (id > dialogueSOList.Count)
-        {
-            // Next scene?
-        }
+        
         if (dialogueSOList[id].dialogues.Count > 1)
         {
             panelText.text = dialogueSOList[id].dialogues[i].ToString();
