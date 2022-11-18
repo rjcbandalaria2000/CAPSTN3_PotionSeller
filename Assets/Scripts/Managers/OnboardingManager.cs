@@ -66,15 +66,29 @@ public class OnboardingManager : MonoBehaviour
             // Next scene?
             Assert.IsNotNull(basicSceneManager, "Scene manager is null or is not set");
             basicSceneManager.loadScene(sceneID);
+            return;
         }
-        AddEventListenerOnID(id);        
+
+        AddEventListenerOnID(id);    
+        
         foreach(GameObject gameObject in arrowFlows)
         {
-            gameObject.SetActive(false);
+            if (gameObject)
+            {
+                gameObject.SetActive(false);
+            }
         }
-        arrowFlows[id].SetActive(true);
-        nextButton.SetActive(dialogueSOList[id].isButtonShown);
-        
+
+        if (arrowFlows[id])
+        {
+            arrowFlows[id].SetActive(true);
+        }
+        else
+        {
+            Debug.Log("arrowFlows is Null.");
+        }
+
+        nextButton.SetActive(dialogueSOList[id].isButtonShown);        
         
         if (dialogueSOList[id].dialogues.Count > 1)
         {
@@ -93,7 +107,6 @@ public class OnboardingManager : MonoBehaviour
             id++;
             i = 0;
         }
-        
     }
 
     private void AddEventListenerOnID(int id)
