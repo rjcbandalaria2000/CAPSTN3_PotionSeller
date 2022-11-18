@@ -18,12 +18,17 @@ public class StoreLevel : MonoBehaviour
     private void Awake()
     {
         SingletonManager.Register(this);
+       
         onGainExp.AddListener(AddExpPoints);
+
+      //  Level = 1;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+       
+
         onRefreshLevelUI.Invoke();
         SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
     }

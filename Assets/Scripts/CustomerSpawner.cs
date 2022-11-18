@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 
 public class CustomerSpawner : MonoBehaviour
 {
+
     public List<GameObject> customer;
     public int customerQuantity;
     public Transform spawnPoint;
@@ -13,6 +14,9 @@ public class CustomerSpawner : MonoBehaviour
     public List<bool> isOccupied;
     public int index;
     public List<Transform> targetPoints = new();
+
+    public List<PotionScriptableObject> unlockPotion;
+    public StoreLevel storeLevel;
     //public List<GameObject> spawnedCustomers = new();
 
     Coroutine customerSpawn;
@@ -21,21 +25,33 @@ public class CustomerSpawner : MonoBehaviour
     private int RNG;
     private void Awake()
     {
+       
         index = 0;
         SingletonManager.Register(this);
-        customerSpawn = StartCoroutine(spawnCustomer());
+        storeLevel = GameObject.FindObjectOfType<StoreLevel>();
+        
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
         //StartCoroutine(CheckForNull());
+        initializeUnlockPotion();
+        customerSpawn = StartCoroutine(spawnCustomer());
+    }
+    
+    public void initializeUnlockPotion()
+    {
+        unlockPotion.Clear();
+
+        for (int i = 0; i < storeLevel.Level; i++)
+        {
+            unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
+        }
     }
 
-    void Update()
-    {
-        
-    }
+
 
     IEnumerator spawnCustomer()
     {
@@ -45,6 +61,8 @@ public class CustomerSpawner : MonoBehaviour
 
             GameObject spawnCustomer = Instantiate(customer[RNG], spawnPoint.position, Quaternion.identity);
             spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
+            spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions.Clear();
+            spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions = unlockPotion;
             spawnCustomer.transform.GetChild(0).GetComponent<Customer>().onOrderComplete.AddListener(newCustomerSpawn);
             spawnCustomers.Add(spawnCustomer);
             isOccupied[index] = true;
@@ -55,25 +73,6 @@ public class CustomerSpawner : MonoBehaviour
         index = 0;
     }
 
-    //public IEnumerator CheckForNull()
-    //{
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(0.5f);
-    //        for (int i = 0; i < spawnCustomers.Count; i++)
-    //        {
-    //            if (spawnCustomers[i] == null)
-    //            {
-    //                Debug.Log("Remove null");
-    //                spawnCustomers.Remove(spawnCustomers[i]);
-    //                //spawnCustomers.RemoveAt(i);
-    //                isOccupied[i] = false;
-    //                break;
-    //            }
-    //        }
-    //    }
-
-    //}
     public void RemoveCustomer()
     {
         //if(spawnCustomers.Count <= 0) { return; }
@@ -113,6 +112,8 @@ public class CustomerSpawner : MonoBehaviour
 
                     GameObject spawnCustomer = Instantiate(customer[RNG], spawnPoint.position, Quaternion.identity);
                     spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
+                    spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions.Clear();
+                    spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions = unlockPotion;
                     spawnCustomers.Add(spawnCustomer);
                     isOccupied[index] = true;
                     break; // Remove this if wants to spawn simultaneously
