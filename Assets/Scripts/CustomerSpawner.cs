@@ -45,7 +45,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         unlockPotion.Clear();
 
-        for (int i = 0; i < storeLevel.Level; i++)
+        for (int i = 0; i <= storeLevel.Level; i++)
         {
             unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
         }

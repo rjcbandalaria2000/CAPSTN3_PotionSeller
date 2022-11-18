@@ -74,7 +74,7 @@ public class Customer : SelectableObject
             PotionScriptableObject potion = availablePotions[RNG];
             customerPotion.Add(potion);
             OrderManager.instance.onCustomerOrderEvent.Invoke(potion, this);
-           orderName.text = potion.name;
+           //orderName.text = potion.name;
             //Debug.Log("Customer wants: " + potion.name);
         }
         yield return null;
