@@ -27836,7 +27836,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1450296061}
         m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
-        m_MethodName: NextButtonHit
+        m_MethodName: NextIntroText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33036,6 +33036,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfed6a95d5c39b647a311fdf04b2b173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  introText:
+  - {fileID: 11400000, guid: 0df5149e666206643aba04287f9f2d08, type: 2}
+  - {fileID: 11400000, guid: 127c17073ff1ba74fa029ff26e5375b9, type: 2}
+  - {fileID: 11400000, guid: e28dc362c164fe94bad8cfaf6003cee5, type: 2}
+  - {fileID: 11400000, guid: b2f6c83757c792a48a2af49e3ad69480, type: 2}
+  - {fileID: 11400000, guid: e5137c5d786877147a9c75ca34233815, type: 2}
+  - {fileID: 11400000, guid: 6ac757f976f713047ac2a6b0987c6613, type: 2}
+  - {fileID: 11400000, guid: c7424c50071ba674f8e05a80d7e32119, type: 2}
+  - {fileID: 11400000, guid: e5a7b5998f917ef4388bc5691f238658, type: 2}
+  - {fileID: 11400000, guid: a623a6beec0ecf84cb9419976da704c6, type: 2}
+  - {fileID: 11400000, guid: 6993f3427e3419c4ca6afcf04d5d78fd, type: 2}
   dialogueSOList:
   - {fileID: 11400000, guid: bb826560339e7924b862f03514126c5b, type: 2}
   - {fileID: 11400000, guid: 66d9d2281b056d8409bb4fecef46b1f9, type: 2}
@@ -43471,7 +43482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1881701124
 RectTransform:
   m_ObjectHideFlags: 0
