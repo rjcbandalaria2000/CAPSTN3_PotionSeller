@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
+  m_Name: 6 - Cauldron
+  m_EditorClassIdentifier: 
+  id: 6
+  dialogueTitle: Cauldron
+  dialogues:
+  - Let's now move to <b>[Cauldron Area]</b> and finish crafting the potion.
+  - For this phase, we just need to <b>drag</b> or <b>swipe</b> the mouse to the
+    direction of the arrow displayed in the screen.

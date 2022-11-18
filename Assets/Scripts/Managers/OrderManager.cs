@@ -37,6 +37,8 @@ public class OrderManager : MonoBehaviour
     public Image orderImage;
     public TextMeshProUGUI orderName;
     public TextMeshProUGUI orderPrice;
+    public TextMeshProUGUI origOrderPrice;
+    public TMP_Dropdown orderDropdown;
     public Button sellButton;
 
     [HideInInspector]
@@ -79,8 +81,7 @@ public class OrderManager : MonoBehaviour
     public void RefreshList(int value)
     {
         float sellingPrice = potionOrder.buyPrice + potionOrder.buyPrice * markupPercent;
-        //orderParentPanel.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(sellingPrice).ToString();
-        orderPrice.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(sellingPrice).ToString();
+        orderPrice.text = Mathf.RoundToInt(sellingPrice).ToString();
     }
 
     public void SetMarkupPercent(int value)
