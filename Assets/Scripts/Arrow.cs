@@ -122,6 +122,8 @@ public class Arrow : MonoBehaviour
             else
             {
                 hitCount++;
+                this.gameObject.transform.position = startPos.position;
+                nextPos = pos2.anchoredPosition;
             }
             //SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
             

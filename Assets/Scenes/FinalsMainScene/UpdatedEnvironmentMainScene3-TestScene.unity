@@ -15629,14 +15629,6 @@ PrefabInstance:
       propertyPath: objectNameUI
       value: 
       objectReference: {fileID: 1444270904}
-    - target: {fileID: 246304119099930774, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 246304119099930774, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1bf8e4eeff51b024bb0c729119159796, type: 2}
     - target: {fileID: 246304119582529960, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_Name
       value: Brew
@@ -15685,18 +15677,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4264599655125360418, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
+    - target: {fileID: 1548014833732279390, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1935346316}
+    - target: {fileID: 2615906915730791528, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1935346316}
+    - target: {fileID: 3469584679899213531, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1935346316}
+    - target: {fileID: 4147836682707920330, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1935346316}
+    - target: {fileID: 5955976545936067962, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: speeds.Array.data[0]
+      value: 500
       objectReference: {fileID: 0}
-    - target: {fileID: 4264599655125360418, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0f13b8b14c69de547a922e1ac7163886, type: 2}
-    - target: {fileID: 4264599655125360418, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0f13b8b14c69de547a922e1ac7163886, type: 2}
+    - target: {fileID: 5955976545936067962, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: speeds.Array.data[1]
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955976545936067962, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: speeds.Array.data[2]
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955976545936067962, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: speeds.Array.data[3]
+      value: 1100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
 --- !u!4 &886079668 stripped
