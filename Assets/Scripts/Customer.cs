@@ -40,6 +40,8 @@ public class Customer : SelectableObject
     [Header("Animator")]
     public Animator animator;
 
+    private StatsManager statsManager;
+
     // Start is called before the first frame update
     void Awake()    
     {
@@ -56,6 +58,7 @@ public class Customer : SelectableObject
         StartCoroutine(initializeCustomerOrderList());
         animationRoutine = StartCoroutine(moveAnimation());
         markupAcceptance = this.GetComponent<MarkupAcceptance>();
+        statsManager = SingletonManager.Get<StatsManager>();
     }
     private void OnEnable()
     {
@@ -152,10 +155,18 @@ public class Customer : SelectableObject
                        
 
                         Debug.Log("Correct Markup price");
+                        if (statsManager)
+                        {
+                            statsManager.customersServed++;
+                        }
 
                     }
                     else
                     {
+                        if (statsManager)
+                        {
+                            statsManager.customersMissed++;
+                        }
                         Debug.Log("Incorrect mark up price");
                     }
 

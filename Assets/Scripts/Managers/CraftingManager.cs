@@ -25,7 +25,7 @@ public class CraftingManager : MonoBehaviour
     public bool                         hasCrafted;
 
     private Inventory                   playerInventory;
-    
+    private StatsManager                statsManager;
 
     private void Awake()
     {
@@ -35,6 +35,7 @@ public class CraftingManager : MonoBehaviour
     private void Start()
     {
         playerInventory = SingletonManager.Get<Inventory>();
+        statsManager = SingletonManager.Get<StatsManager>();
     }
 
     public void OnSelectedPotionClick(PotionScriptableObject potionScriptableObject)
@@ -75,20 +76,7 @@ public class CraftingManager : MonoBehaviour
         }
         //if the player has the right ingredients and the right quantity
         if (tempPlayerIngredients.Count >= potionScriptableObject.requiredIngredients.Count)
-        {
-            //for (int i = 0; i < potionScriptableObject.requiredIngredients.Count; i++)
-            //{
-            //    for(int j = 0; j < tempPlayerIngredients.Count; j++)
-            //    {
-            //        if (tempPlayerIngredients[j].itemName == potionScriptableObject.requiredIngredients[i].ingredient.ingredientName)
-            //        {
-            //            tempPlayerIngredients[j].itemAmount -= potionScriptableObject.requiredIngredients[i].quantity;
-            //            break;
-            //        }
-            //    }
-            
-            //}
-            
+        {   
             selectedPotionScriptableObject = potionScriptableObject;
             if (selectedPotionText)
             {
@@ -125,6 +113,10 @@ public class CraftingManager : MonoBehaviour
                 SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject);
                 onQuestCompletedEvent?.Invoke(QuestManager.instance.createPotionQuest);
                 RemoveIngredients(selectedPotionScriptableObject);
+                if (statsManager)
+                {
+                    statsManager.potionsCreated++;
+                }
             }
            
             isCookingComplete = false;

@@ -50,11 +50,18 @@ public class OrderManager : MonoBehaviour
     private Inventory playerInventory;
     public Dictionary<Customer, PotionScriptableObject> customerOrderDictionary = new(); // test
 
+    private StatsManager statsManager;
     private void Awake()
     {
         _instance = this;
-        playerInventory = SingletonManager.Get<Inventory>();
+        
         //SingletonManager.Register(this);
+    }
+
+    private void Start()
+    {
+        playerInventory = SingletonManager.Get<Inventory>();
+        statsManager = SingletonManager.Get<StatsManager>();
     }
 
     private void OnEnable()
@@ -127,6 +134,8 @@ public class OrderManager : MonoBehaviour
                     
                     //Add experience 
                     storeLevel.onGainExp.Invoke(sellExpPoints);
+
+                
 
                     //Remove Order from OrderList
                     // Remove Order from UI
