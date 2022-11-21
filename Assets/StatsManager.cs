@@ -20,5 +20,16 @@ public class StatsManager : MonoBehaviour
         
     }
 
+    public void AddTotalGoldEarned(int goldEarned)
+    {
+        totalGoldEarned += goldEarned;
+    }
+
+    public void AddTotalGoldSpent(int goldSpent)
+    {
+        totalGoldSpent += goldSpent;
+    }
+
+    
   
 }
