@@ -16,4 +16,6 @@ MonoBehaviour:
   isButtonShown: 1
   dialogueTitle: 4
   dialogues:
-  - So I stopped attending the academy since I can't afford the tuition.
+  - The debt collector sent me a letter when I was still in the academy saying that
+    I must be responsible for my father's debt. He said he'll be back by the 30th
+    day of this month.

@@ -16,5 +16,5 @@ MonoBehaviour:
   isButtonShown: 1
   dialogueTitle: Store Level
   dialogues:
-  - The store level increases the price range that the customers will accept. This
-    will help us earn money the longer the store runs.
+  - The store level increases the base price of the potions we are selling. This
+    will help us earn money the longer the store runs

@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
   m_Name: 7
   m_EditorClassIdentifier: 
-  id: 7
+  id: 6
   isButtonShown: 1
-  dialogueTitle: 7
+  dialogueTitle: 6
   dialogues:
-  - That's where you come in. I need you to be the one to manage the overall operation
-    of the shop, I will be handling the crafting and casting of incantations for
-    the potions.
+  - As you can see, the house is pretty much empty. I sold most of our belongings
+    in order for me to have capital.

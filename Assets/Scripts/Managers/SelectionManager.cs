@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class SelectionManager : MonoBehaviour
 {
+    private Transform selectedObject;
+    private bool isCustomer;
     private List<Material> defaultMaterials = new();
     [SerializeField] private Material highlightMaterial;
     private Material defaultMaterial;
@@ -32,7 +34,12 @@ public class SelectionManager : MonoBehaviour
                 Renderer selectionRend = _selection.GetComponent<Renderer>();
                 //reset back to default material color
                 selectionRend.material = defaultMaterial;
-                _selection.gameObject.transform.GetComponent<SelectableObject>().objectNameUI?.SetActive(false);
+
+                if (_selection.gameObject.GetComponent<SelectableObject>().objectNameUI.activeInHierarchy)
+                {
+                    _selection.gameObject.transform.GetComponent<SelectableObject>().objectNameUI?.SetActive(false);
+                }
+
                 if (_selection.gameObject.GetComponent<SelectableObject>().objectOrderUI != null)
                 {
                     _selection.gameObject.GetComponent<SelectableObject>()?.objectOrderUI.SetActive(false);
@@ -46,8 +53,27 @@ public class SelectionManager : MonoBehaviour
                 _selection.gameObject.GetComponent<SelectableObject>().objectNameUI?.SetActive(false);
             }
             if (_selection.CompareTag("Selectable"))
-            {                
-                if (_selection.transform.childCount > 0)
+            {
+                if (isCustomer && _selection.GetChild(0).childCount > 0)
+                {
+                    int i = 0;
+                    foreach (Transform child in _selection.transform.GetChild(0))
+                    {
+                        Renderer childSelection;
+                        if (child.GetComponent<SkinnedMeshRenderer>())
+                        {
+                            childSelection = child.GetComponent<SkinnedMeshRenderer>();
+                            childSelection.material = defaultMaterials[i];
+                            i++;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    defaultMaterials.Clear();
+                }
+                else if (!isCustomer && _selection.transform.childCount > 0)
                 {
                     int i = 0;
                     foreach (Transform child in _selection.transform)
@@ -57,23 +83,27 @@ public class SelectionManager : MonoBehaviour
                         i++;  
                     }
                     defaultMaterials.Clear();
-                }
+                }                
                 else
                 {
                     Renderer selectionRend = _selection.GetComponent<Renderer>();
                     // reset back to default material color
                     selectionRend.material = defaultMaterial;
                 }
-                // resets _selection to null
-                _selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI?.SetActive(false);
-               
+
+                
+
                 if (_selection.gameObject.GetComponent<SelectableObject>().objectOrderUI != null)
                 {
                     _selection.gameObject.GetComponent<SelectableObject>()?.objectOrderUI.SetActive(false);
                 }
             }
 
-            _selection = null;
+            _selection = null;            
+        }
+        else
+        {
+            selectedObject?.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -91,28 +121,52 @@ public class SelectionManager : MonoBehaviour
             {
                 Renderer selectionRend = selection.GetComponent<Renderer>();
                 if (selectionRend != null)
-                {
-                    if (selection.transform.childCount > 0)
+                {                    
+                    if (selection.GetComponent<Customer>() && selection.GetChild(0).childCount > 0)
                     {
-                        foreach(Transform child in selection.transform)
-                        { 
+                        isCustomer = true;
+                        foreach (Transform child in selection.transform.GetChild(0))
+                        {
+                            Renderer childSelection;
+                            if (child.GetComponent<SkinnedMeshRenderer>())
+                            {
+                                childSelection = child.GetComponent<SkinnedMeshRenderer>();
+                                defaultMaterials.Add(childSelection.material);
+                                childSelection.material = highlightMaterial;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                    else if (selection.transform.childCount > 0)
+                    {
+                        isCustomer = false;
+                        foreach (Transform child in selection.transform)
+                        {
                             Renderer childSelection = child.GetComponent<Renderer>();
                             defaultMaterials.Add(childSelection.material);
                             childSelection.material = highlightMaterial;
                         }
-                    }
+                    }                    
                     else
-                    {                        
+                    {
                         // store default material color
                         defaultMaterial = selectionRend.material;
                         // set material to selectable (highlighted)
                         selectionRend.material = highlightMaterial;
                     }
-                    selection.gameObject.GetComponent<SelectableObject>()?.objectNameUI?.SetActive(true);
 
+                    if (!selection.gameObject.GetComponent<SelectableObject>().objectNameUI.activeInHierarchy)
+                    {
+                        selectedObject?.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
+                        selection.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(true);
+                        selectedObject = selection;
+                    }
 
                     if (selection.gameObject.GetComponent<SelectableObject>().objectOrderUI != null)
-                    {
+                    {                        
                         selection.gameObject.GetComponent<SelectableObject>()?.objectOrderUI.SetActive(true);
                     }
 
