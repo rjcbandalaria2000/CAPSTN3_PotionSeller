@@ -147,7 +147,7 @@ public class Customer : SelectableObject
 
                         // Gain money
                         OrderManager.instance.playerWallet.AddMoney(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
-
+                        
                         // Add experience 
                         //OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
                         SingletonManager.Get<StoreLevel>().AddExpPoints(OrderManager.instance.sellExpPoints);
@@ -157,6 +157,7 @@ public class Customer : SelectableObject
                         Debug.Log("Correct Markup price");
                         if (statsManager)
                         {
+                            statsManager.AddTotalGoldEarned(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
                             statsManager.customersServed++;
                         }
 

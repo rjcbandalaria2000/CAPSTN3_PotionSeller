@@ -33,6 +33,7 @@ public class DisplayStoreReport : MonoBehaviour
         {
             gameManager.onGameFinish.AddListener(UpdateDisplayStoreReport);
         }
+        UpdateDisplayStoreReport();
     }
 
     public void UpdateDisplayStoreReport()
