@@ -14,7 +14,8 @@ public class Shop : MonoBehaviour
     public List<DisplayItemSprite> itemSprites = new();
     public List<DisplayItemName> itemNames = new();
 
-   
+    private StatsManager statsManager;
+
     void Start()
     {
         if(PlayerWallet == null)
@@ -24,7 +25,8 @@ public class Shop : MonoBehaviour
         else
         {
             Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
-        }       
+        }
+        statsManager = SingletonManager.Get<StatsManager>();
     }
 
     public void BuyItem(string itemName)
@@ -42,6 +44,10 @@ public class Shop : MonoBehaviour
                     Debug.Log("Bought " + itemIngredient.ingredientScriptableObject.ingredientName);
                     //Inventory.instance.AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
                     SingletonManager.Get<Inventory>().AddItem(itemIngredient.ingredientScriptableObject);
+                    if (statsManager)
+                    {
+                        statsManager.AddTotalGoldSpent((int)itemIngredient.ingredientScriptableObject.buyPrice);
+                    }
                 }
                 else
                 {
@@ -70,6 +76,10 @@ public class Shop : MonoBehaviour
                     float getPrice = itemPotion.potionScriptableObject.buyPrice * markupPercent;
                     Debug.Log("Bought " + itemPotion.potionScriptableObject.potionName);
                     PlayerWallet.AddMoney(Mathf.RoundToInt(getPrice));
+                    if (statsManager)
+                    {
+                        statsManager.AddTotalGoldEarned(Mathf.RoundToInt(getPrice));
+                    }
                     //Inventory.instance.RemoveItem(itemPotion.potionScriptableObject.potionName);
                 }
                 else
