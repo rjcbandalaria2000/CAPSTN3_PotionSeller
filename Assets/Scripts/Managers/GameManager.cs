@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public Color winColor;
     public Color loseColor;
 
+    [Header("UnityEvents")]
+    
+
     private void Awake()
     {
         SingletonManager.Register(this);

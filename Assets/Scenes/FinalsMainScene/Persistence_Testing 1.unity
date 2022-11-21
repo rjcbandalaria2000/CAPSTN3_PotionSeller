@@ -211,4 +211,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd958589b357424c8a30aae875fa416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneId: MainMenu-Test
+  FirstSceneId: MainMenu
