@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Wallet playerWallet;
+    public Wallet           playerWallet;
 
     [Header("Condition Objects")]
-    public int goalMoney = 1000;
-    public GameObject conditionPanel;
-    public TextMeshProUGUI conditionText;
-    public Color winColor;
-    public Color loseColor;
+    public int              goalMoney = 1000;
+    public GameObject       conditionPanel;
+    public TextMeshProUGUI  conditionText;
+    public Color            winColor;
+    public Color            loseColor;
 
-    [Header("UnityEvents")]
-    
+    [Header("Unity Events")]
+    public OnGameWin        onGameWin = new();
+    public OnGameLose       onGameLose = new();
+    public OnGameFinish     onGameFinish = new();
 
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
                 // Play particle system?
                 // Play sound?
             }
+            onGameFinish.Invoke();
         }
     }
 

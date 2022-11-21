@@ -56,6 +56,14 @@ public class OnCompleteIngredientPotion : UnityEvent { };
 
 #region Ending Condition Events
 
+public class OnGameWin : UnityEvent { };
+public class OnGameLose : UnityEvent { };
+
+public class OnGameFinish: UnityEvent { };
+
+#endregion
+
+#region OnSceneChange Events
 
 
 #endregion
