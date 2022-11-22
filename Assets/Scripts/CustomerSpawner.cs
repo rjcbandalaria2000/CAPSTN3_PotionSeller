@@ -36,6 +36,7 @@ public class CustomerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         //StartCoroutine(CheckForNull());
         initializeUnlockPotion();
         customerSpawn = StartCoroutine(spawnCustomer());
@@ -51,6 +52,17 @@ public class CustomerSpawner : MonoBehaviour
         }
     }
 
+    public void resetSpawner()
+    {
+        spawnCustomers.Clear();
+
+        for(int i = 0; i <= isOccupied.Count; i++)
+        {
+            isOccupied[i] = false;
+        }
+
+        index = 0;
+    }
 
 
     IEnumerator spawnCustomer()
@@ -92,17 +104,16 @@ public class CustomerSpawner : MonoBehaviour
 
     public void newCustomerSpawn()
     {
+        Debug.Log("Calling New Customer");
         newSpawn = StartCoroutine(callNewCustomer());
     }
 
     public IEnumerator callNewCustomer()
     {
-        Debug.Log("Remove Customer");
-        RemoveCustomer();
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
         Debug.Log("Calling New Customer");
-        if (spawnCustomers.Count < customerQuantity)
+        if (spawnCustomers.Count <= customerQuantity)
         {
             while(index < isOccupied.Count)
             {
@@ -114,7 +125,7 @@ public class CustomerSpawner : MonoBehaviour
                     spawnCustomer.transform.GetChild(0).GetComponent<Customer>().targetPos = targetPoints[index];
                     spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions.Clear();
                     spawnCustomer.transform.GetChild(0).GetComponent<Customer>().availablePotions = unlockPotion;
-                    spawnCustomers.Add(spawnCustomer);
+                    spawnCustomers[index] = spawnCustomer;
                     isOccupied[index] = true;
                     break; // Remove this if wants to spawn simultaneously
                 }
@@ -139,9 +150,11 @@ public class CustomerSpawner : MonoBehaviour
         {
             if (spawnCustomers[i] == customerToRemove)
             {
-                spawnCustomers.RemoveAt(i);
+                spawnCustomers[i] = null;
                 isOccupied[i] = false;
                 Debug.Log("Remove Customer");
+
+                newCustomerSpawn();
                 break;
             }
         }
