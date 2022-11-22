@@ -9,12 +9,6 @@ public class DisplayWallet : MonoBehaviour
     public GameObject Player;
     public TextMeshProUGUI MoneyCountText;
     private Wallet wallet;
-
-    private void Awake()
-    {
-        MoneyCountText = this.GetComponent<TextMeshProUGUI>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +21,6 @@ public class DisplayWallet : MonoBehaviour
         if (wallet)
         {
             wallet.WalletUIUpdate.AddListener(DisplayWalletCount);
-            DisplayWalletCount();
         }
 
     }
