@@ -181,10 +181,9 @@ public class Customer : SelectableObject
                     if (SingletonManager.Get<CustomerSpawner>())
                     {
                         SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
-                    }
-                    
+                    }                    
 
-                    //onOrderComplete.Invoke();
+                    onOrderComplete.Invoke();
 
                     //Close UI panel after selling transaction
                     OrderManager.instance.orderPanelUI.SetActive(false);

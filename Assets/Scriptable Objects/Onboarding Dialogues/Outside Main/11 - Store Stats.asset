@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 16 - Outro
+  m_Name: 11 - Store Stats
   m_EditorClassIdentifier: 
-  id: 15
+  id: 10
   isButtonShown: 1
-  dialogueTitle: Exit
+  dialogueTitle: Store Stats
   dialogues:
-  - Great! Now that you know all the things around the shop. Let's call it a day
-    and prepare ourselves for tomorrow. Let's get along well in the future!
+  - We can check the overall stat of the store in the <b>[Store Stats]</b>. There
+    we can see the amount of debt we need to pay, so that we don't forget.

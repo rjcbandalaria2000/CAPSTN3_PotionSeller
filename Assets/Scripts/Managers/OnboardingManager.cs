@@ -110,6 +110,7 @@ public class OnboardingManager : MonoBehaviour
 
     private void AddEventListenerOnID(int id)
     {
+        Debug.Log(id);
         switch (id)
         {
             case 0:
@@ -133,17 +134,14 @@ public class OnboardingManager : MonoBehaviour
                     button.onClick.AddListener(PotionSelectHit);
                 }
                 break;
-            /*case 5:
-             * Craft
-                break;*/
+            case 5:
+                brewHitButton.onClick.AddListener(BrewButtonHit);
+                break;
             case 6:
-                brewHitButton.onClick.AddListener(BrewButtonHit);                
+                SingletonManager.Get<CraftingManager>().onQuestCompletedEvent.AddListener(PotionCreated);                
                 break;
-            case 7:
-                cauldron.onOnboardingClickEvent.AddListener(CauldronHit);                
-                break;
-            case 8:
-                //Selling
+            case 7:                
+                customer.onOnboardingClickEvent.AddListener(CustomerHit);
                 customer.onOrderComplete.AddListener(NextButtonHit);
                 break;
         }
@@ -187,6 +185,12 @@ public class OnboardingManager : MonoBehaviour
     {
         NextButtonHit();
         cauldron.onOnboardingClickEvent.RemoveListener(CauldronHit);
+    }
+
+    private void PotionCreated(Quest quest)
+    {
+        NextButtonHit();
+        SingletonManager.Get<CraftingManager>().onQuestCompletedEvent.RemoveListener(PotionCreated);
     }
     #endregion
 }
