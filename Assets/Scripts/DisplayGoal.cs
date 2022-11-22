@@ -21,7 +21,7 @@ public class DisplayGoal : MonoBehaviour
     public void UpdatePlayerGoal()
     {
        if(gameManager == null) { return; }
-        goalText.text = "Goal: " + gameManager.goalMoney.ToString("0");
+        goalText.text = "Debt: " + gameManager.goalMoney.ToString("0");
         
     }
 }
