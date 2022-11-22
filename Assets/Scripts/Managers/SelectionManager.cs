@@ -103,7 +103,11 @@ public class SelectionManager : MonoBehaviour
         }
         else
         {
-            selectedObject?.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
+            if (selectedObject)
+            {
+                selectedObject?.GetComponent<SelectableObject>()?.objectNameUI?.SetActive(false);
+            }
+            
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -160,7 +164,11 @@ public class SelectionManager : MonoBehaviour
 
                     if (!selection.gameObject.GetComponent<SelectableObject>().objectNameUI.activeInHierarchy)
                     {
-                        selectedObject?.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
+                        if (selectedObject)
+                        {
+                            selectedObject?.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(false);
+                        }
+                        
                         selection.gameObject.GetComponent<SelectableObject>().objectNameUI.SetActive(true);
                         selectedObject = selection;
                     }
