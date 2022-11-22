@@ -104,14 +104,12 @@ public class CustomerSpawner : MonoBehaviour
 
     public void newCustomerSpawn()
     {
+        Debug.Log("Calling New Customer");
         newSpawn = StartCoroutine(callNewCustomer());
     }
 
     public IEnumerator callNewCustomer()
     {
-        Debug.Log("Remove Customer");
-        //RemoveCustomer();
-
         yield return new WaitForSeconds(2.0f);
 
         Debug.Log("Calling New Customer");
@@ -150,11 +148,13 @@ public class CustomerSpawner : MonoBehaviour
     {
         for(int i = 0; i < spawnCustomers.Count; i++)
         {
-            if (spawnCustomers[i].name == customerToRemove.name)
+            if (spawnCustomers[i] == customerToRemove)
             {
                 spawnCustomers[i] = null;
                 isOccupied[i] = false;
                 Debug.Log("Remove Customer");
+
+                newCustomerSpawn();
                 break;
             }
         }
