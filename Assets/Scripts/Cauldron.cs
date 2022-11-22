@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Cauldron : SelectableObject
 {
-    public OnboardingClickEvent onOnboardingClickEvent = new();
-    public QuestCompletedEvent onQuestCompletedEvent = new();
-    public Mixing mixingPot;
+    public OnboardingClickEvent     onOnboardingClickEvent = new();
+    public QuestCompletedEvent      onQuestCompletedEvent = new();
+
+    [Header("Stations")]
+    public Mixing                   mixingPot;
+    public GameObject               character;
 
     // Start is called before the first frame update
     void Start()
     {
         objectPanelUI.SetActive(false);
+        DisplayCharacter(false);
     }
     private void OnEnable()
     {
@@ -31,6 +35,7 @@ public class Cauldron : SelectableObject
         onQuestCompletedEvent.Invoke(QuestManager.instance?.useCauldronQuest);
         onOnboardingClickEvent.Invoke();
         mixingPot.SwitchTrailEffects(true);
+        DisplayCharacter(true);
     }
 
     public void CloseUIPanel()
@@ -40,7 +45,15 @@ public class Cauldron : SelectableObject
         mixingPot.SwitchTrailEffects(false);
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(false);
+        DisplayCharacter(false);
     }
-   
+    
+    public void DisplayCharacter(bool state)
+    {
+        if (character)
+        {
+            character.SetActive(state);
+        }
+    }
 
 }
