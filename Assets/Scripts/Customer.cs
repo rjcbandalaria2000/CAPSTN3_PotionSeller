@@ -33,6 +33,7 @@ public class Customer : SelectableObject
     Coroutine animationRoutine;
 
     public OnboardingClickEvent onOnboardingClickEvent = new();
+    public OnboardingOrderComplete onOnboardingOrderComplete = new();
     public OnOrderComplete onOrderComplete = new OnOrderComplete();
 
     public MarkupAcceptance markupAcceptance;
@@ -181,9 +182,10 @@ public class Customer : SelectableObject
                     if (SingletonManager.Get<CustomerSpawner>())
                     {
                         SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
-                    }                    
+                    }
 
-                    onOrderComplete.Invoke();
+                    //onOrderComplete.Invoke();
+                    onOnboardingOrderComplete.Invoke();
 
                     //Close UI panel after selling transaction
                     OrderManager.instance.orderPanelUI.SetActive(false);

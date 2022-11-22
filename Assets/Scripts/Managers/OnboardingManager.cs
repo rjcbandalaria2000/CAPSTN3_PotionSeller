@@ -142,7 +142,7 @@ public class OnboardingManager : MonoBehaviour
                 break;
             case 7:                
                 customer.onOnboardingClickEvent.AddListener(CustomerHit);
-                customer.onOrderComplete.AddListener(NextButtonHit);
+                customer.onOnboardingOrderComplete.AddListener(NextButtonHit);
                 break;
         }
     }

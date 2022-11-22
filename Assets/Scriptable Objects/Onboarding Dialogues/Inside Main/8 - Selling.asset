@@ -18,7 +18,7 @@ MonoBehaviour:
   dialogues:
   - It's time to go back to the <b>[Order Area]</b>. Let's select the potion we crafted
     to sell them.
-  - The price we see right now is the base price of the potion.  It covers the gold
+  - The price we see right now is the base price of the potion. It covers the gold
     that we used to buy the ingredients awhile ago.
   - We can then add <b>[mark-up]</b> to the base price so we will gain profit. Just
     watch out that we do not overprice the potion or our customers won't buy them.

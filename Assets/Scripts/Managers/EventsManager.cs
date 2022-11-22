@@ -44,7 +44,7 @@ public class OnOrderComplete : UnityEvent { };
 
 #region Onboarding Events
 public class OnboardingClickEvent : UnityEvent { };
-
+public class OnboardingOrderComplete : UnityEvent { };
 #endregion
 
 #region Prep Station Events
