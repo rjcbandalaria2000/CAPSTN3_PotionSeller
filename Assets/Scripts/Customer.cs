@@ -178,8 +178,11 @@ public class Customer : SelectableObject
                     OrderManager.instance.sellButton.onClick.RemoveListener(() => SellOrder());
 
                     // Destroy gameObject and call (spawn) a new customer (gameObject)
-
-                    SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
+                    if (SingletonManager.Get<CustomerSpawner>())
+                    {
+                        SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
+                    }
+                    
 
                     //onOrderComplete.Invoke();
 
