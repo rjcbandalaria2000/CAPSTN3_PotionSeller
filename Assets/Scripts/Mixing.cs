@@ -25,7 +25,10 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
     public GameObject   successUI;
     public GameObject   failUI;
     public GameObject   leftArrowUI;
-    public GameObject   rightArrowUI; 
+    public GameObject   rightArrowUI;
+
+    [Header("VFX")]
+    public GameObject   trailVFX;
     
     private Vector2 InitialPosition;
     public void OnPointerDown(PointerEventData eventData)
@@ -112,6 +115,16 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
         rightArrowUI.SetActive(true);
         DisableMixingResultUI();
     }
+
+    #region VFX
+
+    public void SwitchTrailEffects(bool state)
+    {
+        if (trailVFX == null){ return; }
+        trailVFX.SetActive(state);
+    }
+
+    #endregion
 
     #region UI
     public void ActivateSuccessUI()

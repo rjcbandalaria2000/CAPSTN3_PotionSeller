@@ -7,6 +7,7 @@ public class Cauldron : SelectableObject
     public OnboardingClickEvent onOnboardingClickEvent = new();
     public QuestCompletedEvent onQuestCompletedEvent = new();
     public Mixing mixingPot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +30,14 @@ public class Cauldron : SelectableObject
         objectPanelUI.SetActive(true);
         onQuestCompletedEvent.Invoke(QuestManager.instance?.useCauldronQuest);
         onOnboardingClickEvent.Invoke();
+        mixingPot.SwitchTrailEffects(true);
     }
 
     public void CloseUIPanel()
     {
         if(mixingPot == null) { return;}
         mixingPot.ResetMixing();
+        mixingPot.SwitchTrailEffects(false);
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(false);
     }
