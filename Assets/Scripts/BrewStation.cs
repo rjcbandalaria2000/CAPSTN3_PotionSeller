@@ -7,15 +7,22 @@ public class BrewStation : SelectableObject
     [Header("States")]
     public bool isCompleted;
 
+    [Header("Stations")]
     public Arrow arrow;
     public GameObject prepStationPanel;
     public GameObject brewStationPanel;
+    public GameObject character;
+    
 
     //public SelectableObject selectable;
     // Start is called before the first frame update
     void Start()
     {
         objectPanelUI.SetActive(false);
+        if (character)
+        {
+            character.SetActive(false);
+        }
     }
     private void OnEnable()
     {
@@ -32,6 +39,13 @@ public class BrewStation : SelectableObject
         objectPanelUI.SetActive(true);
         prepStationPanel.SetActive(true);
         brewStationPanel.SetActive(false);
+
+        //DisplayCharacter
+        if (character)
+        {
+            character.SetActive(true);
+        }
+        
         //if(arrow == null) { return; }
         //arrow.StartArrowMovement();
     }
@@ -42,6 +56,13 @@ public class BrewStation : SelectableObject
         arrow.ResetBrewMeter();
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(false);
+
+        //Hide Character
+        if (character)
+        {
+            character.SetActive(false);
+        }
+        
        
     }
 
