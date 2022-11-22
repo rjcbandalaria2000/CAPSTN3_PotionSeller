@@ -60,11 +60,8 @@ public class Arrow : MonoBehaviour
 
     IEnumerator arrowMovement()
     {
-        while(true)//while(true)
+        while(true)
         {
-           
-
-
             if (transform.anchoredPosition.x >= startHitPoint.anchoredPosition.x && transform.anchoredPosition.x <= endHitPoint.anchoredPosition.x)//(transform.anchoredPosition.x >= edgeVal1 && transform.anchoredPosition.x <= edgeVal2) // edge value
             {
                 isHitPoint = true;
@@ -106,9 +103,9 @@ public class Arrow : MonoBehaviour
     {
         if (isHitPoint)
         {
-            if (hitCount >= requiredHits)
+            if (hitCount >= requiredHits - 1)
             {
-                StopCoroutine(movementRoutine);
+                StopArrowMovement();
                 ActivateSuccessUI();
                 CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
                 if (craftingManager)
@@ -141,12 +138,20 @@ public class Arrow : MonoBehaviour
         movementRoutine = StartCoroutine(arrowMovement());
     }
 
+    public void StopArrowMovement()
+    {
+        if(movementRoutine == null) { return; }
+        StopCoroutine(movementRoutine);
+    }
+
     public void ResetBrewMeter()
     {
         this.gameObject.transform.position = startPos.position;
         winConditionUI.SetActive(false);
         loseConditionUI.SetActive(false);
-        isHitPoint = false; 
+        isHitPoint = false;
+        hitCount = 0;
+        StopArrowMovement();
     }
 
     public void ActivateSuccessUI()
