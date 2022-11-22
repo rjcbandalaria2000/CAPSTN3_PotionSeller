@@ -18,5 +18,5 @@ MonoBehaviour:
   dialogues:
   - Here you can see the time and day we are currently in. Since we just opened,
     we are at <b>[Day 1]</b>.
-  - The shop runs at <b>[6:00]</b> to <b>[14:00]</b>. Be sure to serve as many customer
+  - The shop runs at <b>[15:00]</b> to <b>[23:00]</b>. Be sure to serve as many customer
     as we can within the time frame.

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: 
-  id: 8
+  id: 7
   isButtonShown: 1
-  dialogueTitle: 8
+  dialogueTitle: 7
   dialogues:
-  - I would still need your help in the crafting process from time to time to carry
-    or prepare the next ingredient for the potion.
+  - That's where you come in. I need you to be the one to manage the overall operation
+    of the shop, I will be handling the crafting and casting of incantations for
+    the potions.

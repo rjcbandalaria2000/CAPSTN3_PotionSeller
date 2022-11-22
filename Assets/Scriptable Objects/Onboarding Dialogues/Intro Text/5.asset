@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
   m_Name: 5
   m_EditorClassIdentifier: 
-  id: 5
+  id: 4
   isButtonShown: 1
-  dialogueTitle: 5
+  dialogueTitle: 4
   dialogues:
-  - Anyways, enough about the story, let's get to the reason why I needed a helper.
+  - So I stopped attending the academy and went back here to open a potion shop.
+    It's what I'm good at in the academy.

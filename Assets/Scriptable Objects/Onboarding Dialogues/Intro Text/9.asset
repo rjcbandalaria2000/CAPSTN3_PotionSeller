@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
   m_Name: 9
   m_EditorClassIdentifier: 
-  id: 9
+  id: 8
   isButtonShown: 1
-  dialogueTitle: 9
+  dialogueTitle: 8
   dialogues:
-  - So shall we start?
+  - I would still need your help in the crafting process from time to time to carry
+    or prepare the next ingredient for the potion.

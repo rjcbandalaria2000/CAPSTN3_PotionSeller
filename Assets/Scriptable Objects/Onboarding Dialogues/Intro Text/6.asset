@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  id: 6
+  id: 5
   isButtonShown: 1
-  dialogueTitle: 6
+  dialogueTitle: 5
   dialogues:
-  - As you can see, the house is pretty much empty. I sold most of our belongings
-    in order for me to have capital.
+  - Anyways, enough about the story, let's get to the reason why I needed a helper.
