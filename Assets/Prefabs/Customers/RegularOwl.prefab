@@ -251,6 +251,7 @@ MonoBehaviour:
   objectNameUI: {fileID: 3577750227373543678}
   objectPanelUI: {fileID: 0}
   objectOrderUI: {fileID: 0}
+  playerInventory: {fileID: 0}
   availablePotions:
   - {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
   - {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
@@ -297,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2068438809399735940
 RectTransform:
   m_ObjectHideFlags: 0

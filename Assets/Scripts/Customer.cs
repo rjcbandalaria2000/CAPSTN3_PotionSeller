@@ -167,7 +167,7 @@ public class Customer : SelectableObject
 
                     // Destroy gameObject and call (spawn) a new customer (gameObject)
 
-                    SingletonManager.Get<CustomerSpawner>()?.CustomerToRemove(thisParent);
+                    SingletonManager.Get<CustomerSpawner>().CustomerToRemove(thisParent);
                     onOrderComplete.Invoke();
 
                     //Close UI panel after selling transaction
