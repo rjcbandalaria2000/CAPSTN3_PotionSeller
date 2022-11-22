@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 6 - Cauldron
+  m_Name: 7 - Cauldron
   m_EditorClassIdentifier: 
-  id: 6
+  id: 7
+  isButtonShown: 0
   dialogueTitle: Cauldron
   dialogues:
   - Let's now move to <b>[Cauldron Area]</b> and finish crafting the potion.

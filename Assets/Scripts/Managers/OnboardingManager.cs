@@ -20,13 +20,12 @@ public class OnboardingManager : MonoBehaviour
 
     [Header("Inside Main Loop Variables")]
     public List<GameObject> arrowFlows;
-    public List<Customer> customers;
     public List<Button> potionSelectButtons;
+    public Customer customer;
     public Button recipeQuitButton;
     public Button shopQuitButton;
     public Button brewHitButton;
     public Cauldron cauldron;
-    public Button sellButton;
 
     [Header("Scene Change")]
     public int sceneID;
@@ -34,7 +33,7 @@ public class OnboardingManager : MonoBehaviour
     private BasicSceneManager basicSceneManager;
 
     private void Awake()
-    {
+    {        
         basicSceneManager = this.GetComponent<BasicSceneManager>();
     }
 
@@ -85,7 +84,7 @@ public class OnboardingManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("arrowFlows is Null.");
+            Debug.Log("arrowFlows[" + id + "] is Null.");
         }
 
         nextButton.SetActive(dialogueSOList[id].isButtonShown);        
@@ -111,14 +110,11 @@ public class OnboardingManager : MonoBehaviour
 
     private void AddEventListenerOnID(int id)
     {
+        Debug.Log(id);
         switch (id)
         {
-            // Inside Main Loop
             case 0:
-                foreach (Customer customer in customers)
-                {
-                    customer.onOnboardingClickEvent.AddListener(CustomerHit);
-                }                
+                customer.onOnboardingClickEvent.AddListener(CustomerHit);
                 break;
             case 1:
                 foreach (Button button in potionSelectButtons)
@@ -142,17 +138,12 @@ public class OnboardingManager : MonoBehaviour
                 brewHitButton.onClick.AddListener(BrewButtonHit);
                 break;
             case 6:
-                cauldron.onOnboardingClickEvent.AddListener(CauldronHit);
+                SingletonManager.Get<CraftingManager>().onQuestCompletedEvent.AddListener(PotionCreated);                
                 break;
-            case 7:
-                foreach (Customer customer in customers)
-                {
-                    customer.onOnboardingClickEvent.AddListener(CustomerHit);
-                }                
-                sellButton.onClick.AddListener(SellButtonHit);
-                // markup listener
+            case 7:                
+                customer.onOnboardingClickEvent.AddListener(CustomerHit);
+                customer.onOnboardingOrderComplete.AddListener(NextButtonHit);
                 break;
-            // Outside Main Loop
         }
     }
 
@@ -160,10 +151,7 @@ public class OnboardingManager : MonoBehaviour
     private void CustomerHit()
     {
         NextButtonHit();
-        foreach (Customer customer in customers)
-        {
-            customer.onOnboardingClickEvent.RemoveListener(CustomerHit);
-        }
+        customer.onOnboardingClickEvent.RemoveListener(CustomerHit);
     }
 
     private void PotionSelectHit()
@@ -199,14 +187,10 @@ public class OnboardingManager : MonoBehaviour
         cauldron.onOnboardingClickEvent.RemoveListener(CauldronHit);
     }
 
-    private void SellButtonHit()
+    private void PotionCreated(Quest quest)
     {
         NextButtonHit();
-        sellButton.onClick.RemoveListener(SellButtonHit);
+        SingletonManager.Get<CraftingManager>().onQuestCompletedEvent.RemoveListener(PotionCreated);
     }
-    #endregion
-
-    #region Onboarding Outside Main Loop Function Flows
-
     #endregion
 }

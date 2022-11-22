@@ -603,6 +603,7 @@ MonoBehaviour:
   objectName: 
   objectNameUI: {fileID: 6689492953448891256}
   objectPanelUI: {fileID: 3199120549419880792}
+  objectOrderUI: {fileID: 0}
 --- !u!1 &3199120550492944460
 GameObject:
   m_ObjectHideFlags: 0

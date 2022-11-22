@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 8 - Stock
+  m_Name: 6 - Brew
   m_EditorClassIdentifier: 
-  id: 8
-  isButtonShown: 1
-  dialogueTitle: Stock
+  id: 6
+  isButtonShown: 0
+  dialogueTitle: Brew
   dialogues:
-  - All crafted potions and ingredients bought are stored in the <b>[Stock Area]</b>.
-    You can check there if we have extra potions and if we're running low on ingredients.
+  - In the <b>[Brew]</b> phase. Click the <b>[Hit]</b> button on the right timing.
