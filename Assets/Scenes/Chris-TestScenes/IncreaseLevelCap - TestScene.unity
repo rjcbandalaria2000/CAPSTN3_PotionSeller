@@ -42422,7 +42422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: MaxExperiencePoints.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: MaxExperiencePoints.Array.data[1]
