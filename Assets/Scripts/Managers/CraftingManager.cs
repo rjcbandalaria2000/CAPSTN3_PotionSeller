@@ -139,9 +139,10 @@ public class CraftingManager : MonoBehaviour
                     {
                         if (playerInventory.ingredients[j].itemAmount > 0)
                         {
-                            playerInventory.ingredients[j].itemAmount-= potionCrafted.requiredIngredients[i].quantity;
+                            playerInventory.ingredients[j].itemAmount -= potionCrafted.requiredIngredients[i].quantity;
                         }
                         Debug.Log("Remaining Stock " + playerInventory.ingredients[j].ingredientSO.ingredientName + " " + playerInventory.ingredients[j].itemAmount);
+                        playerInventory.onRemoveItemEvent.Invoke(playerInventory.ingredients[j].ingredientSO, playerInventory.ingredients[j].itemAmount);
                         
                         break;
                     }
