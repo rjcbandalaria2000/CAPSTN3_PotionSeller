@@ -150,7 +150,7 @@ public class CustomerSpawner : MonoBehaviour
         {
             if (spawnCustomers[i] == customerToRemove)
             {
-                Destroy(spawnCustomers[i]);
+               // Destroy(spawnCustomers[i]);
                 spawnCustomers[i] = null;
                 isOccupied[i] = false;
                 Debug.Log("Remove Customer");

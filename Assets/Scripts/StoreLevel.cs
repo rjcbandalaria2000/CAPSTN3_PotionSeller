@@ -55,7 +55,7 @@ public class StoreLevel : MonoBehaviour
             CurrentExperiencePoints -= MaxExperiencePoints[Level];
             Level++;
             SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
-
+            SingletonManager.Get<CustomerSpawner>().initializeUnlockPotion();
         }
     }
 

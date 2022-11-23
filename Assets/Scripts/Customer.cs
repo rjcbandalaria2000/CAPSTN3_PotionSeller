@@ -178,7 +178,7 @@ public class Customer : SelectableObject
 
                    
 
-                  //  Destroy(thisParent.gameObject);
+                    Destroy(thisParent.gameObject);
 
                                     
                     //SingletonManager.Get<CustomerSpawner>().CheckForNull();
