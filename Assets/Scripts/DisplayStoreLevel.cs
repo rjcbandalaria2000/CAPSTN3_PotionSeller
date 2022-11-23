@@ -28,6 +28,10 @@ public class DisplayStoreLevel : MonoBehaviour
     {
         if(storeLevel == null) { return; }
         if(fillImage == null) { return; }
-        fillImage.fillAmount = storeLevel.GetNormalizedExpPoints();
+        if (storeLevel.Level < storeLevel.MaxExperiencePoints.Count)
+        {
+            fillImage.fillAmount = storeLevel.GetNormalizedExpPoints();
+        }
+        
     }
 }

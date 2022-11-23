@@ -18136,8 +18136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayCount: 0
-  startHour: 6
-  endHour: 14
+  startHour: 15
+  endHour: 23
   minToRealSeconds: 0.25
   doTimer: 1
 --- !u!4 &976454556
