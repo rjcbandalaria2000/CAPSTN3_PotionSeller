@@ -46,7 +46,7 @@ public class StoreLevel : MonoBehaviour
 
     public void LevelUp()
     {
-        if(Level < MaxExperiencePoints.Count)
+        if(Level < MaxExperiencePoints.Count-1)
         {
             CurrentExperiencePoints -= MaxExperiencePoints[Level];
             Level++;
