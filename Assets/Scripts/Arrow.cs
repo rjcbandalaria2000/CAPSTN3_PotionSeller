@@ -135,6 +135,8 @@ public class Arrow : MonoBehaviour
 
     public void StartArrowMovement()
     {
+        this.gameObject.transform.position = startPos.position;
+        nextPos = pos2.anchoredPosition;
         movementRoutine = StartCoroutine(arrowMovement());
     }
 
