@@ -4599,6 +4599,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 205b832b6d8e7f24ea47a91a9652e88c, type: 3}
   m_PrefabInstance: {fileID: 240384161}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &245082691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9110975068512596495, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+  m_PrefabInstance: {fileID: 1659697439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &247908643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6288,6 +6293,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c4422756b5e9556409274cf68422cc3e, type: 3}
   m_PrefabInstance: {fileID: 308213439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &328015536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5129352879402051954, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+  m_PrefabInstance: {fileID: 886079667}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &338883394
 GameObject:
@@ -16598,6 +16608,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 246304119099930768, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 328015536}
     - target: {fileID: 246304119099930768, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: objectNameUI
       value: 
@@ -31897,6 +31911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cauldron
       objectReference: {fileID: 0}
+    - target: {fileID: 8113188589261238211, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 245082691}
     - target: {fileID: 8113188589261238211, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
       propertyPath: mixingPot
       value: 
