@@ -17,5 +17,3 @@ MonoBehaviour:
   dialogueTitle: Cauldron
   dialogues:
   - Let's now move to <b>[Cauldron Area]</b> and finish crafting the potion.
-  - For this phase, we just need to <b>drag</b> or <b>swipe</b> the mouse to the
-    direction of the arrow displayed in the screen.
