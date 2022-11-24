@@ -32,7 +32,7 @@ public class DisplayQuestUI : MonoBehaviour
         GameObject gameObject = Instantiate(questGameObjectPrefab, questParentPanel.transform, false);
         displayQuests.Add(gameObject);
         gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = quest.questTitle;
-        gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = quest.questReward.ToString();
+        gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"<sprite=0> " + quest.questReward.ToString();
     }
 
     private void RemoveToUI(Quest quest)
