@@ -44,6 +44,9 @@ public class CustomerSpawner : MonoBehaviour
     
     public void initializeUnlockPotion()
     {
+        if(storeLevel.Level >= SingletonManager.Get<PotionManager>().Potions.Count) {
+            Debug.Log("Store level is higher than the potions count");
+            return; }
         unlockPotion.Clear();
 
         for (int i = 0; i <= storeLevel.Level; i++)

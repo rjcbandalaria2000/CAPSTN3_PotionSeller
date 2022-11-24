@@ -6539,6 +6539,10 @@ MonoBehaviour:
   - {fileID: 535024252}
   - {fileID: 65482845}
   - {fileID: 561377362}
+  - {fileID: 1169671920}
+  - {fileID: 877845589}
+  - {fileID: 1617867084}
+  - {fileID: 2022777015}
 --- !u!1 &370080575
 GameObject:
   m_ObjectHideFlags: 0
@@ -16607,6 +16611,10 @@ PrefabInstance:
     - target: {fileID: 70904391707039780, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 106825320435309219, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 246304119099930768, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: character
@@ -31355,7 +31363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1617867085
 Transform:
   m_ObjectHideFlags: 0
@@ -31531,7 +31539,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Goal: 0'
+  m_text: 'Debt: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
   m_sharedMaterial: {fileID: -3984757326273378455, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
@@ -42333,6 +42341,42 @@ PrefabInstance:
     - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: Level
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[1]
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[2]
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[3]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[4]
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[5]
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[6]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[7]
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
+      propertyPath: MaxExperiencePoints.Array.data[8]
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 988059883539165421, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_Name
