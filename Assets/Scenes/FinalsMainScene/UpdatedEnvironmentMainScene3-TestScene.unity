@@ -18182,7 +18182,7 @@ MonoBehaviour:
   dayCount: 0
   startHour: 15
   endHour: 23
-  minToRealSeconds: 0.25
+  minToRealSeconds: 0.15
   doTimer: 1
 --- !u!4 &976454556
 Transform:
