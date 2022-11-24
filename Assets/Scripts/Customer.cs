@@ -178,6 +178,11 @@ public class Customer : SelectableObject
                     // Remove listener reference ?
                     OrderManager.instance.sellButton.onClick.RemoveListener(() => SellOrder());
 
+
+                    //Close UI panel after selling transaction
+                    OrderManager.instance.orderPanelUI.SetActive(false);
+                    //Show UI feedback
+
                     // Destroy gameObject and call (spawn) a new customer (gameObject)
                     if (SingletonManager.Get<CustomerSpawner>())
                     {
@@ -187,11 +192,9 @@ public class Customer : SelectableObject
                     //onOrderComplete.Invoke();
                     onOnboardingOrderComplete.Invoke();
 
-                    //Close UI panel after selling transaction
-                    OrderManager.instance.orderPanelUI.SetActive(false);
-                    //Show UI feedback
+                   
 
-                    Destroy(thisParent);
+                    Destroy(thisParent.gameObject);
 
                                     
                     //SingletonManager.Get<CustomerSpawner>().CheckForNull();
