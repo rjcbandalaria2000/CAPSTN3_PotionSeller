@@ -8577,8 +8577,8 @@ MonoBehaviour:
   Potions:
   - {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
   - {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
-  - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
   - {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
+  - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
 --- !u!4 &495204224
 Transform:
   m_ObjectHideFlags: 0
@@ -39954,7 +39954,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 366556173, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: Level
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 988059883539165421, guid: 5ab226f50865b644dae0aa0dafdc425f, type: 3}
       propertyPath: m_Name
