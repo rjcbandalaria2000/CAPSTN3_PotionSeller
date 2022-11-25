@@ -8,6 +8,8 @@ public class DisplayResultGold : MonoBehaviour
     public Wallet playerWallet;
     public TextMeshProUGUI resultGoldText; 
 
+
+
     // Start is called before the first frame update
     void Start()
     {

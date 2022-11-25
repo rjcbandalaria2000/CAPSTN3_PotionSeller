@@ -22,6 +22,7 @@ public class DisplayWallet : MonoBehaviour
         {
             wallet.WalletUIUpdate.AddListener(DisplayWalletCount);
         }
+        DisplayWalletCount();
 
     }
     

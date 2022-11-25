@@ -34676,7 +34676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47582a7c2e0513140b4386163e3358df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWallet: {fileID: 0}
+  playerWallet: {fileID: 366556170}
   resultGoldText: {fileID: 1721129298}
 --- !u!114 &1721129298
 MonoBehaviour:
