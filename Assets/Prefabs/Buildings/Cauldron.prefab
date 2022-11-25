@@ -1851,6 +1851,7 @@ MonoBehaviour:
   objectPanelUI: {fileID: 1218793644425818757}
   objectOrderUI: {fileID: 0}
   mixingPot: {fileID: 913331068}
+  character: {fileID: 9110975068512596495}
 --- !u!1 &8161399968619844914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,5 +2837,10 @@ PrefabInstance:
 --- !u!4 &8447485306287057077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3548479024309078531, guid: 23c6720eea18c7849b4f53ccac2d5789, type: 3}
+  m_PrefabInstance: {fileID: 4901541464817558198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9110975068512596495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4212390071353888953, guid: 23c6720eea18c7849b4f53ccac2d5789, type: 3}
   m_PrefabInstance: {fileID: 4901541464817558198}
   m_PrefabAsset: {fileID: 0}

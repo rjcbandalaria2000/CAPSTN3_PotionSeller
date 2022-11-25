@@ -15,7 +15,7 @@ public class Cauldron : SelectableObject
     void Start()
     {
         objectPanelUI.SetActive(false);
-        DisplayCharacter(false);
+        DisplayCharacter(true);
     }
     private void OnEnable()
     {
@@ -35,7 +35,7 @@ public class Cauldron : SelectableObject
         onQuestCompletedEvent.Invoke(QuestManager.instance?.useCauldronQuest);
         onOnboardingClickEvent.Invoke();
         mixingPot.SwitchTrailEffects(true);
-        DisplayCharacter(true);
+        //DisplayCharacter(true);
     }
 
     public void CloseUIPanel()
@@ -45,7 +45,7 @@ public class Cauldron : SelectableObject
         mixingPot.SwitchTrailEffects(false);
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(false);
-        DisplayCharacter(false);
+        //DisplayCharacter(false);
     }
     
     public void DisplayCharacter(bool state)
