@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
         SingletonManager.Register(this);
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void OnEnable()
     {
         TimeManager.onDayEndedEvent.AddListener(GoalCheck);

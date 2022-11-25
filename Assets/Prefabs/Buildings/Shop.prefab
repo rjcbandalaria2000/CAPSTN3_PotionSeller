@@ -218,6 +218,7 @@ MonoBehaviour:
   objectName: 
   objectNameUI: {fileID: 0}
   objectPanelUI: {fileID: 4447664266917609682}
+  objectOrderUI: {fileID: 0}
 --- !u!1 &5008953042629601864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1600,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211970522259358708, guid: c595ed1648ea5ba48964aded120ce1e6, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317743794269974658, guid: c595ed1648ea5ba48964aded120ce1e6, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3023484458294782984, guid: c595ed1648ea5ba48964aded120ce1e6, type: 3}
