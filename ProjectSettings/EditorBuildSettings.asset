@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalsMainScene/OnboardingSelectables.unity
     guid: 6ad10a14c58f733428de7d12b701c34c
   - enabled: 1
-    path: Assets/Scenes/FinalsMainScene/UpdatedEnvironmentMainScene3-TestScene.unity
+    path: Assets/Scenes/Emman-TestScenes/AddedBGM.unity
     guid: ba96fe6cbfcd0c94cbc271ae359c0198
   m_configObjects: {}
