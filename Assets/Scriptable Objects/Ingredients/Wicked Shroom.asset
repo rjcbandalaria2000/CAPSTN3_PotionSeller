@@ -15,7 +15,6 @@ MonoBehaviour:
   ingredientName: Wicked Shroom
   ingredientSprite: {fileID: 21300000, guid: 60d3536783c8dbf4ea41cb734c5858ed, type: 3}
   ingredientIconSprite: {fileID: 21300000, guid: 60d3536783c8dbf4ea41cb734c5858ed, type: 3}
-  baseBuyPrice: 0
   buyPrice: 86
   sellPrice: 38
-  ingredientQuantity: 2
+  ingredientQuantity: 1

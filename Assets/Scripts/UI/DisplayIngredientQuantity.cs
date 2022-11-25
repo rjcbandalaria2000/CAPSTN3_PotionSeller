@@ -24,7 +24,7 @@ public class DisplayIngredientQuantity : MonoBehaviour
 
     public void updateCount(int index)
     {
-        ShopIngredient itemIngredient = ingredientComp.Items[index].GetComponent<ShopIngredient>();
-        quantityCount.text = "x" + itemIngredient.ingredientScriptableObject.ingredientQuantity.ToString();
+        //ShopIngredient itemIngredient = ingredientComp.Items[index].GetComponent<ShopIngredient>();
+        quantityCount.text = "x" + ingredientComp.quantities[index].ToString();
     }
 }
