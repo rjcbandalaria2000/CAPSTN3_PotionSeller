@@ -8,6 +8,8 @@ using TMPro;
 public class UIManager : MonoBehaviour
 { 
     public GameObject IngredientBook;
+    public GameObject storeReportPanel;
+    public GameObject conditionPanel;
 
     private void Awake()
     {
@@ -33,4 +35,30 @@ public class UIManager : MonoBehaviour
     {
         IngredientBook.SetActive(false);
     }
+
+    public void ActivateStoreReport()
+    {
+        if (storeReportPanel == null) { return; }
+        storeReportPanel.SetActive(true);
+    }
+
+    public void DeactivateStoreReport()
+    {
+        if (storeReportPanel == null) { return; }
+        storeReportPanel.SetActive(false);
+    }
+
+    public void ActivateConditionPanel()
+    {
+        if(conditionPanel == null) { return; }
+        conditionPanel.SetActive(true);
+    }
+
+    public void DeactivateConditionPanel()
+    {
+        if (conditionPanel == null) { return; }
+        conditionPanel.SetActive(false);
+    }
+
+   
 }
