@@ -15,6 +15,7 @@ MonoBehaviour:
   ingredientName: Young Seedling
   ingredientSprite: {fileID: 21300000, guid: c8c614797ae582040b98630781b175d3, type: 3}
   ingredientIconSprite: {fileID: 21300000, guid: c8c614797ae582040b98630781b175d3, type: 3}
-  buyPrice: 42
-  sellPrice: 16
+  baseBuyPrice: 0
+  buyPrice: 46
+  sellPrice: 18
   ingredientQuantity: 1

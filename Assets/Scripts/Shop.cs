@@ -14,6 +14,8 @@ public class Shop : MonoBehaviour
     public List<DisplayItemSprite> itemSprites = new();
     public List<DisplayItemName> itemNames = new();
 
+    public List<int> quantities;
+
    
     void Start()
     {
@@ -25,6 +27,17 @@ public class Shop : MonoBehaviour
         {
             Assert.IsNotNull(PlayerWallet, "Player wallet is not set");
         }       
+    }
+
+    private void OnEnable()
+    {
+        foreach (GameObject shopItem in Items)
+        {
+            ShopIngredient itemIngredient = shopItem.GetComponent<ShopIngredient>();
+            itemIngredient.ingredientScriptableObject.ingredientQuantity = 1;
+            quantities.Add(itemIngredient.ingredientScriptableObject.ingredientQuantity);
+
+        }
     }
 
     public void BuyItem(string itemName)
@@ -121,6 +134,7 @@ public class Shop : MonoBehaviour
                 itemIngredient.ingredientScriptableObject.ingredientQuantity++;
                 itemIngredient.ingredientScriptableObject.buyPrice += 2;
                 itemIngredient.ingredientScriptableObject.sellPrice += 1;
+                quantities[index] = itemIngredient.ingredientScriptableObject.ingredientQuantity;
                 displayIngredientsQuantity[index].updateCount(index);
                 displayCosts[index].updateCount(index);
             }
@@ -141,6 +155,7 @@ public class Shop : MonoBehaviour
                 itemIngredient.ingredientScriptableObject.ingredientQuantity--;
                 itemIngredient.ingredientScriptableObject.buyPrice -= 2;
                 itemIngredient.ingredientScriptableObject.sellPrice -= 1;
+                quantities[index] = itemIngredient.ingredientScriptableObject.ingredientQuantity;
                 displayIngredientsQuantity[index].updateCount(index);
                 displayCosts[index].updateCount(index);
             }            

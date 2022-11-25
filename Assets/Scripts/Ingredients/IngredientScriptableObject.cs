@@ -8,6 +8,7 @@ public class IngredientScriptableObject : ScriptableObject
     public string ingredientName;
     public Sprite ingredientSprite;
     public Sprite ingredientIconSprite;
+    public float baseBuyPrice;
     public float buyPrice;
     public float sellPrice;
     public int ingredientQuantity;
