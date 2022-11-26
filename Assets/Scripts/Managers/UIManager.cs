@@ -9,7 +9,12 @@ public class UIManager : MonoBehaviour
 { 
     public GameObject IngredientBook;
     public GameObject storeReportPanel;
+    
+
+    [Header("Condition Panels")]
     public GameObject conditionPanel;
+    public GameObject winConditionPanel;
+    public GameObject loseConditionPanel;
 
     private void Awake()
     {
@@ -60,5 +65,24 @@ public class UIManager : MonoBehaviour
         conditionPanel.SetActive(false);
     }
 
+    public void ActivateWinConditionPanel(bool hasWon)
+    {
+        if(winConditionPanel == null) { return; }
+        if(loseConditionPanel == null) { return; }
+        winConditionPanel.SetActive(hasWon);
+        loseConditionPanel.SetActive(!hasWon);
+    }
+
+    public void DeactivateWinConditionPanel()
+    {
+        if(winConditionPanel== null) { return; }
+        winConditionPanel.SetActive(false);
+    }
+
+    public void DeactivateLoseConditionPanel()
+    {
+        if (loseConditionPanel == null) { return; }
+        loseConditionPanel.SetActive(false);
+    }
    
 }

@@ -56,6 +56,5 @@ public class DisplayStoreReport : MonoBehaviour
         customersMissedText.text = statsManager.customersMissed.ToString("0");
 
     }
-
    
 }
