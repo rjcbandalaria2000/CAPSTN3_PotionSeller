@@ -21,7 +21,7 @@ public class StoreLevel : MonoBehaviour
        
         onGainExp.AddListener(AddExpPoints);
 
-      //  Level = 1;
+        Level = 0;
     }
 
     // Start is called before the first frame update

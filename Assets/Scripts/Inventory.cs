@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
         {
             if (potions[i].itemName == scriptableObject.name)
             {
-                potions[i].itemAmount++;                
+                potions[i].itemAmount++;
                 amount = potions[i].itemAmount;
                 break;
             }
@@ -59,8 +59,8 @@ public class Inventory : MonoBehaviour
         {
             if (ingredients[i].itemName == scriptableObject.name)
             {
-                amount = SingletonManager.Get<Shop>().quantities[i]++;
-              //  amount = ingredients[i].itemAmount;
+                ingredients[i].itemAmount += itemQuantity;
+                amount = ingredients[i].itemAmount;
                 break;
             }
         }

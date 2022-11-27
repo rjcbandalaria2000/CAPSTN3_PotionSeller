@@ -22,6 +22,16 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         SingletonManager.Register(this);
+
+        foreach (GameObject shopItem in Items)
+        {
+            ShopIngredient itemIngredient = shopItem.GetComponent<ShopIngredient>();
+
+            quantities.Add(itemIngredient.ingredientScriptableObject.ingredientQuantity);
+            buyItemPrice.Add((int)itemIngredient.ingredientScriptableObject.buyPrice);
+            sellItemPrice.Add((int)itemIngredient.ingredientScriptableObject.sellPrice);
+
+        }
     }
 
     void Start()
@@ -36,25 +46,17 @@ public class Shop : MonoBehaviour
         }       
     }
 
-    private void OnEnable()
+   public void resetList()
     {
-        
         foreach (GameObject shopItem in Items)
         {
             ShopIngredient itemIngredient = shopItem.GetComponent<ShopIngredient>();
-     
+
             quantities.Add(itemIngredient.ingredientScriptableObject.ingredientQuantity);
             buyItemPrice.Add((int)itemIngredient.ingredientScriptableObject.buyPrice);
             sellItemPrice.Add((int)itemIngredient.ingredientScriptableObject.sellPrice);
 
         }
-    }
-
-    private void OnDisable()
-    {
-        buyItemPrice.Clear();
-        sellItemPrice.Clear();
-        quantities.Clear();
     }
 
     public void setIndex(int inspecIndex)
