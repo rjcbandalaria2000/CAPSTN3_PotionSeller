@@ -153,7 +153,7 @@ public class Customer : SelectableObject
                         //OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
                         SingletonManager.Get<StoreLevel>().AddExpPoints(OrderManager.instance.sellExpPoints);
 
-                       
+                        SingletonManager.Get<AudioManager>().Play("coins");
 
                         Debug.Log("Correct Markup price");
                         if (statsManager)
@@ -169,6 +169,9 @@ public class Customer : SelectableObject
                         {
                             statsManager.customersMissed++;
                         }
+                        
+                        SingletonManager.Get<AudioManager>().Play("warning");
+
                         Debug.Log("Incorrect mark up price");
                     }
 
@@ -201,6 +204,7 @@ public class Customer : SelectableObject
                 }
                 else
                 {
+                    SingletonManager.Get<AudioManager>().Play("warning");
                     Debug.Log("Not enough potions to sell");                    
                 }
                 break;
@@ -225,6 +229,11 @@ public class Customer : SelectableObject
         else
         {
             Debug.Log("No target position");
+        }
+
+        if (thisParent.gameObject.transform.position == targetPos.position)
+        {
+            SingletonManager.Get<AudioManager>().Play("owl");
         }
             
         animator.SetBool("IsIdle", true);

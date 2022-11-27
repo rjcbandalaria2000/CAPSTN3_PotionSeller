@@ -112,6 +112,8 @@ public class QuestManager : MonoBehaviour
                 // Give reward/s to player
                 playerWallet.AddMoney(q.questReward);
                 // Inventory.AddItem(quest.rewardsList[GetRandNum(0, quest.RewardsList.Count)])             
+                // Play sound
+                SingletonManager.Get<AudioManager>().Play("coins");
                 break;
             }
         }

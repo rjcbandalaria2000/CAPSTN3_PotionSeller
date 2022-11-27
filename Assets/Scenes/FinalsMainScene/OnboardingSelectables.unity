@@ -20281,6 +20281,34 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: coins
+    clip: {fileID: 8300000, guid: 9a081d174def34647bf633e9fcbbcf67, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: levelup
+    clip: {fileID: 8300000, guid: 1d170cad078ae7647969bc65d02aa8c4, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: owl
+    clip: {fileID: 8300000, guid: 6c8f38241b5faf5458cdbcac97b71208, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: warning
+    clip: {fileID: 8300000, guid: cb8e5aa9540e06c46b51e3c92c04e1b7, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   mixer: {fileID: 24100000, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
 --- !u!1001 &835733724
 PrefabInstance:
@@ -45569,6 +45597,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientBook: {fileID: 1904978353}
+  storeReportPanel: {fileID: 0}
+  conditionPanel: {fileID: 0}
+  winConditionPanel: {fileID: 0}
+  loseConditionPanel: {fileID: 0}
 --- !u!4 &1959826903
 Transform:
   m_ObjectHideFlags: 0
