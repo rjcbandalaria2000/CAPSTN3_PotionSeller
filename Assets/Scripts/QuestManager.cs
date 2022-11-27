@@ -29,6 +29,7 @@ public class QuestManager : MonoBehaviour
     public CraftingManager craftingManager;
     public Wallet playerWallet;
     public Cauldron cauldron;
+    public GameObject questIndicator;
 
     [Header("Quest References")]
     public Quest sellPotionQuest;
@@ -66,7 +67,8 @@ public class QuestManager : MonoBehaviour
     }
 
     private void InitNewQuests(int dayCount)
-    { 
+    {
+        questIndicator.SetActive(true);
         if (questsOfTheDay.Count > 0)
         {
             questsOfTheDay.Clear();

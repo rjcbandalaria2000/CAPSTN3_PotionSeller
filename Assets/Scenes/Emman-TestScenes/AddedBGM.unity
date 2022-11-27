@@ -22050,6 +22050,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204929028}
   m_CullTransparentMesh: 1
+--- !u!1 &1205749760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5251863885261719286, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+  m_PrefabInstance: {fileID: 3199120549725939058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1209718451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39403,6 +39408,7 @@ MonoBehaviour:
   craftingManager: {fileID: 1935346316}
   playerWallet: {fileID: 366556170}
   cauldron: {fileID: 148842678}
+  questIndicator: {fileID: 1205749760}
   sellPotionQuest: {fileID: 11400000, guid: 2f46575b06ac74b4ba17c5936d22626b, type: 2}
   createPotionQuest: {fileID: 11400000, guid: 9a4872fcc91d68b48806bec022c79587, type: 2}
   addMoneyQuest: {fileID: 11400000, guid: 55b996537e68c5047b35244bb8bdab25, type: 2}
