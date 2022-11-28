@@ -11,8 +11,9 @@ using DG.Tweening;
 
 public class Customer : SelectableObject
 {
-    public Inventory                        playerInventory;
-    public List<PotionScriptableObject>     availablePotions;
+    public Inventory playerInventory;
+    public OnboardingManager onboardingManager;
+    public List<PotionScriptableObject> availablePotions;
     // Customer might have more orders, hence "List"
     public List<PotionScriptableObject>     customerPotion = new();
     public Transform                        targetPos;
@@ -114,7 +115,17 @@ public class Customer : SelectableObject
         OrderManager.instance.origOrderPrice.text = $"<sprite=0> " + GetCalculatedPriceWithLevel(customerPotion[0]).ToString();
         OrderManager.instance.sellButton.onClick.RemoveAllListeners();
         OrderManager.instance.orderDropdown.value = 0;
-        OrderManager.instance.sellButton.onClick.AddListener(() => SellOrder());
+
+        if (!onboardingManager)
+        {
+            // If onboardingManager == null, it goes thru the DEFAULT SellOrder() function
+            OrderManager.instance.sellButton.onClick.AddListener(() => SellOrder());
+        }
+        else
+        {
+            // If there is a onboardingManager, it goes to the other OnboardingSellOrder() function instead
+            OrderManager.instance.sellButton.onClick.AddListener(() => OnboardingSellOrder());
+        }
 
         onOnboardingClickEvent.Invoke();
 
@@ -214,6 +225,19 @@ public class Customer : SelectableObject
                 }
                 break;
             }            
+        }
+    }
+
+    public void OnboardingSellOrder()
+    {
+        if (onboardingManager.id == 6)
+        {
+            SellOrder();
+        }
+        else
+        {
+            Debug.Log("You must go through the tutorial first.");
+            // Warning sound play?
         }
     }
 

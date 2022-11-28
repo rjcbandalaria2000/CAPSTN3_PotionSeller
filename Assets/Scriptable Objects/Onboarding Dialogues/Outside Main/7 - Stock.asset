@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 12 - Store Level
+  m_Name: 7 - Stock
   m_EditorClassIdentifier: 
-  id: 11
+  id: 7
   isButtonShown: 1
-  dialogueTitle: Store Level
+  dialogueTitle: Stock
   dialogues:
-  - The store level increases the base price of the potions we are selling. This
-    will help us earn money the longer the store runs
+  - All crafted potions and ingredients bought are stored in the <b>[Stock Area]</b>.
+    You can check there if we have extra potions and if we're running low on ingredients.

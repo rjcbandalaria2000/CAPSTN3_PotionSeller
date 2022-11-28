@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 4 - Select Potion
+  m_Name: 2 - Go to Shop
   m_EditorClassIdentifier: 
-  id: 4
+  id: 2
   isButtonShown: 0
-  dialogueTitle: Select Potion
+  dialogueTitle: Go to Shop
   dialogues:
-  - Now that we have all the ingredients needed. Let's try selecting the potion we
-    need to craft.  Click the corresponding button to proceed to potion brewing.
+  - Now let's go the <b>[Shop]</b> and buy what we need.

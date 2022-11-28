@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 13 - Day and Time
+  m_Name: 9 - Store Level
   m_EditorClassIdentifier: 
-  id: 12
+  id: 9
   isButtonShown: 1
-  dialogueTitle: Day and Time
+  dialogueTitle: Store Level
   dialogues:
-  - Here you can see the time and day we are currently in. Since we just opened,
-    we are at <b>[Day 1]</b>.
-  - The shop runs at <b>[15:00]</b> to <b>[23:00]</b>. Be sure to serve as many customer
-    as we can within the time frame.
+  - The store level increases the base price of the potions we are selling. This
+    will help us earn money the longer the store runs
