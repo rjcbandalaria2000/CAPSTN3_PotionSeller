@@ -20,7 +20,7 @@ public class Arrow : MonoBehaviour
 
    // public Meter meter;
 
-    public int              speed;
+    //public int              speed;
     public List<int> speeds = new();
     [SerializeField] 
     bool                    isHitPoint;
