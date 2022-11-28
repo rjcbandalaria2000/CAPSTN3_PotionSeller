@@ -1151,7 +1151,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.37, y: 2.2, z: 1.45}
+  m_Size: {x: 3.37, y: 3.82, z: 1.45}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7862993554949957393
 MonoBehaviour:
@@ -1168,6 +1168,7 @@ MonoBehaviour:
   objectName: Stock
   objectNameUI: {fileID: 0}
   objectPanelUI: {fileID: 7862993553341792609}
+  objectOrderUI: {fileID: 0}
   stockObjects: []
   itemPanelPrefab: {fileID: 2531608339588517168, guid: f35cc0dedb4f7094aa922368be7f55c2, type: 3}
   stockPanelParent: {fileID: 7862993554096033250}
