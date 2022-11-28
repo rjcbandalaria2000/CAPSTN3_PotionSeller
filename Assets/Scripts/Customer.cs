@@ -143,7 +143,7 @@ public class Customer : SelectableObject
                     //Debug.Log("SOLD: Sold for " + Mathf.RoundToInt(potion.buyPrice + (potion.buyPrice * markupPercent)));
 
                     // Remove potion order item
-                    playerInventory.RemoveItem(customerPotion[0],0);
+                    playerInventory.RemoveItem(customerPotion[0]);
 
                     if (markupAcceptance.IsWithinMarkupRange(OrderManager.instance.markupPercent))
                     {

@@ -129,7 +129,7 @@ public class OrderManager : MonoBehaviour
                     //Debug.Log("SOLD: Markup Percent is " + markupPercent);
                     //Debug.Log("SOLD: Sold for " + Mathf.RoundToInt(potion.buyPrice + (potion.buyPrice * markupPercent)));
                     // Remove potion order item
-                    playerInventory.RemoveItem(potion,0);
+                    playerInventory.RemoveItem(potion);
                     // Gain money
                     playerWallet.AddMoney(Mathf.RoundToInt(potion.buyPrice + (potion.buyPrice * markupPercent)));
                     

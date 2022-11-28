@@ -29,6 +29,6 @@ public class DisplayCost : MonoBehaviour
     public void updateCount(int index)
     {
         //ShopIngredient itemIngredient = shopIngredient.Items[index].GetComponent<ShopIngredient>();
-        quantityCount.text = shopIngredient.buyItemPrice[index].ToString();
+        //quantityCount.text = shopIngredient.buyItemPrice[index].ToString();
     }
 }
