@@ -18,7 +18,9 @@ MonoBehaviour:
   buyPrice: 158
   sellPrice: 0
   description:
-  - wounds and mild desease
+  - one order of salve for wounds
+  - I'll take one potion for pain relief
+  - give me a recovery potion
   requiredIngredients:
   - ingredient: {fileID: 11400000, guid: 4b6f3551de3679d488246ba068e34740, type: 2}
     quantity: 1

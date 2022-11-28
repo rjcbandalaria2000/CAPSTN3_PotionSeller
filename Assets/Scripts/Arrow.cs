@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.VFX;
+
 
 public class Arrow : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class Arrow : MonoBehaviour
     [Header("VFX")]
     public GameObject effect;
     public GameObject characterModel;
+    public VisualEffect poofVFX;
 
     private RectTransform transform;
 
@@ -113,6 +115,7 @@ public class Arrow : MonoBehaviour
                     craftingManager.isCookingComplete = true;
                     craftingManager.OnCompleteCrafting();
                 }
+               
                 PlayVFX();
                 Debug.Log("Score");
             }
@@ -178,5 +181,6 @@ public class Arrow : MonoBehaviour
         effect.SetActive(true);
         ParticleSystem effectParticle = effect.GetComponent<ParticleSystem>();
         effectParticle.Play();
+        poofVFX.Play();
     }
 }

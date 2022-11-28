@@ -18,7 +18,9 @@ MonoBehaviour:
   buyPrice: 76
   sellPrice: 0
   description:
-  - faster growth
+  - one potion for hair growth please
+  - give me potion for my plants to grow healthy
+  - I'll take something that can regrow my crops
   requiredIngredients:
   - ingredient: {fileID: 11400000, guid: d0116ef6e149e9e4b8fe1673e478f612, type: 2}
     quantity: 1

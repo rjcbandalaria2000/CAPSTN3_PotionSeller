@@ -18,7 +18,9 @@ MonoBehaviour:
   buyPrice: 166
   sellPrice: 0
   description:
-  - Potion for affection
+  - I want a potion for attracting people
+  - Please give me a love potion
+  - one potion for hypnotizing someone
   requiredIngredients:
   - ingredient: {fileID: 11400000, guid: 3278b50ce61785c4a89df3a98a330d8b, type: 2}
     quantity: 1
