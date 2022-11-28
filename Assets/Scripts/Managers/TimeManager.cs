@@ -105,7 +105,7 @@ public class TimeManager : MonoBehaviour
         dayCount++;
         // Invoke event ?
         onDayEndedEvent.Invoke(dayCount);
-        ResetTime();
+        ResetTime();        
     }
 
     public void OnTimeSkipButtonHit()

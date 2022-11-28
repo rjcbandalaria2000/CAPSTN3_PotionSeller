@@ -44,7 +44,7 @@ public class Shop : MonoBehaviour
                     Debug.Log("Bought " + itemIngredient.ingredientScriptableObject.ingredientName);
                     //Inventory.instance.AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
                     SingletonManager.Get<Inventory>().AddItem(itemIngredient.ingredientScriptableObject);
-                    SingletonManager.Get<AudioManager>().Play("coins");
+                    SingletonManager.Get<AudioManager>().Play(Constants.COINS_SOUND);
                     if (statsManager)
                     {
                         statsManager.AddTotalGoldSpent((int)itemIngredient.ingredientScriptableObject.buyPrice);
@@ -52,7 +52,7 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    SingletonManager.Get<AudioManager>().Play("warning");
+                    SingletonManager.Get<AudioManager>().Play(Constants.WARNING_SOUND);
                     Debug.Log("Not enough funds...");
                 }
                 break;

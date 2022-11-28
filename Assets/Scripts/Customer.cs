@@ -149,13 +149,15 @@ public class Customer : SelectableObject
                         // Gain money
                         OrderManager.instance.playerWallet.AddMoney(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
                         
+                        // Play money sound
+                        SingletonManager.Get<AudioManager>().Play(Constants.COINS_SOUND);
+
                         // Add experience 
                         //OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
-                        SingletonManager.Get<StoreLevel>().AddExpPoints(OrderManager.instance.sellExpPoints);
-
-                        SingletonManager.Get<AudioManager>().Play("coins");
+                        SingletonManager.Get<StoreLevel>().AddExpPoints(OrderManager.instance.sellExpPoints);                        
 
                         Debug.Log("Correct Markup price");
+
                         if (statsManager)
                         {
                             statsManager.AddTotalGoldEarned(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
@@ -170,7 +172,8 @@ public class Customer : SelectableObject
                             statsManager.customersMissed++;
                         }
                         
-                        SingletonManager.Get<AudioManager>().Play("warning");
+                        // Play rejected sound
+                        SingletonManager.Get<AudioManager>().Play(Constants.REJECTED_SOUND);
 
                         Debug.Log("Incorrect mark up price");
                     }
@@ -204,7 +207,7 @@ public class Customer : SelectableObject
                 }
                 else
                 {
-                    SingletonManager.Get<AudioManager>().Play("warning");
+                    SingletonManager.Get<AudioManager>().Play(Constants.WARNING_SOUND);
                     Debug.Log("Not enough potions to sell");                    
                 }
                 break;
@@ -233,7 +236,7 @@ public class Customer : SelectableObject
 
         if (thisParent.gameObject.transform.position == targetPos.position)
         {
-            SingletonManager.Get<AudioManager>().Play("owl");
+            SingletonManager.Get<AudioManager>().Play(Constants.OWL_SOUND);
         }
             
         animator.SetBool("IsIdle", true);

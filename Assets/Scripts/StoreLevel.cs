@@ -58,7 +58,7 @@ public class StoreLevel : MonoBehaviour
             Level++;
             SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
             SingletonManager.Get<CustomerSpawner>().initializeUnlockPotion();
-            SingletonManager.Get<AudioManager>().Play("levelup");
+            SingletonManager.Get<AudioManager>().Play(Constants.LEVELUP_SOUND);
         }
     }
 

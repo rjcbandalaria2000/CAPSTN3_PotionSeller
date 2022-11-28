@@ -66,7 +66,10 @@ public class QuestManager : MonoBehaviour
     }
 
     private void InitNewQuests(int dayCount)
-    { 
+    {
+        // Play sound
+        SingletonManager.Get<AudioManager>().Play(Constants.DAYRESET_SOUND);
+
         if (questsOfTheDay.Count > 0)
         {
             questsOfTheDay.Clear();
@@ -113,7 +116,7 @@ public class QuestManager : MonoBehaviour
                 playerWallet.AddMoney(q.questReward);
                 // Inventory.AddItem(quest.rewardsList[GetRandNum(0, quest.RewardsList.Count)])             
                 // Play sound
-                SingletonManager.Get<AudioManager>().Play("coins");
+                SingletonManager.Get<AudioManager>().Play(Constants.COINS_SOUND);
                 break;
             }
         }

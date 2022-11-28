@@ -66,7 +66,7 @@ public class CraftingManager : MonoBehaviour
                     else
                     {
                         onIncompleteIngredientPotion.Invoke();
-                        SingletonManager.Get<AudioManager>().Play("warning");
+                        SingletonManager.Get<AudioManager>().Play(Constants.WARNING_SOUND);
                         Debug.Log("Not enough ingredients" +
                             potionScriptableObject.requiredIngredients[i].ingredient.ingredientName + " "
                             + potionScriptableObject.requiredIngredients[i].quantity);
@@ -118,6 +118,9 @@ public class CraftingManager : MonoBehaviour
                 {
                     statsManager.potionsCreated++;
                 }
+
+                // Play sound
+                SingletonManager.Get<AudioManager>().Play(Constants.POTIONCREATED_SOUND);
             }
            
             isCookingComplete = false;

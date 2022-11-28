@@ -120,10 +120,12 @@ public class Arrow : MonoBehaviour
             {
                 hitCount++;
                 this.gameObject.transform.position = startPos.position;
-                nextPos = pos2.anchoredPosition;
+                nextPos = pos2.anchoredPosition;                
             }
             //SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
             
+            // Play sound
+            SingletonManager.Get<AudioManager>().Play(Constants.HITMETER_SOUND);
         }
         else
         {
