@@ -124,6 +124,14 @@ public class Arrow : MonoBehaviour
                 hitCount++;
                 this.gameObject.transform.position = startPos.position;
                 nextPos = pos2.anchoredPosition;
+                if (poofVFX)
+                {
+                    if (!poofVFX.gameObject.activeSelf)
+                    {
+                        poofVFX.gameObject.SetActive(true);
+                    }
+                    poofVFX.Play();
+                }
             }
             //SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
             
@@ -156,6 +164,14 @@ public class Arrow : MonoBehaviour
         loseConditionUI.SetActive(false);
         isHitPoint = false;
         hitCount = 0;
+        if (poofVFX)
+        {
+            poofVFX.gameObject.SetActive(false);
+        }
+        if (effect)
+        {
+            effect.gameObject.SetActive(false);
+        }
         StopArrowMovement();
     }
 
@@ -181,6 +197,5 @@ public class Arrow : MonoBehaviour
         effect.SetActive(true);
         ParticleSystem effectParticle = effect.GetComponent<ParticleSystem>();
         effectParticle.Play();
-        poofVFX.Play();
     }
 }
