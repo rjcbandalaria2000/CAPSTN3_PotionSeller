@@ -18711,7 +18711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be4fcdee9a97b04883f0abf9bbb8bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayCount: 0
+  dayCount: 1
   startHour: 15
   endHour: 23
   minToRealSeconds: 0.15
