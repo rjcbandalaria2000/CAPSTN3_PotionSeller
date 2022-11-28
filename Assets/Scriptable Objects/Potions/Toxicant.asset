@@ -18,7 +18,9 @@ MonoBehaviour:
   buyPrice: 20
   sellPrice: 0
   description:
-  - Pest Control
+  - give me a pest killer please
+  - one order of potion for bugs
+  - please give me potion for bugs infected area.
   requiredIngredients:
   - ingredient: {fileID: 11400000, guid: d0116ef6e149e9e4b8fe1673e478f612, type: 2}
     quantity: 1

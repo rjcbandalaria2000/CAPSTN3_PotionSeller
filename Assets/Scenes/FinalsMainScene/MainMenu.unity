@@ -698,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000043869, y: -166}
+  m_AnchoredPosition: {x: -0.000043869, y: -197}
   m_SizeDelta: {x: 463.3477, y: 285.8553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390289481
@@ -730,7 +730,9 @@ MonoBehaviour:
 
     Christian Gabriel Co
 
-    Arjay Salazar Diocton'
+    Arjay Salazar Diocton
+
+    Justine Lee'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
   m_sharedMaterial: {fileID: -3984757326273378455, guid: 4cd06c7fd56fbae4290dc250ac4afc68, type: 2}
