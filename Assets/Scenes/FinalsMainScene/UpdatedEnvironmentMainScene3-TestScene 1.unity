@@ -17211,10 +17211,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1935346316}
+    - target: {fileID: 2811291571128258254, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 428.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3469584679899213531, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1935346316}
+    - target: {fileID: 3798555485803407388, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_fontSize
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798555485803407388, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 4147836682707920330, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -39769,6 +39781,8 @@ MonoBehaviour:
   IngredientBook: {fileID: 1904978353}
   storeReportPanel: {fileID: 842098125}
   conditionPanel: {fileID: 0}
+  winConditionPanel: {fileID: 0}
+  loseConditionPanel: {fileID: 0}
 --- !u!4 &1959826903
 Transform:
   m_ObjectHideFlags: 0
