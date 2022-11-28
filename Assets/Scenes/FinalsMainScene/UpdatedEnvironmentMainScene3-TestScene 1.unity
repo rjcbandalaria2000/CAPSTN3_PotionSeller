@@ -32315,6 +32315,62 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: coins
+    clip: {fileID: 8300000, guid: 9a081d174def34647bf633e9fcbbcf67, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: levelup
+    clip: {fileID: 8300000, guid: 1d170cad078ae7647969bc65d02aa8c4, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: owl
+    clip: {fileID: 8300000, guid: 6c8f38241b5faf5458cdbcac97b71208, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: warning
+    clip: {fileID: 8300000, guid: cb8e5aa9540e06c46b51e3c92c04e1b7, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: potionCreated
+    clip: {fileID: 8300000, guid: 391cc1202b803fa41980521c73b61526, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: dayReset
+    clip: {fileID: 8300000, guid: d1adc207e2f32d540b703a8f125e0e7c, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: meter
+    clip: {fileID: 8300000, guid: 0475ea5718621b944a0e13714da245ba, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: rejected
+    clip: {fileID: 8300000, guid: 0fb95c5e6b35c8642ab506166b79d9bf, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   mixer: {fileID: 24100000, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
 --- !u!4 &1623728221
 Transform:
@@ -40269,6 +40325,7 @@ MonoBehaviour:
   craftingManager: {fileID: 1935346316}
   playerWallet: {fileID: 366556170}
   cauldron: {fileID: 148842678}
+  questIndicator: {fileID: 2005351315}
   sellPotionQuest: {fileID: 11400000, guid: 2f46575b06ac74b4ba17c5936d22626b, type: 2}
   createPotionQuest: {fileID: 11400000, guid: 9a4872fcc91d68b48806bec022c79587, type: 2}
   addMoneyQuest: {fileID: 11400000, guid: 55b996537e68c5047b35244bb8bdab25, type: 2}
@@ -40460,6 +40517,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995393930}
   m_CullTransparentMesh: 1
+--- !u!1 &2005351315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5251863885261719286, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+  m_PrefabInstance: {fileID: 3199120549725939058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2013275750
 GameObject:
   m_ObjectHideFlags: 0
@@ -43483,6 +43545,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3199120549419880792, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689492953448891256, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
