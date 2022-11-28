@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class OnboardingManager : MonoBehaviour
 {
-    private int id;
+    [HideInInspector] public int id;
     private int i = 0;
 
     public List<Dialogues> introText;
@@ -21,11 +21,21 @@ public class OnboardingManager : MonoBehaviour
     [Header("Inside Main Loop Variables")]
     public List<GameObject> arrowFlows;
     public List<Button> potionSelectButtons;
+    
+    public GameObject selectionManager;
+
     public Customer customer;
+    public GameObject recipeButton;
     public Button recipeQuitButton;
+    public ShopSelect shopSelect;
     public Button shopQuitButton;
-    public Button brewHitButton;
+    public BrewStation brewStation;
+    public Arrow arrow;
     public Cauldron cauldron;
+    public Stock stock;
+    public QuestArea questArea;
+    public GameObject pausePlayButton;
+    public GameObject quitButton;
 
     [Header("Scene Change")]
     public int sceneID;
@@ -40,6 +50,7 @@ public class OnboardingManager : MonoBehaviour
     private void Start()
     {
         NextIntroText();
+        SingletonManager.Register(this);
     }
 
     public void NextIntroText()
@@ -54,6 +65,7 @@ public class OnboardingManager : MonoBehaviour
             id = 0;
             nextIntroButton.GetComponent<Button>().onClick.RemoveAllListeners();
             nextIntroButton.SetActive(false);
+            selectionManager.SetActive(true);
             NextButtonHit();
         }
     }
@@ -113,36 +125,60 @@ public class OnboardingManager : MonoBehaviour
         Debug.Log(id);
         switch (id)
         {
-            case 0:
+            // Inside Main Loop
+            case 0: // Customer / Order
+                // turn on Customer component
+                customer.GetComponent<Customer>().enabled = true;
                 customer.onOnboardingClickEvent.AddListener(CustomerHit);
                 break;
-            case 1:
-                foreach (Button button in potionSelectButtons)
-                {
-                    button.onClick.AddListener(PotionSelectHit);
-                }
+            case 1: // Check Recipe
+                // turn on Recipe Button
+                recipeButton.SetActive(true);
+                recipeQuitButton.onClick.AddListener(RecipeQuitButtonHit);                
                 break;
-            case 2:
-                recipeQuitButton.onClick.AddListener(RecipeQuitButtonHit);
-                break;
-            case 3:
+            case 2: // Go to Shop
+                // turn on ShopSelect component
+                shopSelect.GetComponent<ShopSelect>().enabled = true;
                 shopQuitButton.onClick.AddListener(ShopQuitButtonHit);
                 break;
-            case 4:
+            case 3: // Select Potion
+                // turn on Brew Station component
+                brewStation.GetComponent<BrewStation>().enabled = true;
                 foreach (Button button in potionSelectButtons)
                 {
                     button.onClick.AddListener(PotionSelectHit);
                 }
                 break;
-            case 5:
-                brewHitButton.onClick.AddListener(BrewButtonHit);
+            case 4: // Craft                
+                // Player must craft through brewing to only proceed
+                arrow.onOnboardingClickEvent.AddListener(CraftingDoneHit);
                 break;
-            case 6:
-                SingletonManager.Get<CraftingManager>().onQuestCompletedEvent.AddListener(PotionCreated);                
+            case 5: // Cauldron
+                // turn on Cauldron
+                cauldron.GetComponent<Cauldron>().enabled = true;
+                SingletonManager.Get<CraftingManager>().onQuestCompletedEvent.AddListener(PotionCreated);
                 break;
-            case 7:                
+            case 6: // Selling
                 customer.onOnboardingClickEvent.AddListener(CustomerHit);
                 customer.onOnboardingOrderComplete.AddListener(NextButtonHit);
+                break;
+            
+            // Outside Main Loop
+            case 7: // Stock
+                // turn on Stock component
+                stock.GetComponent<Stock>().enabled = true;
+                break;
+            case 8: // Quests
+                // turn on QuestArea component
+                questArea.GetComponent<QuestArea>().enabled = true;
+                break;            
+            case 12:
+                // turn on Pause/Play Button
+                pausePlayButton.SetActive(true);
+                break;
+            case 13:
+                // turn on Exit Button
+                quitButton.SetActive(true);
                 break;
         }
     }
@@ -175,10 +211,10 @@ public class OnboardingManager : MonoBehaviour
         shopQuitButton.onClick.RemoveListener(ShopQuitButtonHit);
     }
 
-    private void BrewButtonHit()
+    private void CraftingDoneHit()
     {
         NextButtonHit();
-        brewHitButton.onClick.RemoveListener(BrewButtonHit);
+        arrow.onOnboardingClickEvent.RemoveListener(CraftingDoneHit);
     }
 
     private void CauldronHit()

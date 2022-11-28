@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 2 - Check Recipe
+  m_Name: 10 - Day and Time
   m_EditorClassIdentifier: 
-  id: 2
-  dialogueTitle: Check Recipe
+  id: 10
+  isButtonShown: 1
+  dialogueTitle: Day and Time
   dialogues:
-  - Let's check the <b>[Recipe Book]</b> so that we can buy the right ingredients.
+  - Here you can see the time and day we are currently in. Since we just opened,
+    we are at <b>[Day 1]</b>.
+  - The shop runs at <b>[15:00]</b> to <b>[23:00]</b>. Be sure to serve as many customer
+    as we can within the time frame.

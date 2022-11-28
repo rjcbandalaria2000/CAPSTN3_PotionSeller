@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 17 - Outro
+  m_Name: 1 - Check Recipe
   m_EditorClassIdentifier: 
-  id: 15
-  isButtonShown: 1
-  dialogueTitle: Exit
+  id: 1
+  isButtonShown: 0
+  dialogueTitle: Check Recipe
   dialogues:
-  - Great! Now that you know all the things around the shop. Let's call it a day
-    and prepare ourselves for tomorrow. Let's get along well in the future!
+  - Let's check the <b>[Recipe Book]</b> so that we can buy the right ingredients.

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 3 - Go to Shop
+  m_Name: 5 - Cauldron
   m_EditorClassIdentifier: 
-  id: 3
-  dialogueTitle: Go to Shop
+  id: 5
+  isButtonShown: 0
+  dialogueTitle: Cauldron
   dialogues:
-  - Now let's go the <b>[Shop]</b> and buy what we need.
+  - Let's now move to <b>[Cauldron Area]</b> and finish crafting the potion.

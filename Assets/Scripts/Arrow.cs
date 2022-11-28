@@ -42,6 +42,8 @@ public class Arrow : MonoBehaviour
 
     private RectTransform transform;
 
+    public OnboardingClickEvent onOnboardingClickEvent = new();
+
     private void Awake()
     {
         this.gameObject.transform.position = startPos.position;
@@ -114,6 +116,9 @@ public class Arrow : MonoBehaviour
                     craftingManager.OnCompleteCrafting();
                 }
                 PlayVFX();
+
+                onOnboardingClickEvent?.Invoke();
+
                 Debug.Log("Score");
             }
             else

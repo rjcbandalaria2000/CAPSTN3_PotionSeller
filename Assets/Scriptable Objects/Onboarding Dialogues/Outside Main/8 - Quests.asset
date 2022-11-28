@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b9cb960ce62254cb27bafdaee0489d, type: 3}
-  m_Name: 15 - Pause and Play
+  m_Name: 8 - Quests
   m_EditorClassIdentifier: 
-  id: 14
+  id: 8
   isButtonShown: 1
-  dialogueTitle: Pause/Play
+  dialogueTitle: Quests
   dialogues:
-  - You can pause the day by clicking the <b>[Play/Pause Button]</b>.
+  - In order for us to earn money faster, we must have goals everytime we open our
+    shop. We can check the <b>[Quest Board]</b> to know what is the daily goal that
+    we need to meet.
