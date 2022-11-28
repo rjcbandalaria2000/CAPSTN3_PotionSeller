@@ -29,6 +29,32 @@ public class Shop : MonoBehaviour
         statsManager = SingletonManager.Get<StatsManager>();
     }
 
+    private void OnEnable()
+    {
+        
+        foreach (GameObject shopItem in Items)
+        {
+            ShopIngredient itemIngredient = shopItem.GetComponent<ShopIngredient>();
+     
+            quantities.Add(itemIngredient.ingredientScriptableObject.ingredientQuantity);
+            buyItemPrice.Add((int)itemIngredient.ingredientScriptableObject.buyPrice);
+            sellItemPrice.Add((int)itemIngredient.ingredientScriptableObject.sellPrice);
+
+        }
+    }
+
+    private void OnDisable()
+    {
+        buyItemPrice.Clear();
+        sellItemPrice.Clear();
+        quantities.Clear();
+    }
+
+    public void setIndex(int inspecIndex)
+    {
+        itemIndex = inspecIndex;
+    }
+
     public void BuyItem(string itemName)
     {
         bool isItemFound = false;
@@ -38,9 +64,10 @@ public class Shop : MonoBehaviour
             if (itemIngredient.ingredientScriptableObject.ingredientName == itemName)
             {
                 isItemFound = true;
-                if (PlayerWallet.Money >= itemIngredient.ingredientScriptableObject.buyPrice)
+                if (PlayerWallet.Money >= buyItemPrice[itemIndex])
                 {
-                    PlayerWallet.SpendMoney((int)itemIngredient.ingredientScriptableObject.buyPrice);
+                    PlayerWallet.SpendMoney(buyItemPrice[itemIndex]);
+                  
                     Debug.Log("Bought " + itemIngredient.ingredientScriptableObject.ingredientName);
                     //Inventory.instance.AddItem(itemIngredient.ingredientScriptableObject.ingredientName);
                     SingletonManager.Get<Inventory>().AddItem(itemIngredient.ingredientScriptableObject);
@@ -128,9 +155,10 @@ public class Shop : MonoBehaviour
             }
             else
             {
-                itemIngredient.ingredientScriptableObject.ingredientQuantity++;
-                itemIngredient.ingredientScriptableObject.buyPrice += 2;
-                itemIngredient.ingredientScriptableObject.sellPrice += 1;
+                quantities[index]++;
+                buyItemPrice[index] += 2;
+                sellItemPrice[index] += 1;
+               
                 displayIngredientsQuantity[index].updateCount(index);
                 displayCosts[index].updateCount(index);
             }
@@ -148,9 +176,10 @@ public class Shop : MonoBehaviour
             }
             else
             {
-                itemIngredient.ingredientScriptableObject.ingredientQuantity--;
-                itemIngredient.ingredientScriptableObject.buyPrice -= 2;
-                itemIngredient.ingredientScriptableObject.sellPrice -= 1;
+                quantities[index]--;
+                buyItemPrice[index] -= 2;
+                sellItemPrice[index] -= 1;
+
                 displayIngredientsQuantity[index].updateCount(index);
                 displayCosts[index].updateCount(index);
             }            

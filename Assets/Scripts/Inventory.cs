@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(ScriptableObject scriptableObject)
+    public void AddItem(ScriptableObject scriptableObject,int itemQuantity)
     {
         int amount = 0;
         for (int i = 0; i < potions.Count; i++)
@@ -59,8 +59,8 @@ public class Inventory : MonoBehaviour
         {
             if (ingredients[i].itemName == scriptableObject.name)
             {
-                ingredients[i].itemAmount++;                
-                amount = ingredients[i].itemAmount;
+                amount = SingletonManager.Get<Shop>().quantities[i]++;
+              //  amount = ingredients[i].itemAmount;
                 break;
             }
         }
@@ -68,7 +68,7 @@ public class Inventory : MonoBehaviour
         onAddItemEvent.Invoke(scriptableObject, amount);
     }
 
-    public void RemoveItem(ScriptableObject scriptableObject)
+    public void RemoveItem(ScriptableObject scriptableObject, int useQuantity)
     {
         int amount = 0;
         for (int i = 0; i < potions.Count; i++)
@@ -84,8 +84,8 @@ public class Inventory : MonoBehaviour
         {
             if (ingredients[i].itemName == scriptableObject.name)
             {
-                ingredients[i].itemAmount--;
-                amount = ingredients[i].itemAmount;
+                amount = SingletonManager.Get<Shop>().quantities[i]--;
+              //  amount = ingredients[i].itemAmount - 1;
                 break;
             }
         }

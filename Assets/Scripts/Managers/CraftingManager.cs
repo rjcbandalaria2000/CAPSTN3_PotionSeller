@@ -110,7 +110,7 @@ public class CraftingManager : MonoBehaviour
             //Inventory.instance.AddItem(selectedPotionScriptableObject.potionName);
             if (selectedPotionScriptableObject)
             {
-                SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject);
+                SingletonManager.Get<Inventory>().AddItem(selectedPotionScriptableObject,0);
                 onQuestCompletedEvent?.Invoke(QuestManager.instance.createPotionQuest);
                 RemoveIngredients(selectedPotionScriptableObject);
                 if (statsManager)

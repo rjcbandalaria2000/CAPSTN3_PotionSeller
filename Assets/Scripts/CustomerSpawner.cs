@@ -49,10 +49,34 @@ public class CustomerSpawner : MonoBehaviour
             return; }
         unlockPotion.Clear();
 
-        for (int i = 0; i <= storeLevel.Level; i++)
+        switch(storeLevel.Level)
         {
-            unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
+            case 0:
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
+                return;
+            case 1:
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[1]);
+                return;
+            case 3:
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[1]);
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[2]);
+                return;
+            case int level when (storeLevel.Level >= 5):
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[1]);
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[2]);
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[3]);
+                return;
+            default:
+                break;
         }
+
+        //for (int i = 0; i <= storeLevel.Level; i++)
+        //{
+        //    unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
+        //}
     }
 
     public void resetSpawner()
