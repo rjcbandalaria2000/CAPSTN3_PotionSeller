@@ -11,37 +11,38 @@ using DG.Tweening;
 
 public class Customer : SelectableObject
 {
-    public Inventory playerInventory;
-    public List<PotionScriptableObject> availablePotions;
+    public Inventory                        playerInventory;
+    public List<PotionScriptableObject>     availablePotions;
     // Customer might have more orders, hence "List"
-    public List<PotionScriptableObject> customerPotion = new();
-    public Transform targetPos;
+    public List<PotionScriptableObject>     customerPotion = new();
+    public Transform                        targetPos;
 
 
-    public GameObject thisParent;
+    public GameObject                       thisParent;
 
-    public int OrderQuantity;
-    public int RNG;
+    public int                              OrderQuantity;
+    public int                              RNG;
 
-    public TextMeshProUGUI orderName;
+    public TextMeshProUGUI                  orderName;
 
     [Range(0, 10)]
-    public int speed;
+    public int                              speed;
 
-    public bool isSelect;
+    public bool                             isSelect;
 
-    Coroutine animationRoutine;
+    Coroutine                               animationRoutine;
 
-    public OnboardingClickEvent onOnboardingClickEvent = new();
-    public OnboardingOrderComplete onOnboardingOrderComplete = new();
-    public OnOrderComplete onOrderComplete = new OnOrderComplete();
+    public OnboardingClickEvent             onOnboardingClickEvent = new();
+    public OnboardingOrderComplete          onOnboardingOrderComplete = new();
+    public OnOrderComplete                  onOrderComplete = new OnOrderComplete();
 
-    public MarkupAcceptance markupAcceptance;
+    public MarkupAcceptance                 markupAcceptance;
    
     [Header("Animator")]
-    public Animator animator;
+    public Animator                         animator;
 
-    private StatsManager statsManager;
+    private StatsManager                    statsManager;
+    private StoreLevel                      storeLevel;
 
     // Start is called before the first frame update
     void Awake()    
@@ -60,6 +61,7 @@ public class Customer : SelectableObject
         animationRoutine = StartCoroutine(moveAnimation());
         markupAcceptance = this.GetComponent<MarkupAcceptance>();
         statsManager = SingletonManager.Get<StatsManager>();
+        storeLevel = SingletonManager.Get<StoreLevel>();    
     }
     private void OnEnable()
     {
@@ -108,8 +110,8 @@ public class Customer : SelectableObject
         // Change to OrderManager things
         OrderManager.instance.orderImage.sprite = customerPotion[0].potionIconSprite;
         OrderManager.instance.orderName.text =  customerPotion[0].description[0];
-        OrderManager.instance.orderPrice.text = $"<sprite=0> " + customerPotion[0].buyPrice.ToString();
-        OrderManager.instance.origOrderPrice.text = $"<sprite=0> " + customerPotion[0].buyPrice.ToString();
+        OrderManager.instance.orderPrice.text = $"<sprite=0> " + GetCalculatedPriceWithLevel(customerPotion[0]).ToString();
+        OrderManager.instance.origOrderPrice.text = $"<sprite=0> " + GetCalculatedPriceWithLevel(customerPotion[0]).ToString();
         OrderManager.instance.sellButton.onClick.RemoveAllListeners();
         OrderManager.instance.orderDropdown.value = 0;
         OrderManager.instance.sellButton.onClick.AddListener(() => SellOrder());
@@ -147,7 +149,7 @@ public class Customer : SelectableObject
                     {
 
                         // Gain money
-                        OrderManager.instance.playerWallet.AddMoney(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
+                        OrderManager.instance.playerWallet.AddMoney(GetCalculatedSellPriceWithMarkup(customerPotion[0]));
                         
                         // Add experience 
                         //OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
@@ -158,7 +160,7 @@ public class Customer : SelectableObject
                         Debug.Log("Correct Markup price");
                         if (statsManager)
                         {
-                            statsManager.AddTotalGoldEarned(Mathf.RoundToInt(customerPotion[0].buyPrice + (customerPotion[0].buyPrice * OrderManager.instance.markupPercent)));
+                            statsManager.AddTotalGoldEarned(GetCalculatedSellPriceWithMarkup(customerPotion[0]));
                             statsManager.customersServed++;
                         }
 
@@ -228,19 +230,24 @@ public class Customer : SelectableObject
         }
             
         animator.SetBool("IsIdle", true);
+    }
 
-        //while (thisParent.gameObject.transform.position != targetPos.position)
-        //{
-        //    thisParent.transform.position = Vector3.Lerp(thisParent.transform.position, targetPos.position, speed * Time.deltaTime);
-        //    animator.SetBool("IsIdle", false);
-        //    Debug.Log("Not yet in position");
-        //    yield return null;
-        //}
+    public float GetCalculatedPriceWithLevel(PotionScriptableObject potion)
+    {
+        if (storeLevel)
+        {
+            return potion.buyPrice + storeLevel.Level;
+        }
+        else
+        {
+            return potion.buyPrice;
+        }
 
-        //yield return null;
+    }
 
-
-
+    public int GetCalculatedSellPriceWithMarkup(PotionScriptableObject potion)
+    {
+        return Mathf.RoundToInt(GetCalculatedPriceWithLevel(potion) + (GetCalculatedPriceWithLevel(potion) * OrderManager.instance.markupPercent));
     }
     // baseprice + markup
 }

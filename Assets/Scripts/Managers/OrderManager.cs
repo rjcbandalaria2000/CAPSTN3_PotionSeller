@@ -62,6 +62,7 @@ public class OrderManager : MonoBehaviour
     {
         playerInventory = SingletonManager.Get<Inventory>();
         statsManager = SingletonManager.Get<StatsManager>();
+        storeLevel = SingletonManager.Get<StoreLevel>();
     }
 
     private void OnEnable()
@@ -81,14 +82,14 @@ public class OrderManager : MonoBehaviour
         customers.Add(customer);
         customerOrderDictionary.Add(customer, potion);
         orderListPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = potion.potionName;
-        orderListPrefab.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = potion.buyPrice.ToString();
+        orderListPrefab.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"<sprite=0> " + GetCalculatedPriceWithLevel(potion).ToString();
         orderListPrefab.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => SellOrder(orderListPrefab.transform, potion, customer.gameObject));
     }
 
     public void RefreshList(int value)
     {
-        float sellingPrice = potionOrder.buyPrice + potionOrder.buyPrice * markupPercent;
-        orderPrice.text = Mathf.RoundToInt(sellingPrice).ToString();
+        float sellingPrice = GetCalculatedSellPriceWithMarkup(potionOrder);//potionOrder.buyPrice + (potionOrder.buyPrice * markupPercent);
+        orderPrice.text = $"<sprite=0> "+ Mathf.RoundToInt(sellingPrice).ToString();
     }
 
     public void SetMarkupPercent(int value)
@@ -176,5 +177,23 @@ public class OrderManager : MonoBehaviour
                 break;
             }
         }     
+    }
+
+    public float GetCalculatedPriceWithLevel(PotionScriptableObject potion)
+    {
+        if (storeLevel)
+        {
+            return potion.buyPrice + storeLevel.Level;
+        }
+        else
+        {
+            return potion.buyPrice;
+        }
+        
+    }
+
+    public int GetCalculatedSellPriceWithMarkup(PotionScriptableObject potion)
+    {
+        return Mathf.RoundToInt(GetCalculatedPriceWithLevel(potion) + (GetCalculatedPriceWithLevel(potion) * markupPercent));
     }
 }
