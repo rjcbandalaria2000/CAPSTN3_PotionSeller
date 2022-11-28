@@ -24,6 +24,7 @@ public class QuestArea : SelectableObject
     public override void OnInteract()
     {
         onOnboardingClickEvent.Invoke();
+        QuestManager.instance.questIndicator.SetActive(false);
         OpenUIPanel();
     }
 
