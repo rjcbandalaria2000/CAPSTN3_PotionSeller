@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("BGM");
+        Play(Constants.BGM_SOUND);
     }
 
     public Sound GetSoundByName(string name)

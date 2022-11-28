@@ -20281,6 +20281,62 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: coins
+    clip: {fileID: 8300000, guid: 9a081d174def34647bf633e9fcbbcf67, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: levelup
+    clip: {fileID: 8300000, guid: 1d170cad078ae7647969bc65d02aa8c4, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: owl
+    clip: {fileID: 8300000, guid: 6c8f38241b5faf5458cdbcac97b71208, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: warning
+    clip: {fileID: 8300000, guid: cb8e5aa9540e06c46b51e3c92c04e1b7, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: potionCreated
+    clip: {fileID: 8300000, guid: 391cc1202b803fa41980521c73b61526, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: dayReset
+    clip: {fileID: 8300000, guid: d1adc207e2f32d540b703a8f125e0e7c, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: meter
+    clip: {fileID: 8300000, guid: 0475ea5718621b944a0e13714da245ba, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: rejected
+    clip: {fileID: 8300000, guid: 0fb95c5e6b35c8642ab506166b79d9bf, type: 3}
+    output: {fileID: 2692524667136043925, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   mixer: {fileID: 24100000, guid: 5a16fe7535bdb524a84c557c4fc31601, type: 2}
 --- !u!1001 &835733724
 PrefabInstance:

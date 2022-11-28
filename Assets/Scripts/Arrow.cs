@@ -135,6 +135,8 @@ public class Arrow : MonoBehaviour
             }
             //SingletonManager.Get<UIManager>().SuccessTXT.gameObject.SetActive(true);
             
+            // Play sound
+            SingletonManager.Get<AudioManager>().Play(Constants.HITMETER_SOUND);
         }
         else
         {

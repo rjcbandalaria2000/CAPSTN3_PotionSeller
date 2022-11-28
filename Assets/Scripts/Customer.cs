@@ -151,13 +151,15 @@ public class Customer : SelectableObject
                         // Gain money
                         OrderManager.instance.playerWallet.AddMoney(GetCalculatedSellPriceWithMarkup(customerPotion[0]));
                         
+                        // Play money sound
+                        SingletonManager.Get<AudioManager>().Play(Constants.COINS_SOUND);
+
                         // Add experience 
                         //OrderManager.instance.storeLevel.onGainExp.Invoke(OrderManager.instance.sellExpPoints);
-                        SingletonManager.Get<StoreLevel>().AddExpPoints(OrderManager.instance.sellExpPoints);
-
-                       
+                        SingletonManager.Get<StoreLevel>().AddExpPoints(OrderManager.instance.sellExpPoints);                        
 
                         Debug.Log("Correct Markup price");
+
                         if (statsManager)
                         {
                             statsManager.AddTotalGoldEarned(GetCalculatedSellPriceWithMarkup(customerPotion[0]));
@@ -171,6 +173,10 @@ public class Customer : SelectableObject
                         {
                             statsManager.customersMissed++;
                         }
+                        
+                        // Play rejected sound
+                        SingletonManager.Get<AudioManager>().Play(Constants.REJECTED_SOUND);
+
                         Debug.Log("Incorrect mark up price");
                     }
 
@@ -203,6 +209,7 @@ public class Customer : SelectableObject
                 }
                 else
                 {
+                    SingletonManager.Get<AudioManager>().Play(Constants.WARNING_SOUND);
                     Debug.Log("Not enough potions to sell");                    
                 }
                 break;
@@ -227,6 +234,11 @@ public class Customer : SelectableObject
         else
         {
             Debug.Log("No target position");
+        }
+
+        if (thisParent.gameObject.transform.position == targetPos.position)
+        {
+            SingletonManager.Get<AudioManager>().Play(Constants.OWL_SOUND);
         }
             
         animator.SetBool("IsIdle", true);
