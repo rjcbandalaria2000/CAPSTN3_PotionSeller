@@ -6544,7 +6544,6 @@ MonoBehaviour:
   startPos: {fileID: 796581981826979981}
   winConditionUI: {fileID: 3394146358347138846}
   loseConditionUI: {fileID: 3975137875044123706}
-  speed: 250
   speeds: f4010000bc020000840300004c040000
   isHitPoint: 0
   hitPoint: {fileID: 2640309021091517031}
@@ -9746,7 +9745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219876303612549125, guid: 3c1cbb8e0ccebe449897ab6ce30ef6b6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.71212643
+      value: 1.0712517
       objectReference: {fileID: 0}
     - target: {fileID: 8219876303612549125, guid: 3c1cbb8e0ccebe449897ab6ce30ef6b6, type: 3}
       propertyPath: m_LocalScale.y
