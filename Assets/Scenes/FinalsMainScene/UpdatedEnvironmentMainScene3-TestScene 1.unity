@@ -39641,10 +39641,6 @@ PrefabInstance:
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 366556174}
-    - target: {fileID: 7862993554949957394, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
-      propertyPath: m_Size.y
-      value: 3.82
-      objectReference: {fileID: 0}
     - target: {fileID: 7862993554979543832, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
       propertyPath: m_RootOrder
       value: 4

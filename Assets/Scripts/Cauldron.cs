@@ -11,11 +11,14 @@ public class Cauldron : SelectableObject
     public Mixing                   mixingPot;
     public GameObject               character;
 
+    private CraftingManager         craftingManager;
+
     // Start is called before the first frame update
     void Start()
     {
         objectPanelUI.SetActive(false);
         DisplayCharacter(true);
+        craftingManager = SingletonManager.Get<CraftingManager>();
     }
     private void OnEnable()
     {
@@ -30,6 +33,10 @@ public class Cauldron : SelectableObject
     public override void OnInteract()
     {
         //base.OnInteract();
+        if (craftingManager)
+        {
+            if (!craftingManager.isCookingComplete) { return; }
+        }
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(true);
         onQuestCompletedEvent.Invoke(QuestManager.instance?.useCauldronQuest);
