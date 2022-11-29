@@ -21709,6 +21709,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6048750218844936139, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
   m_PrefabInstance: {fileID: 886079667}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &886079671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 70904391707039780, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+  m_PrefabInstance: {fileID: 886079667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &886565431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38397,6 +38402,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8113188589150071756, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
   m_PrefabInstance: {fileID: 1659697439}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1659697441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1218793644425818757, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+  m_PrefabInstance: {fileID: 1659697439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1664710059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45099,6 +45109,10 @@ MonoBehaviour:
   selectedPotionIconImage: {fileID: 1424142060}
   defaultPotionIconImage: {fileID: 21300000, guid: ded41cfe6017d7142bb72b993a4a099e, type: 3}
   potionList: []
+  brewStation: {fileID: 62487513}
+  brewUI: {fileID: 886079671}
+  cauldron: {fileID: 148842678}
+  cauldronUI: {fileID: 1659697441}
   isMixingComplete: 0
   isCookingComplete: 0
   hasCrafted: 0
