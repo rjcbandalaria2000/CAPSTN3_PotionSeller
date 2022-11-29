@@ -93,7 +93,11 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
     public void OnMixingComplete()
     {
-        sparkle.Play();
+        if (sparkle)
+        {
+            sparkle.Play();
+        }
+        
         ActivateSuccessUI();
         Debug.Log("Finished Mixing");
         CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
