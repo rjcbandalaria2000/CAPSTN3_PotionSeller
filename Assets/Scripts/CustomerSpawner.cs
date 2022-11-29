@@ -53,7 +53,11 @@ public class CustomerSpawner : MonoBehaviour
 
         for (int i = 0; i <= storeLevel.Level; i++)
         {
-            unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
+            if(SingletonManager.Get<PotionManager>().Potions[i] != null)
+            {
+                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
+            }
+            
         }
 
         //for (int i = 0; i <= storeLevel.Level; i++)

@@ -9403,8 +9403,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Potions:
   - {fileID: 11400000, guid: 0fb1823166376ca4a84c4ad420da0ba1, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: d44ee1c1dde32b94ebad68f6c9bfeab9, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 3d5ba9ae437316d45bcb1bc21665e38d, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: dd4fd789426d07841b0d9452ad126488, type: 2}
 --- !u!4 &495204224
 Transform:
