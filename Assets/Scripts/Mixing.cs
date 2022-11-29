@@ -29,6 +29,7 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
     [Header("VFX")]
     public GameObject   trailVFX;
+    public ParticleSystem  sparkle;
     
     private Vector2 InitialPosition;
     public void OnPointerDown(PointerEventData eventData)
@@ -89,6 +90,7 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
 
     public void OnMixingComplete()
     {
+        sparkle.Play();
         ActivateSuccessUI();
         Debug.Log("Finished Mixing");
         CraftingManager craftingManager = SingletonManager.Get<CraftingManager>();
