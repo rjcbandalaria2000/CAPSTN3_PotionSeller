@@ -6,31 +6,33 @@ using UnityEngine.EventSystems;
 public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
 {
     [Header("States")]
-    public bool         IsMixing;
-    public bool         SwipedRight;
-    public bool         SwipedLeft;
+    public bool                 IsMixing;
+    public bool                 SwipedRight;
+    public bool                 SwipedLeft;
 
     [Header("Values")]
-    public int          RequiredSwipes = 1;
-    public int          SwipeCount;
-    public float        SwipeRightAccept = 0.5f;
-    public float        SwipeLeftAccept = -0.5f;
+    public int                  RequiredSwipes = 1;
+    public int                  SwipeCount;
+    public float                SwipeRightAccept = 0.5f;
+    public float                SwipeLeftAccept = -0.5f;
 
     [Header("Potion")]
-    public GameObject   Parent;
-    public GameObject   PotionToGive;
-    public GameObject   PotionReceived;
+    public GameObject           Parent;
+    public GameObject           PotionToGive;
+    public GameObject           PotionReceived;
 
     [Header("UI")]
-    public GameObject   successUI;
-    public GameObject   failUI;
-    public GameObject   leftArrowUI;
-    public GameObject   rightArrowUI;
+    public GameObject           successUI;
+    public GameObject           failUI;
+    public GameObject           leftArrowUI;
+    public GameObject           rightArrowUI;
 
     [Header("VFX")]
-    public GameObject   trailVFX;
+    public GameObject           trailVFX;
     
-    private Vector2 InitialPosition;
+    private Vector2             InitialPosition;
+    private CraftingManager     craftingManager;
+
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("OnPointerDown");
@@ -58,17 +60,18 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
                 //Swipe Right next 
                 ActivateRightArrowUI();
             }
-            if(SwipedLeft && SwipedRight)
+            if(SwipedLeft && SwipedRight && !IsMixingComplete())
             {
                 SwipeCount++;
                 SwipedLeft = false;
                 SwipedRight = false;
+                if (IsMixingComplete())
+                {
+                    IsMixing = false;
+                    OnMixingComplete();
+                }
             }
-            if (IsMixingComplete())
-            {
-                IsMixing = false;
-                OnMixingComplete();
-            }
+            
             Debug.Log("Mouse Position " + mousePosition.normalized.x);
             Debug.Log("Object selected: " + eventData.pointerPress.name);
         }
