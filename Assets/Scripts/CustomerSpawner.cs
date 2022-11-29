@@ -44,33 +44,16 @@ public class CustomerSpawner : MonoBehaviour
     
     public void initializeUnlockPotion()
     {
-        if(storeLevel.Level >= SingletonManager.Get<PotionManager>().Potions.Count) {
+        if (storeLevel.Level >= SingletonManager.Get<PotionManager>().Potions.Count)
+        {
             Debug.Log("Store level is higher than the potions count");
-            return; }
+            return;
+        }
         unlockPotion.Clear();
 
-        switch(storeLevel.Level)
+        for (int i = 0; i <= storeLevel.Level; i++)
         {
-            case 0:
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
-                return;
-            case 1:
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[1]);
-                return;
-            case 3:
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[1]);
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[2]);
-                return;
-            case int level when (storeLevel.Level >= 5):
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[0]);
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[1]);
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[2]);
-                unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[3]);
-                return;
-            default:
-                break;
+            unlockPotion.Add(SingletonManager.Get<PotionManager>().Potions[i]);
         }
 
         //for (int i = 0; i <= storeLevel.Level; i++)
