@@ -37338,7 +37338,8 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5255818307879540430, guid: d8678103701239b48a52938c45bedaf2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d8678103701239b48a52938c45bedaf2, type: 3}
 --- !u!4 &1582145837 stripped
 Transform:
@@ -37749,7 +37750,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1613325019}
-  - component: {fileID: 1613325020}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -37780,14 +37780,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1613325020
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613325018}
-  m_Enabled: 1
 --- !u!1 &1617867084
 GameObject:
   m_ObjectHideFlags: 0
@@ -49519,7 +49511,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1214227585, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
 --- !u!1 &3199120549725939059 stripped
 GameObject:
