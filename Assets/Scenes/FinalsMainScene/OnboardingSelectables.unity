@@ -21497,6 +21497,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 246304119099930768, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1987837128}
+    - target: {fileID: 246304119099930768, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -21627,6 +21631,18 @@ PrefabInstance:
     - target: {fileID: 4430284534732882143, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129352879402051954, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652128914892903332, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652128914892903333, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5830657180826470879, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
       propertyPath: m_AnchorMax.y
@@ -33250,7 +33266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1444270905
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46114,6 +46130,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7cc8d8ff4197de747aed5cd3d2f8f4a1, type: 3}
   m_PrefabInstance: {fileID: 1982976554}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1987837128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5129352879402051954, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
+  m_PrefabInstance: {fileID: 886079667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1988422068
 GameObject:
   m_ObjectHideFlags: 0
@@ -49491,6 +49512,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5251863885261719286, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689492953448891256, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
