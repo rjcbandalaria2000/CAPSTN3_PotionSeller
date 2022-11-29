@@ -254,18 +254,19 @@ public class Customer : SelectableObject
                 animator.SetBool("IsIdle", false);
                 yield return null;
             }
+            if (thisParent.gameObject.transform.position == targetPos.position)
+            {
+                SingletonManager.Get<AudioManager>().Play(Constants.OWL_SOUND);
+            }
+
+           
         }
         else
         {
             Debug.Log("No target position");
         }
-
-        if (thisParent.gameObject.transform.position == targetPos.position)
-        {
-            SingletonManager.Get<AudioManager>().Play(Constants.OWL_SOUND);
-        }
-            
         animator.SetBool("IsIdle", true);
+        
     }
 
     public float GetCalculatedPriceWithLevel(PotionScriptableObject potion)

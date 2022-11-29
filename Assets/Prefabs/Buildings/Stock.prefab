@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8692887623807481175}
   - component: {fileID: 6812544280780575052}
-  - component: {fileID: 3635292028581341250}
   - component: {fileID: 7227350032201107643}
   m_Layer: 0
   m_Name: Camera_7_stock_camera_opt
@@ -77,14 +76,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3635292028581341250
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2461981495553229040}
-  m_Enabled: 1
 --- !u!114 &7227350032201107643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +977,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

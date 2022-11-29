@@ -40142,16 +40142,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7862993554317260662, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7862993554317260662, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7862993554317260662, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7862993554949957393, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
       propertyPath: objectNameUI
@@ -40209,8 +40201,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stock
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3635292028581341250, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc2218a7400c3df47b92dcd19f735e8a, type: 3}
 --- !u!4 &1954862333 stripped
 Transform:
