@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BasicSceneManager : MonoBehaviour
 {
+    public OnSceneChange onSceneChange = new();
     public GameObject loadingsScreen;
     public Image loadingBar;
 
@@ -19,6 +20,8 @@ public class BasicSceneManager : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
         loadingsScreen.SetActive(true);
+
+        onSceneChange.Invoke();
 
         while (!operation.isDone)
         {

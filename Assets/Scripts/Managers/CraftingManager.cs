@@ -8,9 +8,10 @@ using JetBrains.Annotations;
 public class CraftingManager : MonoBehaviour
 {
     [Header("Events")]
-    public QuestCompletedEvent onQuestCompletedEvent = new QuestCompletedEvent();
-    public OnCompleteIngredientPotion onCompleteIngredientPotion = new();
+    public QuestCompletedEvent          onQuestCompletedEvent = new QuestCompletedEvent();
+    public OnCompleteIngredientPotion   onCompleteIngredientPotion = new();
     public OnIncompleteIngredientPotion onIncompleteIngredientPotion = new();
+    public OnCauldronLocked             onCauldronLocked = new();
 
     public PotionScriptableObject       selectedPotionScriptableObject;
 
