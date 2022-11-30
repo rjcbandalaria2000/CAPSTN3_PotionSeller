@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     public GameObject           winConditionPanel;
     public GameObject           loseConditionPanel;
 
+    [Header("FeedbackUI")]
+    public GameObject           LevelUpUIFeedback;
+
     [Header("Scene Manager")]
     public BasicSceneManager    basicSceneManager;
 
@@ -88,5 +91,7 @@ public class UIManager : MonoBehaviour
         if (loseConditionPanel == null) { return; }
         loseConditionPanel.SetActive(false);
     }
+
+    
    
 }

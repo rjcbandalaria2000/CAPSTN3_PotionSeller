@@ -33,6 +33,7 @@ public class RemoveAllQuestsEvent : UnityEvent { }
 #region StoreLevel Events
 public class OnGainExp : UnityEvent <int> { };
 public class OnRefreshLevelUI : UnityEvent { };
+public class OnLevelUp : UnityEvent { }
 
 #endregion
 
