@@ -19,10 +19,6 @@ public class CraftingManager : MonoBehaviour
     public Image                        selectedPotionIconImage;
     public Sprite                        defaultPotionIconImage;
     public List<PotionScriptableObject> potionList = new();
-    public BrewStation brewStation;
-    public GameObject brewUI;
-    public Cauldron cauldron; 
-    public GameObject cauldronUI;
 
     [Header("Crafting States")]
     public bool                         isMixingComplete;
@@ -133,8 +129,6 @@ public class CraftingManager : MonoBehaviour
             selectedPotionScriptableObject = null;
             selectedPotionText.text = "";
             selectedPotionIconImage.sprite = defaultPotionIconImage;
-
-            StartCoroutine(ResetCrafting());
         }
     }
 
@@ -160,19 +154,5 @@ public class CraftingManager : MonoBehaviour
                 }
             }
         }        
-    }
-
-    public IEnumerator ResetCrafting()
-    {
-        yield return new WaitForSeconds(2f);
-
-        if(brewUI.activeInHierarchy)
-        {
-            brewStation.CloseUIPanel();
-        }
-        if(cauldronUI.activeInHierarchy)
-        {
-            cauldron.CloseUIPanel();
-        }
     }
 }
