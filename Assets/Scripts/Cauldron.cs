@@ -35,7 +35,11 @@ public class Cauldron : SelectableObject
         //base.OnInteract();
         if (craftingManager)
         {
-            if (!craftingManager.isCookingComplete) { return; }
+            if (!craftingManager.isCookingComplete) 
+            {
+                craftingManager.onCauldronLocked.Invoke();
+                return; 
+            }
         }
         if(objectPanelUI == null) { return; }
         objectPanelUI.SetActive(true);
