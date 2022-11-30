@@ -16,5 +16,5 @@ MonoBehaviour:
   isButtonShown: 1
   dialogueTitle: 1
   dialogues:
-  - Thank you for accepting my request even though I can only provide you food and
-    shelter. I promise to pay you after the debt of my father has been paid.
+  - Thank you for accepting my request, even though I can only provide you food and
+    shelter but I promise to pay you after the debt of my father has been paid.
