@@ -46,8 +46,10 @@ public class CraftingManager : MonoBehaviour
 
         List<ItemData> tempPlayerIngredients = new(); // temporarily store the required ingredients for the potion
 
+        onQuestCompletedEvent?.Invoke(QuestManager.instance.selectPotionQuest); // select potion quest event invoke
+
         //Check if the player has enough ingredients in the inventory
-        for(int i = 0; i < potionScriptableObject.requiredIngredients.Count; i++) // checks how many required ingredients are there
+        for (int i = 0; i < potionScriptableObject.requiredIngredients.Count; i++) // checks how many required ingredients are there
         {
             if (playerInventory == null) { return; }
             ////check if the player has the right ingredient

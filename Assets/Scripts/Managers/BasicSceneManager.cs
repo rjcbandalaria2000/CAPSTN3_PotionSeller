@@ -10,6 +10,11 @@ public class BasicSceneManager : MonoBehaviour
     public GameObject loadingsScreen;
     public Image loadingBar;
 
+    private void Start()
+    {
+        loadingsScreen.SetActive(false);
+    }
+
     public void loadScene(int sceneId)
     {
         StartCoroutine(LoadSceneAsync(sceneId));

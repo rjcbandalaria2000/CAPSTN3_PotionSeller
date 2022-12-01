@@ -34,6 +34,7 @@ public class QuestManager : MonoBehaviour
     [Header("Quest References")]
     public Quest sellPotionQuest;
     public Quest createPotionQuest;
+    public Quest selectPotionQuest;
     public Quest addMoneyQuest;
     public Quest spendMoneyQuest;
     public Quest useCauldronQuest;
@@ -76,12 +77,12 @@ public class QuestManager : MonoBehaviour
         {
             questsOfTheDay.Clear();
             onRemoveAllQuestEvent.Invoke();
-        }        
+        }
         // Randomly pick three (3) quests for the day
         for (int i = 0; i < 3; i++)
         {
             int num = GetRandNum(0, questsList.Count);
-            
+
             // NO samesies allowed (?)
             if (questsOfTheDay.Count > 0)
             {
@@ -94,7 +95,6 @@ public class QuestManager : MonoBehaviour
                     }
                 }
             }
-
             questsOfTheDay.Add(questsList[num]);
             onAddQuestEvent.Invoke(questsList[num]);
         }

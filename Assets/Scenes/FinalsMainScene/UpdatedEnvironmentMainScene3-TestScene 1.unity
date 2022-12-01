@@ -34010,6 +34010,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseUIPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6714731
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6714731
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.22163922
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.22163922
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059550644828973286, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 36.534
+      objectReference: {fileID: 0}
     - target: {fileID: 8113188589150071756, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -41358,6 +41394,7 @@ MonoBehaviour:
   questIndicator: {fileID: 2005351315}
   sellPotionQuest: {fileID: 11400000, guid: 2f46575b06ac74b4ba17c5936d22626b, type: 2}
   createPotionQuest: {fileID: 11400000, guid: 9a4872fcc91d68b48806bec022c79587, type: 2}
+  selectPotionQuest: {fileID: 11400000, guid: 69ff68fd9bccbc3498e29fa4dc08843f, type: 2}
   addMoneyQuest: {fileID: 11400000, guid: 55b996537e68c5047b35244bb8bdab25, type: 2}
   spendMoneyQuest: {fileID: 11400000, guid: ffa3f6e115ea54a439cb58883e2d5121, type: 2}
   useCauldronQuest: {fileID: 11400000, guid: 1d0fc4bf2b2268348ac592188c2398ce, type: 2}

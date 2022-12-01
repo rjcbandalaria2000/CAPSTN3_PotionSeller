@@ -20423,11 +20423,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094020647}
   m_CullTransparentMesh: 1
---- !u!1 &1095975691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 70904391707039780, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
-  m_PrefabInstance: {fileID: 886079667}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1098091870
 GameObject:
   m_ObjectHideFlags: 0
@@ -20534,17 +20529,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098091870}
   m_CullTransparentMesh: 1
---- !u!114 &1099759177 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 246304119099930768, guid: 47ced95673bf5854cbf15e767e2dd562, type: 3}
-  m_PrefabInstance: {fileID: 886079667}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec215ac811861644badf645f74226a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1101228215
 GameObject:
   m_ObjectHideFlags: 0
@@ -34467,11 +34451,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5ed2e3975b3eada4fb2d6cec729cfd3f, type: 3}
   m_PrefabInstance: {fileID: 1740446994}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1745262202 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1218793644425818757, guid: ca2da63a81137e742b6e177dbe122805, type: 3}
-  m_PrefabInstance: {fileID: 1659697439}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1745952222
 GameObject:
   m_ObjectHideFlags: 0
@@ -38318,10 +38297,6 @@ MonoBehaviour:
   selectedPotionIconImage: {fileID: 1424142060}
   defaultPotionIconImage: {fileID: 21300000, guid: ded41cfe6017d7142bb72b993a4a099e, type: 3}
   potionList: []
-  brewStation: {fileID: 1099759177}
-  brewUI: {fileID: 1095975691}
-  cauldron: {fileID: 148842678}
-  cauldronUI: {fileID: 1745262202}
   isMixingComplete: 0
   isCookingComplete: 0
   hasCrafted: 0
@@ -38997,6 +38972,7 @@ MonoBehaviour:
   conditionPanel: {fileID: 0}
   winConditionPanel: {fileID: 0}
   loseConditionPanel: {fileID: 0}
+  basicSceneManager: {fileID: 0}
 --- !u!4 &1959826903
 Transform:
   m_ObjectHideFlags: 0
@@ -39464,6 +39440,7 @@ MonoBehaviour:
   questIndicator: {fileID: 1205749760}
   sellPotionQuest: {fileID: 11400000, guid: 2f46575b06ac74b4ba17c5936d22626b, type: 2}
   createPotionQuest: {fileID: 11400000, guid: 9a4872fcc91d68b48806bec022c79587, type: 2}
+  selectPotionQuest: {fileID: 11400000, guid: 69ff68fd9bccbc3498e29fa4dc08843f, type: 2}
   addMoneyQuest: {fileID: 11400000, guid: 55b996537e68c5047b35244bb8bdab25, type: 2}
   spendMoneyQuest: {fileID: 11400000, guid: ffa3f6e115ea54a439cb58883e2d5121, type: 2}
   useCauldronQuest: {fileID: 11400000, guid: 1d0fc4bf2b2268348ac592188c2398ce, type: 2}
@@ -42627,6 +42604,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1571267895}
     m_Modifications:
+    - target: {fileID: 1710978310, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 140716674408573093, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3199120548859810597, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
       propertyPath: m_Name
       value: Quest
@@ -42679,9 +42664,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3199120549419880793, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199120550063015619, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6689492953448891256, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225610720405365031, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1214227585, guid: 775351ce61516ee40b63ae07b0627e9f, type: 3}
