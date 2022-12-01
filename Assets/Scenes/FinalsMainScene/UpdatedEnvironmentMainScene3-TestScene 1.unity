@@ -23075,7 +23075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976998059122661554, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5976998059122661566, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_Pivot.x
@@ -23191,7 +23191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976998059598743148, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5976998060099643869, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_TargetGraphic
@@ -38311,7 +38311,7 @@ MonoBehaviour:
   conditionPanel: {fileID: 942383039}
   winConditionPanel: {fileID: 1220337237}
   loseConditionPanel: {fileID: 1056356628}
-  LevelUpUIFeedback: {fileID: 0}
+  LevelUpUIFeedback: {fileID: 1429574336}
   basicSceneManager: {fileID: 0}
 --- !u!4 &1959826903
 Transform:
