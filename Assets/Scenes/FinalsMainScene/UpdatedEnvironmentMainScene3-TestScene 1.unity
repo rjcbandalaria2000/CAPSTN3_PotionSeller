@@ -23061,13 +23061,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 616663312}
+    - target: {fileID: 5976998058892783025, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 313
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976998058892783025, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -153
+      objectReference: {fileID: 0}
     - target: {fileID: 5976998059122661554, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_Name
       value: EndingConditionCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5976998059122661554, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5976998059122661566, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_Pivot.x
@@ -23173,9 +23181,17 @@ PrefabInstance:
       propertyPath: playerWallet
       value: 
       objectReference: {fileID: 366556170}
+    - target: {fileID: 5976998059597634918, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 313
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976998059597634918, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -359
+      objectReference: {fileID: 0}
     - target: {fileID: 5976998059598743148, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5976998060099643869, guid: 0085e5c638d84804dbd908d771744d04, type: 3}
       propertyPath: m_TargetGraphic
