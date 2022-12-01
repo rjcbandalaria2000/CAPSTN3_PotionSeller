@@ -43,9 +43,11 @@ public class CraftingManager : MonoBehaviour
     public void OnSelectedPotionClick(PotionScriptableObject potionScriptableObject)
     {
         //if the crafting of potion is already starting, do not let the player switch out the current potion selected
-        if (isMixingComplete || isCookingComplete) {
+        if (isMixingComplete || isCookingComplete)
+        {
             Debug.Log("Already started crafting a potion");
-            return; }
+            return;
+        }
         Debug.Log(potionScriptableObject + " selected.");
 
         List<ItemData> tempPlayerIngredients = new(); // temporarily store the required ingredients for the potion
