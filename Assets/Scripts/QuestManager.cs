@@ -61,7 +61,7 @@ public class QuestManager : MonoBehaviour
     private void OnDisable()
     {
         TimeManager.onDayEndedEvent.RemoveListener(InitNewQuests);
-        OrderManager.instance.onQuestCompletedEvent?.RemoveListener(QuestComplete);
+        OrderManager.instance?.onQuestCompletedEvent?.RemoveListener(QuestComplete);
         craftingManager.onQuestCompletedEvent?.RemoveListener(QuestComplete);
         playerWallet.onQuestCompletedEvent.RemoveListener(QuestComplete);
         cauldron.onQuestCompletedEvent.RemoveListener(QuestComplete);
