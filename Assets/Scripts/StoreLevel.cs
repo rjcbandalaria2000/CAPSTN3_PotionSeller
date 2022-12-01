@@ -7,6 +7,7 @@ public class StoreLevel : MonoBehaviour
     [Header("Unity Events")]
     public OnGainExp onGainExp = new();
     public OnRefreshLevelUI onRefreshLevelUI = new();
+    public OnLevelUp onLevelUp = new();
     
     [Header("Values")]
     public int          Level;
@@ -59,6 +60,7 @@ public class StoreLevel : MonoBehaviour
             SingletonManager.Get<FurnitureManager>().ActivateFurniture(Level);
             SingletonManager.Get<CustomerSpawner>().initializeUnlockPotion();
             SingletonManager.Get<AudioManager>().Play(Constants.LEVELUP_SOUND);
+            onLevelUp.Invoke();
         }
     }
 
