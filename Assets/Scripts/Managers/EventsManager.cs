@@ -65,5 +65,12 @@ public class OnGameFinish: UnityEvent { };
 
 #region OnSceneChange Events
 
+public class OnSceneChange : UnityEvent { };
+
+#endregion
+
+#region Cauldron Events
+
+public class OnCauldronLocked : UnityEvent { }; 
 
 #endregion

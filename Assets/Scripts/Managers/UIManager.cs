@@ -7,23 +7,27 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 { 
-    public GameObject IngredientBook;
-    public GameObject storeReportPanel;
+    public GameObject           IngredientBook;
+    public GameObject           storeReportPanel;
     
 
     [Header("Condition Panels")]
-    public GameObject conditionPanel;
-    public GameObject winConditionPanel;
-    public GameObject loseConditionPanel;
+    public GameObject           conditionPanel;
+    public GameObject           winConditionPanel;
+    public GameObject           loseConditionPanel;
+
+    [Header("Scene Manager")]
+    public BasicSceneManager    basicSceneManager;
 
     private void Awake()
     {
         SingletonManager.Register(this);
+        basicSceneManager = this.GetComponent<BasicSceneManager>();
     }
 
     private void Start()
     {
-      
+        
     }
 
     public void ClosePanel()
