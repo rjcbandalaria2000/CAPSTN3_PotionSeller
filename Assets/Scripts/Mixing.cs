@@ -95,6 +95,7 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
     {
         if (sparkle)
         {
+            sparkle.gameObject.SetActive(true);
             sparkle.Play();
         }
         
@@ -122,6 +123,10 @@ public class Mixing : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
         SwipedRight = false;
         leftArrowUI.SetActive(true);
         rightArrowUI.SetActive(true);
+        if (sparkle)
+        {
+            sparkle.gameObject.SetActive(false);
+        }
         DisableMixingResultUI();
     }
 
